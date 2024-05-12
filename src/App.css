@@ -86,3 +86,6 @@
     background: linear-gradient(27deg, rgb(202, 249, 117) 26%, rgb(147, 233, 132) 82%);
     background-blend-mode: overlay;
 }
+.mySwiper{
+    height: 100%;
+}

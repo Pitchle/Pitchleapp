@@ -18,7 +18,7 @@ function App() {
                 <About/>
                 <Feature/>
                 <Philosophy/>
-                <FaQs/>
+                {/*<FaQs/>*/}
                 <Footer/>
             </main>
         </>

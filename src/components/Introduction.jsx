@@ -72,6 +72,18 @@ const Introduction = () => {
                                         href=""
                                         className="linear rounded-[20px] bg-[#450073] px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"
                                     >
+                                        Sell
+                                    </button>
+                                    <button
+                                        href=""
+                                        className="linear rounded-[20px] bg-[#450073] px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"
+                                    >
+                                        Transfer
+                                    </button>
+                                    <button
+                                        href=""
+                                        className="linear rounded-[20px] bg-[#450073] px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"
+                                    >
                                         Business
                                     </button>
                                     <div className="flex">

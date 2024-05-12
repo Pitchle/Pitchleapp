@@ -1,17 +1,14 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-
+import 'swiper/css'; // Import Swiper styles
+import 'swiper/css/effect-cards'; // Import Swiper effect styles
+import { EffectCards } from 'swiper/modules'; // Import Swiper modules
 
 // import required modules
-import { EffectCards } from 'swiper/modules';
 const Banner = () => {
     return (
         <>
-            <div className="pt-32 md:py-12 xl:container m-auto px-6 md:px-12">
+            <div className="pt-32 md:py-12 xl:container m-auto min-h-screen px-6 md:px-12">
                 <div
                     aria-hidden="true"
                     className="absolute inset-0 my-auto w-96 h-32 rotate-45 bg-gradient-to-r from-primaryLight to-secondaryLight blur-3xl opacity-50 dark:opacity-20"
@@ -19,13 +16,13 @@ const Banner = () => {
                 <div className="relative lg:flex lg:items-center lg:gap-12">
                     <div
                         className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-6/12">
-                        <h1 className="text-white font-bold text-4xl md:text-6xl lg:text-6xl xl:text-6xl dark:text-white">
-                            FULLY-BUSINESS ORIENTED APP{" "}
+                        <h1 className="text-white font-bold text-4xl md:text-7xl ">
+                            FULLY BUSINESS ORIENTED APP{" "}
                         </h1>
-                        <p className="mt-8 text-white">
+                        <p className="mt-8 text-xl text-white">
                             Join our vibrant community and revolutionize the way you do business!
                         </p>
-                                <div className="flex flex-col w-8/12 mt-16 gap-2 p-2 md:flex-row w-full">
+                                <div className="flex flex-col w-8/12 mt-16 gap-2 lg:pe-28 px-6 md:px-0 md:flex-row w-full">
                                     <a
                                         href=""
                                         target="_blank"
@@ -33,7 +30,7 @@ const Banner = () => {
                                         rel="noreferrer"
                                     >
                                         <svg
-                                            className="w-7"
+                                            className="w-6"
                                             viewBox="-9 0 274 274"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +66,7 @@ const Banner = () => {
                                         rel="noreferrer"
                                     >
                                         <svg
-                                            className="w-7"
+                                            className="w-6"
                                             viewBox="0 0 40 45"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -95,12 +92,13 @@ const Banner = () => {
                                 </div>
 
                     </div>
-                    <div className="h-full  overflow-hidden mt-10 lg:mt-0 w-full lg:w-7/12 lg:-mr-16">
+                    <div className="h-[32rem]  overflow-hidden mt-10 lg:mt-0 w-full lg:w-8/12 lg:-mr-16">
                         <Swiper
                             effect={'cards'}
                             grabCursor={true}
                             modules={[EffectCards]}
-                            className="mySwiper h-[4rem]"
+                            autoplay={{ delay: 5000 }} // Set autoplay delay (in milliseconds)
+                            className="mySwiper h-full"
                         >
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Splash%20Screen.jpg" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Account%20Creation.jpg" alt="screen"/></SwiperSlide>
