@@ -6,7 +6,12 @@ const Pricing = () => {
             <div className="space-y-20 px-2 md:px-4 lg:px-8 py-12" id={"plans"}>
                 <h3 className={"text-center mb-10 text-[#450073] text-3xl md:text-4xl lg:text-6xl font-bold"}>INDIVIDUALS PLANS</h3>
                 <div className="demo-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full lg:w-8/12  mx-auto gap-5">
-                    <div className="rounded-[30px] h-[25rem] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                    <div
+                        data-aos="fade-right"
+                        data-aos-offset="100"
+                        data-aos-duration="500"
+                        data-aos-easing="ease-in-sine"
+                        className="rounded-[30px] h-[25rem] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
@@ -179,7 +184,12 @@ const Pricing = () => {
                                 </div>
                             </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                    <div
+                        data-aos="fade-down"
+                        data-aos-offset="120"
+                        data-aos-duration="510"
+                        data-aos-easing="ease-in-sine"
+                        className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -419,7 +429,12 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] h-[27rem] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                    <div
+                        data-aos="fade-right"
+                        data-aos-offset="130"
+                        data-aos-duration="520"
+                        data-aos-easing="ease-in-sine"
+                        className="rounded-[30px] h-[27rem] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -611,7 +626,12 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                    <div
+                        data-aos="fade-up"
+                        data-aos-offset="140"
+                        data-aos-duration="540"
+                        data-aos-easing="ease-in-sine"
+                        className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -840,7 +860,12 @@ const Pricing = () => {
                 </div>
                 <h3 className={"text-center mb-10 text-[#450073] text-3xl md:text-4xl lg:text-6xl font-bold"}>INVESTORS PLANS</h3>
                 <div className="demo-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full lg:w-8/12  mx-auto gap-5">
-                    <div className="rounded-[30px] md:rounded-[36px] h-[25rem] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                    <div
+                        data-aos="fade-right"
+                        data-aos-offset="100"
+                        data-aos-duration="500"
+                        data-aos-easing="ease-in-sine"
+                        className="rounded-[30px] md:rounded-[36px] h-[25rem] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -1015,7 +1040,12 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                    <div
+                        data-aos="fade-up"
+                        data-aos-offset="100"
+                        data-aos-duration="500"
+                        data-aos-easing="ease-in-sine"
+                        className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -1241,7 +1271,12 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] h-[27rem] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                    <div
+                        data-aos="fade-down"
+                        data-aos-offset="120"
+                        data-aos-duration="550"
+                        data-aos-easing="ease-in-sine"
+                        className="rounded-[30px] md:rounded-[36px] h-[27rem] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -1433,7 +1468,12 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                    <div
+                        data-aos="fade-right"
+                        data-aos-offset="150"
+                        data-aos-duration="560"
+                        data-aos-easing="ease-in-sine"
+                        className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
