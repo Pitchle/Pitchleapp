@@ -206,3 +206,16 @@
     font-size: 24px;
     color: #333333;
 }
+/* Hide next and prev arrows by default */
+.slick-next:before,
+.slick-prev:before {
+    display: block;
+}
+
+/* Media query for desktop view */
+@media (min-width: 1024px) {
+    .slick-next:before,
+    .slick-prev:before {
+        display: none; /* Hide next and prev arrows in desktop view */
+    }
+}
