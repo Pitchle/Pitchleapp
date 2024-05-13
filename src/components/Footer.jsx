@@ -11,30 +11,30 @@ const Footer = () => {
                 </div>
                 <div className={"w-8/12 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 mx-auto"}>
                     <div className={"flex flex-col space-y-4"}>
-                        <h3 className={"text-2xl font-bold"}> Legal</h3>
-                        <h3 className={"text-md font-bold"}> Term of Services</h3>
-                        <h3 className={"text-md font-bold"}> Privacy Policy</h3>
+                        <h3 className={"text-2xl font-bold cursor-pointer"}> Legal</h3>
+                        <h3 className={"text-md font-bold  cursor-pointer"}> Term of Services</h3>
+                        <h3 className={"text-md font-bold  cursor-pointer"}> Privacy Policy</h3>
                     </div>
                     <div className={"flex flex-col  space-y-4"}>
-                        <h3 className={"text-2xl font-bold"}> Company</h3>
-                        <h3 className={"text-md font-bold"}> Our Story</h3>
-                        <h3 className={"text-md font-bold"}> FAQs</h3>
+                        <h3 className={"text-2xl font-bold cursor-pointer"}> Company</h3>
+                        <h3 className={"text-md font-bold cursor-pointer"}> Our Story</h3>
+                        <h3 className={"text-md font-bold cursor-pointer"}> FAQs</h3>
                     </div>
                     <div className={"flex flex-col lg:ms-20 ms-0 space-y-4"}>
                         <button
                             href=""
-                            className="linear rounded-md bg-white px-4 py-4 text-base font-medium text-black transition duration-200 hover:bg-brand-800 active:bg-brand-700"
+                            className="linear scale-ani rounded-md bg-white px-4 py-4 text-base font-medium text-black transition duration-200 hover:bg-brand-800 active:bg-brand-700"
                         >
                             Contact Us
                         </button>
                         <h3 className={"text-md font-bold"}> contact@pitchle.com</h3>
                     </div>
                     <div className={"flex flex-col items-center space-y-4 px-10"}>
-                            <img src="/img/logo/link.svg" className={"w-24 h-24"} alt="link"/>
+                            <img src="/img/logo/link.svg" className={"w-24 scale-ani h-24"} alt="link"/>
                         <a
                             href=""
                             target="_blank"
-                            className="flex items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-2xl"
+                            className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-2xl"
                             rel="noreferrer"
                         >
                             <svg
@@ -69,7 +69,7 @@ const Footer = () => {
                         </a>
                         <a href=""
                            target="_blank"
-                           className="flex items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-2xl"
+                           className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-2xl"
                            rel="noreferrer"
                         >
                             <svg

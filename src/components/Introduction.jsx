@@ -40,22 +40,29 @@ const Introduction = () => {
 
     return (
         <>
-            <h3 className={"text-center text-[#450073] my-16 text-3xl md:text-4xl lg:text-6xl font-bold"}>
+            <h3 className={"text-center text-[#450073] my-16 text-3xl md:text-4xl lg:text-6xl font-bold"}
+                data-aos="fade-down"
+                data-aos-offset="100"
+                data-aos-duration="500"
+                data-aos-easing="ease-in-sine">
                 Looking for?
             </h3>
             <div className={"w-full flex justify-center"}>
                 <div className={"w-10/12 ms-0 md:ms-10 lg:ms-20"}>
                     <Slider {...settings}>
                         {slidesData.map((slide, index) => (
-                            <div
-                                key={index}
-                                className="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
+                            <div key={index}
+                                 data-aos="fade-right"
+                                 data-aos-offset="200"
+                                 data-aos-duration={(index + 1) * 300 + 500}
+                                 data-aos-easing="ease-in-sine"
+                                className="!z-5 relative flex flex-col rounded-[20px] max-w-[290px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
                             >
-                                <div className="h-full w-full">
+                                <div className="w-full">
                                     <div className="relative w-full" onMouseEnter={() => handleImageHover(slide.image)}>
                                         <img
                                             src={hoveredImage === slide.image ? slide.hoverImage : slide.image}
-                                            className="mb-3 rounded-md h-full w-full h-[29rem] rounded-xl 3xl:h-full 3xl:w-full"
+                                            className="mb-3 rounded-md h-full w-full h-[28rem] rounded-xl 3xl:h-full 3xl:w-full"
                                             alt=""
                                             style={{ transition: 'transform 0.8s ease', transform: hoveredImage === slide.image ? 'scale(1.02)' : 'scale(1)' }}
                                         />

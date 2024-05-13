@@ -15,17 +15,29 @@ const Banner = () => {
                 />
                 <div className="relative lg:flex-row flex flex-col-reverse lg:items-center lg:gap-12">
                     <div className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-6/12">
-                        <h1 className="text-white font-bold text-4xl md:text-7xl ">
+                        <h1 className="text-white font-bold text-4xl md:text-7xl"
+                            data-aos="fade-right"
+                            data-aos-offset="100"
+                            data-aos-easing="ease-in-sine"
+                        >
                             FULLY BUSINESS ORIENTED APP{" "}
                         </h1>
-                        <p className="mt-8 text-2xl md:text-3xl  text-white">
+                        <p className="mt-8 text-2xl md:text-3xl  text-white"
+                           data-aos="fade-right"
+                           data-aos-offset="200"
+                           data-aos-duration="500"
+                           data-aos-easing="ease-in-sine">
                             Join our vibrant community and revolutionize the way you do business!
                         </p>
-                                <div className="flex flex-row w-8/12 mt-10 gap-2 justify-center items-center lg:pe-40 px-0 md:px-0 md:flex-row w-full">
+                                <div
+                                    data-aos="fade-right"
+                                    data-aos-offset="100"
+                                    data-aos-easing="ease-in-sine"
+                                    className="flex flex-row w-8/12 mt-10 gap-2 justify-center items-center lg:pe-40 px-0 md:px-0 md:flex-row w-full">
                                     <a
                                         href=""
                                         target="_blank"
-                                        className="flex items-center justify-center w-8/12 md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
+                                        className="flex scale-ani items-center justify-center w-8/12 md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
                                         rel="noreferrer"
                                     >
                                         <svg
@@ -61,7 +73,7 @@ const Banner = () => {
                                     <a
                                         href=""
                                         target="_blank"
-                                        className="flex items-center justify-center w-8/12  md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
+                                        className="flex scale-ani items-center justify-center w-8/12  md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
                                         rel="noreferrer"
                                     >
                                         <svg
@@ -91,7 +103,11 @@ const Banner = () => {
                                 </div>
 
                     </div>
-                    <div className="h-[32rem] overflow-hidden mt-0 mb-16 lg:mb-0 lg:mt-6 w-full lg:w-8/12 lg:-mr-16">
+                    <div className="h-[32rem] scale-ani overflow-hidden mt-0 mb-16 lg:mb-0 lg:mt-6 w-full lg:w-8/12 lg:-mr-16"
+                         data-aos="fade-left"
+                         data-aos-offset="100"
+                         data-aos-duration="500"
+                         data-aos-easing="ease-in-sine">
                         <Swiper
                             effect={'cards'}
                             grabCursor={true}
