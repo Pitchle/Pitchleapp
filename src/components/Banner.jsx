@@ -13,20 +13,19 @@ const Banner = () => {
                     aria-hidden="true"
                     className="absolute inset-0 my-auto w-96 h-32 rotate-45 bg-gradient-to-r from-primaryLight to-secondaryLight blur-3xl opacity-50 dark:opacity-20"
                 />
-                <div className="relative lg:flex lg:items-center lg:gap-12">
-                    <div
-                        className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-6/12">
+                <div className="relative lg:flex-row flex flex-col-reverse lg:items-center lg:gap-12">
+                    <div className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-6/12">
                         <h1 className="text-white font-bold text-4xl md:text-7xl ">
                             FULLY BUSINESS ORIENTED APP{" "}
                         </h1>
-                        <p className="mt-8 text-xl text-white">
+                        <p className="mt-8 text-2xl md:text-3xl  text-white">
                             Join our vibrant community and revolutionize the way you do business!
                         </p>
-                                <div className="flex flex-col w-8/12 mt-16 gap-2 lg:pe-28 px-6 md:px-0 md:flex-row w-full">
+                                <div className="flex flex-row w-8/12 mt-10 gap-2 justify-center items-center lg:pe-40 px-0 md:px-0 md:flex-row w-full">
                                     <a
                                         href=""
                                         target="_blank"
-                                        className="flex items-center justify-center w-full px-4 py-3 text-center text-white bg-[#450073] rounded-2xl"
+                                        className="flex items-center justify-center w-8/12 md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
                                         rel="noreferrer"
                                     >
                                         <svg
@@ -62,7 +61,7 @@ const Banner = () => {
                                     <a
                                         href=""
                                         target="_blank"
-                                        className="flex items-center justify-center w-full px-4 py-3 text-center text-white bg-[#450073] rounded-2xl"
+                                        className="flex items-center justify-center w-8/12  md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
                                         rel="noreferrer"
                                     >
                                         <svg
@@ -92,7 +91,7 @@ const Banner = () => {
                                 </div>
 
                     </div>
-                    <div className="h-[32rem]  overflow-hidden mt-10 lg:mt-0 w-full lg:w-8/12 lg:-mr-16">
+                    <div className="h-[32rem] overflow-hidden mt-0 mb-16 lg:mb-0 lg:mt-10 lg:mt-0 w-full lg:w-8/12 lg:-mr-16">
                         <Swiper
                             effect={'cards'}
                             grabCursor={true}
@@ -102,16 +101,12 @@ const Banner = () => {
                         >
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Splash%20Screen.jpg" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Account%20Creation.jpg" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Home.jpg" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Home-1.jpg" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Home-2.jpg" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Home-3.jpg" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/More%20Details.jpg" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Notifications.jpg" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Profile%20Details.jpg" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/More%20Details.jpg" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Record%20Video.jpg" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Share%20Video.jpg" alt="screen"/></SwiperSlide>
-
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Home-1.jpg" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Home.jpg" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Notifications.jpg" alt="screen"/></SwiperSlide>
                         </Swiper>
                     </div>
                 </div>

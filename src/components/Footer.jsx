@@ -4,9 +4,10 @@ const Footer = () => {
     const currentYear = new Date().getFullYear(); // Get the current year
     return (
         <>
-            <div className={"text-white py-16 bg-[#450073]"}>
+            <svg className={"lg:-mb-20 -mb-10"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#450073" fill-opacity="1" d="M0,128L1440,0L1440,320L0,320Z"></path></svg>
+            <div className={"text-white pb-10 bg-[#450073]"}>
                 <div className={"w-8/12 mx-auto"}>
-                    <h3 className={"text-5xl font-bold py-16"}> Stay In Loop</h3>
+                    <h3 className={"text-5xl font-bold pb-16"}> Stay In Loop</h3>
                 </div>
                 <div className={"w-8/12 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 mx-auto"}>
                     <div className={"flex flex-col space-y-4"}>
@@ -19,15 +20,25 @@ const Footer = () => {
                         <h3 className={"text-md font-bold"}> Our Story</h3>
                         <h3 className={"text-md font-bold"}> FAQs</h3>
                     </div>
-                    <div className={"flex flex-col space-y-4"}>
+                    <div className={"flex flex-col lg:ms-20 ms-0 space-y-4"}>
+                        <button
+                            href=""
+                            className="linear rounded-md bg-white px-4 py-4 text-base font-medium text-black transition duration-200 hover:bg-brand-800 active:bg-brand-700"
+                        >
+                            Contact Us
+                        </button>
+                        <h3 className={"text-md font-bold"}> contact@pitchle.com</h3>
+                    </div>
+                    <div className={"flex flex-col items-center space-y-4 px-10"}>
+                            <img src="/img/logo/link.svg" className={"w-24 h-24"} alt="link"/>
                         <a
                             href=""
                             target="_blank"
-                            className="flex items-center justify-center w-full px-4 py-3 text-center text-white bg-black rounded-2xl"
+                            className="flex items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-2xl"
                             rel="noreferrer"
                         >
                             <svg
-                                className="w-7"
+                                className="w-5"
                                 viewBox="-9 0 274 274"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -56,14 +67,13 @@ const Footer = () => {
                                 <span className="text-base font-semibold text-white">Play Store</span>
                             </div>
                         </a>
-                        <a
-                            href=""
-                            target="_blank"
-                            className="flex items-center justify-center w-full px-4 py-3 text-center text-white bg-black rounded-2xl"
-                            rel="noreferrer"
+                        <a href=""
+                           target="_blank"
+                           className="flex items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-2xl"
+                           rel="noreferrer"
                         >
                             <svg
-                                className="w-7"
+                                className="w-5"
                                 viewBox="0 0 40 45"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -86,20 +96,9 @@ const Footer = () => {
                             </div>
                         </a>
                     </div>
-                    <div className={"flex flex-col lg:ms-20 ms-0 space-y-4"}>
-                        <button
-                            href=""
-                            className="linear rounded-md bg-white px-4 py-4 text-base font-medium text-black transition duration-200 hover:bg-brand-800 active:bg-brand-700"
-                        >
-                            Contact Us
-                        </button>
-                        <h3 className={"text-md font-bold"}> contact@pitchle.com</h3>
-                        <h3 className={"text-md font-bold"}> Paris, France</h3>
-                        <h3 className={"text-md font-bold"}> Linked</h3>
-                    </div>
                 </div>
             </div>
-            <p className={"text-center"}>© {currentYear} Pitchle. All rights reserved</p>
+            <p className={"text-center py-2"}>© {currentYear} Pitchle. All rights reserved</p>
         </>
     );
 };

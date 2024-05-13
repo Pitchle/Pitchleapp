@@ -5,6 +5,7 @@
 *{
     font-family: "Rubik",sans-serif;
 }
+
 .c-underline {
     position: relative;
     display: inline-block;
@@ -88,4 +89,10 @@
 }
 .mySwiper{
     height: 100%;
+}
+.intro-slider{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
