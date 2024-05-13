@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SplashScreen from "./components/SplashScreen";
+import Pricing from "./components/Pricing";
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -33,6 +34,7 @@ function App() {
                     <Introduction />
                     <About />
                     <Feature />
+                    <Pricing/>
                     <Philosophy />
                     {/* <FaQs /> */}
                     <Footer />

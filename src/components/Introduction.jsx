@@ -1,14 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Introduction = () => {
     const [hoveredImage, setHoveredImage] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
 
     const handleImageHover = (imageUrl) => {
         setHoveredImage(imageUrl);
     };
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768); // Set isMobile based on viewport width
+        };
+
+        handleResize(); // Call handleResize on initial render
+
+        window.addEventListener('resize', handleResize); // Add event listener for window resize
+
+        return () => {
+            window.removeEventListener('resize', handleResize); // Cleanup on component unmount
+        };
+    }, []);
+
+    const PrevArrow = ({ onClick }) => (
+        <button
+            className="slick-prev"
+            style={{ display: isMobile ? 'none' : 'block' }} // Hide prev arrow if mobile view
+            onClick={onClick}
+        >
+            Previous
+        </button>
+    );
+
+    const NextArrow = ({ onClick }) => (
+        <button
+            className="slick-next"
+            style={{ display: isMobile ? 'none' : 'block' }} // Hide next arrow if mobile view
+            onClick={onClick}
+        >
+            Next
+        </button>
+    );
 
     const settings = {
         dots: false,
@@ -18,6 +53,8 @@ const Introduction = () => {
         slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 3000,
+        prevArrow: <PrevArrow />, // Custom prev arrow component
+        nextArrow: <NextArrow />, // Custom next arrow component
         responsive: [
             {
                 breakpoint: 1024,
@@ -25,6 +62,7 @@ const Introduction = () => {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
+                     // Hide next arrow in desktop view
                 },
             },
             {
@@ -33,6 +71,8 @@ const Introduction = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: true,
+                    prevArrow: null, // Hide prev arrow in desktop view
+                    nextArrow: null,
                 },
             },
         ],
@@ -56,7 +96,7 @@ const Introduction = () => {
                                  data-aos-offset="200"
                                  data-aos-duration={(index + 1) * 300 + 500}
                                  data-aos-easing="ease-in-sine"
-                                className="!z-5 relative flex flex-col rounded-[20px] max-w-[290px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
+                                 className="!z-5 relative flex flex-col rounded-[20px] max-w-[290px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
                             >
                                 <div className="w-full">
                                     <div className="relative w-full" onMouseEnter={() => handleImageHover(slide.image)}>

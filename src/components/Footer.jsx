@@ -4,10 +4,9 @@ const Footer = () => {
     const currentYear = new Date().getFullYear(); // Get the current year
     return (
         <>
-            <svg className={"lg:-mb-20 -mb-10"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#450073" fill-opacity="1" d="M0,128L1440,0L1440,320L0,320Z"></path></svg>
-            <div className={"text-white pb-10 bg-[#450073]"}>
-                <div className={"w-8/12 mx-auto"}>
-                    <h3 className={"text-5xl font-bold pb-16"}> Stay In Loop</h3>
+            <div className={"text-white py-20 bg-[#450073]"}>
+                <div className={"w-9/12 mx-auto"}>
+                        <img src="/img/logo/white-logo.png" className={"w-64 h-40"} alt="lgoo"/>
                 </div>
                 <div className={"w-8/12 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 mx-auto"}>
                     <div className={"flex flex-col space-y-4"}>
@@ -16,7 +15,15 @@ const Footer = () => {
                         <h3 className={"text-md font-bold  cursor-pointer"}> Privacy Policy</h3>
                     </div>
                     <div className={"flex flex-col  space-y-4"}>
-                        <h3 className={"text-2xl font-bold cursor-pointer"}> Company</h3>
+                        <a className="relative group">
+                            <div className="c-underline text-2xl font-bold cursor-pointer">Company</div>
+                            {/* Desktop view submenu */}
+                            <ul className="absolute top-[0.2] mt-1 w-48 bg-white shadow-md rounded-md p-2 space-y-2 hidden group-hover:block">
+                                <li className="text-black cursor-pointer">About Us</li>
+                                <li className="text-black cursor-pointer">Our Story</li>
+                                <li className="text-black cursor-pointer">FAQs</li>
+                            </ul>
+                        </a>
                         <h3 className={"text-md font-bold cursor-pointer"}> Our Story</h3>
                         <h3 className={"text-md font-bold cursor-pointer"}> FAQs</h3>
                     </div>
@@ -29,16 +36,16 @@ const Footer = () => {
                         </button>
                         <h3 className={"text-md font-bold"}> contact@pitchle.com</h3>
                     </div>
-                    <div className={"flex flex-col items-center space-y-4 px-10"}>
-                            <img src="/img/logo/link.svg" className={"w-24 scale-ani h-24"} alt="link"/>
+                    <div className={"flex w-full flex items-center space-x-5 px-10"}>
+                            <img src="/img/logo/link.svg" className={"w-20 scale-ani h-20"} alt="link"/>
                         <a
                             href=""
                             target="_blank"
-                            className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-2xl"
+                            className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-full h-16 w-16 items-center"
                             rel="noreferrer"
                         >
                             <svg
-                                className="w-5"
+                                className="w-10"
                                 viewBox="-9 0 274 274"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -62,18 +69,14 @@ const Footer = () => {
                                     />
                                 </g>
                             </svg>
-                            <div className="flex flex-col ml-2 leading-4 text-left md:ml-3">
-                                <span className="text-sm text-white">Get it on</span>
-                                <span className="text-base font-semibold text-white">Play Store</span>
-                            </div>
                         </a>
                         <a href=""
                            target="_blank"
-                           className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-2xl"
+                           className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-full h-16 w-16 items-center"
                            rel="noreferrer"
                         >
                             <svg
-                                className="w-5"
+                                className="w-10"
                                 viewBox="0 0 40 45"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -90,10 +93,6 @@ const Footer = () => {
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <div className="flex flex-col ml-2 leading-4 text-left md:ml-3">
-                                <span className="text-sm text-white">Get it on</span>
-                                <span className="text-base font-semibold text-white">App Store</span>
-                            </div>
                         </a>
                     </div>
                 </div>
