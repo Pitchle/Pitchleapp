@@ -9,6 +9,9 @@ const Introduction = () => {
         setHoveredImage(imageUrl);
     };
 
+    const handleMouseLeave = () => {
+        setHoveredImage(null);
+    };
 
     const settings = {
         dots: false,
@@ -16,7 +19,7 @@ const Introduction = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: trueg,
         autoplaySpeed: 3000,
         responsive: [
             {
@@ -57,15 +60,22 @@ const Introduction = () => {
                                  data-aos-duration={(index + 1) * 300 + 500}
                                  data-aos-easing="ease-in-sine"
                                  className="!z-5 relative flex flex-col rounded-[20px] max-w-[290px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
+                                 onMouseLeave={handleMouseLeave}
                             >
                                 <div className="w-full">
                                     <div className="relative w-full" onMouseEnter={() => handleImageHover(slide.image)}>
                                         <img
-                                            src={hoveredImage === slide.image ? slide.hoverImage : slide.image}
+                                            src={slide.image}
                                             className="mb-3 rounded-md w-full h-[29rem] rounded-xl 3xl:h-full 3xl:w-full"
                                             alt=""
-                                            style={{ transition: 'transform 0.8s ease', transform: hoveredImage === slide.image ? 'scale(1.02)' : 'scale(1)' }}
                                         />
+                                        {hoveredImage && hoveredImage === slide.image && (
+                                            <img
+                                                src={slide.hoverImage}
+                                                className="mb-3 rounded-md w-full h-[29rem] rounded-xl 3xl:h-full 3xl:w-full absolute top-0 left-2 transform translate-x-4"
+                                                alt=""
+                                            />
+                                        )}
                                     </div>
                                     <div className="mb-3 flex items-center justify-between px-1 md:items-start"></div>
                                     <div className="flex items-center justify-between md:items-center lg:justify-between ">

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link as ScrollLink} from "react-scroll";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear(); // Get the current year
@@ -19,9 +20,9 @@ const Footer = () => {
                             <div className="c-underline text-2xl font-bold cursor-pointer">Company</div>
                             {/* Desktop view submenu */}
                             <ul className="absolute top-[0.2] mt-1 w-48 bg-white shadow-md rounded-md p-2 space-y-2 hidden group-hover:block">
-                                <li className="text-black cursor-pointer">About Us</li>
-                                <li className="text-black cursor-pointer">Our Story</li>
-                                <li className="text-black cursor-pointer">FAQs</li>
+                                <li className="text-black cursor-pointer"><ScrollLink to="about-us" smooth={true} duration={800}>About Us</ScrollLink></li>
+                                <li className="text-black cursor-pointer"><ScrollLink to="our-story" smooth={true} duration={800}>Our Story</ScrollLink></li>
+                                <li className="text-black cursor-pointer"><ScrollLink to="our-story" smooth={true} duration={800}>FAQs</ScrollLink></li>
                             </ul>
                         </a>
                         <h3 className={"text-md font-bold cursor-pointer"}> Our Story</h3>
@@ -41,11 +42,11 @@ const Footer = () => {
                         <a
                             href=""
                             target="_blank"
-                            className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-full h-16 w-16 items-center"
+                            className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-[#0288d1] rounded-full h-16 w-16 items-center"
                             rel="noreferrer"
                         >
                             <svg
-                                className="w-10"
+                                className="w-8"
                                 viewBox="-9 0 274 274"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -72,11 +73,11 @@ const Footer = () => {
                         </a>
                         <a href=""
                            target="_blank"
-                           className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-black rounded-full h-16 w-16 items-center"
+                           className="flex scale-ani items-center justify-center w-full px-4 py-1 text-center text-white bg-[#0288d1] rounded-full h-16 w-16 items-center"
                            rel="noreferrer"
                         >
                             <svg
-                                className="w-10"
+                                className="w-8"
                                 viewBox="0 0 40 45"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
