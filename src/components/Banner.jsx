@@ -91,7 +91,7 @@ const Banner = () => {
                                 </div>
 
                     </div>
-                    <div className="h-[32rem] overflow-hidden mt-0 mb-16 lg:mb-0 lg:mt-10 lg:mt-0 w-full lg:w-8/12 lg:-mr-16">
+                    <div className="h-[32rem] overflow-hidden mt-0 mb-16 lg:mb-0 lg:mt-6 w-full lg:w-8/12 lg:-mr-16">
                         <Swiper
                             effect={'cards'}
                             grabCursor={true}
