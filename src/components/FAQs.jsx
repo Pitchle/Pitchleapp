@@ -84,7 +84,7 @@ const FaQs = () => {
                                 </span>
                             </button>
                             {expandedItems[index] && (
-                                <p className="mt-6 text-lg text-white dark:text-gray-300">
+                                <p className="mt-6 text-lg text-justify text-white dark:text-gray-300">
                                     {faq.answer}
                                 </p>
                             )}

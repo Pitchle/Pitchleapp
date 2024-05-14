@@ -7,6 +7,10 @@ const Navbar = () => {
     const toggleDrawer = () => {
         setIsDrawerOpen(!isDrawerOpen);
     };
+    const closeDrawer = () => {
+        setIsDrawerOpen(false);
+    };
+
 
     return (
         <>

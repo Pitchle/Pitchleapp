@@ -37,7 +37,7 @@ const Feature = () => {
                             className="w-4/12 flex zoom-effect justify-center mt-10 item-center p-4 flex-col rounded-full bg-[#3d0e6d] text-white h-64 w-64 relative group transition duration-300 ease-in-out">
                             <h3 className="w-full text-4xl font-bold  text-center my-4"> Global Accessibility</h3>
                             <div
-                                className="absolute rounded-2xl inset-0 bg-[#3d0e6d] h-[18rem] lg:w-[30rem] w-[20rem]  text-white opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
+                                className="absolute rounded-2xl inset-0 bg-[#3d0e6d] h-[20rem] lg:w-[30rem] w-[20rem]  text-white opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
                                 <p className="text-lg  p-4 tracking-wide">Access a global network of potential partners, investors,
                                     and buyers. <br/> <br/> Pitchle app is accessible globally, facilitating connections
                                     across
@@ -72,7 +72,7 @@ const Feature = () => {
                             <h3 className="w-full text-4xl font-bold my-4"> Subscription Plans </h3>
                             <div
                                 className="absolute rounded-2xl inset-0 bg-[#3d0e6d] text-white opacity-0  h-[25rem] group-hover:opacity-100 w-[17rem]  flex justify-center items-center transition-opacity duration-300">
-                                <p className="text-lg tracking-wide p-4">The Mobile app is FREE, but you choose from
+                                <p className="text-lg text-justify tracking-wide p-4">The Mobile app is FREE, but you choose from
                                     flexible subscription plans to unlock premium
                                     features including one-time use, monthly, or
                                     annual plans. <br/> <br/>

@@ -20,7 +20,7 @@ const About = () => {
                     <div className="relative scale-ani w-full h-full lg:h-80 flex justify-center items-center text-justify my-8 bg-[#f5d2f0] md:my-16 flex flex-col items-start space-y-4 sm:flex-row sm:space-y-0 sm:space-x-6 px-4 py-8 border-2 border-dashed border-gray-400 dark:border-gray-400 shadow-lg rounded-2xl">
                         <div className="w-full sm:w-auto flex flex-col items-center sm:items-start">
                             <div className="mb-4 md:text-lg text-[#450073]">
-                                <p className={"text-2xl text-start md:text-center "}>
+                                <p className={"text-2xl text-center md:text-center "}>
                                     Whether you're an entrepreneur with a groundbreaking <br/> idea, a startup seeking
                                     funding, or a business owner <br/> looking to expand through strategic partnerships, <br/>
                                     Pitchle provides the ideal environment to make your vision a reality. <br/> <br/>Our platform
