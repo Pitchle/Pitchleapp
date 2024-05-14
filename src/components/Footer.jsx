@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom'; // Import Link from react-router-dom
 
 const Footer = () => {
     const currentYear = new Date().getFullYear(); // Get the current year
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
     return (
         <>
             <div className={"text-white py-20 bg-[#450073]"}>
@@ -15,17 +18,18 @@ const Footer = () => {
                 <div className={"w-8/12 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 mx-auto"}>
                     <div className={"flex flex-col space-y-4"}>
                         <h3 className={"text-2xl font-bold c-underline  cursor-pointer"}> LEGAL</h3>
-                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link to={"/terms"}> Term of
+                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/terms"}> Term of
                             Services </Link></h3>
-                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link to={"/privacy"}> Privacy
+                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/privacy"}> Privacy
                             Policy </Link></h3>
                     </div>
                     <div className={"flex flex-col  space-y-4"}>
                         <a className="relative group">
                             <div className="c-underline text-2xl font-bold cursor-pointer">COMPANY</div>
                         </a>
-                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link to={"/about"}> About Us</Link></h3>
-                        <h3 className={"text-md font-bold  c-underline  cursor-pointer"}><Link to={"/faq"}> FAQs</Link>
+                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/about"}> About
+                            Us</Link></h3>
+                        <h3 className={"text-md font-bold  c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/faq"}> FAQs</Link>
                         </h3>
                     </div>
                     <div className={"flex flex-col lg:ms-20 ms-0 space-y-4"}>
@@ -34,13 +38,16 @@ const Footer = () => {
                         </a>
                         <h3 className={"text-md font-bold"}> contact@pitchle.com</h3>
                         <div className={"flex w-full flex items-center space-x-1"}>
-                            <img src="/img/logo/link.svg" className={"w-12 scale-ani h-12"} alt="link"/>
-                            <div className={"w-10 flex justify-center items-center scale-ani h-10 rounded-full bg-[#0288d1]"}>
-                                <img src="/img/logo/playstore.png" className={"w-5 scale-ani h-5"} alt="link"/>
-                            </div>
+                            <a target={"_blank"} href="https://www.linkedin.com/company/pitchle?trk=blended-typeahead">
+                                <img src="/img/logo/link.svg" className={"w-12 scale-ani h-12"} alt="link"/></a>
+                            <a target={"_blank"} href="https://play.google.com/store/games?hl=en&gl=US&pli=1">
+                                <div className={"w-10 flex justify-center items-center scale-ani h-10 rounded-full bg-[#0288d1]"}>
+                                    <img src="/img/logo/playstore.png" className={"w-5 scale-ani h-5"} alt="link"/>
+                                </div>
+                            </a>
                             <div className={"w-10 flex justify-center items-center h-10 rounded-full bg-[#0288d1]"}>
                                 <a
-                                    href=""
+                                    href="https://www.apple.com/app-store/"
                                     target="_blank"
                                     className="flex scale-ani items-center justify-center w-8/12  md:w-full text-center text-white bg-[#0288d1] rounded-2xl"
                                     rel="noreferrer"
@@ -59,7 +66,7 @@ const Footer = () => {
                                         </g>
                                         <defs>
                                             <clipPath id="clip0">
-                                                <rect width={40} height={45} fill="white" />
+                                                <rect width={40} height={45} fill="white"/>
                                             </clipPath>
                                         </defs>
                                     </svg>

@@ -35,6 +35,7 @@ const Navbar = () => {
                         {/* Mobile view submenu */}
                         {isDrawerOpen && (
                             <ul className="absolute left-0 w-48 bg-white shadow-md rounded-md p-2 space-y-2">
+                                <li className="text-black cursor-pointer"><Link to={"/plans"}>Plans</Link></li>
                                 <li className="text-black cursor-pointer"><Link to={"/about"}>About Us</Link></li>
                                 <li className="text-black cursor-pointer"><Link to={"/faq"}>FAQs</Link></li>
                             </ul>

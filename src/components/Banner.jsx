@@ -35,7 +35,7 @@ const Banner = () => {
                                     data-aos-easing="ease-in-sine"
                                     className="flex flex-row w-8/12 mt-10 gap-2 justify-center items-center lg:pe-40 px-0 md:px-0 md:flex-row w-full">
                                     <a
-                                        href=""
+                                        href="https://play.google.com/store/games?hl=en&gl=US&pli=1"
                                         target="_blank"
                                         className="flex scale-ani items-center justify-center w-8/12 md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
                                         rel="noreferrer"
@@ -71,7 +71,7 @@ const Banner = () => {
                                         </div>
                                     </a>
                                     <a
-                                        href=""
+                                        href="https://www.apple.com/app-store/"
                                         target="_blank"
                                         className="flex scale-ani items-center justify-center w-8/12  md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
                                         rel="noreferrer"

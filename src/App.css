@@ -209,8 +209,8 @@
 /* Hide next and prev arrows by default */
 .slick-next:before,
 .slick-prev:before {
-    display: inline-block;
-    transform: scale(1.8);
+    display: block;
+    transform: scale(2);
 }
 
 /* Media query for desktop view */
