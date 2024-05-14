@@ -19,7 +19,7 @@ const Introduction = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         responsive: [
             {
@@ -72,7 +72,7 @@ const Introduction = () => {
                                         {hoveredImage && hoveredImage === slide.image && (
                                             <img
                                                 src={slide.hoverImage}
-                                                className="mb-3 rounded-md w-full h-[29rem] rounded-xl 3xl:h-full 3xl:w-full absolute top-0 left-2 transform translate-x-4"
+                                                className="mb-3 rounded-md w-full h-[32rem] rounded-xl 3xl:h-full 3xl:w-full absolute top-0 left-2 transform translate-x-4"
                                                 alt=""
                                             />
                                         )}

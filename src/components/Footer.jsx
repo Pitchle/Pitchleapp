@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link as ScrollLink} from "react-scroll";
+import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Footer = () => {
     const currentYear = new Date().getFullYear(); // Get the current year
@@ -11,22 +12,16 @@ const Footer = () => {
                 </div>
                 <div className={"w-8/12 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 mx-auto"}>
                     <div className={"flex flex-col space-y-4"}>
-                        <h3 className={"text-2xl font-bold cursor-pointer"}> Legal</h3>
-                        <h3 className={"text-md font-bold  cursor-pointer"}> Term of Services</h3>
-                        <h3 className={"text-md font-bold  cursor-pointer"}> Privacy Policy</h3>
+                        <h3 className={"text-2xl font-bold cursor-pointer"}> <Link to={"/"}> Legal</Link></h3>
+                        <h3 className={"text-md font-bold  cursor-pointer"}> <Link to={"/terms"}> Term of Services </Link></h3>
+                        <h3 className={"text-md font-bold  cursor-pointer"}> <Link to={"/privacy"}> Privacy Policy </Link></h3>
                     </div>
                     <div className={"flex flex-col  space-y-4"}>
                         <a className="relative group">
-                            <div className="c-underline text-2xl font-bold cursor-pointer">Company</div>
-                            {/* Desktop view submenu */}
-                            <ul className="absolute top-[0.2] mt-1 w-48 bg-white shadow-md rounded-md p-2 space-y-2 hidden group-hover:block">
-                                <li className="text-black cursor-pointer"><ScrollLink to="about-us" smooth={true} duration={800}>About Us</ScrollLink></li>
-                                <li className="text-black cursor-pointer"><ScrollLink to="our-story" smooth={true} duration={800}>Our Story</ScrollLink></li>
-                                <li className="text-black cursor-pointer"><ScrollLink to="our-story" smooth={true} duration={800}>FAQs</ScrollLink></li>
-                            </ul>
+                            <div className="c-underline text-2xl font-bold cursor-pointer"><Link to={"/"}>Company</Link></div>
                         </a>
-                        <h3 className={"text-md font-bold cursor-pointer"}> Our Story</h3>
-                        <h3 className={"text-md font-bold cursor-pointer"}> FAQs</h3>
+                        <h3 className={"text-md font-bold cursor-pointer"}> <Link to={"/story"}> Our Story</Link></h3>
+                        <h3 className={"text-md font-bold cursor-pointer"}> <Link to={"/faq"}> FAQs</Link></h3>
                     </div>
                     <div className={"flex flex-col lg:ms-20 ms-0 space-y-4"}>
                         <button

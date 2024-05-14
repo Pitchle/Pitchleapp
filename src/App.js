@@ -1,46 +1,37 @@
-// App.js
-import React, { useEffect, useState } from 'react';
 import './App.css';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import AboutPage from "./pages/AboutPage";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Banner from "./components/Banner";
-import Introduction from "./components/Introduction";
-import About from "./components/About";
-import Feature from "./components/Feature";
-import Philosophy from "./components/Philosophy";
+import React from "react";
 import Footer from "./components/Footer";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import SplashScreen from "./components/SplashScreen";
-import Pricing from "./components/Pricing";
+import Faq from "./pages/Faq";
+import Story from "./pages/Story";
+import Plans from "./pages/Plans";
+import TermsServices from "./pages/TermsServices";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false); // Set loading to false after a certain duration (e.g., 3 seconds)
-            AOS.init();
-        }, 6000); // Adjust the duration as needed
-    }, []);
 
     return (
-        <div className="App">
-            {loading ? (
-                <SplashScreen />
-            ) : (
-                <main className="banner-bg">
-                    <Navbar />
-                    <Banner />
-                    <Introduction />
-                    <About />
-                    <Feature />
-                    <Pricing/>
-                    <Philosophy />
-                    {/* <FaQs /> */}
-                    <Footer />
-                </main>
-            )}
-        </div>
+        <>
+            <main className="banner-bg">
+                <Router>
+                    <Navbar/>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/about" element={<AboutPage/>}/>
+                        <Route path="/faq" element={<Faq/>}/>
+                        <Route path="/story" element={<Story/>}/>
+                        <Route path="/plans" element={<Plans/>}/>
+                        <Route path="/terms" element={<TermsServices/>}/>
+                        <Route path="/privacy" element={<PrivacyPolicy/>}/>
+                    </Routes>
+                    <Footer/>
+                </Router>
+            </main>
+        </>
     );
 }
 

@@ -23,13 +23,15 @@ const Feature = () => {
                             <h3 className="w-full text-4xl font-bold my-4 text-center">Video Pitches</h3>
                             <div
                                 className="absolute rounded-2xl inset-0 bg-[#3d0e6d] transition duration-500 ease-in-out h-[24rem] lg:h-[16rem] lg:w-[30rem] w-[18rem] text-white opacity-0 group-hover:opacity-100 flex justify-center items-center duration-2000 ease-in-out">
-                                <p className="text-lg p-4">Showcase your ideas, projects, or business <br/> offerings through
-                                    engaging 30-second (free) <br/> or 60-second (paid) video pitches, showcasing your <br/> ideas,
-                                    projects, or investment opportunities. <br/> With customizable backgrounds available for a <br/>
+                                <p className="text-lg p-4">Showcase your ideas, projects, or business <br/> offerings
+                                    through
+                                    engaging 30-second (free) <br/> or 60-second (paid) video pitches, showcasing
+                                    your <br/> ideas,
+                                    projects, or investment opportunities. <br/> <br/> With customizable backgrounds available
+                                    for a <br/>
                                     fee (optional), your pitch will stand out from the crowd.</p>
                             </div>
                         </div>
-                        <div className={"dotted-line hidden lg:block"}></div>
                         <div
                             data-aos="fade-right"
                             data-aos-offset="100"
@@ -38,11 +40,12 @@ const Feature = () => {
                             className="w-4/12 flex zoom-effect justify-center item-center p-4 flex-col rounded-full bg-[#3d0e6d] text-white h-64 w-64 relative group transition duration-300 ease-in-out">
                             <h3 className="w-full text-4xl font-bold  text-center my-4"> Global Accessibility</h3>
                             <div
-                                className="absolute rounded-2xl inset-0 bg-[#3d0e6d] h-[20rem] lg:w-[30rem] w-[20rem]  text-white opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
+                                className="absolute rounded-2xl inset-0 bg-[#3d0e6d] h-[14rem] lg:w-[30rem] w-[20rem]  text-white opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
                                 <p className="text-lg  p-4">Access a global network of potential partners, investors,
-                                    and buyers. <br/> Pitchle app is accessible globally, facilitating connections across
+                                    and buyers. <br/> <br/> Pitchle app is accessible globally, facilitating connections
+                                    across
                                     borders and empowering users to explore business opportunities on a global scale.
-                                    Enjoy dedicated customer support to assist you every step of the way.</p>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -63,14 +66,27 @@ const Feature = () => {
                                     the way.</p>
                             </div>
                         </div>
-                        <div className={"dotted-line hidden lg:block"}></div>
                         <div
                             className="w-4/12 flex justify-center item-center zoom-effect flex-col text-center rounded-full bg-[#3d0e6d] text-white h-[15rem] w-[15rem] relative group transition duration-300 ease-in-out">
-                            <h3 className="w-full text-4xl font-bold my-4">Privacy and Security</h3>
+                            <h3 className="w-full text-4xl font-bold my-4">Privacy & Security</h3>
                             <div
                                 className="absolute rounded-2xl inset-0 bg-[#3d0e6d] text-white opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
                                 <p className="text-lg  p-4">You have full control over your privacy settings, allowing
                                     you to manage who can view your profiles and pitches.</p>
+                            </div>
+                        </div>
+                        <div
+                            className="w-4/12 flex justify-center item-center zoom-effect flex-col text-center rounded-full bg-[#3d0e6d] text-white h-[15rem] w-[15rem] relative group transition duration-300 ease-in-out">
+                            <h3 className="w-full text-4xl font-bold my-4"> Subscription on Plan </h3>
+                            <div
+                                className="absolute rounded-2xl inset-0 bg-[#3d0e6d] text-white opacity-0  h-[25rem] group-hover:opacity-100 w-[17rem]  flex justify-center items-center transition-opacity duration-300">
+                                <p className="text-lg  p-4">The Mobile app is FREE, but you choose from
+                                    flexible subscription plans to unlock premium
+                                    features including one-time use, monthly, or
+                                    annual plans. <br/> <br/>
+                                    Subscribers unlock exclusive features such as
+                                    access to other users' profiles, direct messaging
+                                    capabilities, and enhanced visibility. </p>
                             </div>
                         </div>
                     </div>
