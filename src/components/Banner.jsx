@@ -8,7 +8,7 @@ import { EffectCards } from 'swiper/modules'; // Import Swiper modules
 const Banner = () => {
     return (
         <>
-            <div className="pt-32 md:py-12 xl:container m-auto min-h-screen px-6 md:px-12" id={"home"}>
+            <div className="lg:pt-32 pt-4 md:pt-10 md:py-12 xl:container m-auto min-h-screen px-6 md:px-12" id={"home"}>
                 <div
                     aria-hidden="true"
                     className="absolute inset-0 my-auto w-96 h-32 rotate-45 bg-gradient-to-r from-primaryLight to-secondaryLight blur-3xl opacity-50 dark:opacity-20"

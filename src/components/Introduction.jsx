@@ -15,7 +15,7 @@ const Introduction = () => {
 
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -51,7 +51,7 @@ const Introduction = () => {
                 Looking for?
             </h3>
             <div className={"w-full flex justify-center"}>
-                <div className={"w-10/12 ms-0 md:ms-10 lg:ms-20"}>
+                <div className={"w-10/12 ms-0 h-[40rem] md:ms-10 lg:ms-20"}>
                     <Slider {...settings}>
                         {slidesData.map((slide, index) => (
                             <div key={index}
@@ -59,7 +59,7 @@ const Introduction = () => {
                                  data-aos-offset="200"
                                  data-aos-duration={(index + 1) * 300 + 500}
                                  data-aos-easing="ease-in-sine"
-                                 className="!z-5 relative flex flex-col rounded-[20px] max-w-[290px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
+                                 className="!z-5 relative mt-28 flex flex-col rounded-[20px] max-w-[290px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
                                  onMouseLeave={handleMouseLeave}
                             >
                                 <div className="w-full">
@@ -72,7 +72,7 @@ const Introduction = () => {
                                         {hoveredImage && hoveredImage === slide.image && (
                                             <img
                                                 src={slide.hoverImage}
-                                                className="mb-3 rounded-md w-full h-[32rem] rounded-xl 3xl:h-full 3xl:w-full absolute top-0 left-2 transform translate-x-4"
+                                                className="mb-3 rounded-md w-full h-[32rem] z-10 rounded-xl 3xl:h-full 3xl:w-full absolute top-4 left-8 -mt-24 transform translate-x-4"
                                                 alt=""
                                             />
                                         )}

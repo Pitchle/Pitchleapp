@@ -1,9 +1,11 @@
 import React from 'react';
+import NavbarBar from "./NavbarBar";
 
 const Pricing = () => {
     return (
         <>
-            <div className="space-y-20 px-2 md:px-4 lg:px-8 py-12" id={"plans"}>
+            <NavbarBar/>
+            <div className="space-y-20 px-2 md:px-4 lg:px-8 py-12">
                 <h3 className={"text-center mb-10 text-[#450073] text-3xl md:text-4xl lg:text-6xl font-bold"}>INDIVIDUALS PLANS</h3>
                 <div className="demo-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full lg:w-8/12  mx-auto gap-5">
                     <div
@@ -11,17 +13,17 @@ const Pricing = () => {
                         data-aos-offset="100"
                         data-aos-duration="500"
                         data-aos-easing="ease-in-sine"
-                        className="rounded-[30px] h-[25rem] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                        className="rounded-[30px] h-[20rem] md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-white flex justify-between">
+                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>FREE</span>
                                         </div>
-                                        <div className="pt-5 text-white font-medium text-base space-y-1">
+                                        <div className="pt-5 text-black font-medium text-base space-y-1">
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-white">
+                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
                                                     <span>0</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
@@ -29,7 +31,7 @@ const Pricing = () => {
                                         </div>
                                         <div className="">
                                             <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -46,7 +48,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Upload max 30 seconds pitches</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -63,7 +65,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>1 background theme</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -80,7 +82,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Pitch visibility : Public</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -100,36 +102,10 @@ const Pricing = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="pt-2">
-                                        <a
-                                            href="/billing"
-                                            type="button"
-                                            target="_blank"
-                                            className="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-[#2f8f45] text-white py-4 px-5 rounded-2xl cursor-pointer"
-                                        >
-                <span className="w-full font-semibold text-base">
-                  Choose Starter
-                </span>
-                                            <svg
-                                                className="inline-block h-6"
-                                                viewBox="0 0 24 25"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="hidden">
                                     <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -146,7 +122,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>Everything in Free</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -163,7 +139,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>5,000 events / month</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -189,15 +165,15 @@ const Pricing = () => {
                         data-aos-offset="120"
                         data-aos-duration="510"
                         data-aos-easing="ease-in-sine"
-                        className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                        className="rounded-[30px] md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-white flex justify-between">
+                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>EXPLORER⭐</span>
                                             <svg
-                                                className="h-6 w-6 animate-ping-slow text-white"
+                                                className="h-6 w-6 animate-ping-slow text-black"
                                                 viewBox="0 0 50 50"
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -228,10 +204,10 @@ const Pricing = () => {
                                                 />
                                             </svg>
                                         </div>
-                                        <div className="pt-5 text-white font-medium text-base space-y-1">
+                                        <div className="pt-5 text-black font-medium text-base space-y-1">
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-white">
+                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
                                                     <span>16</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
@@ -239,7 +215,7 @@ const Pricing = () => {
                                         </div>
                                         <div className="">
                                             <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -256,7 +232,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Upload max 30 seconds pitches</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -273,7 +249,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Unlimited publications for 1 month</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -290,7 +266,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Multiple background themes to choose</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -307,7 +283,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Pitch visibility public and private</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -324,7 +300,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Watermark/Copyright in videos</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -344,36 +320,10 @@ const Pricing = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="pt-2">
-                                        <a
-                                            href="/billing"
-                                            type="button"
-                                            target="_blank"
-                                            className="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-[#2f8f45] text-white py-4 px-5 rounded-2xl cursor-pointer"
-                                        >
-                <span className="w-full font-semibold text-base">
-                  Choose Startup
-                </span>
-                                            <svg
-                                                className="inline-block h-6"
-                                                viewBox="0 0 24 25"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="hidden">
                                     <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -390,7 +340,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>Everything in Starter</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -407,7 +357,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>20,000 events / month</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -434,18 +384,18 @@ const Pricing = () => {
                         data-aos-offset="130"
                         data-aos-duration="520"
                         data-aos-easing="ease-in-sine"
-                        className="rounded-[30px] h-[27rem] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                        className="rounded-[30px] h-[22rem] md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-white flex justify-between">
+                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>1 TIME PUBLICATION⭐</span>
                                         </div>
-                                        <div className="pt-5 text-white font-medium text-base space-y-1">
+                                        <div className="pt-5 text-black font-medium text-base space-y-1">
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-white">
+                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
                                                     <span>16</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
@@ -453,7 +403,7 @@ const Pricing = () => {
                                         </div>
                                         <div className="">
                                             <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -470,7 +420,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Upload max 60 seconds pitches</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -487,7 +437,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Unlimited publications for 1 month</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -504,7 +454,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>1 background theme</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -521,7 +471,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Pitch visibility public</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -541,36 +491,10 @@ const Pricing = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="pt-2">
-                                        <a
-                                            href="/billing"
-                                            type="button"
-                                            target="_blank"
-                                            className="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-[#2f8f45] text-white py-4 px-5 rounded-2xl cursor-pointer"
-                                        >
-                <span className="w-full font-semibold text-base">
-                  Choose Startup
-                </span>
-                                            <svg
-                                                className="inline-block h-6"
-                                                viewBox="0 0 24 25"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="hidden">
                                     <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -587,7 +511,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>Everything in Starter</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -604,7 +528,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>20,000 events / month</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -631,18 +555,18 @@ const Pricing = () => {
                         data-aos-offset="140"
                         data-aos-duration="540"
                         data-aos-easing="ease-in-sine"
-                        className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                        className="rounded-[30px] md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-white flex justify-between">
+                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>VISIONARY⭐</span>
                                         </div>
-                                        <div className="pt-5 text-white font-medium text-base space-y-1">
+                                        <div className="pt-5 text-black font-medium text-base space-y-1">
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-white">
+                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
                                                     <span>16</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per year</span>
@@ -650,7 +574,7 @@ const Pricing = () => {
                                         </div>
                                         <div className="">
                                             <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -667,7 +591,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Upload max 60 seconds pitches</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -684,7 +608,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Unlimited publications for 12 month</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -701,7 +625,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Multiple background themes to choose</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -718,7 +642,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Pitch visibility public and private</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -735,7 +659,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Watermark/Copyright in videos</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -752,7 +676,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>View partners and investors profiles</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -772,36 +696,10 @@ const Pricing = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="pt-2">
-                                        <a
-                                            href="/billing"
-                                            type="button"
-                                            target="_blank"
-                                            className="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-[#2f8f45] text-white py-4 px-5 rounded-2xl cursor-pointer"
-                                        >
-                <span className="w-full font-semibold text-base">
-                  Choose Startup
-                </span>
-                                            <svg
-                                                className="inline-block h-6"
-                                                viewBox="0 0 24 25"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="hidden">
                                     <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -818,7 +716,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>Everything in Starter</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -835,7 +733,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>20,000 events / month</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -865,18 +763,18 @@ const Pricing = () => {
                         data-aos-offset="100"
                         data-aos-duration="500"
                         data-aos-easing="ease-in-sine"
-                        className="rounded-[30px] md:rounded-[36px] h-[25rem] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                        className="rounded-[30px] md:rounded-[36px] h-[20rem] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-white flex justify-between">
+                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>FREE</span>
                                         </div>
-                                        <div className="pt-5 text-white font-medium text-base space-y-1">
+                                        <div className="pt-5 text-black font-medium text-base space-y-1">
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-white">
+                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
                                                     <span>0</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
@@ -884,7 +782,7 @@ const Pricing = () => {
                                         </div>
                                         <div className="">
                                             <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -901,7 +799,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Upload max 30 seconds pitches</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -918,7 +816,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>1 background theme</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -935,7 +833,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Pitch visibility : Public</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -955,36 +853,10 @@ const Pricing = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="pt-2">
-                                        <a
-                                            href="/billing"
-                                            type="button"
-                                            target="_blank"
-                                            className="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-[#2f8f45] text-white py-4 px-5 rounded-2xl cursor-pointer"
-                                        >
-                <span className="w-full font-semibold text-base">
-                  Choose Starter
-                </span>
-                                            <svg
-                                                className="inline-block h-6"
-                                                viewBox="0 0 24 25"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="hidden">
                                     <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1001,7 +873,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>Everything in Free</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1018,7 +890,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>5,000 events / month</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1045,18 +917,18 @@ const Pricing = () => {
                         data-aos-offset="100"
                         data-aos-duration="500"
                         data-aos-easing="ease-in-sine"
-                        className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                        className="rounded-[30px] md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-white flex justify-between">
+                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>INVESTOR⭐</span>
                                         </div>
-                                        <div className="pt-5 text-white font-medium text-base space-y-1">
+                                        <div className="pt-5 text-black font-medium text-base space-y-1">
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-white">
+                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
                                                     <span>60</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
@@ -1064,7 +936,7 @@ const Pricing = () => {
                                         </div>
                                         <div className="">
                                             <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1081,7 +953,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Upload max 30 seconds pitches</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1098,7 +970,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Unlimited publications for 1 month</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1115,7 +987,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Multiple background themes to choose</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1132,7 +1004,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Pitch visibility public and private</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1149,7 +1021,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Watermark/Copyright in videos</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1166,7 +1038,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>View profiles and contact them</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1186,36 +1058,10 @@ const Pricing = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="pt-2">
-                                        <a
-                                            href="/billing"
-                                            type="button"
-                                            target="_blank"
-                                            className="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-[#2f8f45] text-white py-4 px-5 rounded-2xl cursor-pointer"
-                                        >
-                <span className="w-full font-semibold text-base">
-                  Choose Startup
-                </span>
-                                            <svg
-                                                className="inline-block h-6"
-                                                viewBox="0 0 24 25"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="hidden">
                                     <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1232,7 +1078,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>Everything in Starter</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1249,7 +1095,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>20,000 events / month</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1276,18 +1122,18 @@ const Pricing = () => {
                         data-aos-offset="120"
                         data-aos-duration="550"
                         data-aos-easing="ease-in-sine"
-                        className="rounded-[30px] md:rounded-[36px] h-[27rem] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                        className="rounded-[30px] md:rounded-[36px] h-[22rem] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-white flex justify-between">
+                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>1 TIME PUBLICATION⭐</span>
                                         </div>
-                                        <div className="pt-5 text-white font-medium text-base space-y-1">
+                                        <div className="pt-5 text-black font-medium text-base space-y-1">
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-white">
+                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
                                                     <span>8.9</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
@@ -1295,7 +1141,7 @@ const Pricing = () => {
                                         </div>
                                         <div className="">
                                             <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1312,7 +1158,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Upload max 60 seconds pitches</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1329,7 +1175,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Unlimited publications for 1 month</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1346,7 +1192,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>1 background theme</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1363,7 +1209,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Pitch visibility public</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1383,36 +1229,10 @@ const Pricing = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="pt-2">
-                                        <a
-                                            href="/billing"
-                                            type="button"
-                                            target="_blank"
-                                            className="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-[#2f8f45] text-white py-4 px-5 rounded-2xl cursor-pointer"
-                                        >
-                <span className="w-full font-semibold text-base">
-                  Choose Startup
-                </span>
-                                            <svg
-                                                className="inline-block h-6"
-                                                viewBox="0 0 24 25"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="hidden">
                                     <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1429,7 +1249,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>Everything in Starter</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1446,7 +1266,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>20,000 events / month</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1471,20 +1291,20 @@ const Pricing = () => {
                     <div
                         data-aos="fade-right"
                         data-aos-offset="150"
-                        data-aos-duration="560"
+                        data-aos-duration="500"
                         data-aos-easing="ease-in-sine"
-                        className="rounded-[30px] md:rounded-[36px] bg-[#450073] overflow-hidden border-[1px] border-gray-200 p-8 relative">
+                        className="rounded-[30px] md:rounded-[36px] overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-white flex justify-between">
+                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>VISIONARY⭐</span>
                                         </div>
-                                        <div className="pt-5 text-white font-medium text-base space-y-1">
+                                        <div className="pt-5 text-black font-medium text-base space-y-1">
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-white">
+                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
                                                     <span>119.99</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per year</span>
@@ -1492,7 +1312,7 @@ const Pricing = () => {
                                         </div>
                                         <div className="">
                                             <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1509,7 +1329,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Upload max 60 seconds pitches</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1526,7 +1346,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Unlimited publications for 12 month</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1543,7 +1363,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Multiple background themes to choose</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1560,7 +1380,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Pitch visibility public and private</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1577,7 +1397,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>Watermark/Copyright in videos</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1594,7 +1414,7 @@ const Pricing = () => {
                                                     </svg>
                                                     <span>View profiles and contact them</span>
                                                 </li>
-                                                <li className="flex items-center font-medium space-x-2 text-white">
+                                                <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
                                                         className="h-4 w-4"
                                                         viewBox="0 0 24 24"
@@ -1614,36 +1434,10 @@ const Pricing = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="pt-2">
-                                        <a
-                                            href="/billing"
-                                            type="button"
-                                            target="_blank"
-                                            className="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-[#2f8f45] text-white py-4 px-5 rounded-2xl cursor-pointer"
-                                        >
-                <span className="w-full font-semibold text-base">
-                  Choose Startup
-                </span>
-                                            <svg
-                                                className="inline-block h-6"
-                                                viewBox="0 0 24 25"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div className="hidden">
                                     <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1660,7 +1454,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>Everything in Starter</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
@@ -1677,7 +1471,7 @@ const Pricing = () => {
                                             </svg>
                                             <span>20,000 events / month</span>
                                         </li>
-                                        <li className="flex items-center font-medium space-x-2 text-white">
+                                        <li className="flex items-center font-medium space-x-2 text-black">
                                             <svg
                                                 className="h-4 w-4"
                                                 viewBox="0 0 24 24"
