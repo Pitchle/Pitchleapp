@@ -7,6 +7,9 @@ const Navbar = () => {
     const toggleDrawer = () => {
         setIsDrawerOpen(!isDrawerOpen);
     };
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
 
     return (
         <>
@@ -16,11 +19,11 @@ const Navbar = () => {
                         <li className="relative group">
                             <div className="c-underline text-2xl font-bold cursor-pointer">Company</div>
                             <ul className="absolute left-[0.2] mt-1 w-48 bg-white shadow-md rounded-md p-2 space-y-2 hidden group-hover:block">
-                                <li className="text-black cursor-pointer"><Link to={"/about"}>About Us</Link></li>
-                                <li className="text-black cursor-pointer"><Link to={"/faq"}>FAQs</Link></li>
+                                <li className="text-black cursor-pointer"><Link onClick={scrollToTop} to={"/about"}>About Us</Link></li>
+                                <li className="text-black cursor-pointer"><Link onClick={scrollToTop} to={"/faq"}>FAQs</Link></li>
                             </ul>
                         </li>
-                        <li className="c-underline text-2xl font-bold cursor-pointer"><Link to={"/plans"}>Plans</Link></li>
+                        <li className="c-underline text-2xl font-bold cursor-pointer"><Link onClick={scrollToTop} to={"/plans"}>Plans</Link></li>
                     </ul>
                     <div className="lg:hidden my-auto font-bold"> {/* Show only in mobile view */}
                         <button onClick={toggleDrawer} className="focus:outline-none">
@@ -31,9 +34,9 @@ const Navbar = () => {
                         {/* Mobile view submenu */}
                         {isDrawerOpen && (
                             <ul className="absolute left-0 w-48 bg-white shadow-md rounded-md p-2 space-y-2">
-                                <li className="text-black cursor-pointer"><Link to={"/plans"}>Plans</Link></li>
-                                <li className="text-black cursor-pointer"><Link to={"/about"}>About Us</Link></li>
-                                <li className="text-black cursor-pointer"><Link to={"/faq"}>FAQs</Link></li>
+                                <li className="text-black cursor-pointer"><Link onClick={scrollToTop} to={"/plans"}>Plans</Link></li>
+                                <li className="text-black cursor-pointer"><Link onClick={scrollToTop} to={"/about"}>About Us</Link></li>
+                                <li className="text-black cursor-pointer"><Link onClick={scrollToTop} to={"/faq"}>FAQs</Link></li>
                             </ul>
                         )}
                     </div>

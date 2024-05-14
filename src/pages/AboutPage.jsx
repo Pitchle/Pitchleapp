@@ -32,19 +32,6 @@ const AboutPage = () => {
                     </div>
                     <div className={"flex flex-col lg:flex-row justify-evenly mt-28 items-center space-y-10 space-x-0 lg:space-y-0 lg:space-x-10"}>
                         <div className={"w-full lg:w-6/12 border-2 rounded-md border-gray-300 p-8 shadow-md"}>
-                            <p className={" tracking-wide text-md  text-justify"}>
-                                Welcome to Pitchle, where opportunities in the
-                                business world come to life. Pitchle is more than
-                                just an app; it's a dynamic platform meticulously
-                                crafted for individuals and businesses alike,
-                                connecting dreamers, innovators, partners and
-                                investors worldwide. <br/><br/>
-
-                                Pitchle facilitates the sharing of business ideas
-                                and opportunities.
-                            </p>
-                        </div>
-                        <div className={"w-full lg:w-6/12 border-2 rounded-md border-gray-300 p-8 shadow-md"}>
                             <p className={" tracking-wide text-md"}>
                                <li><span className={"text-md font-bold me-4"}>Fully business-oriented App:</span>
                                    Defining a pioneering

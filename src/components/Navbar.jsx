@@ -43,7 +43,7 @@ const Navbar = () => {
                             </ul>
                         )}
                     </div>
-                    <div className={"text-center my-auto text-4xl md:text-5xl -ms-4 md:ms-0 font-bold cursor-pointer"}> <Link onClick={scrollToTop} to={"/"}> Pitchle </Link></div>
+                    <div className={"text-center my-auto text-4xl md:text-5xl -ms-4 md:ms-0 font-bold cursor-pointer"}> <Link to={"/"}> Pitchle </Link></div>
                     <div className={"flex justify-end"}><img src="/img/logo/logo.png" className={"md:w-16 rotate-image md:h-16 h-12 w-12"} alt="logo"/></div>
                 </div>
             </div>
