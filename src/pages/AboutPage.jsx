@@ -21,9 +21,6 @@ const AboutPage = () => {
                         investors, future partners, buyers or successors.
                     </h2>
                 </div>
-                <div className={"border-2 w-11/12 lg:w-7/12 mx-auto rounded-md border-gray-300 my-24 shadow-md"}>
-                    <img src="/img/logo/about.png" className={"rounded-md h-[13rem] lg:h-full"} alt="about"/>
-                </div>
                 <div id="features" className="mx-auto my-20 w-full lg:w-8/12">
                     <div className={"flex flex-col lg:flex-row justify-evenly my-10 items-center space-y-10 lg:space-y-0 items-center space-x-0 lg:space-x-10"}>
                         <div className={"w-full text-center lg:text-start lg:w-6/12"}> <h3 className={"text-4xl italic"}>

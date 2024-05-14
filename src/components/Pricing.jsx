@@ -208,7 +208,7 @@ const Pricing = () => {
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
                                                 <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>16</span>
+                                                    <span>9.99</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
                                             </div>
@@ -396,7 +396,7 @@ const Pricing = () => {
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
                                                 <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>16</span>
+                                                    <span>6.99</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
                                             </div>
@@ -567,7 +567,7 @@ const Pricing = () => {
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
                                                 <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>16</span>
+                                                    <span>99.99</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per year</span>
                                             </div>
@@ -929,7 +929,7 @@ const Pricing = () => {
                                             <div className="flex items-center align-bottom">
                                                 <span className="pt-1.5">$</span>
                                                 <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>60</span>
+                                                    <span>11.99</span>
                                                 </div>
                                                 <span className="pt-1.5">/ per month</span>
                                             </div>

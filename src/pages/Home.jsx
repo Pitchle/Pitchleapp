@@ -19,7 +19,7 @@ const Home = () => {
             setTimeout(() => {
                 setLoading(false); // Set loading to false after 5 seconds for mobile view
                 AOS.init();
-            }, 5000); // Adjust the duration for mobile view
+            }, 5500); // Adjust the duration for mobile view
         } else {
             setLoading(false); // Set loading to false immediately for desktop and iPad view
             AOS.init();

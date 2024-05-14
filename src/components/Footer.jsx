@@ -34,7 +34,7 @@ const Footer = () => {
                     </div>
                     <div className={"flex flex-col lg:ms-20 ms-0 space-y-4"}>
                         <a className="relative group">
-                            <div className="c-underline text-2xl font-bold cursor-pointer">Contact Us</div>
+                            <div className="c-underline text-2xl font-bold cursor-pointer">CONTACT US</div>
                         </a>
                         <h3 className={"text-md font-bold"}> contact@pitchle.com</h3>
                         <div className={"flex w-full flex items-center space-x-1"}>
