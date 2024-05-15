@@ -66,7 +66,7 @@ const Introduction = () => {
                                     <div className="relative w-full" onMouseEnter={() => handleImageHover(slide.image)}>
                                         <img
                                             src={slide.image}
-                                            className="mb-3 rounded-md w-full h-[29rem] rounded-xl 3xl:h-full 3xl:w-full"
+                                            className="mb-3 scale-up rounded-md w-full h-[29rem] rounded-xl 3xl:h-full 3xl:w-full"
                                             alt=""
                                         />
                                         {hoveredImage && hoveredImage === slide.image && (
