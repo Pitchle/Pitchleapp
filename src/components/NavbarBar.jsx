@@ -18,7 +18,7 @@ const Navbar = () => {
                     <ul className="hidden lg:flex space-x-10 items-center"> {/* Show only in desktop view */}
                         <li className="relative group">
                             <div className="c-underline text-2xl font-bold cursor-pointer">Company</div>
-                            <ul className="absolute left-[0.2] mt-1 w-48 bg-white shadow-md rounded-md p-2 space-y-2 hidden group-hover:block">
+                            <ul className="absolute left-[0.2] w-48 bg-white shadow-md rounded-md p-2 space-y-2 hidden group-hover:block">
                                 <li className="text-black cursor-pointer"><Link onClick={scrollToTop} to={"/about"}>About Us</Link></li>
                                 <li className="text-black cursor-pointer"><Link onClick={scrollToTop} to={"/faq"}>FAQs</Link></li>
                             </ul>
