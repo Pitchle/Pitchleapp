@@ -59,14 +59,14 @@ const Introduction = () => {
                                  data-aos-offset="200"
                                  data-aos-duration={(index + 1) * 300 + 500}
                                  data-aos-easing="ease-in-sine"
-                                 className="!z-5 relative mt-28 flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
+                                 className="!z-5 relative mt-28 ms-2.5 flex flex-col rounded-[20px] max-w-[280px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
                                  onMouseLeave={handleMouseLeave}
                             >
                                 <div className="w-full">
                                     <div className="relative w-full" onMouseEnter={() => handleImageHover(slide.image)}>
                                         <img
                                             src={slide.image}
-                                            className="mb-3 scale-up rounded-md w-full h-[29rem] rounded-xl 3xl:h-full 3xl:w-full"
+                                            className="mb-3 rounded-md w-full h-[29rem] rounded-xl 3xl:h-full 3xl:w-full"
                                             alt=""
                                         />
                                         {hoveredImage && hoveredImage === slide.image && (

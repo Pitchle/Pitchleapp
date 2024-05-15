@@ -220,6 +220,3 @@
         display: none; /* Hide next and prev arrows in desktop view */
     }
 }
-.scale-up{
-    transform: scale(1.03);
-}

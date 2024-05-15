@@ -31,15 +31,35 @@ const AboutPage = () => {
                         </div>
                     </div>
                 </div>
-                <div id="features" className="mx-auto w-11/12 lg:w-7/12 my-20">
+                <div id="features" className="mx-auto w-11/12 lg:w-6/12 my-20">
+                    <h2 className="font-display text-center lg:text-start text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+                        Fully business-oriented App
+                    </h2>
                     <h2 className="text-center font-display text-xl text-center lg:text-justify my-4 tracking-tight text-slate-900 md:text-xl">
-                        <ul className="list-disc list-inside text-gray-700 text-justify pl-4">
-                            <li>Fully business-oriented App: Defining a pioneering app for business opportunities.</li>
-                            <li>User-Friendly App: Creating and sharing easy professional pitches.</li>
-                            <li>Some tools you will easily use are: Visual timer, watermark, app messaging, template for pitches, music background, changing location, pitches categorized by sectors and location.</li>
-                            <li>Innovative Social Media App: Unique application in its kind.</li>
-                            <li>First-hand connections: Facilitates connections between idea people, existing business and partners, investors, future buyers or successors.</li>
-                        </ul>
+                        Defining a pioneering app for business opportunities.
+                    </h2>
+                    <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
+                        Innovative Social Media App
+                    </h2>
+                    <h2 className="text-center font-display text-xl text-center lg:text-justify my-4 tracking-tight text-slate-900 md:text-xl">
+                        Unique application in its kind.
+                    </h2>
+                    <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
+                        User-Friendly App
+                    </h2>
+                    <h2 className="text-center font-display text-xl text-center lg:text-justify my-4 tracking-tight text-slate-900 md:text-xl">
+                        Creating and sharing easy
+                        professional pitches.
+                        Some tools you will easily use are: Visual timer,
+                        watermark, app messaging, template for pitches,
+                        music background, changing location, pitches
+                        categorized by sectors and location.
+                    </h2>
+                    <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
+                        First-hand connections
+                    </h2>
+                    <h2 className="text-center font-display text-xl text-center lg:text-justify my-4 tracking-tight text-slate-900 md:text-xl">
+                        Facilitates connections between idea people, existing business and partners, investors, future buyers or successors.
                     </h2>
                 </div>
 
@@ -70,7 +90,7 @@ const AboutPage = () => {
                             Our Vision
                         </h2>
                         <h2 className="text-center font-display text-xl text-center lg:text-justify my-4 tracking-tight text-slate-900 md:text-xl">
-                            A business starts from an idea.
+                            A business starts from an idea. <br/>
                             Pitchle aims to be the most important business platform in the world regardless of its
                             size, sector or geographic location.
                         </h2>

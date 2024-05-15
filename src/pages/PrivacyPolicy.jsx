@@ -62,13 +62,13 @@ const PrivacyPolicy = () => {
                         </p>
                     </div>
                     <div className="mb-8">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-4">8. Changes to this Privacy Policy</h2>
+                        <h2 className="text-2xl font-bold text-gray-800 mb-4">7. Changes to this Privacy Policy</h2>
                         <p className="text-gray-700 text-justify">
                             We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
                         </p>
                     </div>
                     <div className="text-gray-700 text-justify mb-8">
-                        <h2 className="text-2xl font-bold text-gray-800 mb-4">9. Contact Us</h2>
+                        <h2 className="text-2xl font-bold text-gray-800 mb-4">8. Contact Us</h2>
                         <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@pitchle.com" className="text-blue-600 hover:underline">contact@pitchle.com</a>.</p>
                     </div>
                     <p className="text-gray-700 text-justify">
