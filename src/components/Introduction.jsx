@@ -102,7 +102,7 @@ const Introduction = () => {
 
 const slidesData = [
     {
-        image: "/img/banner/Home.jpg",
+        image: "/img/banner/updated.jpg",
         hoverImage: "/img/banner/Home-1.jpg",
         buttons: [{ text: "Partner" }],
     },
