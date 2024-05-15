@@ -32,7 +32,7 @@ const AboutPage = () => {
                     </div>
                 </div>
                 <div id="features" className="mx-auto w-11/12 lg:w-6/12 my-20">
-                    <h2 className="font-display text-center lg:text-start text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+                    <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
                         Fully business-oriented App
                     </h2>
                     <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
@@ -66,10 +66,10 @@ const AboutPage = () => {
                 <div className={"flex flex-col lg:flex-row justify-evenly items-center lg:space-x-10"}>
                     <div className={"w-full flex justify-evenly py-8 lg:w-6/12"}>
                         <>
-                            <div className="max-w-2xl ms-5 lg:ms-64 mx-4 ">
-                                <div className="mx-auto w-44 h-44s relative -mt-16 border-4 border-white rounded-full overflow-hidden">
+                            <div className="max-w-2xl ms-5 lg:ms-96 mx-4 ">
+                                <div className="mx-auto w-44 h-44s relative -mt-2 border-4 border-white rounded-full overflow-hidden">
                                     <img
-                                        className="object-cover object-center h-40"
+                                        className="object-cover object-center h-52"
                                         src="/img/logo/admin.jpg"
                                         alt="Woman looking front"
                                     />
@@ -94,7 +94,7 @@ const AboutPage = () => {
                         </h2>
                         <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                             A business starts from an idea. <br/>
-                            Pitchle aims to be the most important business <br/> platform in the world regardless of its
+                            Pitchle aims to be the most important business platform <br/>  in the world regardless of its
                             size, sector or geographic location.
                         </h2>
                         <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">

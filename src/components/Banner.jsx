@@ -121,7 +121,7 @@ const Banner = () => {
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/More%20Details.jpg" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Record%20Video.jpg" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Home-1.jpg" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Home.jpg" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/updated.jpg" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/banner/Notifications.jpg" alt="screen"/></SwiperSlide>
                         </Swiper>
                     </div>
