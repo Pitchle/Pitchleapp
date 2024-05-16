@@ -36,7 +36,9 @@ const Footer = () => {
                         <a className="relative group">
                             <div className="c-underline text-2xl font-bold cursor-pointer">CONTACT US</div>
                         </a>
-                        <h3 className={"text-md font-bold"}> contact@pitchle.com</h3>
+                        <h3 className={"c-underline text-md font-bold"}>
+                            <a href="mailto:contact@pitchleapp.com">contact@pitchleapp.com</a>
+                        </h3>
                         <div className={"flex w-full flex items-center space-x-1"}>
                             <a target={"_blank"} href="https://www.linkedin.com/company/pitchle?trk=blended-typeahead">
                                 <img src="/img/logo/link.svg" className={"w-12 scale-ani h-12"} alt="link"/></a>
