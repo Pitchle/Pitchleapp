@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className={"w-8/12 "}>
                     <div className={"w-7/12 ms-8 py-8 flex justify-center items-center space-x-1"}>
                         <img src="/img/logo/logo.png" className={"w-16 h-16"} alt="lgoo"/>
-                        <h3 className={"text-3xl font-bold"}>Pitchle</h3>
+                        <h3 className={"text-3xl font-bold"}><span translate="no"> Pitchle</span></h3>
                     </div>
                 </div>
                 <div className={"w-8/12 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 mx-auto"}>
@@ -37,7 +37,7 @@ const Footer = () => {
                             <div className="c-underline text-2xl font-bold cursor-pointer">CONTACT US</div>
                         </a>
                         <h3 className={"c-underline text-md font-bold"}>
-                            <a href="mailto:contact@pitchleapp.com">contact@pitchleapp.com</a>
+                            <a href="mailto:contact@pitchleapp.com"><span translate="no"><span translate="no">contact@pitchleapp.com</span></span></a>
                         </h3>
                         <div className={"flex w-full flex items-center space-x-1"}>
                             <a target={"_blank"} href="https://www.linkedin.com/company/pitchle?trk=blended-typeahead">
@@ -79,7 +79,8 @@ const Footer = () => {
 
                 </div>
             </div>
-            <p className={"text-center py-2"}>© {currentYear} Pitchle. All rights reserved</p>
+            <p className={"text-center py-2"}>© {currentYear} <span translate="no"> Pitchle</span>. All rights reserved
+            </p>
         </>
     );
 };

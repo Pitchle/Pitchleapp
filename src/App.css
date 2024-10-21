@@ -220,3 +220,9 @@
         display: none; /* Hide next and prev arrows in desktop view */
     }
 }
+.mySwiper .swiper-slide {
+    background-color: transparent !important; /* Remove any background color */
+}
+.f-style{
+    border-radius: 40px 0 0 0;
+}

@@ -28,7 +28,7 @@ const TermsService = () => {
                         <h2 className="text-2xl font-bold text-gray-800 mb-4">3. User Content</h2>
                         <p className="text-gray-700 text-justify mb-2">
                             You are solely responsible for any content you post, upload, or otherwise make available on
-                            the App ("User Content"). By submitting User Content, you grant Pitchle app a non-exclusive,
+                            the App ("User Content"). By submitting User Content, you grant <span translate="no">Pitchle</span> app a non-exclusive,
                             royalty-free, perpetual, irrevocable, and fully sublicensable right to use, reproduce,
                             modify, adapt, publish, translate, create derivative works from, distribute, and display
                             such User Content throughout the world in any media.
@@ -42,7 +42,7 @@ const TermsService = () => {
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold text-gray-800 mb-4">4. Intellectual Property Rights</h2>
                         <p className="text-gray-700 text-justify mb-2">
-                            The App and its original content, features, and functionality are owned by Pitchle and are
+                            The App and its original content, features, and functionality are owned by <span translate="no">Pitchle</span> and are
                             protected by international copyright, trademark, patent, trade secret, and other
                             intellectual property or proprietary rights laws.
                         </p>
@@ -115,7 +115,7 @@ const TermsService = () => {
                         <h2 className="text-2xl font-bold text-justify text-gray-800 mb-4">12. Contact Us</h2>
                         <p>If you have any questions about these Terms, please contact us at <a
                             href="mailto:contact@pitchle.com"
-                            className="text-blue-600 hover:underline">contact@pitchle.com</a>.</p>
+                            className="text-blue-600 hover:underline"><span translate="no">contact@pitchle.com</span></a>.</p>
                     </div>
                     <p className="text-gray-700 text-justify mt-8">
                         By accessing or using the App, you agree to be bound by these Terms. If you do not agree to

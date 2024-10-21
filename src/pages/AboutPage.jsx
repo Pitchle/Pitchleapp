@@ -15,7 +15,7 @@ const AboutPage = () => {
                         left a void in the business sector. There is a need for a platform that address
                         business opportunities with a sophisticated and contemporary touch.
                         <br/><br/>
-                        This is how Pitchle was born out of a need in the business world in order to
+                        This is how <span translate="no">Pitchle</span> was born out of a need in the business world in order to
                         develop a unique an innovate social media that allows users to post their
                         business ideas through virtual elevator pitches and connect with potential
                         investors, future partners, buyers or successors.
@@ -87,14 +87,14 @@ const AboutPage = () => {
                             Our Mission
                         </h2>
                         <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
-                            At Pitchle, your success is our mission.
+                            At <span translate="no">Pitchle</span>, your success is our mission.
                         </h2>
                         <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
                             Our Vision
                         </h2>
                         <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                             A business starts from an idea. <br/>
-                            Pitchle aims to be the most important business platform <br/>  in the world regardless of its
+                            <span translate="no">Pitchle</span> aims to be the most important business platform <br/>  in the world regardless of its
                             size, sector or geographic location.
                         </h2>
                         <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">

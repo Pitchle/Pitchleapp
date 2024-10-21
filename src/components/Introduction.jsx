@@ -59,7 +59,7 @@ const Introduction = () => {
                                  data-aos-offset="200"
                                  data-aos-duration={(index + 1) * 300 + 500}
                                  data-aos-easing="ease-in-sine"
-                                 className="!z-5 relative mt-28 ms-2.5 flex flex-col rounded-[20px] max-w-[280px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
+                                 className="!z-5 relative mt-28 ms-2.5 flex flex-col rounded-[20px] max-w-[280px] bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined"
                                  onMouseLeave={handleMouseLeave}
                             >
                                 <div className="w-full">
@@ -102,22 +102,26 @@ const Introduction = () => {
 
 const slidesData = [
     {
-        image: "/img/banner/updated.jpg",
-        hoverImage: "/img/banner/new-updated.jpg",
-        buttons: [{ text: "Partner" }],
+        image: "/img/new_images/Mockup%20(2).png",
+        hoverImage: "/img/new_images/Mockup%20(4).png",
+        buttons: [{ text: "Partner" },
+            { text: "Investor" }],
     },
     {
-        image: "/img/banner/Home-4.jpg",
-        hoverImage: "/img/banner/Share Video.jpg",
-        buttons: [{ text: "Investor" }],
-    },
-    {
-        image: "/img/banner/Home-3.jpg",
-        hoverImage: "/img/banner/Home-2.jpg",
+        image: "/img/new_images/Mockup%20(5).png",
+        hoverImage: "/img/new_images/Mockup%20(6).png",
         buttons: [
             { text: "Sell" },
             { text: "Transfer" },
             { text: "Business" }
+        ],
+    },
+    {
+        image: "/img/new_images/Mockup%20(7).png",
+        hoverImage: "/img/new_images/Mockup%20(7).png",
+        buttons: [
+            { text: "Promote" },
+            { text: "Product" },
         ],
     },
 ];
