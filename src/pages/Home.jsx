@@ -31,7 +31,7 @@ const Home = () => {
             {loading && <SplashScreen />} {/* Only show splash screen if loading is true */}
             {!loading && (
                 <>
-                <main className="banner-bg">
+                <main>
                     <Navbar />
                     <Banner />
                     <Introduction />

@@ -15,14 +15,14 @@ const Banner = () => {
                 />
                 <div className="relative lg:flex-row flex flex-col-reverse lg:items-center lg:gap-12">
                     <div className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-6/12">
-                        <h1 className="text-white font-bold text-4xl md:text-7xl"
+                        <h1 className="text-black font-bold text-4xl md:text-7xl"
                             data-aos="fade-right"
                             data-aos-offset="100"
                             data-aos-easing="ease-in-sine"
                         >
-                            FULLY BUSINESS ORIENTED APP{" "}
+                            <span className={"text-[#4572c6]"}>FULLY</span> <span className={"text-[#00b04d]"}>BUSINESS</span> ORIENTED APP{" "}
                         </h1>
-                        <p className="mt-8 text-2xl md:text-3xl  text-white"
+                        <p className="mt-8 text-2xl md:text-3xl  text-black"
                            data-aos="fade-right"
                            data-aos-offset="200"
                            data-aos-duration="500"
