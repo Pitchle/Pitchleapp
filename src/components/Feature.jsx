@@ -12,7 +12,7 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-3xl items-center flex font-medium">
+    <span className="text-2xl md:text-3xl items-center flex font-medium">
         <SiTicktick className={"text-blue-700"}/> &nbsp; <span translate="no">Video Pitches</span></span>
                         </div>
 
@@ -27,7 +27,7 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-3xl items-center flex font-medium">
+    <span className="text-2xl md:text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Easy to use
     </span>
                         </div>
@@ -41,7 +41,7 @@ const Feature = () => {
                     <div
                         className="relative  flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-3xl items-center flex font-medium">
+    <span className="text-2xl md:text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;AI
     </span>
                         </div>
@@ -55,7 +55,7 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-3xl items-center flex font-medium">
+    <span className="text-2xl md:text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Customer Support
     </span>
                         </div>
@@ -69,7 +69,7 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-3xl items-center flex font-medium">
+    <span className="text-2xl md:text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Privacy & Security
     </span>
                         </div>
@@ -84,7 +84,7 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-3xl items-center flex font-medium">
+    <span className="text-2xl md:text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Subscription Plans
     </span>
                         </div>
