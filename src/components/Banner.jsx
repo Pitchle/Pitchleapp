@@ -37,7 +37,7 @@ const Banner = () => {
                                     <a
                                         href="https://play.google.com/store/games?hl=en&gl=US&pli=1"
                                         target="_blank"
-                                        className="flex scale-ani items-center justify-center w-8/12 md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
+                                        className="flex scale-ani items-center justify-center w-8/12 md:w-full px-4 py-2 text-center text-white bg-black rounded-2xl"
                                         rel="noreferrer"
                                     >
                                         <svg
@@ -73,7 +73,7 @@ const Banner = () => {
                                     <a
                                         href="https://www.apple.com/app-store/"
                                         target="_blank"
-                                        className="flex scale-ani items-center justify-center w-8/12  md:w-full px-4 py-2 text-center text-white bg-[#450073] rounded-2xl"
+                                        className="flex scale-ani items-center justify-center w-8/12  md:w-full px-4 py-2 text-center text-white bg-black rounded-2xl"
                                         rel="noreferrer"
                                     >
                                         <svg
