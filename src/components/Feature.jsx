@@ -4,13 +4,13 @@ import {SiTicktick} from "react-icons/si";
 const Feature = () => {
     return (
         <>
-            <div className="max-w-4xl mx-auto px-5 mt-16">
+            <div className="max-w-4xl mx-auto px-6 mt-8 md:mt16">
                 <div className="text-center">
                     <h2 className="font-bold text-5xl">Key Features and Benefits</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-10 mt-20">
                     <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
     <span className="text-2xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Video Pitches
@@ -26,7 +26,7 @@ const Feature = () => {
                         </div>
                     </div>
                     <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
     <span className="text-2xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Easy to use
@@ -40,7 +40,7 @@ const Feature = () => {
                         </div>
                     </div>
                     <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
     <span className="text-2xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;AI
@@ -54,7 +54,7 @@ const Feature = () => {
                         </div>
                     </div>
                     <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
     <span className="text-2xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Customer Support
@@ -68,7 +68,7 @@ const Feature = () => {
                         </div>
                     </div>
                     <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
     <span className="text-2xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Privacy & Security
@@ -83,7 +83,7 @@ const Feature = () => {
                         </div>
                     </div>
                     <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
     <span className="text-2xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Subscription Plans
