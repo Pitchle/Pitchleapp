@@ -11,14 +11,18 @@ const AboutPage = () => {
                         About Us
                     </h2>
                     <h2 className="text-center font-display text-xl text-center lg:text-justify my-4 tracking-tight text-slate-900 md:text-xl">
-                        Nowadays, social media have taken on a primarily entertainment role and have
-                        left a void in the business sector. There is a need for a platform that address
-                        business opportunities with a sophisticated and contemporary touch.
+                        Nowadays, social media have taken on a primarily entertainment role
+                        and have left a void in the business sector. There is a need for a platform
+                        that
+                        address business opportunities with a sophisticated and
+                        contemporary touch.
+
                         <br/><br/>
-                        This is how <span translate="no">Pitchle</span> was born out of a need in the business world in order to
-                        develop a unique an innovate social media that allows users to post their
-                        business ideas through virtual elevator pitches and connect with potential
-                        investors, future partners, buyers or successors.
+                        This is how <span translate="no"> Pitchle</span> was born out of a need in the business world to
+                        develop a unique and innovative social media platform that allows users
+                        to post their business ideas through virtual pitches, facilitating the search
+                        for partners and investors, buying or transferring businesses, and
+                        promoting products.
                     </h2>
                 </div>
                 <div id="features" className="mx-auto my-20 w-full lg:w-8/12">
@@ -48,19 +52,19 @@ const AboutPage = () => {
                         User-Friendly App
                     </h2>
                     <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
-                        * Creating and sharing easy
-                        professional pitches. <br/>
-                        * Some tools you will easily use are: Visual timer,
-                        watermark, app messaging, template for pitches,
-                        music background, changing location, pitches
-                        categorized by sectors and location.
+                        • The app is designed to be simple and easy to use.
+                        <br/>
+                        • The app includes additional features and employs
+                        artificial intelligence to automate tasks and
+                        enhance content.
                     </h2>
                     <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
                         First-hand connections
                     </h2>
                     <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
-                        Facilitates connections between idea people, existing business and partners, investors, future buyers or successors.
-                    </h2>
+                        <span translate="no"> Pitchle </span> makes it easy to find partners and investors,
+                        enabling seamless business acquisi ons and transfers,
+                        along with effec ve product promo on.</h2>
                 </div>
 
                 <div className={"flex flex-col lg:flex-row justify-evenly items-center lg:space-x-10"}>
@@ -76,7 +80,7 @@ const AboutPage = () => {
                                 </div>
                                 <div className="text-center mt-2">
                                     <h2 className="font-semibold">Jhon Pillpe</h2>
-                                    <p className="text-gray-500">CEO & Founder</p>
+                                    <p className="text-gray-500">Founder</p>
                                 </div>
                             </div>
                         </>
@@ -93,9 +97,11 @@ const AboutPage = () => {
                             Our Vision
                         </h2>
                         <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
-                            A business starts from an idea. <br/>
-                            <span translate="no">Pitchle</span> aims to be the most important business platform <br/>  in the world regardless of its
-                            size, sector or geographic location.
+                            A business starts with an idea. An idea
+                            thrives through execution.   <br/>
+                            <span translate="no">Pitchle</span>aims to be the most important
+                            business platform in the world <br/> regardless
+                            of its size, sector or geographic location.
                         </h2>
                         <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
                           Values

@@ -56,16 +56,16 @@ const About = () => {
                                 </div>
 
                                 <div
-                                    className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-6/12">
-                                    <h1 className="text-blue-700 font-bold text-4xl md:text-6xl lg:text-5xl dark:text-white">
-                                        Connecting and Promoting{" "}
+                                    className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-7/12">
+                                    <h1 className="text-blue-700 font-bold text-4xl md:text-6xl lg:text-5xl">
+                                        Connecting and Promoting
                                     </h1>
                                     <p className="mt-8 text-xl md:text-3xl">
                                         <span translate="no"> Pitchle</span> facilitates finding partners,
                                         investors,
                                         buying or transferring businesses, and
                                         promo ng products with a sophisticated and
-                                        contemporary touch.
+                                        <br/>contemporary touch.
                                     </p>
                                 </div>
                             </div>
