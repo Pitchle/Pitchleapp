@@ -72,7 +72,7 @@ const PrivacyPolicy = () => {
                         <h2 className="text-2xl font-bold text-gray-800 mb-4">6. Your Choices</h2>
                         <p className="text-gray-700 text-justify">
                             You may access, update, or delete your information by contacting us at <a
-                            href="mailto:contact@pitchle.com" className="text-blue-600 hover:underline"><span translate="no">contact@pitchle.com</span></a>.
+                            href="mailto:contact@pitchleapp.com" className="text-blue-600 hover:underline"><span translate="no"> contact@pitchleapp.com</span></a>.
                             You may also opt-out of certain communications from us by following the instructions
                             provided in those communications.
                         </p>
@@ -87,7 +87,7 @@ const PrivacyPolicy = () => {
                     <div className="text-gray-700 text-justify mb-8">
                         <h2 className="text-2xl font-bold text-gray-800 mb-4">8. Contact Us</h2>
                         <p>If you have any questions about this Privacy Policy, please contact us at <a
-                            href="mailto:contact@pitchle.com" className="text-blue-600 hover:underline"><span translate="no">contact@pitchle.com</span></a>.
+                            href="mailto:contact@pitchleapp.com" className="text-blue-600 hover:underline"><span translate="no"> contact@pitchleapp.com</span></a>.
                         </p>
                     </div>
                     <p className="text-gray-700 text-justify">

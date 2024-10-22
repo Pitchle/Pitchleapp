@@ -55,7 +55,7 @@ const FaQs = () => {
 
     return (
         <>
-            <NavbarBar/>
+            <NavbarBar />
             <div className="container md:px-24 px-4 lg:px-64 py-12 mx-auto">
                 <h1 className="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">
                     Frequently Asked Questions
@@ -63,14 +63,14 @@ const FaQs = () => {
 
                 <div className="mt-8 space-y-8 lg:mt-12">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="p-8 bg-[#01be74] rounded-lg dark:bg-gray-800">
-                            <button
-                                className="flex items-center justify-between w-full"
+                        <div key={index} className="border-2 rounded-lg overflow-hidden">
+                            {/* Question and toggle button div with green background */}
+                            <div
+                                className="p-8 bg-[#01be74] text-white flex items-center justify-between cursor-pointer"
                                 onClick={() => toggleExpand(index)}
                             >
-                                <h1 className="font-semibold text-xl text-white dark:text-white"
-                                    dangerouslySetInnerHTML={{__html: faq.question}}/>
-                                <span className="text-gray-400 bg-gray-200 rounded-full">
+                                <h1 className="font-semibold text-xl" dangerouslySetInnerHTML={{ __html: faq.question }} />
+                                <span className="text-white">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className={`w-6 h-6 transform ${expandedItems[index] ? 'rotate-180' : 'rotate-0'}`}
@@ -78,14 +78,16 @@ const FaQs = () => {
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
                                     >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                                              d="M19 9l-7 7-7-7"/>
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </span>
-                            </button>
+                            </div>
+
+                            {/* Expanded answer div with white background */}
                             {expandedItems[index] && (
-                                <p className="mt-6 text-lg text-start text-white dark:text-gray-300"
-                                   dangerouslySetInnerHTML={{__html: faq.answer}}/>
+                                <div className="p-8 bg-white text-black">
+                                    <p className="text-lg text-justify dark:text-gray-300" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                                </div>
                             )}
                         </div>
                     ))}

@@ -8,16 +8,15 @@ const Feature = () => {
                 <div className="text-center">
                     <h2 className="font-bold text-5xl">Key Features and Benefits</h2>
                 </div>
-                <div className="grid md:grid-cols-2 gap-10 mt-20">
+                <div className="grid md:grid-cols-2 gap-1 mt-20">
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl items-center flex font-medium">
-      <SiTicktick className={"text-blue-700"}/> &nbsp;Video Pitches
-    </span>
+    <span className="text-3xl items-center flex font-medium">
+        <SiTicktick className={"text-blue-700"}/> &nbsp; <span translate="no">Video Pitches</span></span>
                         </div>
 
-                        <div className="p-4">
+                        <div className="p-4 text-md text-justify">
                             <p className="leading-normal ">
                                 Post your ideas, business offers and product promotions through attractive 30 second
                                 (free)
@@ -28,26 +27,26 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl items-center flex font-medium">
+    <span className="text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Easy to use
     </span>
                         </div>
 
-                        <div className="p-4">
+                        <div className="p-4 text-md text-justify">
                             <p className="leading-normal ">
                                 Designed to be simple and easy to use.
                             </p>
                         </div>
                     </div>
                     <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
+                        className="relative  flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl items-center flex font-medium">
+    <span className="text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;AI
     </span>
                         </div>
 
-                        <div className="p-4">
+                        <div className="p-4 text-md text-justify">
                             <p className="leading-normal ">
                                 <span translate="no">Pitchle </span> uses AI to automate tasks efficiently.
                             </p>
@@ -56,12 +55,12 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl items-center flex font-medium">
+    <span className="text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Customer Support
     </span>
                         </div>
 
-                        <div className="p-4">
+                        <div className="p-4 text-md text-justify">
                             <p className="leading-normal ">
                                 Enjoy dedicated customer support to assist you every step of the way.
                             </p>
@@ -70,14 +69,14 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl items-center flex font-medium">
+    <span className="text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Privacy & Security
     </span>
                         </div>
 
-                        <div className="p-4">
+                        <div className="p-4 text-md text-justify">
                             <p className="leading-normal ">
-                                Manage your privacy settings to control who can view your profile and pitches (paid
+                                Manage your privacy settings to control who can view your profile and <span translate="no">pitches</span>(paid
                                 subscription).
                             </p>
                         </div>
@@ -85,12 +84,12 @@ const Feature = () => {
                     <div
                         className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
                         <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl items-center flex font-medium">
+    <span className="text-3xl items-center flex font-medium">
       <SiTicktick className={"text-blue-700"}/> &nbsp;Subscription Plans
     </span>
                         </div>
 
-                        <div className="p-4">
+                        <div className="p-4 text-md text-justify">
                             <p className="leading-normal ">
                                <ul>
                                    <li>*Free under its 30-second video model.</li>

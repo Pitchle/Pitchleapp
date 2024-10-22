@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarBar from "../components/NavbarBar";
+import {SiTicktick} from "react-icons/si";
 
 const AboutPage = () => {
     return (<>
@@ -10,7 +11,7 @@ const AboutPage = () => {
                     <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
                         About Us
                     </h2>
-                    <h2 className="text-center font-display text-xl text-center lg:text-justify my-4 tracking-tight text-slate-900 md:text-xl">
+                    <h2 className="text-center font-display text-xl lg:text-justify my-4 tracking-tight text-slate-900 md:text-xl">
                         Nowadays, social media have taken on a primarily entertainment role
                         and have left a void in the business sector. There is a need for a platform
                         that
@@ -26,7 +27,7 @@ const AboutPage = () => {
                     </h2>
                 </div>
                 <div id="features" className="mx-auto my-20 w-full lg:w-8/12">
-                    <div className={"flex flex-col lg:flex-row justify-evenly my-10 items-center space-y-10 lg:space-y-0 items-center space-x-0 lg:space-x-10"}>
+                    <div className={"flex flex-col lg:flex-row justify-evenly my-10 space-y-10 lg:space-y-0 items-center space-x-0 lg:space-x-10"}>
                         <div className={"w-full text-center lg:text-start lg:w-6/12"}> <h3 className={"text-4xl italic"}>
                             “ Empowering Connections, Driving Success “
                         </h3> </div>
@@ -39,32 +40,31 @@ const AboutPage = () => {
                     <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
                         Fully business-oriented App
                     </h2>
-                    <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
+                    <h2 className="text-center font-display text-xl  lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                         Defining a pioneering app for business opportunities.
                     </h2>
                     <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
                         Innovative Social Media App
                     </h2>
-                    <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
+                    <h2 className="text-center font-display text-xl lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                         Unique application in its kind.
                     </h2>
                     <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
                         User-Friendly App
                     </h2>
-                    <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
-                        • The app is designed to be simple and easy to use.
-                        <br/>
-                        • The app includes additional features and employs
+                    <h2 className="text-center font-display  text-xl lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
+                        <span className={"flex items-center"}><SiTicktick className={"text-blue-700"}/> &nbsp; &nbsp; The app is designed to be simple and easy to use.</span>
+                        <SiTicktick className={"text-blue-700 -mb-5"}/> &nbsp; <span className={"ms-3.5"}>The app includes additional features and employs
                         artificial intelligence to automate tasks and
-                        enhance content.
+                        enhance content.</span>
                     </h2>
                     <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
                         First-hand connections
                     </h2>
                     <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                         <span translate="no"> Pitchle </span> makes it easy to find partners and investors,
-                        enabling seamless business acquisi ons and transfers,
-                        along with effec ve product promo on.</h2>
+                        enabling seamless business acquisitions and transfers,
+                        along with effective product promo on.</h2>
                 </div>
 
                 <div className={"flex flex-col lg:flex-row justify-evenly items-center lg:space-x-10"}>
@@ -99,7 +99,7 @@ const AboutPage = () => {
                         <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                             A business starts with an idea. An idea
                             thrives through execution.   <br/>
-                            <span translate="no">Pitchle</span>aims to be the most important
+                            <span translate="no">Pitchle</span> aims to be the most important
                             business platform in the world <br/> regardless
                             of its size, sector or geographic location.
                         </h2>

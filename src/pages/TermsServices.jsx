@@ -138,9 +138,8 @@ const TermsService = () => {
                     <div className="text-gray-700">
                         <h2 className="text-2xl font-bold text-justify text-gray-800 mb-4">12. Contact Us</h2>
                         <p>If you have any questions about these Terms, please contact us at <a
-                            href="mailto:contact@pitchle.com"
-                            className="text-blue-600 hover:underline"><span
-                            translate="no"><span translate="no">contact@pitchle.com</span></span></a>.</p>
+                            href="mailto:contact@pitchleapp.com"
+                            className="text-blue-600 hover:underline"><span translate="no"> contact@pitchleapp.com</span></a>.</p>
                     </div>
                     <p className="text-gray-700 text-justify mt-8">
                         By accessing or using the App, you agree to be bound by these Terms. If you do not agree to

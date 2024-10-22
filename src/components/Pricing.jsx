@@ -8,9 +8,9 @@ const Pricing = () => {
             <div className="space-y-20 px-2 md:px-4 lg:px-8 py-12">
                 <h3 className={"text-center mb-10 text-[#450073] text-3xl md:text-4xl lg:text-6xl font-bold"}>INDIVIDUALS PLANS</h3>
                 <div className="demo-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full lg:w-8/12  mx-auto gap-5">
-                    <div className="rounded-[30px]  md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                            <div className="h-full z-10 relative">
-                                <div className="flex flex-col flex-1 justify-between h-full space-y-5">
+                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
+                            <div className="h-full z-10  relative">
+                                <div className="flex flex-col  flex-1 justify-between h-full space-y-5">
                                     <div className="flex justify-between flex-col">
                                         <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
                                             <span>FREE</span>
@@ -58,23 +58,6 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>1 background theme</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
                                                     <span>Pitch visibility : Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
@@ -93,6 +76,23 @@ const Pricing = () => {
                                                         />
                                                     </svg>
                                                     <span>Sell or transfer business</span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Promote a product</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -155,7 +155,7 @@ const Pricing = () => {
                                 </div>
                             </div>
                     </div>
-                    <div className="rounded-[30px]  md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
+                    <div className="rounded-[30px] hover:scale-105 md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -206,40 +206,6 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Unlimited publications for 1 month</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>1 background theme</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
                                                     <span>Pitch Visibility: Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
@@ -258,6 +224,23 @@ const Pricing = () => {
                                                         />
                                                     </svg>
                                                     <span>Sell or transfer business  </span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Promote Products</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -321,7 +304,7 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
+                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -403,40 +386,6 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Unlimited publications for 1 month</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Multiple background themes to choose</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
                                                     <span>Pitch visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
@@ -471,7 +420,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>View partners and investors profiles</span>
+                                                    <span>Sell or transfer business</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -488,7 +437,24 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Sell or transfer business</span>
+                                                    <span>Access the Who's viewed your profile feature</span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Promote Products</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -552,7 +518,7 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
+                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -603,41 +569,24 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Unlimited publications for 12 months</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Multiple background themes to choose</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
                                                     <span>Pitch visibility: Public and Private</span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Access the Who's viewed your profile feature</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -671,7 +620,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>View partners and investors profiles</span>
+                                                    <span>Sell or transfer business</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -688,7 +637,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Sell or transfer business </span>
+                                                    <span>Promote products</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -753,9 +702,14 @@ const Pricing = () => {
                         </div>
                     </div>
                 </div>
+
+
+                {/*2nd part*/}
+
+
                 <h3 className={"text-center mb-10 text-[#450073] text-3xl md:text-4xl lg:text-6xl font-bold"}>INVESTORS PLANS</h3>
                 <div className="demo-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full lg:w-8/12  mx-auto gap-5">
-                    <div className="rounded-[30px] md:rounded-[36px]  text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
+                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -789,24 +743,8 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Upload max 30 seconds pitches</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>1 background theme</span>
+                                                    <span>Upload max 30 seconds <span
+                                                        translate="no"> pitches</span></span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -841,6 +779,23 @@ const Pricing = () => {
                                                         />
                                                     </svg>
                                                     <span>Sell or transfer business</span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Promote a product</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -904,7 +859,7 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px]  text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
+                    <div className="rounded-[30px] hover:scale-105  text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -955,40 +910,6 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Unlimited publications for 1 month</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>1 background theme</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
                                                     <span>Pitch Visibility: Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
@@ -1007,6 +928,23 @@ const Pricing = () => {
                                                         />
                                                     </svg>
                                                     <span>Sell or transfer business  </span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Promote products</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1070,7 +1008,7 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
+                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -1138,7 +1076,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Multiple background themes to choose</span>
+                                                    <span>Content visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1155,7 +1093,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch visibility: Public and Private</span>
+                                                    <span>Access the Who's viewed your profile feature</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1189,7 +1127,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>View profiles and contact them directly</span>
+                                                    <span>View individual profiles and contact them directly</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1207,6 +1145,23 @@ const Pricing = () => {
                                                         />
                                                     </svg>
                                                     <span>choose multiple locations</span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Promote products</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1270,7 +1225,7 @@ const Pricing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-[30px] md:rounded-[36px] overflow-hidden border-[2px] border-gray-400 p-8 relative">
+                    <div className="rounded-[30px] hover:scale-105  overflow-hidden border-[2px] border-gray-400 p-8 relative">
                         <div className="h-full">
                             <div className="h-full z-10 relative">
                                 <div className="flex flex-col flex-1 justify-between h-full space-y-5">
@@ -1338,7 +1293,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Multiple background themes to choose</span>
+                                                    <span>Content visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1355,7 +1310,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch visibility: Public and Private</span>
+                                                    <span>Access the Who's viewed your profile feature</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1389,7 +1344,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>View profiles and contact them directly</span>
+                                                    <span>View individual profiles and contact them directly</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1406,7 +1361,24 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Sell or transfer business </span>
+                                                    <span>Choose multiple locations </span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Promote products </span>
                                                 </li>
                                             </ul>
                                         </div>

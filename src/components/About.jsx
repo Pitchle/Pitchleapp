@@ -19,7 +19,7 @@ const About = () => {
                                     <h1 className="text-blue-700 font-bold text-4xl md:text-6xl lg:text-5xl dark:text-white">
                                         Business Social Network{" "}
                                     </h1>
-                                    <p className="mt-8 text-xl md:text-3xl">
+                                    <p className="mt-8 text-xl text-justify md:text-3xl">
                                         A pioneering social network focused on
                                         business, while also serving as a
                                         platform for promoting products
@@ -28,7 +28,7 @@ const About = () => {
                                 </div>
                                 <div className="overflow-hidden mt-5 md:mt-0 w-full lg:w-3/12">
                                     <img
-                                        src="/img/about/Business%20Social%20Network.png"
+                                        src="/img/about/Business%20Social%20Network%20(2).png"
                                         alt="project illustration"
                                         height=""
                                         width=""
@@ -60,11 +60,11 @@ const About = () => {
                                     <h1 className="text-blue-700 font-bold text-4xl md:text-6xl lg:text-5xl">
                                         Connecting and Promoting
                                     </h1>
-                                    <p className="mt-8 text-xl md:text-3xl">
+                                    <p className="mt-8 text-justify text-xl md:text-3xl">
                                         <span translate="no"> Pitchle</span> facilitates finding partners,
                                         investors,
                                         buying or transferring businesses, and
-                                        promo ng products with a sophisticated and
+                                        promoting products with a sophisticated and
                                         <br/>contemporary touch.
                                     </p>
                                 </div>

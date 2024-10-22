@@ -221,7 +221,8 @@
     }
 }
 .mySwiper .swiper-slide {
-    background-color: transparent !important; /* Remove any background color */
+   border-radius: 40px;
+    background-color: white;
 }
 .f-style{
     border-radius: 40px 0 0 0;
