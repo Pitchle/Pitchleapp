@@ -53,7 +53,7 @@ const AboutPage = () => {
                         User-Friendly App
                     </h2>
                     <h2 className="text-center font-display  text-xl lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
-                        <span className={"flex items-center"}><SiTicktick className={"text-blue-700"}/> &nbsp; &nbsp; The app is designed to be simple and easy to use.</span>
+                        <span className={"flex items-center"}><SiTicktick className={"text-blue-700 -mt-7 md:-mt-0 w-8 md:w-10 -ms-0 md:-ms-3"}/> &nbsp; &nbsp; The app is designed to be simple and easy to use.</span>
                         <SiTicktick className={"text-blue-700 -mb-5"}/> &nbsp; <span className={"ms-3.5"}>The app includes additional features and employs
                         artificial intelligence to automate tasks and
                         enhance content.</span>
