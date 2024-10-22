@@ -64,7 +64,7 @@ const AboutPage = () => {
                     <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                         <span translate="no"> Pitchle </span> makes it easy to find partners and investors,
                         enabling seamless business acquisitions and transfers,
-                        along with effective product promo on.</h2>
+                        along with effective product promotion.</h2>
                 </div>
 
                 <div className={"flex flex-col lg:flex-row justify-evenly items-center lg:space-x-10"}>
