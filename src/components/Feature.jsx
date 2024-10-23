@@ -6,7 +6,7 @@ const Feature = () => {
         <>
             <div className="max-w-4xl mx-auto px-6 mt-8 md:mt16">
                 <div className="text-center">
-                    <h2 className="font-bold -ms-0 md:-ms-6 text-5xl">Key Features and Benefits</h2>
+                    <h2 className="font-bold -ms-0 md:-ms-8 text-5xl">Key Features and Benefits</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-1 mt-20">
                     <div
