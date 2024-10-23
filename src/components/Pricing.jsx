@@ -58,7 +58,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span><span translate="no">Pitch </span> visibility : Public</span>
+                                                    <span>Video visibility : Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -206,7 +206,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span><span translate="no">Pitch </span> Visibility: Public</span>
+                                                    <span>Video Visibility: Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -386,7 +386,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span><span translate="no">Pitch</span> visibility: Public and Private</span>
+                                                    <span>Video visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -569,7 +569,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span><span translate="no">Pitch</span> visibility: Public and Private</span>
+                                                    <span><span Videote="no">Video</span> visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -761,7 +761,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span><span translate="no">Pitch</span> visibility : Public</span>
+                                                    <span>Video visibility : Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -893,7 +893,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Upload max 60 seconds pitches</span>
+                                                    <span>Upload max 60 seconds Videoes</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -910,7 +910,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span><span translate="no">Pitch</span> Visibility: Public</span>
+                                                    <span>Video Visibility: Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1059,7 +1059,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span><span translate="no">Pitch </span> visibility: Public and Private</span>
+                                                    <span>Video visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1276,7 +1276,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span><span translate="no">Pitch </span> visibility: Public and Private</span>
+                                                    <span>Video visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
