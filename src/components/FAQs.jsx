@@ -9,7 +9,7 @@ const FaQs = () => {
         },
         {
             question: "Who can use <span translate='no'>Pitchle</span> app?",
-            answer: "<span translate=\"no\">Pitchle </span> is designed for individuals, entrepreneurs, startups, and businesses of all sizes and industries looking to find partners, investments, business sales or transfers, and product promotion."
+            answer: "<span translate=\"no\">Pitchle </span> is designed for individuals, entrepreneurs, startups, and businesses of all sizes and industries looking to find partners, investors, business sales or transfers, and product promotion."
         },
         {
             question: "How does the subscription model work?",
@@ -17,7 +17,7 @@ const FaQs = () => {
         },
         {
             question: "What types of videos are allowed on <span translate='no'><span translate=\"no\"> Pitchle </span></span> app?",
-            answer: "<span translate=\"no\">Pitchle </span> exclusively hosts business-focused content, including videos for seeking partners, investments, business sales or transfers, and product promotions. Any content not aligned with these purposes should be reported and may be removed."
+            answer: "<span translate=\"no\">Pitchle </span> exclusively hosts business-focused content, including videos for seeking partners, investors, business sales or transfers, and product promotions. Any content not aligned with these purposes should be reported and may be removed."
         },
         {
             question: "What security measures protect user information?",
@@ -41,7 +41,8 @@ const FaQs = () => {
         },
         {
             question: "How can users contact customer support? ",
-            answer: "For any inquiries, technical issues, or assistance, users can contact our support team via email at <span translate=\"no\">contact@pitchleapp.com</span>"
+            answer: `For any inquiries, technical issues, or assistance, users can contact our support team via email at 
+             <a class="text-blue-500 underline" href="mailto:contact@pitchleapp.com" translate="no">contact@pitchleapp.com</a>`
         }
     ];
 

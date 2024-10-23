@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <>
             <div className={"w-full sticky top-0 z-30 flex justify-center items-center text-white"} >
-                <div className={"w-11/12 my-2 bg-[#01be74] grid grid-cols-3 px-8 py-2 md:py3 rounded-full"}>
+                <div className={"w-11/12 my-2 color-change grid grid-cols-3 px-8 py-2 md:py3 rounded-full"}>
                     <ul className="hidden lg:flex space-x-10 items-center"> {/* Show only in desktop view */}
                         <li className="relative group">
                             <div className="c-underline text-2xl font-bold cursor-pointer">Company</div>

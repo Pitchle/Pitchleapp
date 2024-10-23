@@ -52,12 +52,24 @@ const AboutPage = () => {
                     <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
                         User-Friendly App
                     </h2>
-                    <h2 className="text-center font-display  text-xl lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
-                        <span className={"flex items-center"}><SiTicktick className={"text-blue-700 -mt-7 md:-mt-0 w-8 md:w-10 -ms-0 md:-ms-3"}/> &nbsp; &nbsp; The app is designed to be simple and easy to use.</span>
-                        <SiTicktick className={"text-blue-700 -mb-5"}/> &nbsp; <span className={"ms-3.5"}>The app includes additional features and employs
-                        artificial intelligence to automate tasks and
-                        enhance content.</span>
+                    <h2 className="text-center font-display text-xl lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
+                        <div className="flex items-start mb-2"> {/* Flex container for the first line */}
+                            <SiTicktick
+                                className="text-blue-700 w-8 md:w-10 mr-2 mt-1"/> {/* Icon with margin-right and slight top margin */}
+                            <span className="leading-tight"> {/* Adjusted line height for better spacing */}
+                                The app is designed to be simple and easy to use.
+        </span>
+                        </div>
+
+                        <div className="flex items-start"> {/* Flex container for the second line */}
+                            <SiTicktick
+                                className="text-blue-700 w-20 md:w-10 mr-2 mt-1"/> {/* Icon with margin-right and slight top margin */}
+                            <span className="leading-tight -ms-5 md:-ms-0"> {/* Adjusted line height for better spacing */}
+                                The app includes additional features and employs artificial intelligence to automate tasks and enhance content.
+        </span>
+                        </div>
                     </h2>
+
                     <h2 className="font-display text-center lg:text-start text-3xl font-bold tracking-tight text-slate-900 md:text-3xl">
                         First-hand connections
                     </h2>
@@ -71,7 +83,8 @@ const AboutPage = () => {
                     <div className={"w-full flex justify-evenly py-8 lg:w-6/12"}>
                         <>
                             <div className="max-w-2xl ms-5 lg:ms-96 mx-4 ">
-                                <div className="mx-auto w-44 h-44s relative -mt-2 border-4 border-white rounded-full overflow-hidden">
+                                <div
+                                    className="mx-auto w-44 h-44s relative -mt-2 border-4 border-white rounded-full overflow-hidden">
                                     <img
                                         className="object-cover object-center h-52"
                                         src="/img/logo/admin.jpg"

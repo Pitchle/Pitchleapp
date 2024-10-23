@@ -227,3 +227,19 @@
 .f-style{
     border-radius: 40px 0 0 0;
 }
+@keyframes fadeColor {
+    0% {
+        background-color: #450073; /* First color */
+    }
+    50% {
+        background-color: #01be74; /* Second color */
+    }
+    100% {
+        background-color: #450073; /* Back to first color */
+    }
+}
+/* Applying the animation to the container */
+.color-change {
+    animation: fadeColor 6s infinite; /* 3 seconds for each color */
+    transition: background-color 5s, opacity 5s; /* Smooth transition */
+}

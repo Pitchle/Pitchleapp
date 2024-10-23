@@ -6,7 +6,7 @@ const Feature = () => {
         <>
             <div className="max-w-4xl mx-auto px-6 mt-8 md:mt16">
                 <div className="text-center">
-                    <h2 className="font-bold text-5xl">Key Features and Benefits</h2>
+                    <h2 className="font-bold -ms-0 md:-ms-6 text-5xl">Key Features and Benefits</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-1 mt-20">
                     <div
@@ -16,7 +16,7 @@ const Feature = () => {
         <SiTicktick className={"text-blue-700"}/> &nbsp; <span translate="no">Video Pitches</span></span>
                         </div>
 
-                        <div className="p-4 text-md text-justify">
+                        <div className="p-4 text-md text-start md:text-justify">
                             <p className="leading-normal ">
                                 Post your ideas, business offers and product promotions through attractive 30 second
                                 (free)
@@ -89,7 +89,7 @@ const Feature = () => {
     </span>
                         </div>
 
-                        <div className="p-4 text-md text-justify">
+                        <div className="p-4 text-md text-start md:text-justify">
                             <p className="leading-normal ">
                                <ul>
                                    <li>*Free under its 30-second video model.</li>

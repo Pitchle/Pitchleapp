@@ -1059,24 +1059,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Unlimited publications for 1 month</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Content visibility: Public and Private</span>
+                                                    <span>Pitch visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1144,7 +1127,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>choose multiple locations</span>
+                                                    <span>Choose multiple locations</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1162,6 +1145,23 @@ const Pricing = () => {
                                                         />
                                                     </svg>
                                                     <span>Promote products</span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Sell or transfer business</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1276,24 +1276,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Unlimited publications for 12 months</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Content visibility: Public and Private</span>
+                                                    <span>Pitch visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1379,6 +1362,23 @@ const Pricing = () => {
                                                         />
                                                     </svg>
                                                     <span>Promote products </span>
+                                                </li>
+                                                <li className="flex items-center font-medium space-x-2 text-black">
+                                                    <svg
+                                                        className="h-4 w-4"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
+                                                            stroke="currentColor"
+                                                            strokeWidth={2}
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                        />
+                                                    </svg>
+                                                    <span>Sell or transfer business</span>
                                                 </li>
                                             </ul>
                                         </div>

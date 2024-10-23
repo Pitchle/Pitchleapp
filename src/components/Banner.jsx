@@ -115,7 +115,7 @@ const Banner = () => {
                             autoplay={{ delay: 5000 }} // Set autoplay delay (in milliseconds)
                             className="mySwiper h-full"
                         >
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(1).png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/logoo.png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(12).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(11).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(10).png" alt="screen"/></SwiperSlide>
