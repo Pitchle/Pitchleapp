@@ -58,7 +58,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch visibility : Public</span>
+                                                    <span><span translate="no">Pitch </span> visibility : Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -206,7 +206,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch Visibility: Public</span>
+                                                    <span><span translate="no">Pitch </span> Visibility: Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -386,7 +386,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch visibility: Public and Private</span>
+                                                    <span><span translate="no">Pitch</span> visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -569,7 +569,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch visibility: Public and Private</span>
+                                                    <span><span translate="no">Pitch</span> visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -761,7 +761,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch visibility : Public</span>
+                                                    <span><span translate="no">Pitch</span> visibility : Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -910,7 +910,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch Visibility: Public</span>
+                                                    <span><span translate="no">Pitch</span> Visibility: Public</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1059,7 +1059,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch visibility: Public and Private</span>
+                                                    <span><span translate="no">Pitch </span> visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
@@ -1276,7 +1276,7 @@ const Pricing = () => {
                                                             strokeLinejoin="round"
                                                         />
                                                     </svg>
-                                                    <span>Pitch visibility: Public and Private</span>
+                                                    <span><span translate="no">Pitch </span> visibility: Public and Private</span>
                                                 </li>
                                                 <li className="flex items-center font-medium space-x-2 text-black">
                                                     <svg
