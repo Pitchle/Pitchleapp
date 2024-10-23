@@ -4,9 +4,9 @@ const About = () => {
     return (
         <>
 
-            <div className={"lg:mt-32 mt-28 md:mt-36 py-10 mb-32"} id={"about-us"}>
-                <h3 className={"text-center mb-0 md:mb-10 text-black text-3xl md:text-4xl lg:text-6xl  font-bold"}>ABOUT <span
-                    translate="no"> PITCHLE</span>
+            <div className={"lg:mt-32 mt-0 md:mt-28 md:mt-36 py-10 mb-32"} id={"about-us"}>
+                <h3 className={"text-center mb-0 md:mb-10 text-black text-5xl md:text-4xl lg:text-6xl  font-bold"}>About <span
+                    translate="no">  Pitchle</span>
                 </h3>
                 <div className="w-full flex justify-center flex-col  px-2 lg:px-20 lg:flex-row lg:space-x-8">
                     <>
