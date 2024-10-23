@@ -54,18 +54,14 @@ const AboutPage = () => {
                     </h2>
                     <h2 className="text-center font-display text-xl lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                         <div className="flex items-start mb-2"> {/* Flex container for the first line */}
-                            <SiTicktick
-                                className="text-blue-700 w-8 md:w-10 mr-2 mt-1"/> {/* Icon with margin-right and slight top margin */}
-                            <span className="leading-tight"> {/* Adjusted line height for better spacing */}
-                                The app is designed to be simple and easy to use.
+                            <SiTicktick className="text-blue-700 w-5 md:w-10 "/> {/* Icon with margin-right and slight top margin */}
+                            <span className="leading-tight ms-[4.3px] md:ms-[2px]"> {/* Adjusted line height for better spacing */}The app is designed to be simple and easy to use.
         </span>
                         </div>
 
                         <div className="flex items-start"> {/* Flex container for the second line */}
-                            <SiTicktick
-                                className="text-blue-700 w-20 md:w-10 mr-2 mt-1"/> {/* Icon with margin-right and slight top margin */}
-                            <span className="leading-tight -ms-5 md:-ms-0"> {/* Adjusted line height for better spacing */}
-                                The app includes additional features and employs artificial intelligence to automate tasks and enhance content.
+                            <SiTicktick className="text-blue-700 ms-0 md:ms-1.5 w-12 md:w-10 mt-1"/> {/* Icon with margin-right and slight top margin */}
+                            <span className="leading-tight ms-2 md:ms-2 "> {/* Adjusted line height for better spacing */}The app includes additional features and employs artificial intelligence to automate tasks and enhance content.
         </span>
                         </div>
                     </h2>
@@ -84,10 +80,10 @@ const AboutPage = () => {
                         <>
                             <div className="max-w-2xl ms-5 lg:ms-96 mx-4 ">
                                 <div
-                                    className="mx-auto w-44 h-44s relative -mt-2 border-4 border-white rounded-full overflow-hidden">
+                                    className="mx-auto w-44 h-44 relative -mt-2 border-4 border-white rounded-full overflow-hidden">
                                     <img
-                                        className="object-cover object-center h-52"
-                                        src="/img/logo/admin.jpg"
+                                        className="object-cover object-fit h-52"
+                                        src="/img/new_images/profile.png"
                                         alt="Woman looking front"
                                     />
                                 </div>
@@ -111,7 +107,7 @@ const AboutPage = () => {
                         </h2>
                         <h2 className="text-center font-display text-xl text-center lg:text-justify mb-4 tracking-tight text-slate-900 md:text-xl">
                             A business starts with an idea. An idea
-                            thrives through execution.   <br/>
+                            thrives through execution.   <br/> <br/>
                             <span translate="no">Pitchle</span> aims to be the most important
                             business platform in the world <br/> regardless
                             of its size, sector or geographic location.

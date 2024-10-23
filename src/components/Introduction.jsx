@@ -43,7 +43,7 @@ const Introduction = () => {
 
     return (
         <>
-            <h3 className="text-center text-[#450073] my-4 text-3xl md:text-4xl lg:text-6xl font-bold"
+            <h3 className="text-center text-[#450073] mt-14 md:mt-4 mb-0 md:mb-4 text-3xl md:text-4xl lg:text-6xl font-bold"
                 data-aos="fade-down"
                 data-aos-offset="100"
                 data-aos-duration="500"
@@ -59,10 +59,10 @@ const Introduction = () => {
                                  data-aos-offset="200"
                                  data-aos-duration={(index + 1) * 300 + 500}
                                  data-aos-easing="ease-in-sine"
-                                 className="relative mt-28 ms-2.5 flex flex-col rounded-[20px] max-w-[310px] bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full p-4 bg-white"
+                                 className="relative mt-16 md:mt-28 ms-2.5 flex flex-col rounded-[20px] max-w-[310px] bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full p-4 bg-white"
                                  onMouseLeave={handleMouseLeave}
                             >
-                                <div className="w-full border-2 shadow-md rounded-md p-4">
+                                <div className="w-full border-2 shadow-sm rounded-md p-4">
                                     <div className="relative w-full" onMouseEnter={() => handleImageHover(slide.image)}>
                                         <img
                                             src={slide.image}
