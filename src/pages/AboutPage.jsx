@@ -61,7 +61,7 @@ const AboutPage = () => {
 
                         <div className="flex items-start"> {/* Flex container for the second line */}
                             <SiTicktick className="text-blue-700 ms-0 md:ms-1.5 w-12 md:w-10 mt-1"/> {/* Icon with margin-right and slight top margin */}
-                            <span className="leading-tight ms-2 md:ms-2 "> {/* Adjusted line height for better spacing */}The app includes additional features and employs artificial intelligence to automate tasks and enhance content.
+                            <span className="leading-tight md:ms-2 "> {/* Adjusted line height for better spacing */}The app includes additional features and employs artificial intelligence to automate tasks and enhance content.
         </span>
                         </div>
                     </h2>
