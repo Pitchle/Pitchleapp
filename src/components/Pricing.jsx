@@ -2,7 +2,7 @@ import React from 'react';
 import NavbarBar from "./NavbarBar";
 
 // Data array with different card information
-const pricingData = [
+const Individual = [
     {
         heading: 'Free',
         headingColor: 'black',
@@ -70,22 +70,23 @@ const pricingData = [
         gradientFrom: 'from-blue-300',
         gradientOpacity: 'opacity-30',
     },
-    {
-        heading: 'Free',
-        headingColor: 'black',
-        subHeading: '',
-        badgeText: 'Investor Free Plan',
-        badgeTextColor: 'white',
-        badgeColor: '#6bb12d',
-        bulletPoints: [
-            'Upload max 30 seconds pitches',
-            'Pitch Visibility: Public',
-            'Sell or transfer business',
-            'Promote a Product',
-        ],
-        gradientFrom: 'from-red-300',
-        gradientOpacity: 'opacity-30',
-    },
+];
+const Pro=[  {
+    heading: 'Free',
+    headingColor: 'black',
+    subHeading: '',
+    badgeText: 'Investor Free Plan',
+    badgeTextColor: 'white',
+    badgeColor: '#6bb12d',
+    bulletPoints: [
+        'Upload max 30 seconds pitches',
+        'Pitch Visibility: Public',
+        'Sell or transfer business',
+        'Promote a Product',
+    ],
+    gradientFrom: 'from-red-300',
+    gradientOpacity: 'opacity-30',
+},
     {
         heading: '$8.99',
         headingColor: 'black',
@@ -141,12 +142,12 @@ const pricingData = [
         ],
         gradientFrom: 'from-yellow-300',
         gradientOpacity: 'opacity-30',
-    },
-];
+    },];
+
 
 const PricingCard = ({ heading, headingColor, subHeading, badgeText, bulletPoints, gradientFrom, gradientOpacity, badgeColor,badgeTextColor }) => {
     return (
-        <div className="relative bg-white shadow-lg rounded-lg h-[530px] w-[350px] hover:z-10 hover:scale-110 transition-all duration-300 ease-in-out p-5 overflow-hidden">
+        <div className="relative bg-white shadow-lg rounded-lg h-[440px] w-[350px] hover:z-10 hover:scale-110 transition-all duration-300 ease-in-out p-5 overflow-hidden">
             {/* Add the circular gradient */}
             <div className={`absolute -bottom-3 blur-md -left-5 w-32 h-32 bg-gradient-to-t ${gradientFrom} to-transparent rounded-full ${gradientOpacity}`}></div>
 
@@ -163,10 +164,10 @@ const PricingCard = ({ heading, headingColor, subHeading, badgeText, bulletPoint
             <h2 className={`text-4xl font-bold text-center mt-6 ${headingColor}`}>{heading}</h2>
 
             {/* Conditionally render the subheading */}
-            {subHeading && <p className="text-center font-semibold text-lg mt-2">{subHeading}</p>}
+            {subHeading && <p className="text-center font-semibold text-lg ">{subHeading}</p>}
 
             {/* List */}
-            <ul className="mt-8 text-center space-y-3 text-gray-700 ">
+            <ul className="mt-4 text-center space-y-1 text-gray-700 ">
                 {bulletPoints.map((point, index) => (
                     <li key={index}>• {point}</li>
                 ))}
@@ -178,10 +179,13 @@ const PricingCard = ({ heading, headingColor, subHeading, badgeText, bulletPoint
 const Pricing = () => {
     return (
         <>
-            <NavbarBar />
+            <NavbarBar/>
+            <div className="text-center">
+                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Individuals Plans</h2>
+            </div>
             <div className={"flex justify-center"}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
-                    {pricingData.map((plan, index) => (
+                    {Individual.map((plan, index) => (
                         <PricingCard
                             key={index}
                             heading={plan.heading}
@@ -196,6 +200,28 @@ const Pricing = () => {
                         />
                     ))}
                 </div>
+            </div>
+            <div className="text-center">
+                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Individuals Plans</h2>
+            </div>
+            <div className={"flex justify-center"}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
+                    {Pro.map((plan, index) => (
+                        <PricingCard
+                            key={index}
+                            heading={plan.heading}
+                            headingColor={plan.headingColor}
+                            subHeading={plan.subHeading} // Pass subheading prop
+                            badgeText={plan.badgeText}
+                            badgeTextColor={plan.badgeTextColor}
+                            badgeColor={plan.badgeColor}
+                            bulletPoints={plan.bulletPoints}
+                            gradientFrom={plan.gradientFrom}
+                            gradientOpacity={plan.gradientOpacity}
+                        />
+                    ))}
+                </div>
+
             </div>
         </>
     );
