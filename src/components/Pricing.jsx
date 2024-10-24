@@ -191,7 +191,7 @@ const Pricing = () => {
     return (
         <>
             <NavbarBar/>
-            <div className="text-center"><h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Individuals Plans</h2>
+            <div className="text-center"><h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Individual Plans</h2>
             </div>
             <div className={"flex justify-center"}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
@@ -212,7 +212,7 @@ const Pricing = () => {
                 </div>
             </div>
             <div className="text-center">
-                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Investors Plans</h2>
+                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Investor Plans</h2>
             </div>
             <div className={"flex justify-center"}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
