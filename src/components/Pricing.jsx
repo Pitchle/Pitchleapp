@@ -146,7 +146,7 @@ const pricingData = [
 
 const PricingCard = ({ heading, headingColor, subHeading, badgeText, bulletPoints, gradientFrom, gradientOpacity, badgeColor,badgeTextColor }) => {
     return (
-        <div className="relative bg-white shadow-lg rounded-lg h-[520px] w-[350px] hover:z-10 hover:scale-110 transition-all duration-300 ease-in-out p-5 overflow-hidden">
+        <div className="relative bg-white shadow-lg rounded-lg h-[530px] w-[350px] hover:z-10 hover:scale-110 transition-all duration-300 ease-in-out p-5 overflow-hidden">
             {/* Add the circular gradient */}
             <div className={`absolute -bottom-3 blur-md -left-5 w-32 h-32 bg-gradient-to-t ${gradientFrom} to-transparent rounded-full ${gradientOpacity}`}></div>
 
@@ -180,7 +180,7 @@ const Pricing = () => {
         <>
             <NavbarBar />
             <div className={"flex justify-center"}>
-                <div className="grid grid-cols-4 w-11/12 gap-10 my-10 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
                     {pricingData.map((plan, index) => (
                         <PricingCard
                             key={index}

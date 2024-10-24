@@ -12,33 +12,47 @@ import Navbar from '../components/Navbar';
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
+    const [isMobile, setIsMobile] = useState(false); // New state to track if it's mobile view
 
     useEffect(() => {
-        const isMobile = window.innerWidth <= 768; // Define mobile view width
+        const checkIfMobile = () => {
+            const isMobileView = window.innerWidth <= 768; // Define mobile view width
+            setIsMobile(isMobileView); // Update the state to reflect if it's mobile
+        };
+
+        checkIfMobile(); // Check on initial render
+        window.addEventListener('resize', checkIfMobile); // Listen for window resize
+
         if (isMobile) {
             setTimeout(() => {
                 setLoading(false); // Set loading to false after 5 seconds for mobile view
                 AOS.init();
             }, 5500); // Adjust the duration for mobile view
         } else {
-            setLoading(false); // Set loading to false immediately for desktop and iPad view
-            AOS.init();
+            setTimeout(() => {
+                setLoading(false); // Set loading to false after 3 seconds for desktop view
+                AOS.init();
+            }, 5500); // Adjust the duration for desktop view
         }
-    }, []);
+
+        return () => {
+            window.removeEventListener('resize', checkIfMobile); // Clean up event listener
+        };
+    }, [isMobile]); // Add isMobile to dependency array
 
     return (
         <div className="App">
-            {loading && <SplashScreen />} {/* Only show splash screen if loading is true */}
+            {loading && <SplashScreen isMobile={isMobile} />} {/* Pass isMobile prop */}
             {!loading && (
                 <>
-                <main>
-                    <Navbar />
-                    <Banner />
-                    <Introduction />
-                </main>
-                <About />
-                <Feature />
-                <Philosophy />
+                    <main>
+                        <Navbar />
+                        <Banner />
+                        <Introduction />
+                    </main>
+                    <About />
+                    <Feature />
+                    <Philosophy />
                 </>
             )}
         </div>

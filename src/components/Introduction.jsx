@@ -5,6 +5,20 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const Introduction = () => {
     const [hoveredImage, setHoveredImage] = useState(null);
+    const [activeImages, setActiveImages] = useState(slidesData.map(slide => slide.image));
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveImages(prevImages =>
+                prevImages.map((image, index) =>
+                    image === slidesData[index].image ? slidesData[index].hoverImage : slidesData[index].image
+                )
+            );
+        }, 4000); // Change images every 4 seconds
+
+        return () => clearInterval(interval); // Cleanup on component unmount
+    }, []);
+
     const handleImageHover = (imageUrl) => {
         setHoveredImage(imageUrl);
     };
@@ -65,15 +79,16 @@ const Introduction = () => {
                                 <div className="w-full border-2 bg-gray-100 rounded-md p-4" style={{ boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px" }}>
                                     <div className="relative w-full" onMouseEnter={() => handleImageHover(slide.image)}>
                                         <img
-                                            src={slide.image}
-                                            className="mb-3 rounded-md w-full h-[29rem] rounded-xl"
+                                            src={activeImages[index]}
+                                            className="mb-3 rounded-md w-full h-[29rem] rounded-xl transition-opacity duration-1000 ease-in-out" // Smooth fade
                                             alt=""
                                         />
                                         {hoveredImage && hoveredImage === slide.image && (
                                             <img
                                                 src={slide.hoverImage}
-                                                className="mb-3 rounded-md w-full h-[32rem] z-10 rounded-xl absolute top-4 left-3 -mt-24 transform translate-x-4"
+                                                className="mb-3 rounded-md w-full h-[32rem] z-10 rounded-xl absolute top-2 left-10 -mt-20 transform translate-x-4 transition-transform duration-700 ease-in-out" // Zoom effect
                                                 alt=""
+                                                style={{ transform: 'scale(1.05)' }} // Apply zoom effect
                                             />
                                         )}
                                     </div>
@@ -104,7 +119,6 @@ const Introduction = () => {
 
 export default Introduction;
 
-
 const slidesData = [
     {
         image: "/img/new_images/Mockup%20(2).png",
@@ -118,7 +132,7 @@ const slidesData = [
     },
     {
         image: "/img/new_images/Mockup%20(7).png",
-        hoverImage: "/img/new_images/Mockup%20(7).png",
+        hoverImage: "/img/new_images/Mockup%20(8).png", // Ensure this is a different hover image
         buttons: [{ text: "Promote" }, { text: "Product" }],
     },
 ];

@@ -243,3 +243,30 @@
     animation: fadeColor 6s infinite; /* 3 seconds for each color */
     transition: background-color 5s, opacity 5s; /* Smooth transition */
 }
+
+
+.image-container {
+    position: relative;
+}
+
+.main-image {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hover-image {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* When hovering over the image container */
+.image-container:hover .main-image {
+    opacity: 0;
+}
+
+.image-container:hover .hover-image {
+    opacity: 1;
+}
