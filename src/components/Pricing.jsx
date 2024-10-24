@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarBar from "./NavbarBar";
+import Slider from "react-slick";
 
 // Data array with different card information
 const Individual = [
@@ -71,7 +72,7 @@ const Individual = [
         gradientOpacity: 'opacity-30',
     },
 ];
-const Pro = [{
+const investor = [{
     heading: 'Free',
     headingColor: 'black',
     subHeading: '',
@@ -144,6 +145,35 @@ const Pro = [{
         gradientOpacity: 'opacity-30',
     },];
 
+const settings = {
+    dots: true, // Keep dots enabled
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    responsive: [
+        {
+            breakpoint: 1024, // Desktop and above
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false, // Hide dots on larger screens
+            },
+        },
+        {
+            breakpoint: 768, // Tablets
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true, // Show dots on smaller screens
+            },
+        },
+    ],
+};
 
 const PricingCard = ({
                          heading,
@@ -157,7 +187,7 @@ const PricingCard = ({
                          badgeTextColor
                      }) => {
     return (
-        <div className="relative bg-white hover:border-gray-500 shadow-md hover:shadow-lg border-2 border-transparent hover:border-gradient-to-r hover:from-[#450073] hover:via-[#01be74] hover:to-[#450073] rounded-lg h-[440px] w-[350px] hover:z-10 hover:scale-105 md:hover:scale-110 transition-all duration-300 ease-in-out p-5 overflow-hidden">
+        <div className="relative my-10 ms-5 md:ms-0 mx-2 bg-white hover:border-gray-500 shadow-md hover:shadow-lg border-2 border-transparent hover:border-gradient-to-r hover:from-[#450073] hover:via-[#01be74] hover:to-[#450073] rounded-lg h-[440px] w-[330px] hover:z-10 hover:scale-105 md:hover:scale-105 transition-all duration-300 ease-in-out p-5 overflow-hidden">
             {/* Add the circular gradient */}
             <div
                 className={`absolute -bottom-3 blur-md -left-5 w-32 h-32 bg-gradient-to-t ${gradientFrom} to-transparent rounded-full ${gradientOpacity}`}></div>
@@ -191,47 +221,50 @@ const Pricing = () => {
     return (
         <>
             <NavbarBar/>
-            <div className="text-center"><h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Individual Plans</h2>
-            </div>
-            <div className={"flex justify-center"}>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
-                    {Individual.map((plan, index) => (
-                        <PricingCard
-                            key={index}
-                            heading={plan.heading}
-                            headingColor={plan.headingColor}
-                            subHeading={plan.subHeading} // Pass subheading prop
-                            badgeText={plan.badgeText}
-                            badgeTextColor={plan.badgeTextColor}
-                            badgeColor={plan.badgeColor}
-                            bulletPoints={plan.bulletPoints}
-                            gradientFrom={plan.gradientFrom}
-                            gradientOpacity={plan.gradientOpacity}
-                        />
-                    ))}
+            <div className="text-center"><h2 className="font-bold -ms-0 md:-ms-8 my-6 text-3xl md:text-5xl">Individual
+                Plans</h2></div>
+            <div className={"w-full flex justify-center"}>
+                <div className={"w-11/12"}>
+                    <Slider {...settings}>
+                        {Individual.map((plan, index) => (
+                            <PricingCard
+                                key={index}
+                                heading={plan.heading}
+                                headingColor={plan.headingColor}
+                                subHeading={plan.subHeading} // Pass subheading prop
+                                badgeText={plan.badgeText}
+                                badgeTextColor={plan.badgeTextColor}
+                                badgeColor={plan.badgeColor}
+                                bulletPoints={plan.bulletPoints}
+                                gradientFrom={plan.gradientFrom}
+                                gradientOpacity={plan.gradientOpacity}
+                            />
+                        ))}
+                    </Slider>
                 </div>
             </div>
             <div className="text-center">
-                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Investor Plans</h2>
+                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-3xl md:text-5xl">Investor Plans</h2>
             </div>
-            <div className={"flex justify-center"}>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
-                    {Pro.map((plan, index) => (
-                        <PricingCard
-                            key={index}
-                            heading={plan.heading}
-                            headingColor={plan.headingColor}
-                            subHeading={plan.subHeading} // Pass subheading prop
-                            badgeText={plan.badgeText}
-                            badgeTextColor={plan.badgeTextColor}
-                            badgeColor={plan.badgeColor}
-                            bulletPoints={plan.bulletPoints}
-                            gradientFrom={plan.gradientFrom}
-                            gradientOpacity={plan.gradientOpacity}
-                        />
-                    ))}
+            <div className={"w-full flex justify-center"}>
+                <div className={"w-11/12 mb-10 md:mb-0 h-full"}>
+                    <Slider {...settings}>
+                        {investor.map((plan, index) => (
+                            <PricingCard
+                                key={index}
+                                heading={plan.heading}
+                                headingColor={plan.headingColor}
+                                subHeading={plan.subHeading} // Pass subheading prop
+                                badgeText={plan.badgeText}
+                                badgeTextColor={plan.badgeTextColor}
+                                badgeColor={plan.badgeColor}
+                                bulletPoints={plan.bulletPoints}
+                                gradientFrom={plan.gradientFrom}
+                                gradientOpacity={plan.gradientOpacity}
+                            />
+                        ))}
+                    </Slider>
                 </div>
-
             </div>
         </>
     );
