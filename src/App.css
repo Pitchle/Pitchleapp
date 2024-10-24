@@ -215,6 +215,9 @@
 
 /* Media query for desktop view */
 @media (min-width: 1024px) {
+    .slick-dots li.slick-active button:before{
+        display: none;
+    }
     .slick-next:before,
     .slick-prev:before {
         display: none; /* Hide next and prev arrows in desktop view */

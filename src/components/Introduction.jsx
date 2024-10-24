@@ -28,7 +28,7 @@ const Introduction = () => {
     };
 
     const settings = {
-        dots: true,
+        dots: true, // Keep dots enabled
         infinite: false,
         speed: 500,
         slidesToShow: 3,
@@ -37,19 +37,21 @@ const Introduction = () => {
         autoplaySpeed: 3000,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1024, // Desktop and above
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
+                    dots: false, // Hide dots on larger screens
                 },
             },
             {
-                breakpoint: 768,
+                breakpoint: 768, // Tablets
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: true,
+                    dots: true, // Show dots on smaller screens
                 },
             },
         ],

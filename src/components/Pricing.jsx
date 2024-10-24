@@ -71,7 +71,7 @@ const Individual = [
         gradientOpacity: 'opacity-30',
     },
 ];
-const Pro=[  {
+const Pro = [{
     heading: 'Free',
     headingColor: 'black',
     subHeading: '',
@@ -145,16 +145,27 @@ const Pro=[  {
     },];
 
 
-const PricingCard = ({ heading, headingColor, subHeading, badgeText, bulletPoints, gradientFrom, gradientOpacity, badgeColor,badgeTextColor }) => {
+const PricingCard = ({
+                         heading,
+                         headingColor,
+                         subHeading,
+                         badgeText,
+                         bulletPoints,
+                         gradientFrom,
+                         gradientOpacity,
+                         badgeColor,
+                         badgeTextColor
+                     }) => {
     return (
-        <div className="relative bg-white shadow-lg rounded-lg h-[440px] w-[350px] hover:z-10 hover:scale-110 transition-all duration-300 ease-in-out p-5 overflow-hidden">
+        <div className="relative bg-white hover:border-gray-500 shadow-md hover:shadow-lg border-2 border-transparent hover:border-gradient-to-r hover:from-[#450073] hover:via-[#01be74] hover:to-[#450073] rounded-lg h-[440px] w-[350px] hover:z-10 hover:scale-105 md:hover:scale-110 transition-all duration-300 ease-in-out p-5 overflow-hidden">
             {/* Add the circular gradient */}
-            <div className={`absolute -bottom-3 blur-md -left-5 w-32 h-32 bg-gradient-to-t ${gradientFrom} to-transparent rounded-full ${gradientOpacity}`}></div>
+            <div
+                className={`absolute -bottom-3 blur-md -left-5 w-32 h-32 bg-gradient-to-t ${gradientFrom} to-transparent rounded-full ${gradientOpacity}`}></div>
 
             {/* Badge */}
             <div className="text-center">
                 <span
-                    style={{ backgroundColor: badgeColor, color:badgeTextColor }}
+                    style={{backgroundColor: badgeColor, color: badgeTextColor}}
                     className="text-sm font-semibold px-6 py-2 rounded-md uppercase tracking-wide">
                     {badgeText}
                 </span>
@@ -180,8 +191,7 @@ const Pricing = () => {
     return (
         <>
             <NavbarBar/>
-            <div className="text-center">
-                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Individuals Plans</h2>
+            <div className="text-center"><h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Individuals Plans</h2>
             </div>
             <div className={"flex justify-center"}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
@@ -202,7 +212,7 @@ const Pricing = () => {
                 </div>
             </div>
             <div className="text-center">
-                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Individuals Plans</h2>
+                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-5xl">Investors Plans</h2>
             </div>
             <div className={"flex justify-center"}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-11/12 gap-10 my-10 items-center">
