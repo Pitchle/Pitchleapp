@@ -1,1447 +1,200 @@
 import React from 'react';
 import NavbarBar from "./NavbarBar";
 
+// Data array with different card information
+const pricingData = [
+    {
+        heading: 'Free',
+        headingColor: 'black',
+        badgeText: 'Individual Free Plan',
+        badgeTextColor: 'white',
+        badgeColor: '#2f7a8f',
+        bulletPoints: [
+            'Upload max 30 seconds pitches',
+            'Pitch Visibility: Public',
+            'Sell or transfer business',
+            'Promote a Product',
+        ],
+        gradientFrom: 'from-green-300',
+        gradientOpacity: 'opacity-20',
+    },
+    {
+        heading: '$6.99',
+        headingColor: 'black',
+        subHeading: 'monthly', // Add subheading for monthly/yearly plans
+        badgeText: 'Individual 1 time publication',
+        badgeTextColor: 'white',
+        badgeColor: '#2f8f45',
+        bulletPoints: [
+            'Upload max 60 seconds pitches',
+            'Pitch Visibility: Public',
+            'Sell or transfer business',
+            'Promote Products',
+        ],
+        gradientFrom: 'from-blue-300',
+        gradientOpacity: 'opacity-30',
+    },
+    {
+        heading: '$9.99',
+        headingColor: 'black',
+        subHeading: 'monthly',
+        badgeText: 'Explorer',
+        badgeTextColor: 'white',
+        badgeColor: '#235b8c',
+        bulletPoints: [
+            'Upload max 60 seconds pitches',
+            'Pitch Visibility: Public and Private',
+            'Watermark/copyright in videos',
+            'Sell or transfer business',
+            'Access who’s viewed your profile feature',
+            'Promote Products',
+        ],
+        gradientFrom: 'from-blue-300',
+        gradientOpacity: 'opacity-30',
+    },
+    {
+        heading: '$99.99',
+        headingColor: 'black',
+        subHeading: 'year',
+        badgeText: 'Visionary',
+        badgeTextColor: 'white',
+        badgeColor: '#235b8c',
+        bulletPoints: [
+            'Upload max 60 seconds pitches',
+            'Pitch Visibility: Public and Private',
+            'Watermark/copyright in videos',
+            'Sell or transfer business',
+            'Access who’s viewed your profile feature',
+            'Promote Products',
+        ],
+        gradientFrom: 'from-blue-300',
+        gradientOpacity: 'opacity-30',
+    },
+    {
+        heading: 'Free',
+        headingColor: 'black',
+        subHeading: '',
+        badgeText: 'Investor Free Plan',
+        badgeTextColor: 'white',
+        badgeColor: '#6bb12d',
+        bulletPoints: [
+            'Upload max 30 seconds pitches',
+            'Pitch Visibility: Public',
+            'Sell or transfer business',
+            'Promote a Product',
+        ],
+        gradientFrom: 'from-red-300',
+        gradientOpacity: 'opacity-30',
+    },
+    {
+        heading: '$8.99',
+        headingColor: 'black',
+        subHeading: 'monthly',
+        badgeText: 'Investor 1 time publication',
+        badgeTextColor: 'white',
+        badgeColor: '#b12d2d',
+        bulletPoints: [
+            'Upload max 60 seconds pitches',
+            'Pitch Visibility: Public',
+            'Sell or transfer business',
+            'Promote Products',
+        ],
+        gradientFrom: 'from-red-300',
+        gradientOpacity: 'opacity-30',
+    },
+    {
+        heading: '$11.99',
+        headingColor: 'black',
+        subHeading: 'monthly',
+        badgeText: 'Investor',
+        badgeTextColor: 'black',
+        badgeColor: '#f6be2c',
+        bulletPoints: [
+            'Upload max 60 seconds pitches',
+            'Pitch Visibility: Public and Private',
+            'Watermark/copyright in videos',
+            'Sell or transfer business',
+            'View individual profiles and contact them directly',
+            'Choose multiple locations',
+            'Access who’s viewed your profile feature',
+            'Promote Products',
+        ],
+        gradientFrom: 'from-yellow-300',
+        gradientOpacity: 'opacity-30',
+    },
+    {
+        heading: '$119.99',
+        headingColor: 'black',
+        subHeading: 'year',
+        badgeText: 'Investor x',
+        badgeTextColor: 'black',
+        badgeColor: '#f6be2c',
+        bulletPoints: [
+            'Upload max 60 seconds pitches',
+            'Pitch Visibility: Public and Private',
+            'Watermark/copyright in videos',
+            'Sell or transfer business',
+            'View individual profiles and contact them directly',
+            'Choose multiple locations',
+            'Access who’s viewed your profile feature',
+            'Promote Products',
+        ],
+        gradientFrom: 'from-yellow-300',
+        gradientOpacity: 'opacity-30',
+    },
+];
+
+const PricingCard = ({ heading, headingColor, subHeading, badgeText, bulletPoints, gradientFrom, gradientOpacity, badgeColor,badgeTextColor }) => {
+    return (
+        <div className="relative bg-white shadow-lg rounded-lg h-[520px] w-[350px] hover:z-10 hover:scale-110 transition-all duration-300 ease-in-out p-5 overflow-hidden">
+            {/* Add the circular gradient */}
+            <div className={`absolute -bottom-3 blur-md -left-5 w-32 h-32 bg-gradient-to-t ${gradientFrom} to-transparent rounded-full ${gradientOpacity}`}></div>
+
+            {/* Badge */}
+            <div className="text-center">
+                <span
+                    style={{ backgroundColor: badgeColor, color:badgeTextColor }}
+                    className="text-sm font-semibold px-6 py-2 rounded-md uppercase tracking-wide">
+                    {badgeText}
+                </span>
+            </div>
+
+            {/* Title */}
+            <h2 className={`text-4xl font-bold text-center mt-6 ${headingColor}`}>{heading}</h2>
+
+            {/* Conditionally render the subheading */}
+            {subHeading && <p className="text-center font-semibold text-lg mt-2">{subHeading}</p>}
+
+            {/* List */}
+            <ul className="mt-8 text-center space-y-3 text-gray-700 ">
+                {bulletPoints.map((point, index) => (
+                    <li key={index}>• {point}</li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
 const Pricing = () => {
     return (
         <>
-            <NavbarBar/>
-            <div className="space-y-20 px-2 md:px-4 lg:px-8 py-12">
-                <h3 className={"text-center mb-10 text-[#450073] text-3xl md:text-4xl lg:text-6xl font-bold"}>INDIVIDUALS PLANS</h3>
-                <div className="demo-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-11/12 lg:w-8/12  mx-auto gap-5">
-                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                            <div className="h-full z-10  relative">
-                                <div className="flex flex-col  flex-1 justify-between h-full space-y-5">
-                                    <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
-                                            <span>FREE</span>
-                                        </div>
-                                        <div className="pt-5 text-black font-medium text-base space-y-1">
-                                            <div className="flex items-center align-bottom">
-                                                <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>0</span>
-                                                </div>
-                                                <span className="pt-1.5">/ per month</span>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Upload max 30 seconds pitches</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Video visibility : Public</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Sell or transfer business</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Promote a product</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="hidden">
-                                    <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Everything in Free</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>5,000 events / month</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Unlimited seats</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                    </div>
-                    <div className="rounded-[30px] hover:scale-105 md:rounded-[36px] text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                        <div className="h-full">
-                            <div className="h-full z-10 relative">
-                                <div className="flex flex-col flex-1 justify-between h-full space-y-5">
-                                    <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
-                                            <span>1 TIME PUBLICATION⭐</span>
-                                        </div>
-                                        <div className="pt-5 text-black font-medium text-base space-y-1">
-                                            <div className="flex items-center align-bottom">
-                                                <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>6.99</span>
-                                                </div>
-                                                <span className="pt-1.5">/ per month</span>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Upload max 60 seconds pitches</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Video Visibility: Public</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Sell or transfer business  </span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Promote Products</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="hidden">
-                                    <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Everything in Starter</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>20,000 events / month</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Unlimited seats</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                        <div className="h-full">
-                            <div className="h-full z-10 relative">
-                                <div className="flex flex-col flex-1 justify-between h-full space-y-5">
-                                    <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
-                                            <span>EXPLORER⭐</span>
-                                            <svg
-                                                className="h-6 w-6 animate-ping-slow text-black"
-                                                viewBox="0 0 50 50"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M30.5 25C30.5 28.0376 28.0376 30.5 25 30.5C21.9624 30.5 19.5 28.0376 19.5 25C19.5 21.9624 21.9624 19.5 25 19.5C28.0376 19.5 30.5 21.9624 30.5 25Z"
-                                                    stroke="currentColor"
-                                                    strokeOpacity="0.7"
-                                                    strokeWidth={4}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                                <path
-                                                    d="M38.75 25C38.75 32.5939 32.5939 38.75 25 38.75C17.4061 38.75 11.25 32.5939 11.25 25C11.25 17.4061 17.4061 11.25 25 11.25C32.5939 11.25 38.75 17.4061 38.75 25Z"
-                                                    stroke="currentColor"
-                                                    strokeOpacity="0.4"
-                                                    strokeWidth="4.5"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                                <path
-                                                    d="M47.5 25C47.5 37.4264 37.4264 47.5 25 47.5C12.5736 47.5 2.5 37.4264 2.5 25C2.5 12.5736 12.5736 2.5 25 2.5C37.4264 2.5 47.5 12.5736 47.5 25Z"
-                                                    stroke="currentColor"
-                                                    strokeOpacity="0.1"
-                                                    strokeWidth={5}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <div className="pt-5 text-black font-medium text-base space-y-1">
-                                            <div className="flex items-center align-bottom">
-                                                <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>9.99</span>
-                                                </div>
-                                                <span className="pt-1.5">/ per month</span>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Upload max 60 seconds pitches</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Video visibility: Public and Private</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Watermark/Copyright in videos</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Sell or transfer business</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Access the Who's viewed your profile feature</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Promote Products</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="hidden">
-                                    <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Everything in Starter</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>20,000 events / month</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Unlimited seats</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                        <div className="h-full">
-                            <div className="h-full z-10 relative">
-                                <div className="flex flex-col flex-1 justify-between h-full space-y-5">
-                                    <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
-                                            <span>VISIONARY⭐</span>
-                                        </div>
-                                        <div className="pt-5 text-black font-medium text-base space-y-1">
-                                            <div className="flex items-center align-bottom">
-                                                <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>99.99</span>
-                                                </div>
-                                                <span className="pt-1.5">/ per year</span>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Upload max 60 seconds pitches</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span><span Videote="no">Video</span> visibility: Public and Private</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Access the Who's viewed your profile feature</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Watermark/Copyright in videos</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Sell or transfer business</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Promote products</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="hidden">
-                                    <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Everything in Starter</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>20,000 events / month</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Unlimited seats</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                {/*2nd part*/}
-
-
-                <h3 className={"text-center mb-10 text-[#450073] text-3xl md:text-4xl lg:text-6xl font-bold"}>INVESTORS PLANS</h3>
-                <div className="demo-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-11/12 lg:w-8/12  mx-auto gap-5">
-                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                        <div className="h-full">
-                            <div className="h-full z-10 relative">
-                                <div className="flex flex-col flex-1 justify-between h-full space-y-5">
-                                    <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
-                                            <span>FREE</span>
-                                        </div>
-                                        <div className="pt-5 text-black font-medium text-base space-y-1">
-                                            <div className="flex items-center align-bottom">
-                                                <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>0</span>
-                                                </div>
-                                                <span className="pt-1.5">/ per month</span>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Upload max 30 seconds <span
-                                                        translate="no"> pitches</span></span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Video visibility : Public</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Sell or transfer business</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Promote a product</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="hidden">
-                                    <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Everything in Free</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>5,000 events / month</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Unlimited seats</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rounded-[30px] hover:scale-105  text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                        <div className="h-full">
-                            <div className="h-full z-10 relative">
-                                <div className="flex flex-col flex-1 justify-between h-full space-y-5">
-                                    <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
-                                            <span>1 TIME PUBLICATION⭐</span>
-                                        </div>
-                                        <div className="pt-5 text-black font-medium text-base space-y-1">
-                                            <div className="flex items-center align-bottom">
-                                                <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>8.99</span>
-                                                </div>
-                                                <span className="pt-1.5">/ per month</span>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Upload max 60 seconds Videoes</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Video Visibility: Public</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Sell or transfer business  </span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Promote products</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="hidden">
-                                    <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Everything in Starter</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>20,000 events / month</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Unlimited seats</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rounded-[30px] hover:scale-105 text-bg-white overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                        <div className="h-full">
-                            <div className="h-full z-10 relative">
-                                <div className="flex flex-col flex-1 justify-between h-full space-y-5">
-                                    <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
-                                            <span>INVESTOR⭐</span>
-                                        </div>
-                                        <div className="pt-5 text-black font-medium text-base space-y-1">
-                                            <div className="flex items-center align-bottom">
-                                                <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>11.99</span>
-                                                </div>
-                                                <span className="pt-1.5">/ per month</span>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Upload max 60 seconds pitches</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Video visibility: Public and Private</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Access the Who's viewed your profile feature</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Watermark/Copyright in videos</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>View individual profiles and contact them directly</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Choose multiple locations</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Promote products</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Sell or transfer business</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="hidden">
-                                    <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Everything in Starter</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>20,000 events / month</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Unlimited seats</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rounded-[30px] hover:scale-105  overflow-hidden border-[2px] border-gray-400 p-8 relative">
-                        <div className="h-full">
-                            <div className="h-full z-10 relative">
-                                <div className="flex flex-col flex-1 justify-between h-full space-y-5">
-                                    <div className="flex justify-between flex-col">
-                                        <div className="text-xl md:text-2xl font-bold text-black flex justify-between">
-                                            <span>INVESTOR X⭐</span>
-                                        </div>
-                                        <div className="pt-5 text-black font-medium text-base space-y-1">
-                                            <div className="flex items-center align-bottom">
-                                                <span className="pt-1.5">$</span>
-                                                <div className="ml-1 mr-2 text-2xl md:text-3xl font-bold text-black">
-                                                    <span>119.99</span>
-                                                </div>
-                                                <span className="pt-1.5">/ per year</span>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <ul className="space-y-2 pt-8">
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Upload max 60 seconds pitches</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Video visibility: Public and Private</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Access the Who's viewed your profile feature</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Watermark/Copyright in videos</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>View individual profiles and contact them directly</span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Choose multiple locations </span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Promote products </span>
-                                                </li>
-                                                <li className="flex items-center font-medium space-x-2 text-black">
-                                                    <svg
-                                                        className="h-4 w-4"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                    >
-                                                        <path
-                                                            d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                            stroke="currentColor"
-                                                            strokeWidth={2}
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span>Sell or transfer business</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="hidden">
-                                    <ul className="space-y-2 pt-8">
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Everything in Starter</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>20,000 events / month</span>
-                                        </li>
-                                        <li className="flex items-center font-medium space-x-2 text-black">
-                                            <svg
-                                                className="h-4 w-4"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M16.4444 3.03947C15.1056 2.37412 13.5965 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 11.6244 21.9793 11.2537 21.939 10.8889M9 11L12 14L22 4"
-                                                    stroke="currentColor"
-                                                    strokeWidth={2}
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                />
-                                            </svg>
-                                            <span>Unlimited seats</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <NavbarBar />
+            <div className={"flex justify-center"}>
+                <div className="grid grid-cols-4 w-11/12 gap-10 my-10 items-center">
+                    {pricingData.map((plan, index) => (
+                        <PricingCard
+                            key={index}
+                            heading={plan.heading}
+                            headingColor={plan.headingColor}
+                            subHeading={plan.subHeading} // Pass subheading prop
+                            badgeText={plan.badgeText}
+                            badgeTextColor={plan.badgeTextColor}
+                            badgeColor={plan.badgeColor}
+                            bulletPoints={plan.bulletPoints}
+                            gradientFrom={plan.gradientFrom}
+                            gradientOpacity={plan.gradientOpacity}
+                        />
+                    ))}
                 </div>
             </div>
         </>
