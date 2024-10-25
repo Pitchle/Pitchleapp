@@ -242,10 +242,10 @@ const Pricing = () => {
                 </div>
             </div>
             <div className="text-center">
-                <h2 className="font-bold -ms-0 md:-ms-8 my-6 text-3xl md:text-5xl">Investor Plans</h2>
+                <h2 className="font-bold -ms-0 md:-ms-8 mt-28 mb-6 md:mt-6 md:mb-6 text-3xl md:text-5xl">Investor Plans</h2>
             </div>
             <div className={"w-full flex justify-center"}>
-                <div className={"w-11/12 mb-10 md:mb-0 h-full"}>
+                <div className={"w-11/12 mb-28 md:mb-0 h-full"}>
                     <Slider {...settings}>
                         {investor.map((plan, index) => (
                             <PricingCard

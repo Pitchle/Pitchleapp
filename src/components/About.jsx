@@ -27,7 +27,7 @@ const About = () => {
                                         through short 30 or 60-second videos.
                                     </p>
                                 </div>
-                                <div className="overflow-hidden mt-5 md:mt-0 w-full lg:w-3/12">
+                                <div className="overflow-hidden mt-16 md:mt-0 w-full lg:w-3/12">
                                     <img
                                         src="/img/about/Business%20Social%20Network%20(2).png"
                                         alt="project illustration"
@@ -95,7 +95,7 @@ const About = () => {
                                         <br/>contemporary touch.
                                     </p>
                                 </div>
-                                <div className="overflow-hidden mb-5 md:mb-0 w-full mt-4 lg:w-4/12">
+                                <div className="overflow-hidden mb-5 md:mb-0 w-full mt-16 lg:w-4/12">
                                     <img
                                         src="/img/about/Connecting%20and%20Promoting.png"
                                         alt="project illustration"
