@@ -187,7 +187,7 @@ const PricingCard = ({
                          badgeTextColor
                      }) => {
     return (
-        <div className="relative my-10 ms-5 md:ms-2 mx-2 bg-white hover:border-gray-500 shadow-md hover:shadow-lg border-2 border-transparent hover:border-gradient-to-r hover:from-[#450073] hover:via-[#01be74] hover:to-[#450073] rounded-lg h-[460px] w-[330px] hover:z-10 hover:scale-105 md:hover:scale-105 transition-all duration-300 ease-in-out p-5 overflow-hidden">
+        <div className="relative my-10 ms-5 md:ms-2 mx-2 bg-white hover:border-gray-500 shadow-md hover:shadow-lg border-2 border-transparent hover:border-gradient-to-r hover:from-[#450073] hover:via-[#01be74] hover:to-[#450073] rounded-lg h-[480px] w-[330px] hover:z-10 hover:scale-105 md:hover:scale-105 transition-all duration-300 ease-in-out p-5 overflow-hidden">
             {/* Add the circular gradient */}
             <div
                 className={`absolute -bottom-3 blur-md -left-5 w-32 h-32 bg-gradient-to-t ${gradientFrom} to-transparent rounded-full ${gradientOpacity}`}></div>
