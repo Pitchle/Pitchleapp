@@ -134,7 +134,7 @@ const slidesData = [
     },
     {
         image: "/img/new_images/Mockup%20(7).png",
-        hoverImage: "/img/new_images/Mockup%20(8).png", // Ensure this is a different hover image
+        hoverImage: "/img/new_images/Mockup_updated.png", // Ensure this is a different hover image
         buttons: [{ text: "Promote" }, { text: "Product" }],
     },
 ];

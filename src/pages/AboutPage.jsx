@@ -88,7 +88,7 @@ const AboutPage = () => {
                                     />
                                 </div>
                                 <div className="text-center mt-2">
-                                    <h2 className="font-semibold">Jhon Pillpe</h2>
+                                    <h2 className="font-semibold"><span translate="no">Jhon Pillpe</span></h2>
                                     <p className="text-gray-500">Founder</p>
                                 </div>
                             </div>

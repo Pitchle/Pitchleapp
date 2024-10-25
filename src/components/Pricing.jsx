@@ -7,14 +7,14 @@ const Individual = [
     {
         heading: 'Free',
         headingColor: 'black',
-        badgeText: 'Individual Free Plan',
+        badgeText: 'User Free Plan',
         badgeTextColor: 'white',
-        badgeColor: '#2f7a8f',
+        badgeColor: '#5180ee',
         bulletPoints: [
             'Upload max 30 seconds pitches',
-            'Pitch Visibility: Public',
+            'Video Visibility: Public',
             'Sell or transfer business',
-            'Promote a Product',
+            'Promote Products',
         ],
         gradientFrom: 'from-green-300',
         gradientOpacity: 'opacity-20',
@@ -23,12 +23,12 @@ const Individual = [
         heading: '$6.99',
         headingColor: 'black',
         subHeading: 'monthly', // Add subheading for monthly/yearly plans
-        badgeText: 'Individual 1 time publication',
+        badgeText: 'User 1 time publication',
         badgeTextColor: 'white',
-        badgeColor: '#2f8f45',
+        badgeColor: '#dd1839',
         bulletPoints: [
             'Upload max 60 seconds pitches',
-            'Pitch Visibility: Public',
+            'Video Visibility: Public',
             'Sell or transfer business',
             'Promote Products',
         ],
@@ -41,13 +41,13 @@ const Individual = [
         subHeading: 'monthly',
         badgeText: 'Explorer',
         badgeTextColor: 'white',
-        badgeColor: '#235b8c',
+        badgeColor: '#f4c128',
         bulletPoints: [
             'Upload max 60 seconds pitches',
-            'Pitch Visibility: Public and Private',
+            'Video Visibility: Public and Private',
+            'Profile View Settings: Everyone, Investors Only, Subscribers Only',
             'Watermark/copyright in videos',
             'Sell or transfer business',
-            'Access who’s viewed your profile feature',
             'Promote Products',
         ],
         gradientFrom: 'from-blue-300',
@@ -59,13 +59,13 @@ const Individual = [
         subHeading: 'year',
         badgeText: 'Visionary',
         badgeTextColor: 'white',
-        badgeColor: '#235b8c',
+        badgeColor: '#6460a9',
         bulletPoints: [
             'Upload max 60 seconds pitches',
-            'Pitch Visibility: Public and Private',
+            'Video Visibility: Public and Private',
+            'Profile View Settings: Everyone, Investors Only, Subscribers Only',
             'Watermark/copyright in videos',
             'Sell or transfer business',
-            'Access who’s viewed your profile feature',
             'Promote Products',
         ],
         gradientFrom: 'from-blue-300',
@@ -81,9 +81,9 @@ const investor = [{
     badgeColor: '#6bb12d',
     bulletPoints: [
         'Upload max 30 seconds pitches',
-        'Pitch Visibility: Public',
+        'Video Visibility: Public',
         'Sell or transfer business',
-        'Promote a Product',
+        'Promote Products',
     ],
     gradientFrom: 'from-red-300',
     gradientOpacity: 'opacity-30',
@@ -94,10 +94,10 @@ const investor = [{
         subHeading: 'monthly',
         badgeText: 'Investor 1 time publication',
         badgeTextColor: 'white',
-        badgeColor: '#b12d2d',
+        badgeColor: '#f27020',
         bulletPoints: [
             'Upload max 60 seconds pitches',
-            'Pitch Visibility: Public',
+            'Video Visibility: Public',
             'Sell or transfer business',
             'Promote Products',
         ],
@@ -109,16 +109,15 @@ const investor = [{
         headingColor: 'black',
         subHeading: 'monthly',
         badgeText: 'Investor',
-        badgeTextColor: 'black',
-        badgeColor: '#f6be2c',
+        badgeTextColor: 'white',
+        badgeColor: '#00a3f6',
         bulletPoints: [
             'Upload max 60 seconds pitches',
-            'Pitch Visibility: Public and Private',
+            'Video Visibility: Public and Private',
+            'Profile View Settings: Everyone, Investors Only, Subscribers Only',
             'Watermark/copyright in videos',
-            'Sell or transfer business',
-            'View individual profiles and contact them directly',
             'Choose multiple locations',
-            'Access who’s viewed your profile feature',
+            'Sell or transfer business',
             'Promote Products',
         ],
         gradientFrom: 'from-yellow-300',
@@ -129,16 +128,15 @@ const investor = [{
         headingColor: 'black',
         subHeading: 'year',
         badgeText: 'Investor x',
-        badgeTextColor: 'black',
-        badgeColor: '#f6be2c',
+        badgeTextColor: 'white',
+        badgeColor: '#2f8e45',
         bulletPoints: [
             'Upload max 60 seconds pitches',
-            'Pitch Visibility: Public and Private',
+            'Video Visibility: Public and Private',
+            'Profile View Settings: Everyone, Investors Only, Subscribers Only',
             'Watermark/copyright in videos',
-            'Sell or transfer business',
-            'View individual profiles and contact them directly',
             'Choose multiple locations',
-            'Access who’s viewed your profile feature',
+            'Sell or transfer business',
             'Promote Products',
         ],
         gradientFrom: 'from-yellow-300',
@@ -187,7 +185,7 @@ const PricingCard = ({
                          badgeTextColor
                      }) => {
     return (
-        <div className="relative my-10 ms-5 md:ms-2 mx-2 bg-white hover:border-gray-500 shadow-md hover:shadow-lg border-2 border-transparent hover:border-gradient-to-r hover:from-[#450073] hover:via-[#01be74] hover:to-[#450073] rounded-lg h-[480px] w-[330px] hover:z-10 hover:scale-105 md:hover:scale-105 transition-all duration-300 ease-in-out p-5 overflow-hidden">
+        <div className="relative my-10 ms-5 md:ms-2 mx-2 bg-white hover:border-gray-500 shadow-md hover:shadow-lg border-2 border-transparent hover:border-gradient-to-r hover:from-[#450073] hover:via-[#01be74] hover:to-[#450073] rounded-lg h-[500px] w-[330px] hover:z-10 hover:scale-105 md:hover:scale-105 transition-all duration-300 ease-in-out p-5 overflow-hidden">
             {/* Add the circular gradient */}
             <div
                 className={`absolute -bottom-3 blur-md -left-5 w-32 h-32 bg-gradient-to-t ${gradientFrom} to-transparent rounded-full ${gradientOpacity}`}></div>
@@ -221,7 +219,7 @@ const Pricing = () => {
     return (
         <>
             <NavbarBar/>
-            <div className="text-center"><h2 className="font-bold -ms-0 md:-ms-8 my-6 text-3xl md:text-5xl">Individual
+            <div className="text-center"><h2 className="font-bold -ms-0 md:-ms-8 my-6 text-3xl md:text-5xl">User
                 Plans</h2></div>
             <div className={"w-full flex justify-center"}>
                 <div className={"w-11/12"}>
