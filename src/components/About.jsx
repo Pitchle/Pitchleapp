@@ -14,7 +14,7 @@ const About = () => {
                             <div aria-hidden="true"
                                  className="absolute inset-0 my-auto w-96 h-32 rotate-45 bg-gradient-to-r from-primaryLight to-secondaryLight blur-3xl opacity-50 dark:opacity-20"
                             />
-                            <div className="relative lg:flex lg:items-center lg:gap-12">
+                            <div className="relative lg:flex  lg:items-center lg:gap-12">
                                 <div
                                     className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-6/12">
                                     <h1 className="text-blue-700 font-bold text-4xl md:text-6xl lg:text-5xl dark:text-white">
@@ -28,12 +28,16 @@ const About = () => {
                                     </p>
                                 </div>
                                 <div className="overflow-hidden mt-16 md:mt-0 w-full lg:w-3/12">
-                                    <img
-                                        src="/img/about/Business%20Social%20Network%20(2).png"
-                                        alt="project illustration"
-                                        height=""
-                                        width=""
-                                    />
+                                    <iframe
+                                        className=" w-[218px] h-[388px] mx-auto md:mx-0"
+                                        src="https://www.youtube.com/embed/-lq4Btuuadk"
+                                        title="YouTube Short video player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                        style={{borderRadius: '16px'}}
+                                    ></iframe>
                                 </div>
                             </div>
                         </div>
