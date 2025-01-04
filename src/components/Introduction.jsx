@@ -123,19 +123,19 @@ export default Introduction;
 
 const slidesData = [
     {
-        image: "/img/new_images/Mockup%20(5).png",
-        hoverImage: "/img/new_images/Mockup%20(6).png",
+        image: "/img/updated-images/iPhone-13-Pro-Front-7.png",
+        hoverImage: "/img/updated-images/iPhone-13-Pro-Front-9.png",
+
         buttons: [{ text: "Sell" }, { text: "Transfer" }, { text: "Business" }],
     },
     {
-        image: "/img/new_images/Mockup%20(2).png",
-        hoverImage: "/img/new_images/Mockup%20(4).png",
+        image: "/img/updated-images/iPhone-13-Pro-Front-4.png",
+        hoverImage: "/img/updated-images/iPhone-13-Pro-Front-6.png",
         buttons: [{ text: "Partner" }, { text: "Investor" }],
     },
-
     {
-        image: "/img/new_images/Mockup%20(7).png",
-        hoverImage: "/img/new_images/Mockup_updated.png", // Ensure this is a different hover image
+        image: "/img/updated-images/iPhone-13-Pro-Front-11.png",
+        hoverImage: "/img/updated-images/iPhone-13-Pro-Front-14.png", // Ensure this is a different hover image
         buttons: [{ text: "Promote" }, { text: "Product" }],
     },
 ];
