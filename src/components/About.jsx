@@ -118,7 +118,7 @@ const About = () => {
                                     {/*    width=""*/}
                                     {/*/>*/}
                                     <iframe
-                                        className=" w-[300px] rounded-sm h-[533px] border-2 mx-auto md:ms-10 md:me-0"
+                                        className=" w-[300px] rounded-sm h-[532px] border-2 mx-auto md:ms-10 md:me-0"
                                         src="https://www.youtube.com/embed/-lq4Btuuadk"
                                         title="YouTube Short video player"
                                         frameBorder="0"
