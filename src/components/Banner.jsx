@@ -119,13 +119,14 @@ const Banner = () => {
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(12).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(11).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(10).png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/iPhone-13-Pro-Front-10.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/iPhone-13-Pro-Front-8.png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(2).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(3).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(4).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(5).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(6).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(7).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup_updated.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(7).png" alt="screen"/></SwiperSlide>
+
+
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(8).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(9).png" alt="screen"/></SwiperSlide>
                         </Swiper>
