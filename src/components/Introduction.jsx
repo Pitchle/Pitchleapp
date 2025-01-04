@@ -123,15 +123,16 @@ export default Introduction;
 
 const slidesData = [
     {
-        image: "/img/new_images/Mockup%20(2).png",
-        hoverImage: "/img/new_images/Mockup%20(4).png",
-        buttons: [{ text: "Partner" }, { text: "Investor" }],
-    },
-    {
         image: "/img/new_images/Mockup%20(5).png",
         hoverImage: "/img/new_images/Mockup%20(6).png",
         buttons: [{ text: "Sell" }, { text: "Transfer" }, { text: "Business" }],
     },
+    {
+        image: "/img/new_images/Mockup%20(2).png",
+        hoverImage: "/img/new_images/Mockup%20(4).png",
+        buttons: [{ text: "Partner" }, { text: "Investor" }],
+    },
+
     {
         image: "/img/new_images/Mockup%20(7).png",
         hoverImage: "/img/new_images/Mockup_updated.png", // Ensure this is a different hover image

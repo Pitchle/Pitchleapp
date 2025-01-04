@@ -125,8 +125,6 @@ const Banner = () => {
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(4).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup_updated.png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(7).png" alt="screen"/></SwiperSlide>
-
-
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(8).png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(9).png" alt="screen"/></SwiperSlide>
                         </Swiper>
