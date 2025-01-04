@@ -123,8 +123,8 @@ export default Introduction;
 
 const slidesData = [
     {
-        image: "/img/updated-images/iPhone-13-Pro-Front-7.png",
-        hoverImage: "/img/updated-images/iPhone-13-Pro-Front-9.png",
+        image: "/img/updated-images/iPhone-13-Pro-Front-10.png",
+        hoverImage: "/img/updated-images/iPhone-13-Pro-Front-8.png",
 
         buttons: [{ text: "Sell" }, { text: "Transfer" }, { text: "Business" }],
     },
