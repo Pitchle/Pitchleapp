@@ -42,14 +42,14 @@ const Footer = () => {
                         <div className={"flex w-full flex items-center space-x-1"}>
                             <a target={"_blank"} href="https://www.linkedin.com/company/pitchle?trk=blended-typeahead">
                                 <img src="/img/logo/link.svg" className={"w-12 scale-ani h-12"} alt="link"/></a>
-                            <a target={"_blank"} href="https://play.google.com/store/games?hl=en&gl=US&pli=1">
+                            <a target={"_blank"} href="https://play.google.com/store/apps/details?id=com.pitchle.pitchleApp">
                                 <div className={"w-10 flex justify-center items-center scale-ani h-10 rounded-full bg-[#0288d1]"}>
                                     <img src="/img/logo/playstore.png" className={"w-5 scale-ani h-5"} alt="link"/>
                                 </div>
                             </a>
                             <div className={"w-10 flex justify-center items-center h-10 rounded-full bg-[#0288d1]"}>
                                 <a
-                                    href="https://www.apple.com/app-store/"
+                                    href="https://apps.apple.com/us/app/pitchle/id6677026938"
                                     target="_blank"
                                     className="flex scale-ani items-center justify-center w-8/12  md:w-full text-center text-white bg-[#0288d1] rounded-2xl"
                                     rel="noreferrer"
