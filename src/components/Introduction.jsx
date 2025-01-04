@@ -31,7 +31,7 @@ const Introduction = () => {
         dots: true, // Keep dots enabled
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
         autoplaySpeed: 3000,
@@ -67,7 +67,7 @@ const Introduction = () => {
                 Looking for?
             </h3>
             <div className="w-full flex justify-center pb-16">
-                <div className="w-[300px] md:w-10/12 ms-0 h-[40rem] md:ms-10 lg:ms-20">
+                <div className="w-[300px] md:w-11/12 ms-0 h-[40rem] md:ms-10 lg:ms-0">
                     <Slider {...settings}>
                         {slidesData.map((slide, index) => (
                             <div key={index}
@@ -138,4 +138,10 @@ const slidesData = [
         hoverImage: "/img/updated-images/iPhone-13-Pro-Front-14.png", // Ensure this is a different hover image
         buttons: [{ text: "Promote" }, { text: "Product" }],
     },
+    {
+        image: "/img/updated-images/Mockup-3.png",
+        hoverImage: "/img/updated-images/Mockup-2.png", // Ensure this is a different hover image
+        buttons: [{ text: "Business" }, { text: "Events" }],
+    },
+
 ];
