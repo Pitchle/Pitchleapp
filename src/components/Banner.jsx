@@ -124,7 +124,7 @@ const Banner = () => {
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-4.png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-6.png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-14.png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-11.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/Mockup-3.png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-12.png" alt="screen"/></SwiperSlide>
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-13.png" alt="screen"/></SwiperSlide>
 
