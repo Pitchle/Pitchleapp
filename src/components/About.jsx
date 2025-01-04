@@ -14,7 +14,7 @@ const About = () => {
                             <div aria-hidden="true"
                                  className="absolute inset-0 my-auto w-96 h-32 rotate-45 bg-gradient-to-r from-primaryLight to-secondaryLight blur-3xl opacity-50 dark:opacity-20"
                             />
-                            <div className="relative lg:flex lg:items-center lg:gap-12">
+                            <div className="relative lg:flex  lg:items-center lg:gap-10">
                                 <div
                                     className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-6/12">
                                     <h1 className="text-blue-700 font-bold text-4xl md:text-6xl lg:text-5xl dark:text-white">
@@ -27,13 +27,17 @@ const About = () => {
                                         through short 30 or 60-second videos.
                                     </p>
                                 </div>
-                                <div className="overflow-hidden mt-16 md:mt-0 w-full lg:w-3/12">
-                                    <img
-                                        src="/img/about/Business%20Social%20Network%20(2).png"
-                                        alt="project illustration"
-                                        height=""
-                                        width=""
-                                    />
+                                <div className="overflow-hidden mt-16 md:mt-0 w-full lg:w-5/12">
+                                    <iframe
+                                        className="w-full h-[350px] rounded-md "
+                                        src="https://www.youtube.com/embed/HE0buY6GAGM?si=Ul9sXNRreVV98Shs"
+                                        title="YouTube video player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
+
                                 </div>
                             </div>
                         </div>
@@ -47,13 +51,24 @@ const About = () => {
                                  className="absolute inset-0 my-auto w-96 h-32 rotate-45 bg-gradient-to-r from-primaryLight to-secondaryLight blur-3xl opacity-50 dark:opacity-20"
                             />
                             <div className="relative lg:flex lg:items-center lg:gap-12">
-                                <div className="overflow-hidden mb-5 md:mb-0 w-full lg:w-4/12">
-                                    <img
-                                        src="/img/about/Connecting%20and%20Promoting.png"
-                                        alt="project illustration"
-                                        height=""
-                                        width=""
-                                    />
+                                <div className="relative overflow-hidden mb-5 md:mb-0 w-full lg:w-5/12">
+                                    {/*<img*/}
+                                    {/*    src="/img/about/Connecting%20and%20Promoting.png"*/}
+                                    {/*    alt="project illustration"*/}
+                                    {/*    height=""*/}
+                                    {/*    width=""*/}
+                                    {/*/>*/}
+                                    <iframe
+                                        className=" w-[300px] rounded-sm h-[533px] border-2 mx-auto md:ms-10 md:me-0 border-2"
+                                        src="https://www.youtube.com/embed/-lq4Btuuadk"
+                                        title="YouTube Short video player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                        style={{borderRadius: '16px'}}
+                                    ></iframe>
+
                                 </div>
 
                                 <div
@@ -96,12 +111,22 @@ const About = () => {
                                     </p>
                                 </div>
                                 <div className="overflow-hidden mb-5 md:mb-0 w-full mt-16 lg:w-4/12">
-                                    <img
-                                        src="/img/about/Connecting%20and%20Promoting.png"
-                                        alt="project illustration"
-                                        height=""
-                                        width=""
-                                    />
+                                    {/*<img*/}
+                                    {/*    src="/img/about/Connecting%20and%20Promoting.png"*/}
+                                    {/*    alt="project illustration"*/}
+                                    {/*    height=""*/}
+                                    {/*    width=""*/}
+                                    {/*/>*/}
+                                    <iframe
+                                        className=" w-[300px] rounded-sm h-[532px] border-2 mx-auto md:ms-10 md:me-0"
+                                        src="https://www.youtube.com/embed/-lq4Btuuadk"
+                                        title="YouTube Short video player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                        style={{borderRadius: '16px'}}
+                                    ></iframe>
                                 </div>
 
                             </div>
