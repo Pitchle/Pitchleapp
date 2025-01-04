@@ -29,7 +29,7 @@ const About = () => {
                                 </div>
                                 <div className="overflow-hidden mt-16 md:mt-0 w-full lg:w-5/12">
                                     <iframe
-                                        className="w-full h-[350px] rounded-md"
+                                        className="w-full h-[350px] rounded-md "
                                         src="https://www.youtube.com/embed/HE0buY6GAGM?si=Ul9sXNRreVV98Shs"
                                         title="YouTube video player"
                                         frameBorder="0"
@@ -59,7 +59,7 @@ const About = () => {
                                     {/*    width=""*/}
                                     {/*/>*/}
                                     <iframe
-                                        className=" w-[300px] rounded-sm h-[533px] mx-auto md:ms-10 md:me-0 border-2"
+                                        className=" w-[300px] rounded-sm h-[533px] border-2 mx-auto md:ms-10 md:me-0 border-2"
                                         src="https://www.youtube.com/embed/-lq4Btuuadk"
                                         title="YouTube Short video player"
                                         frameBorder="0"
@@ -118,7 +118,7 @@ const About = () => {
                                     {/*    width=""*/}
                                     {/*/>*/}
                                     <iframe
-                                        className=" w-[300px] rounded-sm h-[533px] mx-auto md:ms-10 md:me-0"
+                                        className=" w-[300px] rounded-sm h-[533px] border-2 mx-auto md:ms-10 md:me-0"
                                         src="https://www.youtube.com/embed/-lq4Btuuadk"
                                         title="YouTube Short video player"
                                         frameBorder="0"
