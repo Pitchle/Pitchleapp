@@ -71,7 +71,7 @@ const Banner = () => {
                                         </div>
                                     </a>
                                     <a
-                                        href="https://play.google.com/store/apps/details?id=com.pitchle.pitchleApp"
+                                        href="https://apps.apple.com/us/app/pitchle/id6677026938"
                                         target="_blank"
                                         className="flex scale-ani items-center justify-center w-8/12  md:w-full px-4 py-2 text-center text-white bg-black rounded-2xl"
                                         rel="noreferrer"
@@ -116,17 +116,18 @@ const Banner = () => {
                             className="mySwiper h-full"
                         >
                             <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/logoo.png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(12).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(11).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockups%20(10).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/iPhone-13-Pro-Front-10.png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/iPhone-13-Pro-Front-8.png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(2).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(4).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup_updated.png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(7).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(8).png" alt="screen"/></SwiperSlide>
-                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/new_images/Mockup%20(9).png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-1.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-2.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-3.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-10.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-8.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-4.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-6.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-14.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-11.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-12.png" alt="screen"/></SwiperSlide>
+                            <SwiperSlide><img className={"object-fill h-full w-full"} src="/img/updated-images/iPhone-13-Pro-Front-13.png" alt="screen"/></SwiperSlide>
+
                         </Swiper>
                     </div>
                 </div>
