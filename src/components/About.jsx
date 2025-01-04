@@ -47,24 +47,29 @@ const About = () => {
                                  className="absolute inset-0 my-auto w-96 h-32 rotate-45 bg-gradient-to-r from-primaryLight to-secondaryLight blur-3xl opacity-50 dark:opacity-20"
                             />
                             <div className="relative lg:flex lg:items-center lg:gap-12">
-                                <div className="overflow-hidden mb-5 md:mb-0 w-full lg:w-4/12">
+                                <div className="relative overflow-hidden mb-5 md:mb-0 w-full lg:w-4/12"
+                                     style={{paddingTop: '22%',borderRadius: '8px', overflow: 'hidden'}}>
                                     {/*<img*/}
                                     {/*    src="/img/about/Connecting%20and%20Promoting.png"*/}
                                     {/*    alt="project illustration"*/}
                                     {/*    height=""*/}
                                     {/*    width=""*/}
                                     {/*/>*/}
-                                    <iframe width="560" height="315"
-                                            src="https://www.youtube.com/embed/6BGmX2W6ano?si=_ICwXTdCs6T34jXZ"
-                                            title="YouTube video player" frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                                    <iframe
+                                        className="absolute top-0 left-0 w-full h-full"
+                                        src="https://www.youtube.com/embed/HE0buY6GAGM?si=Ul9sXNRreVV98Shs"
+                                        title="YouTube video player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
                                 </div>
 
                                 <div
                                     className="text-center lg:text-left md:mt-12 lg:mt-0 sm:w-10/12 md:w-2/3 sm:mx-auto lg:mr-auto lg:w-7/12">
                                     <h1 className="text-blue-700 font-bold text-4xl md:text-6xl lg:text-5xl">
-                                    Connecting and Promoting
+                                        Connecting and Promoting
                                     </h1>
                                     <p className="mt-8 text-justify text-xl md:text-3xl">
                                         <span translate="no"> Pitchle</span> facilitates finding partners,
@@ -100,13 +105,22 @@ const About = () => {
                                         <br/>contemporary touch.
                                     </p>
                                 </div>
-                                <div className="overflow-hidden mb-5 md:mb-0 w-full mt-16 lg:w-4/12">
-                                    <img
-                                        src="/img/about/Connecting%20and%20Promoting.png"
-                                        alt="project illustration"
-                                        height=""
-                                        width=""
-                                    />
+                                <div className="overflow-hidden mb-5 md:mb-0 w-full mt-16 lg:w-4/12" >
+                                    {/*<img*/}
+                                    {/*    src="/img/about/Connecting%20and%20Promoting.png"*/}
+                                    {/*    alt="project illustration"*/}
+                                    {/*    height=""*/}
+                                    {/*    width=""*/}
+                                    {/*/>*/}
+                                    <iframe
+                                        className="absolute top-50 left-0 w-full h-full"
+                                        src="https://www.youtube.com/embed/HE0buY6GAGM?si=Ul9sXNRreVV98Shs"
+                                        title="YouTube video player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
                                 </div>
 
                             </div>
