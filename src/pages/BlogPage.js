@@ -96,52 +96,53 @@ const BlogPage = () => {
 
 
             {/* Other Blog Posts */}
-            <div className="flex flex-wrap space-x-0 lg:space-x-4 items-center justify-center">
-                {otherBlogs.map((post) => (
-                    <Link to={`/blog/${post.slug?.current}`} key={post._id}>
-                        <div
-                            className="relative flex flex-col space-y-2 space-x-4 my-2 lg:my-6 bg-white shadow-sm border border-slate-200 rounded-lg mx-4 lg:w-96 pb-4 transition-all duration-300 group">
-                            <div className="relative h-52 mb-8 overflow-hidden rounded-t-lg text-white">
-                                <img src={post.image?.asset?.url || 'https://via.placeholder.com/400'}
-                                     alt={post.title}/>
-                            </div>
-                            <div className="pb-4">
-                                <div className="flex justify-between">
-                                    <div
-                                        className="mb-4 text-cyan-600 py-0.5 px-2.5 text-xs transition-all shadow-sm w-20 text-center">
-                                        {post.status?.toUpperCase() || 'UNKNOWN'}
-                                    </div>
-                                    <div
-                                        className="mb-4 text-black py-0.5 px-2.5 me-8 text-xs transition-all shadow-sm w-20 text-center">
-                                        {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : 'Date not available'}
-                                    </div>
+            <div className={"w-full flex justify-center"}>
+                <div className=" w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    {otherBlogs.map((post) => (
+                        <Link to={`/blog/${post.slug?.current}`} key={post._id}>
+                            <div
+                                className="relative flex flex-col space-y-2 space-x-4 my-2 lg:my-6 bg-white shadow-sm border border-slate-200 rounded-lg mx-4 lg:w-96 pb-4 transition-all duration-300 group">
+                                <div className="relative h-52 mb-8 overflow-hidden rounded-t-lg text-white">
+                                    <img src={post.image?.asset?.url || 'https://via.placeholder.com/400'}
+                                         alt={post.title}/>
                                 </div>
-                                <h6 className="mb-2 text-slate-800 text-xl font-semibold group-hover:underline">
-                                    {post.title}
-                                </h6>
-                                <p className="text-slate-600 leading-normal font-light">{post.description}</p>
-                            </div>
-                            <div className="flex items-center justify-between p-4">
-                                <div className="flex items-center">
-                                    <img
-                                        alt="Author"
-                                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&h=1480&q=80"
-                                        className="h-8 w-8 rounded-full"
-                                    />
-                                    <div className="flex flex-col ml-3 text-sm">
+                                <div className="pb-4">
+                                    <div className="flex justify-between">
+                                        <div
+                                            className="mb-4 text-cyan-600 py-0.5 px-2.5 text-xs transition-all shadow-sm w-20 text-center">
+                                            {post.status?.toUpperCase() || 'UNKNOWN'}
+                                        </div>
+                                        <div
+                                            className="mb-4 text-black py-0.5 px-2.5 me-8 text-xs transition-all shadow-sm w-20 text-center">
+                                            {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : 'Date not available'}
+                                        </div>
+                                    </div>
+                                    <h6 className="mb-2 text-slate-800 text-xl font-semibold group-hover:underline">
+                                        {post.title}
+                                    </h6>
+                                    <p className="text-slate-600 leading-normal line-clamp-2 font-light">{post.description}</p>
+                                </div>
+                                <div className="flex items-center justify-between p-4">
+                                    <div className="flex items-center">
+                                        <img
+                                            alt="Author"
+                                            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&h=1480&q=80"
+                                            className="h-8 w-8 rounded-full"
+                                        />
+                                        <div className="flex flex-col ml-3 text-sm">
                     <span className="text-slate-800 font-semibold group-hover:underline">
                         Tamilore Oladipo
                     </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
 
-                    </Link>
-                ))}
+                        </Link>
+                    ))}
+                </div>
             </div>
-
         </>
     );
 };
