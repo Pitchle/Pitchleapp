@@ -17,16 +17,21 @@ const BlogDetail = () => {
         client
             .fetch(
                 `*[_type == "blog" && slug.current == $slug][0]{
-                    title,
-                    description,
-                    content,
-                    image {
-                        asset -> {
-                            url
-                        }
-                    },
-                    publishedAt
-                }`,
+                title,
+                description,
+                content[]{
+                    ...,
+                    _type == "image" => {
+                        "url": asset->url
+                    }
+                },
+                image {
+                    asset -> {
+                        url
+                    }
+                },
+                publishedAt
+            }`,
                 { slug }
             )
             .then((data) => {
@@ -38,6 +43,7 @@ const BlogDetail = () => {
                 setLoading(false);
             });
     }, [slug]);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -130,7 +136,27 @@ const BlogDetail = () => {
 
                         {/* Blog Content (Scrollable) */}
                         <div className="prose lg:prose-xl my-20 text-xl max-w-none">
-                            <PortableText value={post.content} />
+                            <PortableText
+                                value={post.content}
+                                components={{
+                                    marks: {
+                                        color: ({ children, value }) => (
+                                            <span style={{ color: value.hex }}>{children}</span>
+                                        ),
+                                    },
+                                    types: {
+                                        image: ({ value }) =>
+                                            value.url ? (
+                                                <img
+                                                    src={value.url}
+                                                    alt="Blog Content"
+                                                    className="w-full h-auto rounded-lg shadow-md my-6"
+                                                />
+                                            ) : null,
+                                    },
+                                }}
+                            />
+
                         </div>
                     </div>
                 </div>

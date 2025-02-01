@@ -6,27 +6,29 @@ import Navbar from "../components/Navbar";
 const BlogPage = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const majorBlog = posts.find(post => post.isMajorBlog);
+    const otherBlogs = posts.filter(post => !post.isMajorBlog);
 
     useEffect(() => {
-        // Fetch blog posts from Sanity
         client
             .fetch(
-                `*[_type == "blog"] | order(publishedAt desc) {
-                    _id,
-                    title,
-                    description,
-                    image {
-                        asset -> {
-                            _id,
-                            url
-                        }
-                    },
-                    publishedAt,
-                    status,
-                    slug {
-                        current
+                `*[_type == "blog"] | order(isMajorBlog desc, publishedAt desc) {
+                _id,
+                title,
+                description,
+                image {
+                    asset -> {
+                        _id,
+                        url
                     }
-                }`
+                },
+                publishedAt,
+                status,
+                slug {
+                    current
+                },
+                isMajorBlog
+            }`
             )
             .then((data) => {
                 setPosts(data);
@@ -37,6 +39,7 @@ const BlogPage = () => {
                 setLoading(false);
             });
     }, []);
+
 
     if (loading) {
         return <div>
@@ -53,20 +56,26 @@ const BlogPage = () => {
     return (
         <>
             <Navbar/>
-            {posts.length > 0 && (
-                <div className={"flex justify-center mt-20 mb-10 lg:mb-20"}>
+            {majorBlog && (
+                <div className="flex justify-center mt-20 mb-10 lg:mb-20">
                     <div className="flex w-11/12 lg:w-10/12 flex-col md:flex-row items-center justify-evenly mb-6">
                         <div className="md:w-6/12">
                             <img
-                                src={posts[0].image?.asset?.url || 'https://via.placeholder.com/400'}
-                                alt={posts[0].title}
-                                className=" w-full h-full lg:w-[600px] lg:h-[450px]"
+                                src={majorBlog.image?.asset?.url || 'https://via.placeholder.com/400'}
+                                alt={majorBlog.title}
+                                className="w-full h-full lg:w-[600px] lg:h-[450px]"
                             />
                         </div>
                         <div className="md:w-6/12 py-4 px-4 lg:px-0">
-                            <p className={"text-xl font-semibold text-[#b8b8c8] my-2"}>Blog <span className={"ms-3"}> ></span></p>
-                            <Link to={`/blog/${posts[0].slug?.current}`}><h2 className="text-2xl lg:text-5xl hover:underline underline lg:no-underline tracking-normal font-semibold text-gray-900">{posts[0].title}</h2></Link>
-                            <p className=" text-xl my-6 lg:my-12">{posts[0].description}</p>
+                            <p className="text-xl font-semibold text-[#b8b8c8] my-2">
+                                Major Blog <span className="ms-3"> ></span>
+                            </p>
+                            <Link to={`/blog/${majorBlog.slug?.current}`}>
+                                <h2 className="text-2xl lg:text-5xl hover:underline tracking-normal font-semibold text-gray-900">
+                                    {majorBlog.title}
+                                </h2>
+                            </Link>
+                            <p className="text-xl my-6 lg:my-12">{majorBlog.description}</p>
                             <div className="flex items-center mt-4">
                                 <img
                                     alt="Author"
@@ -75,7 +84,9 @@ const BlogPage = () => {
                                 />
                                 <div className="ml-3 text-sm">
                                     <span className="text-blue-500 text-xl font-semibold">Moon Khan</span>
-                                    <p className="text-gray-500">{new Date(posts[0].publishedAt).toLocaleDateString()}</p>
+                                    <p className="text-gray-500">
+                                        {new Date(majorBlog.publishedAt).toLocaleDateString()}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -83,20 +94,25 @@ const BlogPage = () => {
                 </div>
             )}
 
+
             {/* Other Blog Posts */}
-            <div className="flex flex-wrap space-x-0 lg:space-x-4 items-center justify-center ">
-                {posts.length > 1 && posts.slice(1).map((post) => (
+            <div className="flex flex-wrap space-x-0 lg:space-x-4 items-center justify-center">
+                {otherBlogs.map((post) => (
                     <Link to={`/blog/${post.slug?.current}`} key={post._id}>
-                        <div className="relative flex flex-col space-y-2 space-x-4 my-2 lg:my-6 bg-white shadow-sm border border-slate-200 rounded-lg mx-4 lg:w-96 pb-4 transition-all duration-300 group ">
+                        <div
+                            className="relative flex flex-col space-y-2 space-x-4 my-2 lg:my-6 bg-white shadow-sm border border-slate-200 rounded-lg mx-4 lg:w-96 pb-4 transition-all duration-300 group">
                             <div className="relative h-52 mb-8 overflow-hidden rounded-t-lg text-white">
-                                <img src={post.image?.asset?.url || 'https://via.placeholder.com/400'} alt={post.title} />
+                                <img src={post.image?.asset?.url || 'https://via.placeholder.com/400'}
+                                     alt={post.title}/>
                             </div>
                             <div className="pb-4">
                                 <div className="flex justify-between">
-                                    <div className="mb-4 text-cyan-600 py-0.5 px-2.5 text-xs transition-all shadow-sm w-20 text-center">
+                                    <div
+                                        className="mb-4 text-cyan-600 py-0.5 px-2.5 text-xs transition-all shadow-sm w-20 text-center">
                                         {post.status?.toUpperCase() || 'UNKNOWN'}
                                     </div>
-                                    <div className="mb-4 text-black py-0.5 px-2.5 me-8 text-xs transition-all shadow-sm w-20 text-center">
+                                    <div
+                                        className="mb-4 text-black py-0.5 px-2.5 me-8 text-xs transition-all shadow-sm w-20 text-center">
                                         {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : 'Date not available'}
                                     </div>
                                 </div>
@@ -105,25 +121,11 @@ const BlogPage = () => {
                                 </h6>
                                 <p className="text-slate-600 leading-normal font-light">{post.description}</p>
                             </div>
-                            <div className="flex items-center justify-between p-4">
-                                <div className="flex items-center">
-                                    <img
-                                        alt="Author"
-                                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&h=1480&q=80"
-                                        className="h-8 w-8 rounded-full"
-                                    />
-                                    <div className="flex flex-col ml-3 text-sm">
-                    <span className="text-slate-800 font-semibold group-hover:underline">
-                        Tamilore Oladipo
-                    </span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </Link>
-
                 ))}
             </div>
+
         </>
     );
 };

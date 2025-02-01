@@ -18,10 +18,34 @@ export default {
             title: "Content",
             type: "array",
             of: [
-                { type: "block" }, // Supports rich text (bold, italic, etc.)
                 {
-                    type: "image",  // ✅ Allow images inside the content array
-                    options: { hotspot: true }
+                    type: "block",
+                    marks: {
+                        annotations: [
+                            {
+                                name: "color",
+                                title: "Text Color",
+                                type: "object",
+                                fields: [
+                                    {
+                                        name: "hex",
+                                        title: "Hex Code",
+                                        type: "string",
+                                        description: "Enter a hex color (e.g., #ff5733)",
+                                        validation: (Rule) =>
+                                            Rule.regex(/^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$/, {
+                                                name: "hex color",
+                                                invert: false,
+                                            }).error("Enter a valid hex color (e.g., #ff5733)"),
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                },
+                {
+                    type: "image",
+                    options: { hotspot: true },
                 },
             ],
         },
