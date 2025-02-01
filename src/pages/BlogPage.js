@@ -54,18 +54,19 @@ const BlogPage = () => {
         <>
             <Navbar/>
             {posts.length > 0 && (
-                <div className={"flex justify-center my-28 "}>
-                    <div className="flex w-11/12 flex-col md:flex-row items-center justify-evenly p-6 mb-6">
+                <div className={"flex justify-center mt-20 mb-10 lg:mb-20"}>
+                    <div className="flex w-11/12 lg:w-10/12 flex-col md:flex-row items-center justify-evenly mb-6">
                         <div className="md:w-6/12">
                             <img
                                 src={posts[0].image?.asset?.url || 'https://via.placeholder.com/400'}
                                 alt={posts[0].title}
-                                className="rounded-lg shadow-md w-full h-[420px]"
+                                className=" w-full h-full lg:w-[600px] lg:h-[450px]"
                             />
                         </div>
-                        <div className="md:w-5/12 p-4">
-                            <Link to={`/blog/${posts[0].slug?.current}`}><h2 className="text-5xl hover:underline font-bold text-gray-900">{posts[0].title}</h2></Link>
-                            <p className=" text-xl my-12">{posts[0].description}</p>
+                        <div className="md:w-6/12 py-4 px-4 lg:px-0">
+                            <p className={"text-xl font-semibold text-[#b8b8c8] my-2"}>Blog <span className={"ms-3"}> ></span></p>
+                            <Link to={`/blog/${posts[0].slug?.current}`}><h2 className="text-2xl lg:text-5xl hover:underline underline lg:no-underline tracking-normal font-semibold text-gray-900">{posts[0].title}</h2></Link>
+                            <p className=" text-xl my-6 lg:my-12">{posts[0].description}</p>
                             <div className="flex items-center mt-4">
                                 <img
                                     alt="Author"
@@ -73,7 +74,7 @@ const BlogPage = () => {
                                     className="h-14 w-14 border-blue-600 border-4 rounded-full"
                                 />
                                 <div className="ml-3 text-sm">
-                                    <span className="text-blue-500 text-xl font-semibold">Author Name</span>
+                                    <span className="text-blue-500 text-xl font-semibold">Moon Khan</span>
                                     <p className="text-gray-500">{new Date(posts[0].publishedAt).toLocaleDateString()}</p>
                                 </div>
                             </div>
@@ -83,11 +84,11 @@ const BlogPage = () => {
             )}
 
             {/* Other Blog Posts */}
-            <div className="flex flex-wrap space-x-4 justify-center">
+            <div className="flex flex-wrap space-x-0 lg:space-x-4 items-center justify-center ">
                 {posts.length > 1 && posts.slice(1).map((post) => (
                     <Link to={`/blog/${post.slug?.current}`} key={post._id}>
-                        <div className="relative flex flex-col space-x-4 my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96 pb-4 transition-all duration-300 group hover:shadow-md">
-                            <div className="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+                        <div className="relative flex flex-col space-y-2 space-x-4 my-2 lg:my-6 bg-white shadow-sm border border-slate-200 rounded-lg mx-4 lg:w-96 pb-4 transition-all duration-300 group ">
+                            <div className="relative h-52 mb-8 overflow-hidden rounded-t-lg text-white">
                                 <img src={post.image?.asset?.url || 'https://via.placeholder.com/400'} alt={post.title} />
                             </div>
                             <div className="pb-4">
@@ -95,7 +96,7 @@ const BlogPage = () => {
                                     <div className="mb-4 text-cyan-600 py-0.5 px-2.5 text-xs transition-all shadow-sm w-20 text-center">
                                         {post.status?.toUpperCase() || 'UNKNOWN'}
                                     </div>
-                                    <div className="mb-4 text-black py-0.5 px-2.5 text-xs transition-all shadow-sm w-20 text-center">
+                                    <div className="mb-4 text-black py-0.5 px-2.5 me-8 text-xs transition-all shadow-sm w-20 text-center">
                                         {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : 'Date not available'}
                                     </div>
                                 </div>
@@ -113,7 +114,7 @@ const BlogPage = () => {
                                     />
                                     <div className="flex flex-col ml-3 text-sm">
                     <span className="text-slate-800 font-semibold group-hover:underline">
-                        Author Name
+                        Tamilore Oladipo
                     </span>
                                     </div>
                                 </div>
