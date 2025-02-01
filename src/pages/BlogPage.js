@@ -121,7 +121,23 @@ const BlogPage = () => {
                                 </h6>
                                 <p className="text-slate-600 leading-normal font-light">{post.description}</p>
                             </div>
+                            <div className="flex items-center justify-between p-4">
+                                <div className="flex items-center">
+                                    <img
+                                        alt="Author"
+                                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&h=1480&q=80"
+                                        className="h-8 w-8 rounded-full"
+                                    />
+                                    <div className="flex flex-col ml-3 text-sm">
+                    <span className="text-slate-800 font-semibold group-hover:underline">
+                        Tamilore Oladipo
+                    </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+
                     </Link>
                 ))}
             </div>
