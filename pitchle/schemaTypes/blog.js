@@ -17,15 +17,19 @@ export default {
             name: "content",
             title: "Content",
             type: "array",
-            of: [{ type: "block" }], // Supports rich text (bold, italic, etc.)
+            of: [
+                { type: "block" }, // Supports rich text (bold, italic, etc.)
+                {
+                    type: "image",  // ✅ Allow images inside the content array
+                    options: { hotspot: true }
+                },
+            ],
         },
         {
             name: "image",
             title: "Image",
             type: "image",
-            options: {
-                hotspot: true, // Enables image cropping
-            },
+            options: { hotspot: true },
         },
         {
             name: "publishedAt",
@@ -47,10 +51,13 @@ export default {
             name: "slug",
             title: "Slug",
             type: "slug",
-            options: {
-                source: "title", // Automatically generates the slug based on the title
-                maxLength: 96, // Optional: to limit the length of the slug
-            },
+            options: { source: "title", maxLength: 96 },
+        },
+        {
+            name: "isMajorBlog",
+            title: "Make this the major blog",
+            type: "boolean",
+            description: "Check this to display this blog as the major blog on top.",
         },
     ],
 };
