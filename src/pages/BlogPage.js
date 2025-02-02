@@ -16,6 +16,8 @@ const BlogPage = () => {
     const [majorBlog, setMajorBlog] = useState(null);
     const [visibleCount, setVisibleCount] = useState(6);
     const [loading, setLoading] = useState(true);
+    const [email, setEmail] = useState("");
+    const [subscribed, setSubscribed] = useState(false);
 
     const [selectedCategory, setSelectedCategory] = useState("latest updates"); // Match Sanity's stored value
 
@@ -56,15 +58,81 @@ const BlogPage = () => {
                 setLoading(false);
             });
     }, []);
+    useEffect(() => {
+        client
+            .fetch(
+                `*[_type == "blog"] | order(publishedAt desc) {
+                _id,
+                title,
+                description,
+                image {
+                    asset -> {
+                        _id,
+                        url
+                    }
+                },
+                publishedAt,
+                slug {
+                    current
+                },
+                category
+            }`
+            )
+            .then((data) => {
+                setPosts(data);
+                setLoading(false);
+
+                // Send a notification when a new blog is posted
+                if (Notification.permission === "granted" && data.length > 0) {
+                    new Notification("New Blog Posted!", {
+                        body: `Check out our latest blog: ${data[0].title}`,
+                        icon: data[0].image?.asset?.url || "/img/logo/logo.png",
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching posts:", error);
+                setLoading(false);
+            });
+    }, []);
+
 
     if (loading) {
         return <div className="text-center mt-20">Loading...</div>;
     }
 
 
+
+    const handleSubscribe = () => {
+        if (!email) {
+            alert("Please enter a valid email.");
+            return;
+        }
+
+        setSubscribed(true);
+        setEmail(""); // Clear input
+
+        // Ask for notification permission
+        requestNotificationPermission();
+    };
+
+    const requestNotificationPermission = () => {
+        if ("Notification" in window && Notification.permission !== "granted") {
+            Notification.requestPermission().then((permission) => {
+                if (permission === "granted") {
+                    new Notification("Subscription Successful!", {
+                        body: "You will receive updates for new blogs.",
+                        icon: "/img/logo/logo.png",
+                    });
+                }
+            });
+        }
+    };
+
+
     return (
         <>
-            <Navbar />
+            <Navbar/>
 
             {majorBlog && (
                 <div className="flex justify-center mt-20 mb-10 lg:mb-20">
@@ -78,7 +146,8 @@ const BlogPage = () => {
                         </div>
                         <div className="md:w-6/12 py-4 px-4 lg:px-0">
                             <p className="text-xl font-semibold text-[#b8b8c8] my-2">
-                                Blog <span className="ms-3"> <span className={"text-sm"}>></span> <span className={"text-blue-500 ms-2 text-md capitalize"}>{majorBlog.category || "Uncategorized"}</span> </span>
+                                Blog <span className="ms-3"> <span className={"text-sm"}>></span> <span
+                                className={"text-blue-500 ms-2 text-md capitalize"}>{majorBlog.category || "Uncategorized"}</span> </span>
                             </p>
 
                             <Link to={`/blog/${majorBlog.slug?.current}`}>
@@ -163,27 +232,37 @@ const BlogPage = () => {
                     </button>
                 </div>
             )}
-            <div className={"mb-40 mt-10 lg:mt-40"}>
+            <div className="mb-40 mt-10 lg:mt-40">
                 <div
                     className="mt-4 md:mt-32 lg:mt-12 w-full lg:w-2/5 m-auto flex flex-col items-center p-3 space-y-12">
                     <h3 className="text-4xl font-semibold text-center">
                         Subscribe to our newsletter
                     </h3>
-                    <p className="mt-6 text-xl text-center leading-normal ">
-                        We’ll keep you in the loop on our best advice and strategies for
-                        social media marketing and growing a small business.
+                    <p className="mt-6 text-xl text-center leading-normal">
+                        We’ll keep you updated on new blog posts.
                     </p>
-                    <div className="mt-6 flex flex-col md:flex-row w-full md:px-14">
-                        <input
-                            className="flex flex-grow px-4 py-4 rounded-full text-gray-500 border border-gray-500"
-                            placeholder="Email Address"
-                        />
-                        <button className="mt-2 md:mt-0 rounded-full md:ml-2 bg-blue-500 shadow-lg  text-white px-5 py-4">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
 
+                    {subscribed ? (
+                        <p className="text-green-500 text-lg font-semibold">
+                            Thanks for subscribing! 🎉
+                        </p>
+                    ) : (
+                        <div className="mt-6 flex flex-col md:flex-row w-full md:px-14">
+                            <input
+                                className="flex flex-grow px-4 py-4 rounded-full border border-black"
+                                placeholder="Enter Your Email Address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <button
+                                className="mt-2 md:mt-0 rounded-full md:ml-2 bg-blue-500 shadow-lg text-white px-6 py-4"
+                                onClick={handleSubscribe}
+                            >
+                                Subscribe
+                            </button>
+                        </div>
+                    )}
+                </div>
             </div>
         </>
     );
