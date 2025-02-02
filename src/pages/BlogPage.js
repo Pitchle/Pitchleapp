@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { client } from "../sanityClient";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import {Spinner} from "@material-tailwind/react";
 
 const categories = [
     { title: "Latest Updates", value: "latest updates" }, // Ensure space, not hyphen
@@ -98,7 +99,7 @@ const BlogPage = () => {
 
 
     if (loading) {
-        return <div className="text-center mt-20">Loading...</div>;
+        return <div className="text-center w-full flex justify-center my-10 text-lg"><Spinner className="h-12 w-12" color="blue" /></div>;
     }
 
 

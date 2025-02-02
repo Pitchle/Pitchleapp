@@ -1,49 +1,75 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom"; // import useLocation hook
 import { client } from "../sanityClient";
 import { PortableText } from "@portabletext/react";
 import Navbar from "../components/Navbar";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import {Spinner} from "@material-tailwind/react";
 
 const BlogDetail = () => {
     const { slug } = useParams();
+    const location = useLocation(); // Get the current location
     const [post, setPost] = useState(null);
     const [loading, setLoading] = useState(true);
     const [scrollProgress, setScrollProgress] = useState(0);
     const [showIcons, setShowIcons] = useState(false);
+    const [relatedBlogs, setRelatedBlogs] = useState([]);
+    const [visibleBlogs, setVisibleBlogs] = useState(6); // To control the number of blogs shown
     const contentRef = useRef(null);
 
     useEffect(() => {
+        // Scroll to the top whenever the route changes
+        window.scrollTo(0, 0);
+    }, [location]); // This will trigger when the location (route) changes
+
+    useEffect(() => {
+        // Fetch the blog post data
         client
             .fetch(
                 `*[_type == "blog" && slug.current == $slug][0]{
-                title,
-                description,
-                content[]{
-                    ...,
-                    _type == "image" => {
-                        "url": asset->url
-                    }
-                },
-                image {
-                    asset -> {
-                        url
-                    }
-                },
-                publishedAt
-            }`,
+                    title,
+                    description,
+                    content[] {
+                        ...,
+                        _type == "image" => {
+                            "url": asset->url
+                        }
+                    },
+                    image {
+                        asset -> { url }
+                    },
+                    publishedAt,
+                    category // Fetch the category for the current post
+                }`,
                 { slug }
             )
             .then((data) => {
                 setPost(data);
                 setLoading(false);
+                // Fetch related blogs based on category
+                if (data.category) {
+                    const category = data.category;
+                    client
+                        .fetch(
+                            `*[_type == "blog" && category == $category && slug.current != $slug]{
+                                title,
+                                slug,
+                                image {
+                                    asset -> { url }
+                                },
+                                description
+                            }[0...6]`, // Fetch the first 6 related blogs based on the category
+                            { category, slug }
+                        )
+                        .then((relatedData) => setRelatedBlogs(relatedData))
+                        .catch((error) => console.error("Error fetching related blogs:", error));
+                }
             })
             .catch((error) => {
                 console.error("Error fetching blog post:", error);
                 setLoading(false);
             });
     }, [slug]);
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -64,7 +90,7 @@ const BlogDetail = () => {
                 }
 
                 // Show social media icons after scrolling 400px, but hide them near the bottom
-                const isAtBottom = window.scrollY + windowHeight >= documentHeight - 700;
+                const isAtBottom = window.scrollY + windowHeight >= documentHeight - 1500;
                 setShowIcons(scrollY > 300 && !isAtBottom);
             }
         };
@@ -73,17 +99,12 @@ const BlogDetail = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    if (loading) return <div className="text-center my-10 text-lg">
-        <div>
-            <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-                <svg className="text-gray-300 animate-spin" viewBox="0 0 64 64" fill="none"
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="24" height="24">
-                    <path d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </div>
-        </div>;
-    </div>;
+    const loadMoreBlogs = () => {
+        // Load more blogs when "Load More" is clicked
+        setVisibleBlogs((prevVisible) => prevVisible + 6);
+    };
+
+    if (loading) return <div className="text-center w-full flex justify-center my-10 text-lg"><Spinner className="h-12 w-12" color="blue" /></div>;
     if (!post) return <div className="text-center my-10 text-lg">Blog post not found.</div>;
 
     return (
@@ -92,11 +113,12 @@ const BlogDetail = () => {
             <div className="fixed top-0 left-0 h-1 bg-blue-500 transition-all duration-200" style={{ width: `${scrollProgress}%` }} />
             <div className="my-28 flex mx-auto space-x-8">
                 <div className="w-full md:pl-16">
-
                     {/* Blog Header */}
-                    <div className="flex flex-col-reverse md:flex-row justify-center  w-11/12 mx-auto">
+                    <div className="flex flex-col-reverse md:flex-row justify-center w-11/12 mx-auto">
                         <div className="md:w-6/12">
-                            <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]">Blog <span className="ms-3"> ></span></p>
+                            <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]">
+                                Blog <span className="ms-3"> > <span className={"capitalize text-blue-500 ms-2"}>{post.category}</span></span>
+                            </p>
                             <h1 className="text-3xl lg:text-5xl font-semibold my-2 lg:my-6 text-gray-900">{post.title}</h1>
                             <p className="text-lg my-6">{post.description}</p>
 
@@ -104,11 +126,11 @@ const BlogDetail = () => {
                             <div className="flex items-center mt-4">
                                 <img
                                     alt="Author"
-                                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&h=1480&q=80"
+                                    src="/img/logo/logo.png"
                                     className="h-14 w-14 border-blue-600 border-4 rounded-full"
                                 />
                                 <div className="ml-3 text-sm">
-                                    <span className="text-gray-800 font-semibold">Moon Khan</span>
+                                    <span className="text-gray-800 font-semibold">Pitchle Team</span>
                                     <p className="text-gray-500">{new Date(post.publishedAt).toLocaleDateString()}</p>
                                 </div>
                             </div>
@@ -126,8 +148,7 @@ const BlogDetail = () => {
 
                     {/* Blog Content Section */}
                     <div ref={contentRef} className="relative flex max-w-4xl mx-auto px-6 py-10">
-
-                        {/* Social Media Icons (Appear after scrolling 400px & Hide at Bottom) */}
+                        {/* Social Media Icons */}
                         <div className={`fixed hidden lg:block left-40 top-1/2 space-y-8 transition-opacity duration-300 ${showIcons ? 'opacity-100' : 'opacity-0'}`}>
                             <FaFacebookF className="text-gray-500 hover:text-blue-600 text-2xl cursor-pointer" />
                             <FaTwitter className="text-gray-500 hover:text-blue-400 text-2xl cursor-pointer" />
@@ -156,9 +177,54 @@ const BlogDetail = () => {
                                     },
                                 }}
                             />
-
                         </div>
                     </div>
+
+                    {/* Related Blogs Section */}
+                    {relatedBlogs.length > 0 && (
+                        <div className="my-16">
+                            <h2 className="text-5xl font-semibold text-center  my-20">Related Articles</h2>
+                            <div className="grid grid-cols-1 w-full lg:w-10/12 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {relatedBlogs.slice(0, visibleBlogs).map((blog) => (
+                                    <Link to={`/blog/${blog.slug.current}`}>
+                                        <div className="bg-white shadow-md border border-gray-200 rounded-lg">
+                                            <img
+                                                src={post.image?.asset?.url || "https://via.placeholder.com/400"}
+                                                alt={post.title}
+                                                className="w-full h-52 object-fit "
+                                            />
+                                            <div className="flex justify-between p-4 my-4">
+                                                <p className="text-md text-blue-500 capitalize">{post.category || "Uncategorized"}</p>
+                                                <p className="text-md text-gray-400">
+                                                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
+                                                </p>
+                                            </div>
+                                            <h3 className="text-xl font-bold mt-4 line-clamp-2 px-4">{post.title}</h3>
+                                            <p className="text-lg text-gray-600 mt-4 line-clamp-3 px-4">{post.description}</p>
+                                            <div className="flex items-center mt-2 p-4">
+                                                <img
+                                                    src="/img/logo/logo.png"
+                                                    alt="Pitchle Team"
+                                                    className="w-6 h-6 rounded-full mr-2"
+                                                />
+                                                <span className="text-sm font-medium">Pitchle Team</span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {/* Load More Button */}
+                            {relatedBlogs.length > visibleBlogs && (
+                                <button
+                                    onClick={loadMoreBlogs}
+                                    className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-800"
+                                >
+                                    Load more
+                                </button>
+                            )}
+                        </div>
+                    )}
                 </div>
             </div>
         </>
