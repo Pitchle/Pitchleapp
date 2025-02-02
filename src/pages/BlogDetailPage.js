@@ -3,8 +3,12 @@ import { Link, useParams, useLocation } from "react-router-dom"; // import useLo
 import { client } from "../sanityClient";
 import { PortableText } from "@portabletext/react";
 import Navbar from "../components/Navbar";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import {Spinner} from "@material-tailwind/react";
+import { FaWhatsapp } from "react-icons/fa";
+import { HiOutlineShare } from "react-icons/hi";
+
 
 const BlogDetail = () => {
     const { slug } = useParams();
@@ -90,7 +94,7 @@ const BlogDetail = () => {
                 }
 
                 // Show social media icons after scrolling 400px, but hide them near the bottom
-                const isAtBottom = window.scrollY + windowHeight >= documentHeight - 1500;
+                const isAtBottom = window.scrollY + windowHeight >= documentHeight - 2000;
                 setShowIcons(scrollY > 300 && !isAtBottom);
             }
         };
@@ -151,8 +155,9 @@ const BlogDetail = () => {
                         {/* Social Media Icons */}
                         <div className={`fixed hidden lg:block left-40 top-1/2 space-y-8 transition-opacity duration-300 ${showIcons ? 'opacity-100' : 'opacity-0'}`}>
                             <FaFacebookF className="text-gray-500 hover:text-blue-600 text-2xl cursor-pointer" />
-                            <FaTwitter className="text-gray-500 hover:text-blue-400 text-2xl cursor-pointer" />
-                            <FaLinkedinIn className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer" />
+                            <FaXTwitter  className="text-gray-500 hover:text-blue-400 text-2xl cursor-pointer" />
+                            <FaWhatsapp  className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer" />
+                            <HiOutlineShare   className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer" />
                         </div>
 
                         {/* Blog Content (Scrollable) */}
