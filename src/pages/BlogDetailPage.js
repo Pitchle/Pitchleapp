@@ -192,7 +192,7 @@ const BlogDetail = () => {
                         </div>
 
                         {/* Blog Content (Scrollable) */}
-                        <div className="prose lg:prose-xl my-20 text-md">
+                        <div className="prose lg:prose-xl my-20 text-md lg:text-xl">
                             <PortableText
                                 value={post.content}
                                 components={{
