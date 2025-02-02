@@ -77,7 +77,10 @@ const BlogPage = () => {
                             />
                         </div>
                         <div className="md:w-6/12 py-4 px-4 lg:px-0">
-                            <p className="text-xl font-semibold text-[#b8b8c8] my-2">Blog <span className="ms-3"> ></span></p>
+                            <p className="text-xl font-semibold text-[#b8b8c8] my-2">
+                                Blog <span className="ms-3"> <span className={"text-sm"}>></span> <span className={"text-blue-500 ms-2 text-md capitalize"}>{majorBlog.category || "Uncategorized"}</span> </span>
+                            </p>
+
                             <Link to={`/blog/${majorBlog.slug?.current}`}>
                                 <h2 className="text-2xl lg:text-5xl hover:underline tracking-normal font-semibold text-gray-900">
                                     {majorBlog.title}
@@ -85,7 +88,8 @@ const BlogPage = () => {
                             </Link>
                             <p className="text-xl my-6 lg:my-12">{majorBlog.description}</p>
                             <div className="flex items-center mt-4">
-                                <img alt="Author" src="/img/logo/logo.png" className="h-14 w-14 border-blue-600 border-4 rounded-full" />
+                                <img alt="Author" src="/img/logo/logo.png"
+                                     className="h-14 w-14 border-blue-600 border-4 rounded-full"/>
                                 <div className="ml-3 text-sm">
                                     <span className="text-blue-500 text-xl font-semibold">Pitchle Team</span>
                                     <p className="text-gray-500">{new Date(majorBlog.publishedAt).toLocaleDateString()}</p>
