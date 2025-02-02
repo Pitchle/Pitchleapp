@@ -163,7 +163,28 @@ const BlogPage = () => {
                     </button>
                 </div>
             )}
+            <div className={"mb-40 mt-10 lg:mt-40"}>
+                <div
+                    className="mt-4 md:mt-32 lg:mt-12 w-full lg:w-2/5 m-auto flex flex-col items-center p-3 space-y-12">
+                    <h3 className="text-4xl font-semibold text-center">
+                        Subscribe to our newsletter
+                    </h3>
+                    <p className="mt-6 text-xl text-center leading-normal ">
+                        We’ll keep you in the loop on our best advice and strategies for
+                        social media marketing and growing a small business.
+                    </p>
+                    <div className="mt-6 flex flex-col md:flex-row w-full md:px-14">
+                        <input
+                            className="flex flex-grow px-4 py-4 rounded-full text-gray-500 border border-gray-500"
+                            placeholder="Email Address"
+                        />
+                        <button className="mt-2 md:mt-0 rounded-full md:ml-2 bg-blue-500 shadow-lg  text-white px-5 py-4">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
 
+            </div>
         </>
     );
 };
