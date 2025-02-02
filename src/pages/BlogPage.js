@@ -68,7 +68,7 @@ const BlogPage = () => {
                         </div>
                         <div className="md:w-6/12 py-4 px-4 lg:px-0">
                             <p className="text-xl font-semibold text-[#b8b8c8] my-2">
-                                Major Blog <span className="ms-3"> ></span>
+                                Blog <span className="ms-3"> ></span>
                             </p>
                             <Link to={`/blog/${majorBlog.slug?.current}`}>
                                 <h2 className="text-2xl lg:text-5xl hover:underline tracking-normal font-semibold text-gray-900">
@@ -79,11 +79,11 @@ const BlogPage = () => {
                             <div className="flex items-center mt-4">
                                 <img
                                     alt="Author"
-                                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&h=1480&q=80"
+                                    src="/img/logo/logo.png"
                                     className="h-14 w-14 border-blue-600 border-4 rounded-full"
                                 />
                                 <div className="ml-3 text-sm">
-                                    <span className="text-blue-500 text-xl font-semibold">Moon Khan</span>
+                                    <span className="text-blue-500 text-xl font-semibold">Pitchle Team</span>
                                     <p className="text-gray-500">
                                         {new Date(majorBlog.publishedAt).toLocaleDateString()}
                                     </p>
@@ -126,12 +126,12 @@ const BlogPage = () => {
                                     <div className="flex items-center">
                                         <img
                                             alt="Author"
-                                            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1480&h=1480&q=80"
+                                            src="/img/logo/logo.png"
                                             className="h-8 w-8 rounded-full"
                                         />
                                         <div className="flex flex-col ml-3 text-sm">
                     <span className="text-slate-800 font-semibold group-hover:underline">
-                        Tamilore Oladipo
+                        Pitchle Team
                     </span>
                                         </div>
                                     </div>
