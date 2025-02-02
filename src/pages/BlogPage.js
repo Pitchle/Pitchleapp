@@ -146,8 +146,7 @@ const BlogPage = () => {
                             />
                         </div>
                         <div className="md:w-6/12 py-4 px-4 lg:px-0">
-                            <p className="text-xl font-semibold text-[#b8b8c8] my-2">
-                                Blog <span className="ms-3"> <span className={"text-sm"}>></span> <span
+                            <p className="text-xl font-semibold text-[#b8b8c8] my-2">Blog <span className="ms-3"> <span className={"text-sm"}>></span> <span
                                 className={"text-blue-500 ms-2 text-md capitalize"}>{majorBlog.category || "Uncategorized"}</span> </span>
                             </p>
 
