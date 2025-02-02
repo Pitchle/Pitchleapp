@@ -19,6 +19,8 @@ const BlogPage = () => {
     const [loading, setLoading] = useState(true);
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
+    const [emailError, setEmailError] = useState(""); // State to track email validation
+
 
     const [selectedCategory, setSelectedCategory] = useState("latest updates"); // Match Sanity's stored value
 
@@ -105,13 +107,22 @@ const BlogPage = () => {
 
 
     const handleSubscribe = () => {
+        // Email validation regex pattern
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
         if (!email) {
-            alert("Please enter a valid email.");
+            setEmailError("Email is required.");
+            return;
+        }
+
+        if (!emailRegex.test(email)) {
+            setEmailError("Please enter a valid email address.");
             return;
         }
 
         setSubscribed(true);
         setEmail(""); // Clear input
+        setEmailError(""); // Clear error message
 
         // Ask for notification permission
         requestNotificationPermission();
@@ -233,25 +244,21 @@ const BlogPage = () => {
                 </div>
             )}
             <div className="mb-40 mt-10 lg:mt-40">
-                <div
-                    className="mt-4 md:mt-32 lg:mt-12 w-full lg:w-2/5 m-auto flex flex-col items-center p-3 space-y-12">
-                    <h3 className="text-4xl font-semibold text-center">
-                        Subscribe to our newsletter
-                    </h3>
+                <div className="mt-4 md:mt-32 lg:mt-12 w-full lg:w-2/5 m-auto flex flex-col items-center p-3 space-y-12">
+                    <h3 className="text-4xl font-semibold text-center">Subscribe to our newsletter</h3>
                     <p className="mt-6 text-xl text-center leading-normal">
-                        We’ll keep you updated on new blog posts.
+                        We’ll keep you in the loop on our best advice and strategies for social media marketing and growing a small business.
                     </p>
 
                     {subscribed ? (
-                        <p className="text-green-500 text-lg font-semibold">
-                            Thanks for subscribing! 🎉
-                        </p>
+                        <p className="text-green-500 text-lg font-semibold">Thanks for subscribing! 🎉</p>
                     ) : (
                         <div className="mt-6 flex flex-col md:flex-row w-full md:px-14">
                             <input
-                                className="flex flex-grow px-4 py-4 rounded-full border border-black"
+                                className={`flex flex-grow px-4 py-4 rounded-full border ${emailError ? "border-red-500" : "border-black"}`}
                                 placeholder="Enter Your Email Address"
                                 value={email}
+                                type={"email"}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <button
@@ -262,6 +269,9 @@ const BlogPage = () => {
                             </button>
                         </div>
                     )}
+
+                    {/* Show error message below the input */}
+                    {emailError && <p className="text-red-500 text-lg mt-4">{emailError}</p>}
                 </div>
             </div>
         </>
