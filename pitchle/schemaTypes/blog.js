@@ -83,5 +83,18 @@ export default {
             type: "boolean",
             description: "Check this to display this blog as the major blog on top.",
         },
+        {
+            name: "category",
+            title: "Category",
+            type: "string",
+            options: {
+                list: [
+                    { title: "Latest Updates", value: "latest updates" },
+                    { title: "Sell & Transfer", value: "sell & transfer" },
+                    { title: "Partners & Investors", value: "partners & investors" },
+                    { title: "Promote", value: "Promote" },
+                ],
+            },
+        },
     ],
 };

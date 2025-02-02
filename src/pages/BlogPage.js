@@ -1,36 +1,53 @@
-import React, { useEffect, useState } from 'react';
-import { client } from '../sanityClient'; // Adjust the path if needed
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { client } from "../sanityClient";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+
+const categories = [
+    { title: "Latest Updates", value: "latest updates" }, // Ensure space, not hyphen
+    { title: "Sell & Transfer", value: "sell & transfer" },
+    { title: "Partners & Investors", value: "partners & investors" },
+    { title: "Promote", value: "Promote" },
+];
+
 
 const BlogPage = () => {
     const [posts, setPosts] = useState([]);
+    const [majorBlog, setMajorBlog] = useState(null);
+    const [visibleCount, setVisibleCount] = useState(6);
     const [loading, setLoading] = useState(true);
-    const majorBlog = posts.find(post => post.isMajorBlog);
-    const otherBlogs = posts.filter(post => !post.isMajorBlog);
+
+    const [selectedCategory, setSelectedCategory] = useState("latest updates"); // Match Sanity's stored value
+
+    const filteredPosts = posts
+        .filter((post) => selectedCategory === "latest updates" || post.category?.toLowerCase() === selectedCategory.toLowerCase())
+        .slice(0, visibleCount);
 
     useEffect(() => {
         client
             .fetch(
-                `*[_type == "blog"] | order(isMajorBlog desc, publishedAt desc) {
-                _id,
-                title,
-                description,
-                image {
-                    asset -> {
-                        _id,
-                        url
-                    }
-                },
-                publishedAt,
-                status,
-                slug {
-                    current
-                },
-                isMajorBlog
-            }`
+                `*[_type == "blog"] | order(publishedAt desc) {
+                    _id,
+                    title,
+                    description,
+                    image {
+                        asset -> {
+                            _id,
+                            url
+                        }
+                    },
+                    publishedAt,
+                    status,
+                    slug {
+                        current
+                    },
+                    category,
+                    isMajorBlog
+                }`
             )
             .then((data) => {
+                const major = data.find((post) => post.isMajorBlog);
+                setMajorBlog(major);
                 setPosts(data);
                 setLoading(false);
             })
@@ -40,22 +57,15 @@ const BlogPage = () => {
             });
     }, []);
 
-
     if (loading) {
-        return <div>
-            <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
-                <svg className="text-gray-300 animate-spin" viewBox="0 0 64 64" fill="none"
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="24" height="24">
-                    <path d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </div>
-        </div>;
+        return <div className="text-center mt-20">Loading...</div>;
     }
+
 
     return (
         <>
-            <Navbar/>
+            <Navbar />
+
             {majorBlog && (
                 <div className="flex justify-center mt-20 mb-10 lg:mb-20">
                     <div className="flex w-11/12 lg:w-10/12 flex-col md:flex-row items-center justify-evenly mb-6">
@@ -67,9 +77,7 @@ const BlogPage = () => {
                             />
                         </div>
                         <div className="md:w-6/12 py-4 px-4 lg:px-0">
-                            <p className="text-xl font-semibold text-[#b8b8c8] my-2">
-                                Blog <span className="ms-3"> ></span>
-                            </p>
+                            <p className="text-xl font-semibold text-[#b8b8c8] my-2">Blog <span className="ms-3"> ></span></p>
                             <Link to={`/blog/${majorBlog.slug?.current}`}>
                                 <h2 className="text-2xl lg:text-5xl hover:underline tracking-normal font-semibold text-gray-900">
                                     {majorBlog.title}
@@ -77,16 +85,10 @@ const BlogPage = () => {
                             </Link>
                             <p className="text-xl my-6 lg:my-12">{majorBlog.description}</p>
                             <div className="flex items-center mt-4">
-                                <img
-                                    alt="Author"
-                                    src="/img/logo/logo.png"
-                                    className="h-14 w-14 border-blue-600 border-4 rounded-full"
-                                />
+                                <img alt="Author" src="/img/logo/logo.png" className="h-14 w-14 border-blue-600 border-4 rounded-full" />
                                 <div className="ml-3 text-sm">
                                     <span className="text-blue-500 text-xl font-semibold">Pitchle Team</span>
-                                    <p className="text-gray-500">
-                                        {new Date(majorBlog.publishedAt).toLocaleDateString()}
-                                    </p>
+                                    <p className="text-gray-500">{new Date(majorBlog.publishedAt).toLocaleDateString()}</p>
                                 </div>
                             </div>
                         </div>
@@ -94,55 +96,70 @@ const BlogPage = () => {
                 </div>
             )}
 
-
-            {/* Other Blog Posts */}
-            <div className={"w-full flex justify-center"}>
-                <div className=" w-full lg:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    {otherBlogs.map((post) => (
-                        <Link to={`/blog/${post.slug?.current}`} key={post._id}>
-                            <div
-                                className="relative flex flex-col space-y-2 space-x-4 my-2 lg:my-6 bg-white shadow-sm border border-slate-200 rounded-lg mx-4 lg:w-96 pb-4 transition-all duration-300 group">
-                                <div className="relative h-52 mb-8 overflow-hidden rounded-t-lg text-white">
-                                    <img src={post.image?.asset?.url || 'https://via.placeholder.com/400'}
-                                         alt={post.title}/>
-                                </div>
-                                <div className="pb-4">
-                                    <div className="flex justify-between">
-                                        <div
-                                            className="mb-4 text-cyan-600 py-0.5 px-2.5 text-xs transition-all shadow-sm w-20 text-center">
-                                            {post.status?.toUpperCase() || 'UNKNOWN'}
-                                        </div>
-                                        <div
-                                            className="mb-4 text-black py-0.5 px-2.5 me-8 text-xs transition-all shadow-sm w-20 text-center">
-                                            {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : 'Date not available'}
-                                        </div>
-                                    </div>
-                                    <h6 className="mb-2 text-slate-800 text-xl font-semibold group-hover:underline">
-                                        {post.title}
-                                    </h6>
-                                    <p className="text-slate-600 leading-normal line-clamp-2 font-light">{post.description}</p>
-                                </div>
-                                <div className="flex items-center justify-between p-4">
-                                    <div className="flex items-center">
-                                        <img
-                                            alt="Author"
-                                            src="/img/logo/logo.png"
-                                            className="h-8 w-8 rounded-full"
-                                        />
-                                        <div className="flex flex-col ml-3 text-sm">
-                    <span className="text-slate-800 font-semibold group-hover:underline">
-                        Pitchle Team
-                    </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </Link>
-                    ))}
-                </div>
+            {/* Categories Tabs - Scrollable on Mobile */}
+            <div className="overflow-x-auto whitespace-nowrap flex justify-start md:justify-center mb-6 px-4">
+                {categories.map((cat) => (
+                    <button
+                        key={cat.value}
+                        className={`px-4 py-2 mx-2 ${
+                            selectedCategory === cat.value ? "border-b-4 border-blue-500 font-bold" : ""
+                        }`}
+                        onClick={() => {
+                            setSelectedCategory(cat.value);
+                            setVisibleCount(6);
+                        }}
+                    >
+                        {cat.title}
+                    </button>
+                ))}
             </div>
+
+            {/* Category Blogs - Grid Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 my-4 md:grid-cols-3 gap-6 w-10/12 mx-auto">
+                {filteredPosts.map((post) => (
+                    <Link to={`/blog/${post.slug?.current}`} key={post._id}>
+                        <div className="bg-white shadow-md border border-gray-200 rounded-lg">
+                            <img
+                                src={post.image?.asset?.url || "https://via.placeholder.com/400"}
+                                alt={post.title}
+                                className="w-full h-52 object-fit "
+                            />
+                            <div className="flex justify-between p-4 my-4">
+                                <p className="text-md text-blue-500 capitalize">{post.category || "Uncategorized"}</p>
+                                <p className="text-md text-gray-400">
+                                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
+                                </p>
+                            </div>
+                            <h3 className="text-xl font-bold mt-4 line-clamp-2 px-4">{post.title}</h3>
+                            <p className="text-lg text-gray-600 mt-4 line-clamp-3 px-4">{post.description}</p>
+                            <div className="flex items-center mt-2 p-4">
+                                <img
+                                    src="/img/logo/logo.png"
+                                    alt="Pitchle Team"
+                                    className="w-6 h-6 rounded-full mr-2"
+                                />
+                                <span className="text-sm font-medium">Pitchle Team</span>
+                            </div>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+
+            {/* Load More Button */}
+            {(selectedCategory === "latest updates"
+                    ? posts.length > visibleCount
+                    : posts.filter((post) => post.category?.toLowerCase() === selectedCategory.toLowerCase()).length > visibleCount
+            ) && (
+                <div className="flex justify-center mt-6">
+                    <button
+                        className="px-6 py-2 my-4 bg-blue-500 text-white rounded-lg"
+                        onClick={() => setVisibleCount(visibleCount + 6)}
+                    >
+                        Load More
+                    </button>
+                </div>
+            )}
+
         </>
     );
 };
