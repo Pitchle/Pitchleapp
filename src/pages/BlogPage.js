@@ -186,7 +186,7 @@ const BlogPage = () => {
                 }
             }, 100);  // Delay to ensure page navigation happens first
         }}
-        className={"ms-2 text-md font-display tracking-tight text-[#2c4bff] capitalize"}
+        className={"ms-2 poppins-semibold text-[#2c4bff] capitalize"}
     >
         {majorBlog.category || "Uncategorized"}
     </span>
@@ -220,7 +220,7 @@ const BlogPage = () => {
                 {categories.map((cat) => (
                     <button
                         key={cat.value}
-                        className={`px-4 py-2 mx-2 ${selectedCategory === cat.value ? "border-b-4 border-blue-500 font-bold" : ""}`}
+                        className={`px-4 py-2 mx-2 ${selectedCategory === cat.value ? "border-b-4 border-[#2c4bfe] font-bold" : ""}`}
                         onClick={() => handleCategoryChange(cat.value)}
                     >
                         {cat.title}
@@ -240,7 +240,7 @@ const BlogPage = () => {
                                 className="w-full h-52 object-fit "
                             />
                             <div className="flex justify-between p-4 my-4">
-                                <p className="text-md text-[#2c4bff] font-bold capitalize">{post.category || "Uncategorized"}</p>
+                                <p className="text-md text-[#2c4bff] poppins-regular  capitalize">{post.category || "Uncategorized"}</p>
                                 <p className="text-md text-gray-400">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}</p>
                             </div>
                             <h3 className="text-xl font-bold mt-4 line-clamp-2 px-4">{post.title}</h3>

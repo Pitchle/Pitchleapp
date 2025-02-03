@@ -164,7 +164,7 @@ const BlogDetail = () => {
                     <div className="flex flex-col-reverse md:flex-row justify-center w-11/12 mx-auto">
                         <div className="md:w-6/12">
                             <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]"><Link to={"/blog"}>
-                                <span>Blog</span></Link> <span className="ms-3"> ><Link to={`/blog?category=${encodeURIComponent(post.category)}`} className="capitalize font-display text-[#2c4bff] ms-2">
+                                <span>Blog</span></Link> <span className="ms-3"> ><Link to={`/blog?category=${encodeURIComponent(post.category)}`} className="capitalize poppins-semibold text-[#2c4bff] ms-2">
   {post.category}
 </Link>
 
@@ -181,7 +181,7 @@ const BlogDetail = () => {
                                     className="h-14 w-14 border-blue-600 border-4 rounded-full"
                                 />
                                 <div className="ml-3 text-sm">
-                                    <span className="text-[#2c4bff]font-semibold">Pitchle Team</span>
+                                    <span className="text-[#2c4bff] text-xl font-semibold">Pitchle Team</span>
                                     <p className="text-gray-500">{new Date(post.publishedAt).toLocaleDateString()}</p>
                                 </div>
                             </div>
@@ -272,7 +272,7 @@ const BlogDetail = () => {
                                                 className="w-full h-52 object-fit "
                                             />
                                             <div className="flex justify-between p-4 my-4">
-                                                <p className="text-md text-[#2c4bff] font-bold capitalize cursor-pointer">
+                                                <p className="text-md text-[#2c6aff] poppins-regular capitalize cursor-pointer">
                                                     {post.category || "Uncategorized"}
                                                 </p>
                                                 <p className="text-md text-gray-400">
