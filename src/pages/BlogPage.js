@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { client } from "../sanityClient";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
-import { Spinner } from "@material-tailwind/react";
 
 const categories = [
     { title: "Latest Updates", value: "latest updates" },
@@ -17,48 +16,60 @@ const categories = [
 const BlogPage = () => {
     const [posts, setPosts] = useState([]);
     const [majorBlog, setMajorBlog] = useState(null);
-    const [visibleCount, setVisibleCount] = useState(6);
     const [loading, setLoading] = useState(true);
     const [email, setEmail] = useState("");
     const [subscribed, setSubscribed] = useState(false);
     const [emailError, setEmailError] = useState("");
+    const [currentPage, setCurrentPage] = useState(1);  // New state for pagination
+    const [postsPerPage] = useState(6);  // Posts per page
     const location = useLocation();
     const navigate = useNavigate();
     const queryParams = new URLSearchParams(location.search);
     const category = decodeURIComponent(queryParams.get("category") || "");
     const [selectedCategory, setSelectedCategory] = useState("latest updates");
+    const categorySectionRef = useRef(null);
 
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
         const category = queryParams.get("category");
 
         if (category) {
-            setSelectedCategory(decodeURIComponent(category));
+            setSelectedCategory(decodeURIComponent(category)); // Proper decoding
         }
     }, [location]);
 
+    useEffect(() => {
+        if (category) {
+            setTimeout(() => {
+                const categorySection = document.getElementById("category-section");
+                if (categorySection) {
+                    categorySection.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 300); // Delay to allow content to load
+        }
+    }, [category]);
 
     useEffect(() => {
         client
             .fetch(
                 `*[_type == "blog"] | order(publishedAt desc) {
-          _id,
-          title,
-          description,
-          image {
-            asset -> {
-              _id,
-              url
-            }
-          },
-          publishedAt,
-          status,
-          slug {
-            current
-          },
-          category,
-          isMajorBlog
-        }`
+                  _id,
+                  title,
+                  description,
+                  image {
+                    asset -> {
+                      _id,
+                      url
+                    }
+                  },
+                  publishedAt,
+                  status,
+                  slug {
+                    current
+                  },
+                  category,
+                  isMajorBlog
+                }`
             )
             .then((data) => {
                 const major = data.find((post) => post.isMajorBlog);
@@ -72,6 +83,42 @@ const BlogPage = () => {
             });
     }, []);
 
+    const filteredPosts = posts
+        .filter(
+            (post) =>
+                selectedCategory === "latest updates" ||
+                post.category?.toLowerCase() === selectedCategory.toLowerCase()
+        );
+
+    // Get current posts based on pagination
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+    const handleCategoryChange = (category) => {
+        setSelectedCategory(category);
+        setCurrentPage(1);  // Reset to page 1 when category changes
+        navigate({
+            pathname: "/blog",
+            search: `?category=${encodeURIComponent(category)}`,
+        });
+    };
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+
+        // Scroll to the category section after the page change
+        setTimeout(() => {
+            const categorySection = document.getElementById("category-section");
+            if (categorySection) {
+                categorySection.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }, 100); // Adding a small delay to ensure the page change happens first
+    };
+
+
+    // Calculate total pages
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
     const handleSubscribe = () => {
         // Email validation regex pattern
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -106,42 +153,10 @@ const BlogPage = () => {
             });
         }
     };
-    useEffect(() => {
-        // Scroll to category section only if redirected with a category in the URL
-        if (category) {
-            setTimeout(() => {
-                const categorySection = document.getElementById("category-section");
-                if (categorySection) {
-                    categorySection.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
-            }, 300);
-        }
-    }, [category, posts]);
-
-    const filteredPosts = posts
-        .filter(
-            (post) =>
-                selectedCategory === "latest updates" ||
-                post.category?.toLowerCase() === selectedCategory.toLowerCase()
-        )
-        .slice(0, visibleCount);
-
-    const handleCategoryChange = (category) => {
-        setSelectedCategory(category);
-        setVisibleCount(6);
-
-        navigate({
-            pathname: "/blog",
-            search: `?category=${encodeURIComponent(category)}`,
-        });
-    };
-
-
-
 
     return (
         <>
-            <Navbar />
+            <Navbar/>
 
             {majorBlog && (
                 <div className="flex justify-center mt-20 mb-10 lg:mb-20">
@@ -158,9 +173,25 @@ const BlogPage = () => {
                                 Blog{" "}
                                 <span className="ms-3">
                   <span className={"text-sm"}>></span>{" "}
-                                    <span className={" ms-2 text-md font-display tracking-tight text-[#2c4bff] capitalize"}>
-                    {majorBlog.category || "Uncategorized"}
-                  </span>
+                                    <Link to={`/blog?category=${encodeURIComponent(majorBlog.category)}`}>
+    <span
+        onClick={() => {
+            // Trigger the scroll
+            setTimeout(() => {
+                if (categorySectionRef.current) {
+                    categorySectionRef.current.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                }
+            }, 100);  // Delay to ensure page navigation happens first
+        }}
+        className={"ms-2 text-md font-display tracking-tight text-[#2c4bff] capitalize"}
+    >
+        {majorBlog.category || "Uncategorized"}
+    </span>
+</Link>
+
                 </span>
                             </p>
 
@@ -171,7 +202,8 @@ const BlogPage = () => {
                             </Link>
                             <p className="text-xl my-6 lg:my-12">{majorBlog.description}</p>
                             <div className="flex items-center mt-4">
-                                <img alt="Author" src="/img/logo/logo.png" className="h-14 w-14 border-blue-600 border-4 rounded-full" />
+                                <img alt="Author" src="/img/logo/logo.png"
+                                     className="h-14 w-14 border-blue-600 border-4 rounded-full"/>
                                 <div className="ml-3 text-sm">
                                     <span className="text-[#2c4bff] text-xl font-semibold">Pitchle Team</span>
                                     <p className="text-gray-500">{new Date(majorBlog.publishedAt).toLocaleDateString()}</p>
@@ -183,13 +215,12 @@ const BlogPage = () => {
             )}
 
             {/* Categories Tabs - Scrollable on Mobile */}
-            <div id="category-section" className="overflow-x-auto whitespace-nowrap flex justify-start md:justify-center mb-6 px-4">
+            <div id="category-section" ref={categorySectionRef}
+                 className="overflow-x-auto whitespace-nowrap flex justify-start md:justify-center mb-6 px-4">
                 {categories.map((cat) => (
                     <button
                         key={cat.value}
-                        className={`px-4 py-2 mx-2 ${
-                            selectedCategory === cat.value ? "border-b-4 border-blue-500 font-bold" : ""
-                        }`}
+                        className={`px-4 py-2 mx-2 ${selectedCategory === cat.value ? "border-b-4 border-blue-500 font-bold" : ""}`}
                         onClick={() => handleCategoryChange(cat.value)}
                     >
                         {cat.title}
@@ -197,9 +228,10 @@ const BlogPage = () => {
                 ))}
             </div>
 
+
             {/* Category Blogs - Grid Layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 my-4 md:grid-cols-3 gap-6 w-10/12 mx-auto">
-                {filteredPosts.map((post) => (
+                {currentPosts.map((post) => (
                     <Link to={`/blog/${post.slug?.current}`} key={post._id}>
                         <div className="bg-white shadow-md border border-gray-200 rounded-lg">
                             <img
@@ -209,14 +241,12 @@ const BlogPage = () => {
                             />
                             <div className="flex justify-between p-4 my-4">
                                 <p className="text-md text-[#2c4bff] font-bold capitalize">{post.category || "Uncategorized"}</p>
-                                <p className="text-md text-gray-400">
-                                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
-                                </p>
+                                <p className="text-md text-gray-400">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}</p>
                             </div>
                             <h3 className="text-xl font-bold mt-4 line-clamp-2 px-4">{post.title}</h3>
                             <p className="text-lg text-gray-600 mt-4 line-clamp-3 px-4">{post.description}</p>
                             <div className="flex items-center mt-2 p-4">
-                                <img src="/img/logo/logo.png" alt="Pitchle Team" className="w-6 h-6 rounded-full mr-2" />
+                                <img src="/img/logo/logo.png" alt="Pitchle Team" className="w-6 h-6 rounded-full mr-2"/>
                                 <span className="text-sm font-medium">Pitchle Team</span>
                             </div>
                         </div>
@@ -224,20 +254,22 @@ const BlogPage = () => {
                 ))}
             </div>
 
-            {/* Load More Button */}
-            {filteredPosts.length > visibleCount && (
-                <div className="flex justify-center mt-6">
+            {/* Pagination Controls */}
+            <div className="flex justify-center mt-6 space-x-4">
+                {Array.from({length: totalPages}, (_, index) => (
                     <button
-                        className="px-6 py-2 my-4 bg-[#450073] text-white rounded-full"
-                        onClick={() => setVisibleCount(visibleCount + 6)}
+                        key={index}
+                        onClick={() => handlePageChange(index + 1)}
+                        className={`px-4 py-2 rounded-full ${currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-gray-200"}`}
                     >
-                        Load More
+                        {index + 1}
                     </button>
-                </div>
-            )}
+                ))}
+            </div>
 
             <div className="mb-40 mt-10 lg:mt-40">
-                <div className="mt-4 md:mt-32 lg:mt-12 w-full lg:w-2/5 m-auto flex flex-col items-center p-3 space-y-12">
+                <div
+                    className="mt-4 md:mt-32 lg:mt-12 w-full lg:w-2/5 m-auto flex flex-col items-center p-3 space-y-12">
                     <h3 className="text-4xl font-semibold text-center">Subscribe to our newsletter</h3>
 
                     {subscribed ? (
@@ -260,7 +292,6 @@ const BlogPage = () => {
                         </div>
                     )}
 
-                    {/* Show error message below the input */}
                     {emailError && <p className="text-red-500 text-lg mt-4">{emailError}</p>}
                 </div>
             </div>
