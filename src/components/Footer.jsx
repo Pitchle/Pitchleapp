@@ -27,9 +27,13 @@ const Footer = () => {
                         <a className="relative group">
                             <div className="c-underline text-2xl font-bold cursor-pointer">COMPANY</div>
                         </a>
-                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/about"}> About
+                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link onClick={scrollToTop}
+                                                                                              to={"/about"}> About
                             Us</Link></h3>
-                        <h3 className={"text-md font-bold  c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/faq"}> FAQs</Link>
+                        <h3 className={"text-md font-bold  c-underline  cursor-pointer"}><Link onClick={scrollToTop}
+                                                                                               to={"/faq"}> FAQs</Link>
+                        </h3>
+                        <h3 className={"text-md font-bold  c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/blog"}> Blog</Link>
                         </h3>
                     </div>
                     <div className={"flex flex-col lg:ms-20 ms-0 space-y-4"}>
