@@ -138,7 +138,7 @@ const BlogDetail = () => {
                     {/* Blog Header */}
                     <div className="flex flex-col-reverse md:flex-row justify-center w-11/12 mx-auto">
                         <div className="md:w-6/12">
-                            <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]"> <Link to={"/blog"}> <span>Blog</span></Link> <span className="ms-3"> > <span className={"capitalize text-blue-500 ms-2"}>{post.category}</span></span>
+                            <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]"> <Link to={"/blog"}> <span>Blog</span></Link> <span className="ms-3"> > <span className={"capitalize font-display text-[#4572c6] ms-2"}>{post.category}</span></span>
                             </p>
                             <h1 className="text-3xl lg:text-5xl font-semibold my-2 lg:my-6 text-gray-900">{post.title}</h1>
                             <p className="text-lg my-6">{post.description}</p>

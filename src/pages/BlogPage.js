@@ -158,7 +158,7 @@ const BlogPage = () => {
                         </div>
                         <div className="md:w-6/12 py-4 px-4 lg:px-0">
                             <p className="text-xl font-semibold text-[#b8b8c8] my-2">Blog <span className="ms-3"> <span className={"text-sm"}>></span> <span
-                                className={"text-blue-500 ms-2 text-md capitalize"}>{majorBlog.category || "Uncategorized"}</span> </span>
+                                className={" ms-2 text-md font-display tracking-tight text-[#4572c6] capitalize"}>{majorBlog.category || "Uncategorized"}</span> </span>
                             </p>
 
                             <Link to={`/blog/${majorBlog.slug?.current}`}>
@@ -246,9 +246,6 @@ const BlogPage = () => {
             <div className="mb-40 mt-10 lg:mt-40">
                 <div className="mt-4 md:mt-32 lg:mt-12 w-full lg:w-2/5 m-auto flex flex-col items-center p-3 space-y-12">
                     <h3 className="text-4xl font-semibold text-center">Subscribe to our newsletter</h3>
-                    <p className="mt-6 text-xl text-center leading-normal">
-                        We’ll keep you in the loop on our best advice and strategies for social media marketing and growing a small business.
-                    </p>
 
                     {subscribed ? (
                         <p className="text-green-500 text-lg font-semibold">Thanks for subscribing! 🎉</p>
@@ -262,7 +259,7 @@ const BlogPage = () => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <button
-                                className="mt-2 md:mt-0 rounded-full md:ml-2 bg-blue-500 shadow-lg text-white px-6 py-4"
+                                className="mt-2 md:mt-0 rounded-full md:ml-2 bg-[#450073] shadow-lg text-white px-6 py-4"
                                 onClick={handleSubscribe}
                             >
                                 Subscribe
