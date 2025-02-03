@@ -9,6 +9,7 @@ const categories = [
     { title: "Sell & Transfer", value: "sell & transfer" },
     { title: "Partners & Investors", value: "partners & investors" },
     { title: "Promote", value: "Promote" },
+    { title: "Events & Networking", value: "events & networking" },
 ];
 
 
@@ -209,7 +210,7 @@ const BlogPage = () => {
                                 className="w-full h-52 object-fit "
                             />
                             <div className="flex justify-between p-4 my-4">
-                                <p className="text-md text-blue-500 capitalize">{post.category || "Uncategorized"}</p>
+                                <p className="text-md text-[#4572c6] font-bold capitalize">{post.category || "Uncategorized"}</p>
                                 <p className="text-md text-gray-400">
                                     {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
                                 </p>

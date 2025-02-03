@@ -128,6 +128,29 @@ const BlogDetail = () => {
                 console.error("Error copying link to clipboard:", error);
             });
     };
+    const handleShare = (platform) => {
+        const postUrl = encodeURIComponent(window.location.href); // Get and encode the current page URL
+        const postTitle = encodeURIComponent(post?.title || "Check out this blog!");
+
+        let shareUrl = "";
+
+        switch (platform) {
+            case "facebook":
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${postUrl}`;
+                break;
+            case "twitter":
+                shareUrl = `https://twitter.com/intent/tweet?url=${postUrl}&text=${postTitle}`;
+                break;
+            case "whatsapp":
+                shareUrl = `https://wa.me/?text=${postTitle}%20${postUrl}`;
+                break;
+            default:
+                return;
+        }
+
+        window.open(shareUrl, "_blank", "noopener,noreferrer");
+    };
+
 
     return (
         <>
@@ -170,12 +193,21 @@ const BlogDetail = () => {
                     {/* Blog Content Section */}
                     <div ref={contentRef} className="relative flex max-w-4xl mx-auto px-6 py-10">
                         {/* Social Media Icons */}
-                        <div
-                            className={`fixed hidden lg:block left-40 top-1/2 space-y-8 transition-opacity duration-300 ${showIcons ? 'opacity-100' : 'opacity-0'}`}>
-                            <FaFacebookF className="text-gray-500 hover:text-blue-600 text-2xl cursor-pointer"/>
-                            <FaXTwitter className="text-gray-500 hover:text-blue-400 text-2xl cursor-pointer"/>
-                            <FaWhatsapp className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"/>
-                            <div>
+                        <div className={`fixed hidden lg:block left-40 top-1/2 space-y-8 transition-opacity duration-300 ${showIcons ? 'opacity-100' : 'opacity-0'}`}>
+                            <FaFacebookF
+                                className="text-gray-500 hover:text-blue-600 text-2xl cursor-pointer"
+                                onClick={() => handleShare("facebook")}
+                            />
+                            <FaXTwitter
+                                className="text-gray-500 hover:text-blue-400 text-2xl cursor-pointer"
+                                onClick={() => handleShare("twitter")}
+                            />
+                            <FaWhatsapp
+                                className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
+                                onClick={() => handleShare("whatsapp")}
+                            />
+
+                        <div>
                                 <HiOutlineShare
                                     className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
                                     onClick={handleCopyLink}
@@ -230,7 +262,7 @@ const BlogDetail = () => {
                                                 className="w-full h-52 object-fit "
                                             />
                                             <div className="flex justify-between p-4 my-4">
-                                                <p className="text-md text-blue-500 capitalize">{post.category || "Uncategorized"}</p>
+                                                <p className="text-md text-[#4572c6] font-bold capitalize">{post.category || "Uncategorized"}</p>
                                                 <p className="text-md text-gray-400">
                                                     {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
                                                 </p>

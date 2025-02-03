@@ -93,6 +93,7 @@ export default {
                     { title: "Sell & Transfer", value: "sell & transfer" },
                     { title: "Partners & Investors", value: "partners & investors" },
                     { title: "Promote", value: "Promote" },
+                    { title: "Events & Networking", value: "events & networking" },
                 ],
             },
         },
