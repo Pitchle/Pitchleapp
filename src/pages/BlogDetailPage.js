@@ -1,17 +1,17 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Link, useParams, useLocation } from "react-router-dom"; // import useLocation hook
-import { client } from "../sanityClient";
-import { PortableText } from "@portabletext/react";
+import React, {useEffect, useState, useRef} from "react";
+import {Link, useParams, useLocation} from "react-router-dom"; // import useLocation hook
+import {client} from "../sanityClient";
+import {PortableText} from "@portabletext/react";
 import Navbar from "../components/Navbar";
-import { FaFacebookF } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import {FaFacebookF} from "react-icons/fa";
+import {FaXTwitter} from "react-icons/fa6";
 import {Spinner} from "@material-tailwind/react";
-import { FaWhatsapp } from "react-icons/fa";
-import { HiOutlineShare } from "react-icons/hi";
+import {FaWhatsapp} from "react-icons/fa";
+import {HiOutlineShare} from "react-icons/hi";
 
 
 const BlogDetail = () => {
-    const { slug } = useParams();
+    const {slug} = useParams();
     const location = useLocation(); // Get the current location
     const [post, setPost] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -47,7 +47,7 @@ const BlogDetail = () => {
                     publishedAt,
                     category // Fetch the category for the current post
                 }`,
-                { slug }
+                {slug}
             )
             .then((data) => {
                 setPost(data);
@@ -65,7 +65,7 @@ const BlogDetail = () => {
                                 },
                                 description
                             }[0...6]`, // Fetch the first 6 related blogs based on the category
-                            { category, slug }
+                            {category, slug}
                         )
                         .then((relatedData) => setRelatedBlogs(relatedData))
                         .catch((error) => console.error("Error fetching related blogs:", error));
@@ -110,7 +110,8 @@ const BlogDetail = () => {
         setVisibleBlogs((prevVisible) => prevVisible + 6);
     };
 
-    if (loading) return <div className="text-center w-full flex justify-center my-10 text-lg"><Spinner className="h-12 w-12" color="blue" /></div>;
+    if (loading) return <div className="text-center w-full flex justify-center my-10 text-lg"><Spinner
+        className="h-12 w-12" color="blue"/></div>;
     if (!post) return <div className="text-center my-10 text-lg">Blog post not found.</div>;
 
     const handleCopyLink = () => {
@@ -154,14 +155,20 @@ const BlogDetail = () => {
 
     return (
         <>
-            <Navbar />
-            <div className="fixed top-0 left-0 h-1 bg-blue-500 transition-all duration-200" style={{ width: `${scrollProgress}%` }} />
+            <Navbar/>
+            <div className="fixed top-0 left-0 h-1 bg-blue-500 transition-all duration-200"
+                 style={{width: `${scrollProgress}%`}}/>
             <div className="my-20 lg:my-28 flex mx-auto space-x-8">
                 <div className="w-full md:pl-16">
                     {/* Blog Header */}
                     <div className="flex flex-col-reverse md:flex-row justify-center w-11/12 mx-auto">
                         <div className="md:w-6/12">
-                            <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]"> <Link to={"/blog"}> <span>Blog</span></Link> <span className="ms-3"> > <span className={"capitalize font-display text-[#4572c6] ms-2"}>{post.category}</span></span>
+                            <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]"><Link to={"/blog"}>
+                                <span>Blog</span></Link> <span className="ms-3"> ><Link to={`/blog?category=${encodeURIComponent(post.category)}`} className="capitalize font-display text-[#2c4bff] ms-2">
+  {post.category}
+</Link>
+
+                            </span>
                             </p>
                             <h1 className="text-3xl lg:text-5xl font-semibold my-2 lg:my-6 text-gray-900">{post.title}</h1>
                             <p className="text-lg my-6">{post.description}</p>
@@ -174,7 +181,7 @@ const BlogDetail = () => {
                                     className="h-14 w-14 border-blue-600 border-4 rounded-full"
                                 />
                                 <div className="ml-3 text-sm">
-                                    <span className="text-gray-800 font-semibold">Pitchle Team</span>
+                                    <span className="text-[#2c4bff]font-semibold">Pitchle Team</span>
                                     <p className="text-gray-500">{new Date(post.publishedAt).toLocaleDateString()}</p>
                                 </div>
                             </div>
@@ -193,7 +200,8 @@ const BlogDetail = () => {
                     {/* Blog Content Section */}
                     <div ref={contentRef} className="relative flex max-w-4xl mx-auto px-6 py-10">
                         {/* Social Media Icons */}
-                        <div className={`fixed hidden lg:block left-40 top-1/2 space-y-8 transition-opacity duration-300 ${showIcons ? 'opacity-100' : 'opacity-0'}`}>
+                        <div
+                            className={`fixed hidden lg:block left-40 top-1/2 space-y-8 transition-opacity duration-300 ${showIcons ? 'opacity-100' : 'opacity-0'}`}>
                             <FaFacebookF
                                 className="text-gray-500 hover:text-blue-600 text-2xl cursor-pointer"
                                 onClick={() => handleShare("facebook")}
@@ -207,7 +215,7 @@ const BlogDetail = () => {
                                 onClick={() => handleShare("whatsapp")}
                             />
 
-                        <div>
+                            <div>
                                 <HiOutlineShare
                                     className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
                                     onClick={handleCopyLink}
@@ -234,7 +242,7 @@ const BlogDetail = () => {
                                         ),
                                     },
                                     types: {
-                                        image: ({ value }) =>
+                                        image: ({value}) =>
                                             value.url ? (
                                                 <img
                                                     src={value.url}
@@ -252,17 +260,21 @@ const BlogDetail = () => {
                     {relatedBlogs.length > 0 && (
                         <div className="my-16">
                             <h2 className=" text-3xl lg:text-5xl font-semibold text-center  my-20">Related Articles</h2>
-                            <div className="grid grid-cols-1 w-full lg:w-10/12 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div
+                                className="grid grid-cols-1 w-full lg:w-10/12 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {relatedBlogs.slice(0, visibleBlogs).map((blog) => (
                                     <Link to={`/blog/${blog.slug.current}`}>
-                                        <div className="bg-white mx-4 lg:mx-0 shadow-md border border-gray-200 rounded-lg">
+                                        <div
+                                            className="bg-white mx-4 lg:mx-0 shadow-md border border-gray-200 rounded-lg">
                                             <img
                                                 src={post.image?.asset?.url || "https://via.placeholder.com/400"}
                                                 alt={post.title}
                                                 className="w-full h-52 object-fit "
                                             />
                                             <div className="flex justify-between p-4 my-4">
-                                                <p className="text-md text-[#4572c6] font-bold capitalize">{post.category || "Uncategorized"}</p>
+                                                <p className="text-md text-[#2c4bff] font-bold capitalize cursor-pointer">
+                                                    {post.category || "Uncategorized"}
+                                                </p>
                                                 <p className="text-md text-gray-400">
                                                     {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
                                                 </p>
