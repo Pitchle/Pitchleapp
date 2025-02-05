@@ -162,7 +162,7 @@ const BlogDetail = () => {
                 <div className="w-full md:pl-16">
                     {/* Blog Header */}
                     <div className="flex flex-col-reverse md:flex-row justify-center w-11/12 mx-auto">
-                        <div className="md:w-6/12">
+                        <div className=" pe-0 lg:pe-8 md:w-6/12">
                             <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]"><Link to={"/blog"}>
                                 <span>Blog</span></Link> <span className="ms-3"> ><Link to={`/blog?category=${encodeURIComponent(post.category)}`} className="capitalize poppins-semibold text-[#2c4bff] ms-2">
   {post.category}
@@ -170,8 +170,8 @@ const BlogDetail = () => {
 
                             </span>
                             </p>
-                            <h1 className="text-3xl lg:text-5xl font-semibold my-2 lg:my-6 text-gray-900">{post.title}</h1>
-                            <p className="text-lg my-6">{post.description}</p>
+                            <h1 className="text-2xl lg:text-4xl poppins-semibold my-2 pe-0 lg:pe-8 lg:my-6 text-gray-900">{post.title}</h1>
+                            <p className="text-lg poppins-regular pe-0 lg:pe-20 my-6">{post.description}</p>
 
                             {/* Author & Date */}
                             <div className="flex items-center mt-4">
@@ -189,7 +189,7 @@ const BlogDetail = () => {
                         {post.image?.asset?.url && (
                             <div className="md:w-6/12">
                                 <img
-                                    className="w-full h-44 rounded-md lg:w-[600px] lg:h-[350px]"
+                                    className="w-full h-44 rounded-md lg:w-[550px] lg:h-[350px]"
                                     src={post.image.asset.url}
                                     alt={post.title}
                                 />
@@ -279,7 +279,7 @@ const BlogDetail = () => {
                                                     {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
                                                 </p>
                                             </div>
-                                            <h3 className="text-xl font-bold mt-4 line-clamp-2 px-4">{post.title}</h3>
+                                            <h3 className="text-xl font-bold mt-4 lg:line-clamp-2 px-4">{post.title}</h3>
                                             <p className="text-lg text-gray-600 mt-4 line-clamp-3 px-4">{post.description}</p>
                                             <div className="flex items-center mt-2 p-4">
                                                 <img
