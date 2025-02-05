@@ -13,6 +13,9 @@ export default {
             title: "Description",
             type: "text",
         },
+
+        // Content
+
         {
             name: "content",
             title: "Content",
@@ -35,8 +38,20 @@ export default {
                                         validation: (Rule) =>
                                             Rule.regex(/^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$/, {
                                                 name: "hex color",
-                                                invert: false,
-                                            }).error("Enter a valid hex color (e.g., #ff5733)"),
+                                            }).error("Enter a valid hex color"),
+                                    },
+                                ],
+                            },
+                            {
+                                name: "link",
+                                title: "Hyperlink",
+                                type: "object",
+                                fields: [
+                                    {
+                                        name: "href",
+                                        title: "URL",
+                                        type: "url",
+                                        validation: (Rule) => Rule.uri({ allowRelative: false }),
                                     },
                                 ],
                             },
@@ -45,10 +60,13 @@ export default {
                 },
                 {
                     type: "image",
-                    options: { hotspot: true },
+                    options: { hotspot: true }, // Enable cropping
                 },
             ],
         },
+
+
+
         {
             name: "image",
             title: "Image",

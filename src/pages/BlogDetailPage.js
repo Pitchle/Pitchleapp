@@ -8,6 +8,7 @@ import {FaXTwitter} from "react-icons/fa6";
 import {Spinner} from "@material-tailwind/react";
 import {FaWhatsapp} from "react-icons/fa";
 import {HiOutlineShare} from "react-icons/hi";
+import { urlFor } from "../sanityClient"; // Adjust path if needed
 
 
 const BlogDetail = () => {
@@ -232,28 +233,72 @@ const BlogDetail = () => {
                         </div>
 
                         {/* Blog Content (Scrollable) */}
-                        <div className="prose lg:prose-xl my-20 text-md lg:text-xl">
+
+                        <div className="prose lg:prose-xl poppins-regular  my-20 text-md lg:text-xl space-y-10">
                             <PortableText
                                 value={post.content}
                                 components={{
-                                    marks: {
-                                        color: ({children, value}) => (
-                                            <span style={{color: value.hex}}>{children}</span>
+                                    block: {
+                                        h1: ({ children }) => <h1 className="text-4xl poppins-medium  mt-4">{children}</h1>,
+                                        h2: ({ children }) => <h2 className="text-3xl poppins-medium mt-3">{children}</h2>,
+                                        h3: ({ children }) => <h3 className="text-2xl poppins-medium mt-3">{children}</h3>,
+                                        normal: ({ children }) => (
+                                            <p className="leading-8 mt-4">
+                                                {children.map((child, i) =>
+                                                    typeof child === "string"
+                                                        ? child.split("\n").map((line, j) => (
+                                                            <React.Fragment key={j}>
+                                                                {j > 0 && <br />}
+                                                                {line}
+                                                            </React.Fragment>
+                                                        ))
+                                                        : child
+                                                )}
+                                            </p>
                                         ),
                                     },
+                                    list: {
+                                        bullet: ({ children }) => (
+                                            <ul className="list-disc pl-5 space-y-2">{children}</ul>
+                                        ), // ✅ Bullet Points (Unordered List)
+                                        number: ({ children }) => (
+                                            <ol className="list-decimal pl-5 space-y-2">{children}</ol>
+                                        ), // ✅ Numbered List (Ordered List)
+                                    },
+                                    marks: {
+                                        color: ({ children, value }) => <span style={{ color: value.hex }}>{children}</span>,
+                                        strong: ({ children }) => <strong>{children}</strong>,
+                                        em: ({ children }) => <em>{children}</em>,
+                                        underline: ({ children }) => <u>{children}</u>,
+                                        code: ({ children }) => <code className="bg-gray-200 p-1 rounded">{children}</code>,
+                                        link: ({ children, value }) => (
+                                            <a href={value.href} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                                                {children}
+                                            </a>
+                                        ), // ✅ Hyperlink Support with Blue Color & Underline
+                                    },
                                     types: {
-                                        image: ({value}) =>
-                                            value.url ? (
+                                        image: ({ value }) => (
+                                            value && value.asset ? (
                                                 <img
-                                                    src={value.url}
+                                                    src={urlFor(value)
+                                                        .auto('format')
+                                                        .fit('max')
+                                                        .width(1000)}
                                                     alt="Blog Content"
                                                     className="w-full h-auto rounded-lg shadow-md my-6"
                                                 />
-                                            ) : null,
+                                            ) : null
+                                        ),
                                     },
                                 }}
                             />
+
+
+
                         </div>
+
+
                     </div>
 
                     {/* Related Blogs Section */}
