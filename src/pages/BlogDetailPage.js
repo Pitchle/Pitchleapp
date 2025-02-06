@@ -236,7 +236,7 @@ const BlogDetail = () => {
 
                         {/* Blog Content (Scrollable) */}
 
-                        <div className="prose lg:prose-xl poppins-regular space-y-6 text-[18px]  my-10">
+                        <div className="prose lg:prose-xl poppins-regular space-y-2 text-[18px]  my-10">
                             <PortableText
                                 value={post.content}
                                 components={{
@@ -340,7 +340,7 @@ const BlogDetail = () => {
                                                 <p className="text-md text-[#2c6aff] poppins-regular capitalize cursor-pointer">
                                                     {post.category || "Uncategorized"}
                                                 </p>
-                                                <p className="text-md text-gray-400">
+                                                <p className="text-md text-gray-700">
                                                     {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
                                                 </p>
                                             </div>
