@@ -13,9 +13,6 @@ export default {
             title: "Description",
             type: "text",
         },
-
-        // Content
-
         {
             name: "content",
             title: "Content",
@@ -24,6 +21,12 @@ export default {
                 {
                     type: "block",
                     marks: {
+                        decorators: [
+                            { title: "Strong", value: "strong" },
+                            { title: "Emphasis", value: "em" },
+                            { title: "Underline", value: "underline" },
+                        ],
+
                         annotations: [
                             {
                                 name: "color",
@@ -34,7 +37,6 @@ export default {
                                         name: "hex",
                                         title: "Hex Code",
                                         type: "string",
-                                        description: "Enter a hex color (e.g., #ff5733)",
                                         validation: (Rule) =>
                                             Rule.regex(/^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$/, {
                                                 name: "hex color",
@@ -55,18 +57,71 @@ export default {
                                     },
                                 ],
                             },
+                            {
+                                name: "lineBreak", // Keep the lineBreak annotation
+                                title: "Line Break",
+                                type: "object",
+                                fields: [
+                                    {
+                                        name: "enabled",
+                                        title: "Enabled",
+                                        type: "boolean",
+                                        initialValue: false,
+                                        hidden: true, // Hide the field from UI
+                                    },
+                                ],
+                            },
+                            {
+                                name: "alignment",
+                                title: "Text Alignment",
+                                type: "object",
+                                fields: [
+                                    {
+                                        name: "style",
+                                        title: "Alignment",
+                                        type: "string",
+                                        options: {
+                                            list: [
+                                                { title: "Left", value: "left" },
+                                                { title: "Center", value: "center" },
+                                                { title: "Right", value: "right" },
+                                                { title: "Justify", value: "justify" },
+                                            ],
+                                        },
+                                    },
+                                ],
+                            },
+                            {
+                                name: "fontFamily",
+                                title: "Font Family",
+                                type: "object",
+                                fields: [
+                                    {
+                                        name: "family",
+                                        title: "Choose Font",
+                                        type: "string",
+                                        options: {
+                                            list: [
+                                                { title: "Arial", value: "Arial, sans-serif" },
+                                                { title: "Times New Roman", value: "Times New Roman, serif" },
+                                                { title: "Poppins", value: "Poppins, sans-serif" },
+                                                { title: "Courier New", value: "Courier New, monospace" },
+                                                { title: "Georgia", value: "Georgia, serif" },
+                                                { title: "Verdana", value: "Verdana, sans-serif" },
+                                            ],
+                                        },
+                                    },
+                                ],
+                            },
                         ],
                     },
                 },
                 {
                     type: "image",
-                    options: { hotspot: true }, // Enable cropping
+                    options: { hotspot: true },
                 },
             ],
         },
-
-
-
         {
             name: "image",
             title: "Image",
@@ -99,7 +154,6 @@ export default {
             name: "isMajorBlog",
             title: "Make this the major blog",
             type: "boolean",
-            description: "Check this to display this blog as the major blog on top.",
         },
         {
             name: "category",

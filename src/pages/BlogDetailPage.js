@@ -8,7 +8,7 @@ import {FaXTwitter} from "react-icons/fa6";
 import {Spinner} from "@material-tailwind/react";
 import {FaWhatsapp} from "react-icons/fa";
 import {HiOutlineShare} from "react-icons/hi";
-import { urlFor } from "../sanityClient"; // Adjust path if needed
+import {urlFor} from "../sanityClient"; // Adjust path if needed
 
 
 const BlogDetail = () => {
@@ -165,7 +165,9 @@ const BlogDetail = () => {
                     <div className="flex flex-col-reverse md:flex-row justify-center w-11/12 mx-auto">
                         <div className=" pe-0 lg:pe-8 md:w-6/12">
                             <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]"><Link to={"/blog"}>
-                                <span>Blog</span></Link> <span className="ms-3"> ><Link to={`/blog?category=${encodeURIComponent(post.category)}`} className="capitalize poppins-semibold text-[#2c4bff] ms-2">
+                                <span>Blog</span></Link> <span className="ms-3"> ><Link
+                                to={`/blog?category=${encodeURIComponent(post.category)}`}
+                                className="capitalize poppins-semibold text-[#2c4bff] ms-2">
   {post.category}
 </Link>
 
@@ -234,21 +236,26 @@ const BlogDetail = () => {
 
                         {/* Blog Content (Scrollable) */}
 
-                        <div className="prose lg:prose-xl poppins-regular  my-20 text-md lg:text-xl space-y-10">
+                        <div className="prose lg:prose-xl poppins-regular space-y-6 text-[18px]  my-10">
                             <PortableText
                                 value={post.content}
                                 components={{
                                     block: {
-                                        h1: ({ children }) => <h1 className="text-4xl poppins-medium  mt-4">{children}</h1>,
-                                        h2: ({ children }) => <h2 className="text-3xl poppins-medium mt-3">{children}</h2>,
-                                        h3: ({ children }) => <h3 className="text-2xl poppins-medium mt-3">{children}</h3>,
-                                        normal: ({ children }) => (
-                                            <p className="leading-8 mt-4">
+                                        h1: ({children}) => <h1 className="text-5xl poppins-bold mt-4">{children}</h1>,
+                                        h2: ({children}) => <h2 className="text-4xl poppins-bold mt-3">{children}</h2>,
+                                        h3: ({children}) => <h3
+                                            className="text-3xl poppins-medium mt-3">{children}</h3>,
+                                        h4: ({children}) => <h3
+                                            className="text-2xl poppins-medium mt-3">{children}</h3>,
+                                        h5: ({children}) => <h3 className="text-xl poppins-medium mt-3">{children}</h3>,
+
+                                        normal: ({children}) => (
+                                            <p className="leading-8 mt-4 whitespace-pre-wrap">
                                                 {children.map((child, i) =>
                                                     typeof child === "string"
                                                         ? child.split("\n").map((line, j) => (
                                                             <React.Fragment key={j}>
-                                                                {j > 0 && <br />}
+                                                                {j > 0 && <br/>}
                                                                 {line}
                                                             </React.Fragment>
                                                         ))
@@ -256,46 +263,59 @@ const BlogDetail = () => {
                                                 )}
                                             </p>
                                         ),
+                                        blockquote: ({children}) => (
+                                            <blockquote
+                                                className="border-l-4 border-gray-500 pl-4 italic my-4">{children}</blockquote>
+                                        ),
+                                        center: ({children}) => <div className="text-center">{children}</div>,
+                                        right: ({children}) => <div className="text-right">{children}</div>,
+                                        justify: ({children}) => <div className="text-justify">{children}</div>,
                                     },
+
                                     list: {
-                                        bullet: ({ children }) => (
-                                            <ul className="list-disc pl-5 space-y-2">{children}</ul>
-                                        ), // ✅ Bullet Points (Unordered List)
-                                        number: ({ children }) => (
-                                            <ol className="list-decimal pl-5 space-y-2">{children}</ol>
-                                        ), // ✅ Numbered List (Ordered List)
+                                        bullet: ({children}) => <ul
+                                            className="list-disc pl-5 space-y-2">{children}</ul>,
+                                        number: ({children}) => <ol
+                                            className="list-decimal pl-5 space-y-2">{children}</ol>,
                                     },
+
                                     marks: {
-                                        color: ({ children, value }) => <span style={{ color: value.hex }}>{children}</span>,
-                                        strong: ({ children }) => <strong>{children}</strong>,
-                                        em: ({ children }) => <em>{children}</em>,
-                                        underline: ({ children }) => <u>{children}</u>,
-                                        code: ({ children }) => <code className="bg-gray-200 p-1 rounded">{children}</code>,
-                                        link: ({ children, value }) => (
-                                            <a href={value.href} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                                        color: ({children, value}) => <span
+                                            style={{color: value.hex}}>{children}</span>,
+                                        strong: ({children}) => <strong>{children}</strong>,
+                                        em: ({children}) => <em>{children}</em>,
+                                        underline: ({children}) => <u>{children}</u>,
+                                        code: ({children}) => <code
+                                            className="bg-gray-200 p-1 rounded">{children}</code>,
+                                        link: ({children, value}) => (
+                                            <a href={value.href} target="_blank" rel="noopener noreferrer"
+                                               className="text-blue-600 underline">
                                                 {children}
                                             </a>
-                                        ), // ✅ Hyperlink Support with Blue Color & Underline
+                                        ),
+                                        alignment: ({children, value}) => (
+                                            <div style={{textAlign: value.style}}>{children}</div>
+                                        ),
+                                        fontFamily: ({children, value}) => (
+                                            <span style={{fontFamily: value.family}}>{children}</span>
+                                        ),
+                                        small: ({children}) => <span className="text-sm">{children}</span>,
+                                        large: ({children}) => <span className="text-lg">{children}</span>,
                                     },
+                                    lineBreak: () => <br />,  // Render the line break here
+
                                     types: {
-                                        image: ({ value }) => (
+                                        image: ({value}) =>
                                             value && value.asset ? (
                                                 <img
-                                                    src={urlFor(value)
-                                                        .auto('format')
-                                                        .fit('max')
-                                                        .width(1000)}
-                                                    alt="Blog Content"
-                                                    className="w-full h-auto rounded-lg shadow-md my-6"
+                                                    src={urlFor(value).auto("format").fit("max").width(1000)}
+                                                    alt={value.alt || "Blog Content"}
+                                                    className="w-[550px] h-[400px] mx-auto rounded-md shadow-sm my-6"
                                                 />
-                                            ) : null
-                                        ),
+                                            ) : null,
                                     },
                                 }}
                             />
-
-
-
                         </div>
 
 
@@ -314,7 +334,7 @@ const BlogDetail = () => {
                                             <img
                                                 src={post.image?.asset?.url || "https://via.placeholder.com/400"}
                                                 alt={post.title}
-                                                className="w-full h-52 object-fit "
+                                                className="w-full rounded-t-lg h-52 object-fit "
                                             />
                                             <div className="flex justify-between p-4 my-4">
                                                 <p className="text-md text-[#2c6aff] poppins-regular capitalize cursor-pointer">
@@ -324,8 +344,8 @@ const BlogDetail = () => {
                                                     {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
                                                 </p>
                                             </div>
-                                            <h3 className="text-2xl lg:text-4xl font-semibold mt-4 hover:underline poppins-bold tracking-wide text-gray-900">{post.title}</h3>
-                                            <p className="text-[17px] poppins-regular my-6 tracking-wide lg:my-12">{post.description}</p>
+                                            <h3 className="px-4 text-md lg:text-xl hover:underline poppins-bold tracking-wide text-gray-900">{post.title}</h3>
+                                            <p className="text-[15px] px-4 poppins-regular line-clamp-3 tracking-wide my-4">{post.description}</p>
                                             <div className="flex items-center hover:underline mt-2 p-4">
                                                 <img
                                                     src="/img/logo/logo.png"
