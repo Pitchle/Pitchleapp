@@ -324,9 +324,9 @@ const BlogDetail = () => {
                                                     {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
                                                 </p>
                                             </div>
-                                            <h3 className="text-xl font-bold mt-4 lg:line-clamp-2 px-4">{post.title}</h3>
-                                            <p className="text-lg text-gray-600 mt-4 line-clamp-3 px-4">{post.description}</p>
-                                            <div className="flex items-center mt-2 p-4">
+                                            <h3 className="text-2xl lg:text-4xl font-semibold mt-4 hover:underline poppins-bold tracking-wide text-gray-900">{post.title}</h3>
+                                            <p className="text-[17px] poppins-regular my-6 tracking-wide lg:my-12">{post.description}</p>
+                                            <div className="flex items-center hover:underline mt-2 p-4">
                                                 <img
                                                     src="/img/logo/logo.png"
                                                     alt="Pitchle Team"

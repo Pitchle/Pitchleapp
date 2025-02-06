@@ -196,11 +196,11 @@ const BlogPage = () => {
                             </p>
 
                             <Link to={`/blog/${majorBlog.slug?.current}`}>
-                                <h2 className="text-2xl lg:text-5xl hover:underline tracking-normal font-semibold text-gray-900">
+                                <h2 className="text-2xl lg:text-4xl font-semibold mt-4 hover:underline poppins-bold tracking-wide text-gray-900">
                                     {majorBlog.title}
                                 </h2>
                             </Link>
-                            <p className="text-xl my-6 lg:my-12">{majorBlog.description}</p>
+                            <p className="text-[17px] poppins-regular my-6 tracking-wide lg:my-12">{majorBlog.description}</p>
                             <div className="flex items-center mt-4">
                                 <img alt="Author" src="/img/logo/logo.png"
                                      className="h-14 w-14 border-blue-600 border-4 rounded-full"/>
@@ -243,9 +243,9 @@ const BlogPage = () => {
                                 <p className="text-md text-[#2c4bff] poppins-regular  capitalize">{post.category || "Uncategorized"}</p>
                                 <p className="text-md text-gray-400">{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}</p>
                             </div>
-                            <h3 className="text-xl font-bold mt-4 line-clamp-2 px-4">{post.title}</h3>
-                            <p className="text-lg text-gray-600 mt-4 line-clamp-3 px-4">{post.description}</p>
-                            <div className="flex items-center mt-2 p-4">
+                            <h3 className=" text-[18px] poppins-bold hover:underline tracking-wide mt-4 line-clamp-2 px-4">{post.title}</h3>
+                            <p className="text-md text-gray-800 poppine-regular  mt-4 tracking-wide line-clamp-3 px-4">{post.description}</p>
+                            <div className="flex items-center hover:underline mt-2 p-4">
                                 <img src="/img/logo/logo.png" alt="Pitchle Team" className="w-6 h-6 rounded-full mr-2"/>
                                 <span className="text-sm font-medium">Pitchle Team</span>
                             </div>
