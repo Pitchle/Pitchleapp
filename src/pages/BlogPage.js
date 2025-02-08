@@ -237,7 +237,7 @@ const BlogPage = () => {
                             <img
                                 src={post.image?.asset?.url || "https://via.placeholder.com/400"}
                                 alt={post.title}
-                                className="w-full h-52 object-fit "
+                                className="w-full h-52 object-cover "
                             />
                             <div className="flex justify-between p-4 my-4">
                                 <p className="text-md text-[#2c4bff] poppins-regular  capitalize">{post.category || "Uncategorized"}</p>
