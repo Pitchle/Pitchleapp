@@ -181,7 +181,7 @@ const BlogDetail = () => {
                                 <img
                                     alt="Author"
                                     src="/img/logo/logo.png"
-                                    className="h-14 w-14 border-blue-600 border-4 rounded-full"
+                                    className="h-14 w-14 border-blue-600  border-4 rounded-full"
                                 />
                                 <div className="ml-3 text-sm">
                                     <span className="text-[#2c4bff] text-xl font-semibold">Pitchle Team</span>
@@ -192,7 +192,7 @@ const BlogDetail = () => {
                         {post.image?.asset?.url && (
                             <div className="md:w-6/12">
                                 <img
-                                    className="w-full h-44 rounded-md lg:w-[550px] lg:h-[350px]"
+                                    className="w-full h-44 object-cover rounded-md lg:w-[550px] lg:h-[350px]"
                                     src={post.image.asset.url}
                                     alt={post.title}
                                 />
@@ -334,7 +334,7 @@ const BlogDetail = () => {
                                             <img
                                                 src={post.image?.asset?.url || "https://via.placeholder.com/400"}
                                                 alt={post.title}
-                                                className="w-full rounded-t-lg h-52 object-fit "
+                                                className="w-full rounded-t-lg h-52 object-cover "
                                             />
                                             <div className="flex justify-between p-4 my-4">
                                                 <p className="text-md text-[#2c6aff] poppins-regular capitalize cursor-pointer">
