@@ -192,7 +192,7 @@ const BlogDetail = () => {
                         {post.image?.asset?.url && (
                             <div className="md:w-6/12">
                                 <img
-                                    className="w-full h-44 object-cover rounded-md lg:w-[550px] lg:h-[350px]"
+                                    className="w-full h-auto object-cover rounded-md lg:w-[550px] lg:h-[350px]"
                                     src={post.image.asset.url}
                                     alt={post.title}
                                 />
@@ -310,7 +310,7 @@ const BlogDetail = () => {
                                                 <img
                                                     src={urlFor(value).auto("format").fit("max").width(1000)}
                                                     alt={value.alt || "Blog Content"}
-                                                    className="w-[550px] h-[400px] mx-auto rounded-md shadow-sm my-6"
+                                                    className="w-auto h-auto lg:h-[400px] mx-auto rounded-md shadow-sm my-6"
                                                 />
                                             ) : null,
                                     },
