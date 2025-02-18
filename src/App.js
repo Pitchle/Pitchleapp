@@ -9,7 +9,8 @@ import Plans from "./pages/Plans";
 import TermsServices from "./pages/TermsServices";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BlogPage from "./pages/BlogPage";
-import BlogDetailPage from './pages/BlogDetailPage'; // Import BlogDetailPage
+import BlogDetailPage from './pages/BlogDetailPage';
+import RedirectPage from "./components/RedirectPage"; // Import BlogDetailPage
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/privacy" element={<PrivacyPolicy />} />
                     <Route path="/blog" element={<BlogPage />} />
                     <Route path="/blog/:slug" element={<BlogDetailPage />} /> {/* Dynamic blog detail route */}
+                    <Route path="/redirect" element={<RedirectPage />} />
                 </Routes>
                 <Footer />
             </Router>
