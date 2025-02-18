@@ -4,7 +4,7 @@ import { IoMdDownload } from "react-icons/io";
 import { QRCodeCanvas } from "qrcode.react";
 
 
-const Navbar = ({ url }) => {
+const Navbar = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [showQR, setShowQR] = useState(false);
 
@@ -79,7 +79,7 @@ const Navbar = ({ url }) => {
                                 <div
                                     className="absolute top-12 left-1/2 transform -translate-x-1/2 bg-white p-2 shadow-lg border rounded-lg">
                                     <QRCodeCanvas
-                                        value={url}
+                                        value={redirectUrl}
                                         size={128} // QR code size
                                         bgColor={"#ffffff"} // Background color
                                         fgColor={"#000000"} // QR code color
