@@ -60,6 +60,39 @@ const Navbar = () => {
                                                                                 to={"/faq"}>FAQs</Link></li>
                                 <li className="c-underline text-black font-bold cursor-pointer"><Link
                                     onClick={scrollToTop} to={"/blog"}>Blog</Link></li>
+                                <li>
+                                    <span
+                                        className="relative block md:hidden cursor-pointer"
+                                        onMouseEnter={() => setShowQR(true)}
+                                        onMouseLeave={() => setShowQR(false)}
+                                    >
+                            <IoMdDownload className="h-8 w-8 text-black hover:text-black transition"/>
+
+                                        {/* QR Code Popup */}
+                                        {showQR && (
+                                            <div
+                                                className="absolute top-12 left-1/2 transform -translate-x-1/2 bg-white p-2 shadow-lg border rounded-lg">
+                                                <QRCodeCanvas
+                                                    value={redirectUrl}
+                                                    size={128} // QR code size
+                                                    bgColor={"#ffffff"} // Background color
+                                                    fgColor={"#000000"} // QR code color
+                                                    level={"H"} // Error correction level (H allows for bigger logos)
+                                                    includeMargin={true} // Adds margin around the QR code
+                                                />
+
+                                                {/* Logo Overlay */}
+                                                <div className="absolute inset-0 flex items-center justify-center">
+                                                    <img
+                                                        src="/img/logo/logo-crop.png" // Your logo path
+                                                        alt="Logo"
+                                                        className="w-10 h-10 bg-white p-1 rounded-full" // Adjust size
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+                        </span>
+                                </li>
                             </ul>
                         )}
                     </div>
@@ -89,10 +122,10 @@ const Navbar = () => {
 
                                     {/* Logo Overlay */}
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <img
-                                            src="/img/logo/logo.png" // Your logo path
+                                    <img
+                                            src="/img/logo/logo-crop.png" // Your logo path
                                             alt="Logo"
-                                            className="w-10 h-10 bg-white rounded-full" // Adjust size
+                                            className="w-10 h-10 bg-white p-1 rounded-full" // Adjust size
                                         />
                                     </div>
                                 </div>
