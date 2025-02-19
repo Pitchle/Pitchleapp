@@ -150,7 +150,14 @@ const Navbar = () => {
                         fgColor={"#000000"}
                         level={"H"} // High error correction for logos
                         includeMargin={true}
-
+                        imageSettings={{
+                            src: "/img/logo/logo-crop.png", // Your pre-edited circular logo with padding
+                            x: undefined,
+                            y: undefined,
+                            height: 40, // Increase height to simulate padding
+                            width: 40,
+                            excavate: true,
+                        }}
                     />
 
 </div>
