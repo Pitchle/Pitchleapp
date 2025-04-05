@@ -10,6 +10,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navbar from '../components/Navbar';
 import Benefits from "../components/Benefits";
+import PlansSection from "../components/PlansSection";
+import FAQs from "../components/FAQs";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -50,7 +52,9 @@ const Home = () => {
                     <Banner/>
                     <Introduction/>
                     <Benefits/>
-                    {/*<About/>*/}
+                    <PlansSection/>
+                    <FAQs/>
+                        {/*<About/>*/}
                     {/*<Feature/>*/}
                     {/*<Philosophy/>*/}
                 </>
