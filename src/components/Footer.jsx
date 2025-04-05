@@ -20,13 +20,13 @@ const Footer = () => {
                         </div>
                         {/* Tagline */}
                         <p className="text-lg mt-4 text-center md:text-left">
-                            The Social Network <br className="hidden md:block" />
-                            for Business &amp; Commerce
+                            The Social Network <br className="block"/>
+                            for Business &amp; <br className="block md:hidden"/> Commerce
                         </p>
                     </div>
 
                     {/* Newsletter */}
-                    <div className="w-full md:w-1/2 lg:w-2/5">
+                    <div className="w-full md:w-1/2 lg:w-2/5 my-10 lg:my-0">
                         <h3 className="text-2xl lato-font text-center md:text-left mb-2">
                             Stay Updated with Our Latest News &amp; Offers!
                         </h3>
