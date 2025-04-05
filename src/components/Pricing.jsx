@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarBar from "./NavbarBar";
 import Slider from "react-slick";
+import Navbar from "./Navbar";
 
 // Data array with different card information
 const Individual = [
@@ -222,7 +223,7 @@ const PricingCard = ({
 const Pricing = () => {
     return (
         <>
-            <NavbarBar/>
+            <Navbar/>
             <div className="text-center"><h2 className="font-bold -ms-0 md:-ms-8 my-6 text-3xl md:text-5xl">User
                 Plans</h2></div>
             <div className={"w-full flex justify-center"}>

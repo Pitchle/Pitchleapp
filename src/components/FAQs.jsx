@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import NavbarBar from "./NavbarBar";
+import Navbar from "./Navbar";
 
 const FaQs = () => {
     const faqs = [
@@ -56,7 +57,7 @@ const FaQs = () => {
 
     return (
         <>
-            <NavbarBar />
+            <Navbar/>
             <div className="container md:px-24 px-4 lg:px-64 py-12 mx-auto">
                 <h1 className="text-2xl font-semibold text-gray-800 lg:text-3xl dark:text-white">
                     Frequently Asked Questions

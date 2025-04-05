@@ -1,10 +1,10 @@
 import React from 'react';
-import NavbarBar from "../components/NavbarBar";
 import {SiTicktick} from "react-icons/si";
+import Navbar from "../components/Navbar";
 
 const AboutPage = () => {
     return (<>
-            <NavbarBar/>
+            <Navbar/>
 
             <div className="px-2 py-10">
                 <div id="features" className="mx-auto w-11/12 lg:w-6/12">

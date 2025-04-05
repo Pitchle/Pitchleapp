@@ -32,7 +32,7 @@ const Home = () => {
             setTimeout(() => {
                 setLoading(false); // Set loading to false after 3 seconds for desktop view
                 AOS.init();
-            }, 5500); // Adjust the duration for desktop view
+            }, 1); // Adjust the duration for desktop view
         }
 
         return () => {
