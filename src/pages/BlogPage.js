@@ -156,8 +156,6 @@ const BlogPage = () => {
 
     return (
         <>
-            <Navbar/>
-
             {majorBlog && (
                 <div className="flex justify-center mt-20 mb-10 lg:mb-20">
                     <div className="flex w-11/12 lg:w-10/12 flex-col md:flex-row items-center justify-evenly mb-6">

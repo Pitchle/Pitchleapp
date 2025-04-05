@@ -156,7 +156,6 @@ const BlogDetail = () => {
 
     return (
         <>
-            <Navbar/>
             <div className="fixed top-0 left-0 h-1 bg-blue-500 transition-all duration-200"
                  style={{width: `${scrollProgress}%`}}/>
             <div className="my-20 lg:my-28 flex mx-auto space-x-8">

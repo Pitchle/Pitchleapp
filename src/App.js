@@ -10,12 +10,14 @@ import TermsServices from "./pages/TermsServices";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import BlogPage from "./pages/BlogPage";
 import BlogDetailPage from './pages/BlogDetailPage';
-import RedirectPage from "./components/RedirectPage"; // Import BlogDetailPage
+import RedirectPage from "./components/RedirectPage";
+import Navbar from "./components/Navbar"; // Import BlogDetailPage
 
 function App() {
     return (
         <>
             <Router>
+                <Navbar/>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<AboutPage />} />

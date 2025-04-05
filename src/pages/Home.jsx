@@ -48,15 +48,14 @@ const Home = () => {
             {loading && <SplashScreen isMobile={isMobile}/>} {/* Pass isMobile prop */}
             {!loading && (
                 <>
-                    <Navbar/>
+
                     <Banner/>
                     <Introduction/>
+                    <About/>
                     <Benefits/>
                     <PlansSection/>
                     <FAQs/>
-                        {/*<About/>*/}
                     <Feature/>
-                    {/*<Philosophy/>*/}
                 </>
             )}
         </div>
