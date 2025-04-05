@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import SplashScreen from '../components/SplashScreen';
 import Banner from '../components/Banner';
 import Introduction from '../components/Introduction';
@@ -9,6 +9,7 @@ import Philosophy from '../components/Philosophy';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navbar from '../components/Navbar';
+import Benefits from "../components/Benefits";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -42,17 +43,16 @@ const Home = () => {
 
     return (
         <div className="App">
-            {loading && <SplashScreen isMobile={isMobile} />} {/* Pass isMobile prop */}
+            {loading && <SplashScreen isMobile={isMobile}/>} {/* Pass isMobile prop */}
             {!loading && (
                 <>
-                    <main>
-                        <Navbar />
-                        <Banner />
-                        <Introduction />
-                    </main>
-                    <About />
-                    <Feature />
-                    <Philosophy />
+                    <Navbar/>
+                    <Banner/>
+                    <Introduction/>
+                    <Benefits/>
+                    {/*<About/>*/}
+                    {/*<Feature/>*/}
+                    {/*<Philosophy/>*/}
                 </>
             )}
         </div>
