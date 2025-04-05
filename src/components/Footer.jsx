@@ -1,91 +1,106 @@
 import React from 'react';
-import {Link} from 'react-router-dom'; // Import Link from react-router-dom
+import { FaLinkedin, FaYoutube, FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear(); // Get the current year
-    const scrollToTop = () => {
-        window.scrollTo(0, 0);
-    };
     return (
-        <>
-            <div className={"text-white py-20 bg-[#450073]"}>
-                <div className={"w-8/12 "}>
-                    <div className={"w-7/12 ms-8 py-8 flex justify-center items-center space-x-1"}>
-                        <img src="/img/logo/logo.png" className={"w-16 h-16"} alt="lgoo"/>
-                        <h3 className={"text-3xl font-bold"}><span translate="no"> Pitchle</span></h3>
-                    </div>
-                </div>
-                <div className={"w-8/12 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 mx-auto"}>
-                    <div className={"flex flex-col space-y-4"}>
-                        <h3 className={"text-2xl font-bold c-underline  cursor-pointer"}> LEGAL</h3>
-                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/terms"}> Term of
-                            Services </Link></h3>
-                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/privacy"}> Privacy
-                            Policy </Link></h3>
-                    </div>
-                    <div className={"flex flex-col  space-y-4"}>
-                        <a className="relative group">
-                            <div className="c-underline text-2xl font-bold cursor-pointer">COMPANY</div>
-                        </a>
-                        <h3 className={"text-md font-bold c-underline  cursor-pointer"}><Link onClick={scrollToTop}
-                                                                                              to={"/about"}> About
-                            Us</Link></h3>
-                        <h3 className={"text-md font-bold  c-underline  cursor-pointer"}><Link onClick={scrollToTop}
-                                                                                               to={"/faq"}> FAQs</Link>
-                        </h3>
-                        <h3 className={"text-md font-bold  c-underline  cursor-pointer"}><Link onClick={scrollToTop} to={"/blog"}> Blog</Link>
-                        </h3>
-                    </div>
-                    <div className={"flex flex-col lg:ms-20 ms-0 space-y-4"}>
-                        <a className="relative group">
-                            <div className="c-underline text-2xl font-bold cursor-pointer">CONTACT US</div>
-                        </a>
-                        <h3 className={"c-underline text-md font-bold"}>
-                            <a href="mailto:contact@pitchleapp.com"><span translate="no"><span translate="no">contact@pitchleapp.com</span></span></a>
-                        </h3>
-                        <div className={"flex w-full flex items-center space-x-1"}>
-                            <a target={"_blank"} href="https://www.linkedin.com/company/pitchle?trk=blended-typeahead">
-                                <img src="/img/logo/link.svg" className={"w-12 scale-ani h-12"} alt="link"/></a>
-                            <a target={"_blank"} href="https://play.google.com/store/apps/details?id=com.pitchle.pitchleApp">
-                                <div className={"w-10 flex justify-center items-center scale-ani h-10 rounded-full bg-[#0288d1]"}>
-                                    <img src="/img/logo/playstore.png" className={"w-5 scale-ani h-5"} alt="link"/>
-                                </div>
-                            </a>
-                            <div className={"w-10 flex justify-center items-center h-10 rounded-full bg-[#0288d1]"}>
-                                <a
-                                    href="https://apps.apple.com/us/app/pitchle/id6677026938"
-                                    target="_blank"
-                                    className="flex scale-ani items-center justify-center w-8/12  md:w-full text-center text-white bg-[#0288d1] rounded-2xl"
-                                    rel="noreferrer"
-                                >
-                                    <svg
-                                        className="w-6"
-                                        viewBox="0 0 40 45"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <g clipPath="url(#clip0)">
-                                            <path
-                                                d="M32.6226 23.7016C32.6026 20.0267 34.2591 17.253 37.6118 15.2103C35.7359 12.5167 32.902 11.0347 29.1601 10.7443C25.6177 10.464 21.7461 12.8171 20.3292 12.8171C18.8324 12.8171 15.3998 10.8445 12.7057 10.8445C7.13769 10.9346 1.22048 15.3004 1.22048 24.1822C1.22048 26.8057 1.69945 29.516 2.65738 32.3131C3.93461 35.988 8.54465 45 13.3542 44.8498C15.8688 44.7897 17.645 43.0574 20.9179 43.0574C24.091 43.0574 25.7375 44.8498 28.5414 44.8498C33.3909 44.7797 37.5619 36.5888 38.7793 32.9039C32.2733 29.8298 32.6226 23.8919 32.6226 23.7016ZM26.9748 7.25968C29.6989 4.01535 29.4494 1.06142 29.3696 0C26.9648 0.140187 24.1808 1.64219 22.5943 3.49466C20.848 5.4773 19.8203 7.93058 20.0398 10.6943C22.6442 10.8945 25.019 9.55274 26.9748 7.25968Z"
-                                                fill="white"
-                                            />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0">
-                                                <rect width={40} height={45} fill="white"/>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </a>
-                            </div>
+        <footer className="bg-gray-100 py-10 px-4 color-[#343434] md:px-8 m-0 lg:m-2 lg:m-4 lg:px-16  rounded-xl mt-10">
+            <div className="max-w-7xl mx-auto">
+                {/* Row 1: Brand (left) + Newsletter (right) */}
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+                    {/* Brand */}
+                    <div className="flex flex-col gap-3">
+                        <div className={"flex justify-center items-center space-x-2"}>
+                            <img
+                                src="/img/logo/logo.png"
+                                alt="Pitchle Logo"
+                                className="w-12 h-12 rounded-full"
+                            />
+                            <h2 className="text-2xl font-bold">Pitchle</h2>
+                        </div>
+                        <div>
+                            <p className="text-sm text-center">
+                                The Social Network for Business & Commerce
+                            </p>
                         </div>
                     </div>
 
+                    {/* Newsletter */}
+                    <div className="w-full lg:w-2/5">
+                        <h3 className="text-2xl text-center lato-font lg:text-start font-bold mb-2">
+                            Stay Updated with Our Latest News &amp; Offers!
+                        </h3>
+                        <p className=" sub-lato mt-3 text-center lg:text-start  mb-4">
+                            Subscribe to our newsletter for exclusive updates, business tips,
+                            and special offers.
+                        </p>
+                        <div className="flex mt-7  justify-center">
+                            <input
+                                type="email"
+                                placeholder="Enter your Email"
+                                className=" border sub-lato w-44 lg:w-full border-blue-500 placeholder-[#7A7A7A] rounded-full px-2 lg:px-4 py-3 focus:outline-none"
+                            />
+                            <button className="ml-3 bg-[#417DFF] text-white px-4 lg:px-6 py-2 rounded-full hover:bg-blue-600 transition">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Row 2: Company | Legal | Connect */}
+                <div className={"flex justify-end"}>
+                    <div className=" w-full lg:w-2/5  grid grid-cols-1 md:grid-cols-1 gap-0 mt-10">
+                        <div className={"flex flex-col lg:flex-row justify-between w-full"}>
+                            <div className={"flex w-full px-4 lg:px-0 lg:w-7/12 flex-row justify-between"}>
+                                <div>
+                                    <h4 className="font-bold text-2xl color-[#343434] mb-2">Company</h4>
+                                    <ul className="space-y-1 mt-3 text-sm">
+                                        <li>About Us</li>
+                                        <li>Plans</li>
+                                        <li>We Care</li>
+                                        <li>Blog</li>
+                                        <li>FAQs</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-2xl color-[#343434] mb-2">Legal</h4>
+                                    <ul className="space-y-1 mt-3 text-sm">
+                                        <li>Privacy Policy</li>
+                                        <li>Terms of Services</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className={"mt-6 ms-3 lg:ms-0 w-7/12 lg:w-4/12 lg:mt-0"}>
+                                <h4 className="font-bold text-2xl color-[#343434] mb-2">Connect</h4>
+                                <p className="text-md mt-3 mb-2">contact@pitchleapp.com</p>
+                                <div className="flex mt-4 space-x-1">
+                                    {/* Social icons in green circles with white icons */}
+                                    <div
+                                        className="bg-green-600 w-10 h-10 flex items-center justify-center rounded-full">
+                                        <FaLinkedin size={16} className="text-white"/>
+                                    </div>
+                                    <div
+                                        className="bg-green-600 w-10 h-10 flex items-center justify-center rounded-full">
+                                        <FaYoutube size={16} className="text-white"/>
+                                    </div>
+                                    <div
+                                        className="bg-green-600 w-10 h-10 flex items-center justify-center rounded-full">
+                                        <FaApple size={16} className="text-white"/>
+                                    </div>
+                                    <div
+                                        className="bg-green-600 w-10 h-10 flex items-center justify-center rounded-full">
+                                        <FaGooglePlay size={16} className="text-white"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Bottom line: Copyright */}
+                <div className="mt-28 text-center text-sm ">
+                    © 2025 Pitchle. All rights reserved
                 </div>
             </div>
-            <p className={"text-center py-2"}>© {currentYear} <span translate="no"> Pitchle</span>. All rights reserved
-            </p>
-        </>
+        </footer>
     );
 };
 

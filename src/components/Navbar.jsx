@@ -110,9 +110,9 @@ const Navbar = () => {
                 }`}
             >
                 {/* Header in Drawer */}
-                <div className="flex items-center justify-between p-4 bg-white rounded-full m-4">
+                <div className="flex items-center justify-between p-2 bg-white rounded-full m-4">
                     <div className="flex items-center space-x-2">
-                        <img src="/logo.png" alt="logo" className="w-8 h-8" />
+                        <img src="/img/logo/logo-crop.png" alt="logo" className="w-10 h-10" />
                         <span className="font-bold text-lg text-gray-800">Pitchle</span>
                     </div>
                     <button
@@ -124,13 +124,13 @@ const Navbar = () => {
                 </div>
 
                 {/* Navigation Items */}
-                <div className="flex flex-col items-center justify-center mt-16 space-y-6">
+                <div className="flex flex-col items-center justify-center mt-16 space-y-10 ">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
                             to={item.path}
                             onClick={() => setMobileOpen(false)}
-                            className={`text-white text-lg font-medium ${
+                            className={`text-white text-2xl font-medium ${
                                 location.pathname === item.path ? "underline" : ""
                             }`}
                         >
