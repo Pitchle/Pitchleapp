@@ -3,43 +3,47 @@ import { FaLinkedin, FaYoutube, FaApple, FaGooglePlay } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-100 py-10 px-4 color-[#343434] md:px-8 m-0 lg:m-2 lg:m-4 lg:px-16  rounded-xl mt-10">
+        <footer className="bg-gray-100 py-10 px-4 text-[#343434] md:px-8 lg:m-4 lg:px-16 rounded-xl mt-10">
             <div className="max-w-7xl mx-auto">
                 {/* Row 1: Brand (left) + Newsletter (right) */}
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+                <div className="flex flex-col md:flex-row md:justify-between gap-2">
                     {/* Brand */}
-                    <div className="flex flex-col gap-3">
-                        <div className={"flex justify-center items-center space-x-2"}>
+                    <div className="flex flex-col justify-center items-center md:items-start">
+                        {/* Logo + Title */}
+                        <div className="flex items-center space-x-2">
                             <img
                                 src="/img/logo/logo.png"
                                 alt="Pitchle Logo"
                                 className="w-12 h-12 rounded-full"
                             />
-                            <h2 className="text-2xl font-bold">Pitchle</h2>
+                            <h2 className="text-3xl font-bold">Pitchle</h2>
                         </div>
-                        <div>
-                            <p className="text-sm text-center">
-                                The Social Network for Business & Commerce
-                            </p>
-                        </div>
+                        {/* Tagline */}
+                        <p className="text-lg mt-4 text-center md:text-left">
+                            The Social Network <br className="hidden md:block" />
+                            for Business &amp; Commerce
+                        </p>
                     </div>
 
                     {/* Newsletter */}
-                    <div className="w-full lg:w-2/5">
-                        <h3 className="text-2xl text-center lato-font lg:text-start font-bold mb-2">
+                    <div className="w-full md:w-1/2 lg:w-2/5">
+                        <h3 className="text-2xl lato-font text-center md:text-left mb-2">
                             Stay Updated with Our Latest News &amp; Offers!
                         </h3>
-                        <p className=" sub-lato mt-3 text-center lg:text-start  mb-4">
+                        <p className="mt-3 text-center md:text-left mb-4">
                             Subscribe to our newsletter for exclusive updates, business tips,
                             and special offers.
                         </p>
-                        <div className="flex mt-7  justify-center">
+                        <div className="flex mt-7 justify-center md:justify-start">
                             <input
                                 type="email"
                                 placeholder="Enter your Email"
-                                className=" border sub-lato w-44 lg:w-full border-blue-500 placeholder-[#7A7A7A] rounded-full px-2 lg:px-4 py-3 focus:outline-none"
+                                className="border border-blue-500 placeholder-[#7A7A7A]
+                           rounded-full px-4 py-3 focus:outline-none
+                           w-44 md:w-full"
                             />
-                            <button className="ml-3 bg-[#417DFF] text-white px-4 lg:px-6 py-2 rounded-full hover:bg-blue-600 transition">
+                            <button className="ml-3 bg-[#417DFF] text-white px-6 py-2
+                                 rounded-full hover:bg-blue-600 transition">
                                 Subscribe
                             </button>
                         </div>
@@ -48,55 +52,53 @@ const Footer = () => {
 
                 {/* Row 2: Company | Legal | Connect */}
                 <div className={"flex justify-end"}>
-                    <div className=" w-full lg:w-2/5  grid grid-cols-1 md:grid-cols-1 gap-0 mt-10">
-                        <div className={"flex flex-col lg:flex-row justify-between w-full"}>
-                            <div className={"flex w-full px-4 lg:px-0 lg:w-7/12 flex-row justify-between"}>
-                                <div>
-                                    <h4 className="font-bold text-2xl color-[#343434] mb-2">Company</h4>
-                                    <ul className="space-y-1 mt-3 text-sm">
-                                        <li>About Us</li>
-                                        <li>Plans</li>
-                                        <li>We Care</li>
-                                        <li>Blog</li>
-                                        <li>FAQs</li>
-                                    </ul>
+                    <div className=" w-full lg:w-5/12 grid grid-cols-2 px-4 md:grid-cols-3 gap-8 lg:gap-0 mt-10">
+                        {/* Company */}
+                        <div>
+                            <h4 className="font-bold text-2xl mb-2">Company</h4>
+                            <ul className="space-y-3 mt-3 text-sm">
+                                <li>About Us</li>
+                                <li>Plans</li>
+                                <li>We Care</li>
+                                <li>Blog</li>
+                                <li>FAQs</li>
+                            </ul>
+                        </div>
+
+                        {/* Legal */}
+                        <div>
+                            <h4 className="font-bold text-2xl mb-2">Legal</h4>
+                            <ul className="space-y-3 mt-3 text-sm">
+                                <li>Privacy Policy</li>
+                                <li>Terms of Services</li>
+                            </ul>
+                        </div>
+
+                        {/* Connect */}
+                        <div className={"col-span-2 md:col-span-1 "}>
+                            <h4 className="font-bold text-2xl mb-2">Connect</h4>
+                            <p className="text-md mt-3 mb-2">contact@pitchleapp.com</p>
+                            <div className="flex mt-4 space-x-1">
+                                {/* Social icons in green circles with white icons */}
+                                <div className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
+                                    <FaLinkedin size={22} className="text-white"/>
                                 </div>
-                                <div>
-                                    <h4 className="font-bold text-2xl color-[#343434] mb-2">Legal</h4>
-                                    <ul className="space-y-1 mt-3 text-sm">
-                                        <li>Privacy Policy</li>
-                                        <li>Terms of Services</li>
-                                    </ul>
+                                <div className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
+                                    <FaYoutube size={22} className="text-white"/>
                                 </div>
-                            </div>
-                            <div className={"mt-6 ms-3 lg:ms-0 w-7/12 lg:w-4/12 lg:mt-0"}>
-                                <h4 className="font-bold text-2xl color-[#343434] mb-2">Connect</h4>
-                                <p className="text-md mt-3 mb-2">contact@pitchleapp.com</p>
-                                <div className="flex mt-4 space-x-1">
-                                    {/* Social icons in green circles with white icons */}
-                                    <div
-                                        className="bg-green-600 w-10 h-10 flex items-center justify-center rounded-full">
-                                        <FaLinkedin size={16} className="text-white"/>
-                                    </div>
-                                    <div
-                                        className="bg-green-600 w-10 h-10 flex items-center justify-center rounded-full">
-                                        <FaYoutube size={16} className="text-white"/>
-                                    </div>
-                                    <div
-                                        className="bg-green-600 w-10 h-10 flex items-center justify-center rounded-full">
-                                        <FaApple size={16} className="text-white"/>
-                                    </div>
-                                    <div
-                                        className="bg-green-600 w-10 h-10 flex items-center justify-center rounded-full">
-                                        <FaGooglePlay size={16} className="text-white"/>
-                                    </div>
+                                <div className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
+                                    <FaApple size={22} className="text-white"/>
+                                </div>
+                                <div className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
+                                    <FaGooglePlay size={22} className="text-white"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 {/* Bottom line: Copyright */}
-                <div className="mt-28 text-center text-sm ">
+                <div className="mt-10 lg:mt-20 text-center text-sm">
                     © 2025 Pitchle. All rights reserved
                 </div>
             </div>

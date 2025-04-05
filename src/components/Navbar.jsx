@@ -20,8 +20,8 @@ const Navbar = () => {
     const redirectUrl = `${window.location.origin}/redirect`;
 
     return (
-        <nav className="sticky top-0 z-50 w-full bg-transparent">
-            <div className="w-11/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-4 sm:px-6 lg:px-8 bg-white">
+        <nav className=" w-full bg-transparent">
+            <div className="w-11/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-4 sm:px-6 lg:px-3 bg-white">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <div className="flex items-center space-x-2">
