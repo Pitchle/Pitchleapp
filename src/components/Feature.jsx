@@ -1,108 +1,59 @@
-import React from 'react';
-import {SiTicktick} from "react-icons/si";
+import React, { useState } from 'react';
+import { AiOutlineQrcode } from 'react-icons/ai';
+import { QRCodeCanvas } from 'qrcode.react';
 
 const Feature = () => {
+    const [showQR, setShowQR] = useState(false);
+    const redirectUrl = `${window.location.origin}/redirect`;
+
     return (
-        <>
-            <div className="max-w-4xl mx-auto px-6 mt-8 md:mt16">
-                <div className="text-center">
-                    <h2 className="font-bold -ms-0 md:-ms-8 text-5xl">Key Features and Benefits</h2>
-                </div>
-                <div className="grid md:grid-cols-2 gap-1 mt-20">
-                    <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
-                        <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl md:text-3xl items-center flex font-medium">
-        <SiTicktick className={"text-blue-700"}/> &nbsp; <span translate="no">Video Pitches</span></span>
-                        </div>
-
-                        <div className="p-4 text-md text-start md:text-justify">
-                            <p className="leading-normal ">
-                                Post your ideas, business offers and product promotions through attractive 30 second
-                                (free)
-                                or 60 second (paid) videos.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
-                        <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl md:text-3xl items-center flex font-medium">
-      <SiTicktick className={"text-blue-700"}/> &nbsp;Easy to use
-    </span>
-                        </div>
-
-                        <div className="p-4 text-md text-justify">
-                            <p className="leading-normal ">
-                                Designed to be simple and easy to use.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        className="relative  flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
-                        <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl md:text-3xl items-center flex font-medium">
-      <SiTicktick className={"text-blue-700"}/> &nbsp;AI
-    </span>
-                        </div>
-
-                        <div className="p-4 text-md text-justify">
-                            <p className="leading-normal ">
-                                <span translate="no">Pitchle </span> uses AI to automate tasks efficiently.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
-                        <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl md:text-3xl items-center flex font-medium">
-      <SiTicktick className={"text-blue-700"}/> &nbsp;Customer Support
-    </span>
-                        </div>
-
-                        <div className="p-4 text-md text-justify">
-                            <p className="leading-normal ">
-                                Enjoy dedicated customer support to assist you every step of the way.
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
-                        <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl md:text-3xl items-center flex font-medium">
-      <SiTicktick className={"text-blue-700"}/> &nbsp;Privacy & Security
-    </span>
-                        </div>
-
-                        <div className="p-4 text-md text-justify">
-                            <p className="leading-normal ">
-                                Manage your privacy settings to control who can view your profile and <span translate="no">pitches</span>(paid
-                                subscription).
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-80 md:w-96">
-                        <div className="mx-3 mb-0 border-b border-slate-200 pt-3 pb-2 px-1">
-    <span className="text-2xl md:text-3xl items-center flex font-medium">
-      <SiTicktick className={"text-blue-700"}/> &nbsp;Subscription Plans
-    </span>
-                        </div>
-
-                        <div className="p-4 text-md text-start md:text-justify">
-                            <p className="leading-normal ">
-                               <ul>
-                                   <li>*Free under its 30-second video model.</li>
-                                   <li>*Paid:60-second video.  </li>
-                                   <li>*Subscriptions: one-time use, monthly, or annual plans. </li>
-                               </ul>
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
+        <section className="py-32 lg:py-40 px-4 md:px-16 lg:px-24 text-center relative">
+            {/* Heading */}
+            <div className="mb-8 space-y-7">
+                <h1 className="text-3xl lg:text-7xl font-bold text-[#01BF74] mb-4">We Grow <br /> When You Grow</h1>
+                <p className="text-md lg:text-lg">
+                    Download Pitchle and Start Growing <br/>Your Business Today!
+                </p>
             </div>
-        </>
+
+            {/* Button */}
+            <div className="flex justify-center mt-10 relative">
+                <button
+                    onMouseEnter={() => setShowQR(true)}
+                    onMouseLeave={() => setShowQR(false)}
+                    className="bg-blue-500 text-white py-3 px-8 lg:px-12 rounded-full shadow-md hover:bg-blue-600 transition flex items-center space-x-2 text-sm lg:text-base"
+                >
+                    <span>Scan to Install</span>
+                    <AiOutlineQrcode className="w-5 h-5" />
+                </button>
+
+                {/* QR Code Popup */}
+                {showQR && (
+                    <div
+                        className="absolute top-12 left-1/2 transform -translate-x-1/2 bg-white p-3 shadow-lg border rounded-lg z-50"
+                        onMouseEnter={() => setShowQR(true)}
+                        onMouseLeave={() => setShowQR(false)}
+                    >
+                        <QRCodeCanvas
+                            value={redirectUrl}
+                            size={128}
+                            bgColor={"#ffffff"}
+                            fgColor={"#000000"}
+                            level={"H"}
+                            includeMargin={true}
+                        />
+                        {/* Logo overlay */}
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <img
+                                src="/img/logo/logo-crop.png"
+                                alt="Logo"
+                                className="w-10 h-10 bg-white p-1 rounded-full"
+                            />
+                        </div>
+                    </div>
+                )}
+            </div>
+        </section>
     );
 };
 

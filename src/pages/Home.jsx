@@ -55,7 +55,7 @@ const Home = () => {
                     <PlansSection/>
                     <FAQs/>
                         {/*<About/>*/}
-                    {/*<Feature/>*/}
+                    <Feature/>
                     {/*<Philosophy/>*/}
                 </>
             )}

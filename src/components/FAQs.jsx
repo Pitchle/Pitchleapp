@@ -57,7 +57,7 @@ const FaQs = () => {
 
     return (
         <>
-            <h1 className="text-xl ms-32 mt-20 font-semibold text-gray-800 lg:text-5xl dark:text-white">
+            <h1 className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-20 font-semibold  text-gray-800 lg:text-5xl dark:text-white">
                 <span className={"text-[#01BF74]"}> Got any questions?</span> <br/> <span className={"text-[#DFDFDF]"}>We’ve got answers.</span>
             </h1>
 
@@ -67,10 +67,10 @@ const FaQs = () => {
                         <div key={index} className="rounded-lg overflow-hidden transition-all duration-500">
                             {/* Question and toggle button div with blue background */}
                             <div
-                                className={`p-8 bg-[#417DFF] text-white flex items-center justify-between cursor-pointer transition-all duration-300 ${expandedItems[index] ? 'shadow-lg' : ''}`}
+                                className={`px-8 py-6 lg:py-8 bg-[#417DFF] text-white flex items-center justify-between cursor-pointer transition-all duration-300 ${expandedItems[index] ? 'shadow-lg' : ''}`}
                                 onClick={() => toggleExpand(index)}
                             >
-                                <h1 className="font-semibold text-xl" dangerouslySetInnerHTML={{__html: faq.question}}/>
+                                <h1 className="font-semibold text-lg lg:text-xl" dangerouslySetInnerHTML={{__html: faq.question}}/>
                                 <span className="text-white transition-transform duration-300">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +92,7 @@ const FaQs = () => {
                             >
                                 {expandedItems[index] && (
                                     <div className="p-8 text-black">
-                                        <p className="text-lg text-justify"
+                                        <p className="text-lg text-justify lg:text-start"
                                            dangerouslySetInnerHTML={{__html: faq.answer}}/>
                                     </div>
                                 )}
