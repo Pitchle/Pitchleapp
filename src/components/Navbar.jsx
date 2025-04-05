@@ -4,12 +4,13 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { FaLinkedinIn, FaYoutube, FaApple, FaGooglePlay } from "react-icons/fa";
 import { LuScan } from "react-icons/lu";
 import { QRCodeCanvas } from "qrcode.react";
+import { Link as ScrollLink } from 'react-scroll';
 
 const navItems = [
     { name: "About", path: "/about" },
     { name: "Plans", path: "/plans" },
     { name: "Blog", path: "/blog" },
-    { name: "We Care", path: "/we-care" },
+    { name: "We Care", to: "CARE", path: "/we-care" },
     { name: "FAQs", path: "/faq" },
 ];
 

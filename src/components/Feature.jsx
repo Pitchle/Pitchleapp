@@ -7,7 +7,7 @@ const Feature = () => {
     const redirectUrl = `${window.location.origin}/redirect`;
 
     return (
-        <section className="py-32 lg:py-40 px-4 md:px-16 lg:px-24 text-center relative">
+        <section className="py-32 lg:py-30 px-4 md:px-16 lg:px-24 text-center relative">
             {/* Heading */}
             <div className="mb-8 space-y-7">
                 <h1 className="text-3xl lg:text-7xl font-bold text-[#01BF74] mb-4">We Grow <br /> When You Grow</h1>
