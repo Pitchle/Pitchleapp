@@ -58,6 +58,15 @@ const BlogData = () => {
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-8">
+            {/* Breadcrumb */}
+            <nav className="text-sm text-gray-500 mb-4 text-left w-full">
+                <Link to="/blog" className="hover:underline text-blue-500">
+                    Blog
+                </Link>
+                <span className="mx-1">&gt;</span>
+                <span className="capitalize">{category || "All Blogs"}</span>
+            </nav>
+
             {/* Header Section */}
             <div className="flex flex-col items-center mb-8">
                 {headerImage ? (
@@ -69,9 +78,25 @@ const BlogData = () => {
                 ) : (
                     <div className="w-24 h-24 rounded-full bg-gray-300 mb-4" />
                 )}
-                <h1 className="text-3xl lg:text-4xl font-bold text-center">
+                <h1 className="text-3xl lg:text-7xl my-4 font-bold text-center">
                     {category || "All Blogs"}
                 </h1>
+                <div className="w-6/12 my-6">
+                    <svg
+                        className="w-full"
+                        height="2"
+                        viewBox="0 0 841 2"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M1 1H840"
+                            stroke="#A1A1A1"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                        />
+                    </svg>
+                </div>
             </div>
 
             {/* Loading State */}
@@ -83,36 +108,43 @@ const BlogData = () => {
                     {posts.slice(0, limit).map((post) => (
                         <div
                             key={post._id}
-                            className="bg-white p-4 shadow-lg rounded-lg flex flex-col"
+                            className="bg-white space-y-2 p-4 shadow-lg rounded-lg flex flex-col"
                         >
-                            {/* Post Image */}
                             <img
                                 src={post.image?.asset?.url}
                                 alt={post.title}
                                 className="w-full h-48 object-cover rounded mb-2"
                             />
-                            {/* Title */}
-                            <h3 className="text-lg font-semibold mb-1 line-clamp-2">
-                                {post.title}
-                            </h3>
-                            {/* Description */}
-                            <p className="text-gray-500 text-sm line-clamp-3 mb-2">
-                                {post.description}
+                            <p className="text-blue-500 font-semibold mb-1">
+                                {post.category}
                             </p>
+                            <Link
+                                to={`/blog/${post.slug.current}`}
+                                className="mt-2 hover:underline"
+                            >
+                                <h3 className="text-lg font-semibold mb-1 line-clamp-2">
+                                    {post.title}
+                                </h3>
+                                <p className="text-sm line-clamp-3 mb-2">
+                                    {post.description}
+                                </p>
+                            </Link>
                             {/* Footer */}
                             <div className="mt-auto flex justify-between items-center pt-2">
-                                <p className="text-sm font-semibold">Pitchle Team</p>
+                                <div className="flex items-center gap-2">
+                                    <img
+                                        src="/img/logo/logo.png"
+                                        alt="Author"
+                                        className="w-6 h-6 rounded-full"
+                                    />
+                                    <span className="text-sm font-semibold">
+                                        Pitchle Team
+                                    </span>
+                                </div>
                                 <p className="text-sm">
                                     {new Date(post.publishedAt).toLocaleDateString()}
                                 </p>
                             </div>
-                            {/* Link to Blog Detail Page */}
-                            <Link
-                                to={`/blog/${post.slug.current}`}
-                                className="mt-2 text-blue-600 hover:underline"
-                            >
-                                Read More
-                            </Link>
                         </div>
                     ))}
                 </div>

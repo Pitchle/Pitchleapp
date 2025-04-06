@@ -1,72 +1,72 @@
-import React, {useEffect, useState, useRef} from "react";
-import {Link, useParams, useLocation} from "react-router-dom"; // import useLocation hook
-import {client} from "../sanityClient";
-import {PortableText} from "@portabletext/react";
-import Navbar from "../components/Navbar";
-import {FaFacebookF} from "react-icons/fa";
-import {FaXTwitter} from "react-icons/fa6";
-import {Spinner} from "@material-tailwind/react";
-import {FaWhatsapp} from "react-icons/fa";
-import {HiOutlineShare} from "react-icons/hi";
-import {urlFor} from "../sanityClient"; // Adjust path if needed
-
+import React, { useEffect, useState, useRef } from "react";
+import { Link, useParams, useLocation } from "react-router-dom";
+import { client } from "../sanityClient";
+import { PortableText } from "@portabletext/react";
+import { Spinner } from "@material-tailwind/react";
+import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { HiOutlineShare } from "react-icons/hi";
+import { urlFor } from "../sanityClient";
 
 const BlogDetail = () => {
-    const {slug} = useParams();
-    const location = useLocation(); // Get the current location
+    const { slug } = useParams();
+    const location = useLocation();
+
     const [post, setPost] = useState(null);
     const [loading, setLoading] = useState(true);
     const [scrollProgress, setScrollProgress] = useState(0);
     const [showIcons, setShowIcons] = useState(false);
     const [relatedBlogs, setRelatedBlogs] = useState([]);
-    const [visibleBlogs, setVisibleBlogs] = useState(6); // To control the number of blogs shown
-    const contentRef = useRef(null);
+    const [visibleBlogs, setVisibleBlogs] = useState(6);
     const [isLinkCopied, setIsLinkCopied] = useState(false);
 
+    const contentRef = useRef(null);
 
+    // Scroll to top on route change
     useEffect(() => {
-        // Scroll to the top whenever the route changes
         window.scrollTo(0, 0);
-    }, [location]); // This will trigger when the location (route) changes
+    }, [location]);
 
+    // Fetch the blog post and related blogs
     useEffect(() => {
-        // Fetch the blog post data
         client
             .fetch(
                 `*[_type == "blog" && slug.current == $slug][0]{
-                    title,
-                    description,
-                    content[] {
-                        ...,
-                        _type == "image" => {
-                            "url": asset->url
-                        }
-                    },
-                    image {
-                        asset -> { url }
-                    },
-                    publishedAt,
-                    category // Fetch the category for the current post
-                }`,
-                {slug}
+          title,
+          description,
+          content[] {
+            ...,
+            _type == "image" => {
+              "url": asset->url
+            }
+          },
+          image {
+            asset -> { url }
+          },
+          publishedAt,
+          category
+        }`,
+                { slug }
             )
             .then((data) => {
                 setPost(data);
                 setLoading(false);
-                // Fetch related blogs based on category
-                if (data.category) {
-                    const category = data.category;
+
+                // Fetch related blogs (same category, excluding current slug)
+                if (data?.category) {
                     client
                         .fetch(
                             `*[_type == "blog" && category == $category && slug.current != $slug]{
-                                title,
-                                slug,
-                                image {
-                                    asset -> { url }
-                                },
-                                description
-                            }[0...6]`, // Fetch the first 6 related blogs based on the category
-                            {category, slug}
+                title,
+                slug,
+                image {
+                  asset -> { url }
+                },
+                description,
+                publishedAt,
+                category
+              }[0...6]`,
+                            { category: data.category, slug }
                         )
                         .then((relatedData) => setRelatedBlogs(relatedData))
                         .catch((error) => console.error("Error fetching related blogs:", error));
@@ -78,6 +78,7 @@ const BlogDetail = () => {
             });
     }, [slug]);
 
+    // Scroll progress & show/hide social icons
     useEffect(() => {
         const handleScroll = () => {
             if (contentRef.current) {
@@ -96,8 +97,8 @@ const BlogDetail = () => {
                     setScrollProgress(0);
                 }
 
-                // Show social media icons after scrolling 400px, but hide them near the bottom
-                const isAtBottom = window.scrollY + windowHeight >= documentHeight - 2000;
+                // Show icons after scrolling 300px, hide near bottom
+                const isAtBottom = scrollY + windowHeight >= documentHeight - 2000;
                 setShowIcons(scrollY > 300 && !isAtBottom);
             }
         };
@@ -106,34 +107,26 @@ const BlogDetail = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // "Load more" related blogs
     const loadMoreBlogs = () => {
-        // Load more blogs when "Load More" is clicked
         setVisibleBlogs((prevVisible) => prevVisible + 6);
     };
 
-    if (loading) return <div className="text-center w-full flex justify-center my-10 text-lg"><Spinner
-        className="h-12 w-12" color="blue"/></div>;
-    if (!post) return <div className="text-center my-10 text-lg">Blog post not found.</div>;
-
+    // Copy link to clipboard
     const handleCopyLink = () => {
-        // Get the current URL
         const currentUrl = window.location.href;
-
-        // Copy the URL to clipboard
         navigator.clipboard.writeText(currentUrl)
             .then(() => {
                 setIsLinkCopied(true);
-                // Hide the notification after 2 seconds
                 setTimeout(() => setIsLinkCopied(false), 2000);
             })
-            .catch((error) => {
-                console.error("Error copying link to clipboard:", error);
-            });
+            .catch((error) => console.error("Error copying link:", error));
     };
-    const handleShare = (platform) => {
-        const postUrl = encodeURIComponent(window.location.href); // Get and encode the current page URL
-        const postTitle = encodeURIComponent(post?.title || "Check out this blog!");
 
+    // Social sharing
+    const handleShare = (platform) => {
+        const postUrl = encodeURIComponent(window.location.href);
+        const postTitle = encodeURIComponent(post?.title || "Check out this blog!");
         let shareUrl = "";
 
         switch (platform) {
@@ -149,228 +142,224 @@ const BlogDetail = () => {
             default:
                 return;
         }
-
         window.open(shareUrl, "_blank", "noopener,noreferrer");
     };
 
+    // Loading state
+    if (loading) {
+        return (
+            <div className="text-center w-full flex justify-center my-10 text-lg">
+                <Spinner className="h-12 w-12" color="blue" />
+            </div>
+        );
+    }
+
+    // If no post found
+    if (!post) {
+        return <div className="text-center my-10 text-lg">Blog post not found.</div>;
+    }
 
     return (
         <>
-            <div className="fixed top-0 left-0 h-1 bg-blue-500 transition-all duration-200"
-                 style={{width: `${scrollProgress}%`}}/>
-            <div className="my-20 lg:my-28 flex mx-auto space-x-8">
-                <div className="w-full md:pl-16">
-                    {/* Blog Header */}
-                    <div className="flex flex-col-reverse md:flex-row justify-center w-11/12 mx-auto">
-                        <div className=" pe-0 lg:pe-8 md:w-6/12">
-                            <p className="text-xl font-semibold mt-6 lg:mt-0 ms-1 text-[#b8b8c8]"><Link to={"/blog"}>
-                                <span>Blog</span></Link> <span className="ms-3"> ><Link
-                                to={`/blog?category=${encodeURIComponent(post.category)}`}
-                                className="capitalize poppins-semibold text-[#2c4bff] ms-2">
-  {post.category}
-</Link>
+            <div
+                className="fixed top-0 left-0 h-1 bg-blue-500 transition-all duration-200"
+                style={{ width: `${scrollProgress}%` }}
+            />
 
-                            </span>
-                            </p>
-                            <h1 className="text-2xl lg:text-4xl poppins-semibold my-2 pe-0 lg:pe-8 lg:my-6 text-gray-900">{post.title}</h1>
-                            <p className="text-lg poppins-regular pe-0 lg:pe-20 my-6">{post.description}</p>
+            <div className="max-w-4xl mx-auto px-4 my-20 lg:my-28">
+                <nav className="absolute top-24 left-5 lg:top-32 lg:left-40 text-sm text-gray-800">
+                    <Link to="/blog" className="hover:underline text-blue-500">
+                        Blog
+                    </Link>
+                    <span className="mx-2">&gt;</span>
+                    {post.category ? (
+                        <Link
+                            to={`/blog-data?category=${encodeURIComponent(post.category)}`}
+                            className="capitalize hover:underline"
+                        >
+                            {post.category}
+                        </Link>
+                    ) : (
+                        <span className="text-gray-800">Uncategorized</span>
+                    )}
+                    <span className="mx-2">&gt;</span>
+                    <span className="text-blue-500">{post.title}</span>
+                </nav>
 
-                            {/* Author & Date */}
-                            <div className="flex items-center mt-4">
-                                <img
-                                    alt="Author"
-                                    src="/img/logo/logo.png"
-                                    className="h-14 w-14 border-blue-600  border-4 rounded-full"
-                                />
-                                <div className="ml-3 text-sm">
-                                    <span className="text-[#2c4bff] text-xl font-semibold">Pitchle Team</span>
-                                    <p className="text-gray-500">{new Date(post.publishedAt).toLocaleDateString()}</p>
-                                </div>
-                            </div>
-                        </div>
-                        {post.image?.asset?.url && (
-                            <div className="md:w-6/12">
-                                <img
-                                    className="w-full h-auto object-cover rounded-md lg:w-[550px] lg:h-[350px]"
-                                    src={post.image.asset.url}
-                                    alt={post.title}
-                                />
-                            </div>
-                        )}
+                <h1 className="text-md w-7/12 lg:w-3/12 my-6 mx-auto text-white bg-blue-500 rounded-full p-3 lg:text-xl font-semibold text-center mb-4 ">
+                    {post.category}
+                </h1>
+                <h1 className="text-3xl lg:text-5xl font-bold py-5 text-center mb-4 ">
+                    {post.title}
+
+                </h1>
+                <h3 className="text-md lg:text-lg  text-center mb-4 ">
+                    {post.description}
+
+                </h3>
+                <div className="flex text-center items-center justify-center gap-4 mb-6 ">
+                    <div>
+                        <span className="font-semibold">Date:</span>{" "}
+                        {new Date(post.publishedAt).toLocaleDateString()}
                     </div>
-
-                    {/* Blog Content Section */}
-                    <div ref={contentRef} className="relative flex max-w-4xl mx-auto px-6 py-10">
-                        {/* Social Media Icons */}
-                        <div
-                            className={`fixed hidden lg:block left-40 top-1/2 space-y-8 transition-opacity duration-300 ${showIcons ? 'opacity-100' : 'opacity-0'}`}>
-                            <FaFacebookF
-                                className="text-gray-500 hover:text-blue-600 text-2xl cursor-pointer"
-                                onClick={() => handleShare("facebook")}
-                            />
-                            <FaXTwitter
-                                className="text-gray-500 hover:text-blue-400 text-2xl cursor-pointer"
-                                onClick={() => handleShare("twitter")}
-                            />
-                            <FaWhatsapp
-                                className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
-                                onClick={() => handleShare("whatsapp")}
-                            />
-
-                            <div>
-                                <HiOutlineShare
-                                    className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
-                                    onClick={handleCopyLink}
-                                />
-
-                                {/* Display a notification when the link is copied */}
-                                {isLinkCopied && (
-                                    <div
-                                        className="absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">
-                                        Link copied!
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-
-                        {/* Blog Content (Scrollable) */}
-
-                        <div className="prose lg:prose-xl poppins-regular space-y-2 text-[18px]  my-10">
-                            <PortableText
-                                value={post.content}
-                                components={{
-                                    block: {
-                                        h1: ({children}) => <h1 className="text-5xl poppins-bold mt-4">{children}</h1>,
-                                        h2: ({children}) => <h2 className="text-4xl poppins-bold mt-3">{children}</h2>,
-                                        h3: ({children}) => <h3
-                                            className="text-3xl poppins-medium mt-3">{children}</h3>,
-                                        h4: ({children}) => <h3
-                                            className="text-2xl poppins-medium mt-3">{children}</h3>,
-                                        h5: ({children}) => <h3 className="text-xl poppins-medium mt-3">{children}</h3>,
-
-                                        normal: ({children}) => (
-                                            <p className="leading-8 mt-4 whitespace-pre-wrap">
-                                                {children.map((child, i) =>
-                                                    typeof child === "string"
-                                                        ? child.split("\n").map((line, j) => (
-                                                            <React.Fragment key={j}>
-                                                                {j > 0 && <br/>}
-                                                                {line}
-                                                            </React.Fragment>
-                                                        ))
-                                                        : child
-                                                )}
-                                            </p>
-                                        ),
-                                        blockquote: ({children}) => (
-                                            <blockquote
-                                                className="border-l-4 border-gray-500 pl-4 italic my-4">{children}</blockquote>
-                                        ),
-                                        center: ({children}) => <div className="text-center">{children}</div>,
-                                        right: ({children}) => <div className="text-right">{children}</div>,
-                                        justify: ({children}) => <div className="text-justify">{children}</div>,
-                                    },
-
-                                    list: {
-                                        bullet: ({children}) => <ul
-                                            className="list-disc pl-5 space-y-2">{children}</ul>,
-                                        number: ({children}) => <ol
-                                            className="list-decimal pl-5 space-y-2">{children}</ol>,
-                                    },
-
-                                    marks: {
-                                        color: ({children, value}) => <span
-                                            style={{color: value.hex}}>{children}</span>,
-                                        strong: ({children}) => <strong>{children}</strong>,
-                                        em: ({children}) => <em>{children}</em>,
-                                        underline: ({children}) => <u>{children}</u>,
-                                        code: ({children}) => <code
-                                            className="bg-gray-200 p-1 rounded">{children}</code>,
-                                        link: ({children, value}) => (
-                                            <a href={value.href} target="_blank" rel="noopener noreferrer"
-                                               className="text-blue-600 underline">
-                                                {children}
-                                            </a>
-                                        ),
-                                        alignment: ({children, value}) => (
-                                            <div style={{textAlign: value.style}}>{children}</div>
-                                        ),
-                                        fontFamily: ({children, value}) => (
-                                            <span style={{fontFamily: value.family}}>{children}</span>
-                                        ),
-                                        small: ({children}) => <span className="text-sm">{children}</span>,
-                                        large: ({children}) => <span className="text-lg">{children}</span>,
-                                    },
-                                    lineBreak: () => <br />,  // Render the line break here
-
-                                    types: {
-                                        image: ({value}) =>
-                                            value && value.asset ? (
-                                                <img
-                                                    src={urlFor(value).auto("format").fit("max").width(1000)}
-                                                    alt={value.alt || "Blog Content"}
-                                                    className="w-auto h-auto lg:h-[400px] mx-auto rounded-md shadow-sm my-6"
-                                                />
-                                            ) : null,
-                                    },
-                                }}
-                            />
-                        </div>
-
-
+                    <div>
+                        <span className="font-semibold">Publisher:</span> Pitchle Team
                     </div>
+                    <div>
+                        <span className="font-semibold">Reading Time:</span> 12 minutes
+                    </div>
+                </div>
 
-                    {/* Related Blogs Section */}
-                    {relatedBlogs.length > 0 && (
-                        <div className="my-16">
-                            <h2 className=" text-3xl lg:text-5xl font-semibold text-center  my-20">Related Articles</h2>
-                            <div
-                                className="grid grid-cols-1 w-full lg:w-10/12 mx-auto md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {relatedBlogs.slice(0, visibleBlogs).map((blog) => (
-                                    <Link to={`/blog/${blog.slug.current}`}>
-                                        <div
-                                            className="bg-white mx-4 lg:mx-0 shadow-md border border-gray-200 rounded-lg">
-                                            <img
-                                                src={post.image?.asset?.url || "https://via.placeholder.com/400"}
-                                                alt={post.title}
-                                                className="w-full rounded-t-lg h-52 object-cover "
-                                            />
-                                            <div className="flex justify-between p-4 my-4">
-                                                <p className="text-md text-[#2c6aff] poppins-regular capitalize cursor-pointer">
-                                                    {post.category || "Uncategorized"}
-                                                </p>
-                                                <p className="text-md text-gray-700">
-                                                    {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "Date not available"}
-                                                </p>
-                                            </div>
-                                            <h3 className="px-4 text-md lg:text-xl hover:underline poppins-bold tracking-wide text-gray-900">{post.title}</h3>
-                                            <p className="text-[15px] px-4 poppins-regular line-clamp-3 tracking-wide my-4">{post.description}</p>
-                                            <div className="flex items-center hover:underline mt-2 p-4">
-                                                <img
-                                                    src="/img/logo/logo.png"
-                                                    alt="Pitchle Team"
-                                                    className="w-6 h-6 rounded-full mr-2"
-                                                />
-                                                <span className="text-sm font-medium">Pitchle Team</span>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                ))}
-                            </div>
+                {post.image?.asset?.url && (
+                    <img
+                        className="w-full h-auto object-cover rounded-md mb-6"
+                        src={post.image.asset.url}
+                        alt={post.title}
+                    />
+                )}
+                {post.description && (
+                    <p className="text-center text-lg text-gray-700 mb-10">
+                        {post.description}
+                    </p>
+                )}
+                <div ref={contentRef} className="prose lg:prose-xl poppins-regular text-[18px] mx-auto">
+                    <PortableText
+                        value={post.content}
+                        components={{
+                            block: {
+                                h1: ({children}) => <h1 className="text-5xl font-bold mt-4">{children}</h1>,
+                                h2: ({children}) => <h2 className="text-4xl font-bold mt-3">{children}</h2>,
+                                h3: ({children}) => <h3 className="text-3xl font-semibold mt-3">{children}</h3>,
+                                h4: ({children}) => <h4 className="text-2xl font-semibold mt-3">{children}</h4>,
+                                h5: ({children}) => <h5 className="text-xl font-medium mt-3">{children}</h5>,
 
-                            {/* Load More Button */}
-                            {relatedBlogs.length > visibleBlogs && (
-                                <button
-                                    onClick={loadMoreBlogs}
-                                    className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-800"
-                                >
-                                    Load more
-                                </button>
-                            )}
+                                normal: ({children}) => (
+                                    <p className="leading-8 mt-4 whitespace-pre-wrap">
+                                        {children}
+                                    </p>
+                                ),
+                                blockquote: ({children}) => (
+                                    <blockquote className="border-l-4 border-gray-500 pl-4 italic my-4">
+                                        {children}
+                                    </blockquote>
+                                ),
+                            },
+                            list: {
+                                bullet: ({children}) => <ul className="list-disc pl-5 space-y-2">{children}</ul>,
+                                number: ({children}) => <ol className="list-decimal pl-5 space-y-2">{children}</ol>,
+                            },
+                            marks: {
+                                strong: ({children}) => <strong>{children}</strong>,
+                                em: ({children}) => <em>{children}</em>,
+                                underline: ({children}) => <u>{children}</u>,
+                                link: ({children, value}) => (
+                                    <a href={value.href} target="_blank" rel="noopener noreferrer"
+                                       className="text-blue-600 underline">
+                                        {children}
+                                    </a>
+                                ),
+                            },
+                            types: {
+                                image: ({value}) =>
+                                    value?.asset ? (
+                                        <img
+                                            src={urlFor(value).auto("format").fit("max").width(1000)}
+                                            alt={value.alt || "Blog Content"}
+                                            className="w-auto h-auto lg:h-[400px] mx-auto rounded-md shadow-sm my-6"
+                                        />
+                                    ) : null,
+                            },
+                        }}
+                    />
+                </div>
+            </div>
+            <div className={"w-full flex justify-end"}>
+            <div className={"flex w-6/12 justify-center items-center space-x-5"}>
+                <FaFacebookF
+                    className="text-gray-500 hover:text-blue-600 text-2xl cursor-pointer"
+                    onClick={() => handleShare("facebook")}
+                />
+                <FaXTwitter
+                    className="text-gray-500 hover:text-blue-400 text-2xl cursor-pointer"
+                    onClick={() => handleShare("twitter")}
+                />
+                <FaWhatsapp
+                    className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
+                    onClick={() => handleShare("whatsapp")}
+                />
+                <div className="relative">
+                    <HiOutlineShare
+                        className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
+                        onClick={handleCopyLink}
+                    />
+                    {isLinkCopied && (
+                        <div className="absolute top-[-2rem] left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
+                            Link copied!
                         </div>
                     )}
                 </div>
             </div>
+            </div>
+            {/* Related Blogs Section */}
+            {relatedBlogs.length > 0 && (
+                <div className="max-w-6xl mx-auto px-4 mb-16">
+                    <h2 className="text-3xl lg:text-5xl font-semibold text-center my-10">
+                        Related Articles
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {relatedBlogs.slice(0, visibleBlogs).map((blog) => (
+                            <Link
+                                key={blog.slug.current}
+                                to={`/blog/${blog.slug.current}`}
+                                className="bg-white shadow-md border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition"
+                            >
+                                <img
+                                    src={blog.image?.asset?.url || "https://via.placeholder.com/400"}
+                                    alt={blog.title}
+                                    className="w-full h-52 object-cover"
+                                />
+                                <div className="p-4">
+                                    <div className="flex justify-between items-center mb-2">
+                                        <p className="text-md text-[#2c6aff] capitalize">
+                                            {blog.category || "Uncategorized"}
+                                        </p>
+                                        <p className="text-md text-gray-700">
+                                            {blog.publishedAt
+                                                ? new Date(blog.publishedAt).toLocaleDateString()
+                                                : "Date not available"}
+                                        </p>
+                                    </div>
+                                    <h3 className="text-md lg:text-xl font-bold text-gray-900 line-clamp-2 mb-2">
+                                        {blog.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-600 line-clamp-3">
+                                        {blog.description}
+                                    </p>
+                                    <div className="flex items-center mt-4">
+                                        <img
+                                            src="/img/logo/logo.png"
+                                            alt="Pitchle Team"
+                                            className="w-6 h-6 rounded-full mr-2"
+                                        />
+                                        <span className="text-sm font-medium">Pitchle Team</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                    {/* Load More Button */}
+                    {relatedBlogs.length > visibleBlogs && (
+                        <div className="flex justify-center mt-6">
+                            <button
+                                onClick={loadMoreBlogs}
+                                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-800"
+                            >
+                                Load more
+                            </button>
+                        </div>
+                    )}
+                </div>
+            )}
         </>
     );
 };

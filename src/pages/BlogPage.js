@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { client } from "../sanityClient";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import CategoryTabs from "../components/CategoryTabs";
 
 const categories = [
     { title: "Latest Updates", value: "latest updates" },
@@ -221,21 +222,10 @@ const BlogPage = () => {
                     </div>
                 </div>)}
 
-            <div id="category-section" ref={categorySectionRef} className="overflow-x-auto whitespace-nowrap flex justify-start md:justify-center mb-6 px-4">
-                {categories.map((cat) => (
-                    <button
-                        key={cat.value}
-                        className={`px-4 py-2 mx-2 ${
-                            selectedCategory === cat.value
-                                ? "border-b-4 border-[#2c4bfe] font-bold"
-                                : ""
-                        }`}
-                        onClick={() => handleCategoryChange(cat.value)}
-                    >
-                        {cat.title}
-                    </button>
-                ))}
-            </div>
+            <CategoryTabs
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+            />
 
             <div className="my-12 w-10/12 mx-auto">
                 <h2 className="text-3xl font-bold">Promote</h2>
@@ -272,9 +262,7 @@ const BlogPage = () => {
                                             alt="Author"
                                             className="w-6 h-6 rounded-full"
                                         />
-                                        <span className="text-sm font-semibold">
-                      Pitchle Team
-                    </span>
+                                        <span className="text-sm font-semibold">Pitchle Team</span>
                                     </div>
                                     <span>
                     {new Date(promotePosts[0].publishedAt).toLocaleDateString()}
