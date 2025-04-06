@@ -1,5 +1,4 @@
 import React from 'react';
-import { CheckCircleIcon, UsersIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import Feature from "../components/Feature";
 
 const AboutPage = () => {
