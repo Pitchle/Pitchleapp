@@ -14,24 +14,29 @@ const Banner = () => {
                 <span className="text-[#01BF74]">Revolutionize</span> Business <br/> with Short Videos!
             </h1>
 
-            <div className="relative mt-10 flex flex-col lg:flex-row items-center space-x-10 justify-center mb-12 gap-8">
-                <div className="flex flex-col items-start gap-6">
+            <div className="relative mt-10 flex flex-col lg:flex-row items-center justify-center mb-3 gap-0">
+                <div className="flex flex-col space-y-20 items-start gap-6">
                     <img className={"w-60 h-32"} src="/img/buttons/Frame%2086.png" alt=""/>
                     <img className={"w-60 h-32"} src="/img/buttons/Group%2010.png" alt=""/>
                 </div>
                 <div className="relative">
-                    <img
-                        src="/img/banner/Home.jpg"
-                        alt="Mobile Mockup"
-                        className="w-64 h-[500px] rounded-xl shadow-lg"
-                    />
+                    <div className={"w-7/12 mx-auto"}>
+                        <video
+                            src="/video/intro.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-[500px] p-4 scale-125  mx-auto h-[800px] rounded-lg"
+                        />
+                    </div>
                 </div>
-                <img  className={"w-60 h-32"}  src="/img/buttons/Frame%2091.png" alt=""/>
+                <img className={"w-60 h-32"} src="/img/buttons/Frame%2091.png" alt=""/>
             </div>
             <p className="text-center text-lg my-4">Download Pitchle and start growing <br/> your business today!</p>
             <div className="flex mt-5 gap-4">
                 <button className="flex items-center bg-black text-white px-4 py-4 rounded-lg shadow-lg">
-                    <img className={"w-7 h-7 me-2"} src="/img/logo/apple.png" alt=""/> <span
+                <img className={"w-7 h-7 me-2"} src="/img/logo/apple.png" alt=""/> <span
                     className={"text-md font-semibold"}>Google Play</span>
                 </button>
                 <button className="flex items-center bg-black text-white px-4 py-4 rounded-lg shadow-lg">
