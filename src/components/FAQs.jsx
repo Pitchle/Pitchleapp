@@ -57,11 +57,11 @@ const FaQs = () => {
 
     return (
         <>
-            <h1 className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-20 font-semibold  text-gray-800 lg:text-5xl dark:text-white">
+            <h1 className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-5xl dark:text-white">
                 <span className={"text-[#01BF74]"}> Got any questions?</span> <br/> <span className={"text-[#DFDFDF]"}>We’ve got answers.</span>
             </h1>
 
-            <div className="container md:px-24 px-4 lg:px-64 py-12 mx-auto">
+            <div className="container md:px-24 px-4 lg:px-64 py-6 lg:py-12 mx-auto">
                 <div className="mt-8 space-y-8 lg:mt-12">
                     {faqs.map((faq, index) => (
                         <div key={index} className="rounded-lg overflow-hidden transition-all duration-500">

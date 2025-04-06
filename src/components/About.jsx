@@ -41,7 +41,7 @@ const About = () => {
     const inViews = [inView1, inView2, inView3];
 
     return (
-        <div className="w-8/12 mx-auto my-64 relative space-y-20">
+        <div className="w-11/12 lg:w-8/12 mx-auto my-0 lg:my-64 relative space-y-20">
             <h2 className="text-center text-3xl lg:text-5xl font-bold mb-8">With Pitchle you can</h2>
 
             <div className="relative">
@@ -62,10 +62,10 @@ const About = () => {
                             transition={{ type: 'spring', stiffness: 60, damping: 15 }}
                             className={`relative w-full ${section.bgColor} text-white rounded-xl shadow-lg mb-10`}
                         >
-                            <div className={`flex flex-col md:flex-row rounded-xl overflow-hidden shadow-lg ${isVideoRight ? 'md:flex-row-reverse' : ''}`}>
+                            <div className={`flex flex-col-reverse md:flex-row rounded-xl overflow-hidden shadow-lg ${isVideoRight ? 'md:flex-row-reverse' : ''}`}>
 
                                 {/* Video Section */}
-                                <div className="w-11/12 bg-white m-4 p-4 rounded-lg md:w-1/2">
+                                <div className="w-11/12 bg-white m-3 p-4 rounded-lg md:w-1/2">
                                     <video
                                         src={section.videoId}
                                         autoPlay
@@ -77,8 +77,8 @@ const About = () => {
                                 </div>
 
                                 {/* Text Section */}
-                                <div className="p-16 w-full flex justify-center items-start flex-col md:w-1/2">
-                                    <h3 className="text-xl font-bold">{section.title}</h3>
+                                <div className="p-5 lg:p-16 w-full flex justify-center items-start flex-col md:w-1/2">
+                                    <h3 className="text-2xl lg:text-4xl font-bold">{section.title}</h3>
                                     <p className="mt-2">{section.description}</p>
                                 </div>
                             </div>

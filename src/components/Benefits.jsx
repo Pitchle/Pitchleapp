@@ -36,7 +36,7 @@ const benefitsData = [
 const Benefits = () => {
     return (
         <div className="">
-            <h1 className="text-2xl lg:text-5xl font-bold mb-32 text-center">
+            <h1 className="text-2xl lg:text-5xl font-bold mb-10 lg:mb-32 text-center">
                 Discover all the benefits of Pitchle!
             </h1>
             <div className="w-11/12 lg:w-9/12 mt-10 mx-auto">
