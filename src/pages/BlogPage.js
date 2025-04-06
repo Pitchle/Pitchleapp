@@ -171,8 +171,7 @@ const BlogPage = () => {
             <div className="my-12 w-10/12 mx-auto">
                 <h2 className="text-3xl font-bold ">Promote</h2>
                 <div className={"border-gray-400 border-2 mb-6"}></div>
-                <div
-                    className="flex flex-col lg:flex-row justify-center lg:justify-between space-x-0 space-y-5 lg:space-y-0 lg:space-x-10">
+                <div className="flex flex-col lg:flex-row justify-center lg:justify-between space-x-0 space-y-5 lg:space-y-0 lg:space-x-10">
                     <div className={"w-full lg:w-6/12"}>
                         {promotePosts.length > 0 && (
                             <div className="md:col-span-1 bg-white p-2 rounded-xl "
@@ -194,8 +193,7 @@ const BlogPage = () => {
                             </div>
                         )}
                     </div>
-                    <div
-                        className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px]  w-full lg:w-6/12">
+                    <div className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] space-x-0 lg:space-x-5 w-full lg:w-6/12">
                         {promotePosts.slice(1).map((post) => (
                             <div key={post._id} className="bg-white p-2 rounded-xl "
                                  style={{boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>
@@ -252,7 +250,7 @@ const BlogPage = () => {
                         )}
                     </div>
                     <div
-                        className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px]  w-full lg:w-6/12">
+                        className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] space-x-0 lg:space-x-5  w-full lg:w-6/12">
                         {sellPosts.slice(1).map((post) => (
                             <div key={post._id} className="bg-white p-2 rounded-xl "
                                  style={{boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>
@@ -277,7 +275,7 @@ const BlogPage = () => {
 
                 <div className="flex justify-center mt-20">
                     <button
-                        className="px-6 py-3 bg-[#01BF74] text-white rounded-full shadow-lg transition">
+                        className="px-6 py-3 bg-[#417DFF] text-white rounded-full shadow-lg transition">
                         View All →
                     </button>
                 </div>
@@ -308,7 +306,7 @@ const BlogPage = () => {
                         )}
                     </div>
                     <div
-                        className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px]  w-full lg:w-6/12">
+                        className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] space-x-0 lg:space-x-5  w-full lg:w-6/12">
                         {partnerPosts.slice(1).map((post) => (
                             <div key={post._id} className="bg-white p-2 rounded-xl "
                                  style={{boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>
