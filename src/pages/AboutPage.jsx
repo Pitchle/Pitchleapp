@@ -1,10 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Feature from "../components/Feature";
 import {useLocation} from "react-router-dom";
+import {QRCodeCanvas} from "qrcode.react";
 
 const AboutPage = () => {
     const location = useLocation();
-
+    const [showQR, setShowQR] = useState(false);
+    const redirectUrl = `${window.location.origin}/redirect`;
     useEffect(() => {
         if (location.hash) {
             const element = document.getElementById(location.hash.substring(1));
@@ -17,7 +19,8 @@ const AboutPage = () => {
         <div className="p-8 flex justify-center flex-col max-w-7xl mx-auto space-y-10 lg:space-y-40">
             <section className="flex flex-col mx-auto lg:flex-row items-center mt-6 lg:mt-16 justify-evenly">
                 <div className="lg:w-7/12 space-y-12">
-                    <h1 className="text-4xl lg:text-8xl text-center lg:text-start font-bold text-[#417DFF]">About Company</h1>
+                    <h1 className="text-4xl lg:text-8xl text-center lg:text-start font-bold text-[#417DFF]">About
+                        Company</h1>
                     <p className=" text-lg lg:text-xl text-center lg:text-start">
                         At Pitchle, we empower small businesses to thrive through short, impactful videos.
                         Unlike traditional social media, Pitchle is built for business, advocating for eco-friendly
@@ -25,15 +28,12 @@ const AboutPage = () => {
                         while providing all businesses a platform to grow equitably.
                     </p>
                 </div>
-                <div className="w-full lg:w-5/12 mt-6 ms-0 lg:ms-40 flex justify-end lg:mt-0">
-                    <video
-                        src="/video/intro.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-[500px] mt-10 lg:mt-0 mx-auto p-4 scale-125 h-[500px] rounded-lg"
-                    />
+                <div className="w-full lg:w-5/12 mt-10 ms-0 lg:ms-40 flex justify-end lg:mt-0">
+                    <img
+                        src='/img/about/about_main.png'
+
+                        className="w-fit mt-10 lg:mt-0 mx-auto p-4 scale-125 h-[450px] rounded-lg"
+                        alt={"img"}/>
                 </div>
             </section>
             <section className="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-6 text-center">
@@ -92,24 +92,28 @@ const AboutPage = () => {
                             <h3>{section.icon}</h3>
                             <h3 className="font-bold mt-2 text-xl">{section.title}</h3>
                         </div>
-                        <p className="text-gray-600 text-start">{section.description}</p>
+                        <p className="text-start">{section.description}</p>
                     </div>
                 ))}
             </section>
-            <section className="flex flex-col lg:flex-row items-center justify-between">
-                <div className="lg:w-1/2 mt-6 flex justify-center lg:mt-0">
-                    <video
-                        src="/video/intro.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-[500px] mx-auto p-4 scale-125 h-[500px] rounded-lg"
-                    />
+            <section className="flex flex-col lg:flex-row  items-center justify-between">
+                <div className="lg:w-1/2 mt-6 flex  justify-center lg:mt-0">
+                    <div className={"flex items-center scale-100 lg:scale-110 lg:space-x-5"}>
+                        <img
+                            src='/img/about/about1.png'
+
+                            className="lg:w-fit mx-auto lg:p-4 scale-100 lg:scale-125 h-60 lg:h-[400px] rounded-lg"
+                            alt={"img"}/>
+                        <img
+                            src='/img/about/about2.png'
+
+                            className="lg:w-fit mx-auto lg:p-4 scale-100 lg:scale-125 h-80 lg:h-[500px] rounded-lg"
+                            alt={"img"}/>
+                    </div>
                 </div>
-                <div className="lg:w-1/2 mt-20 lg:mt-0 space-y-4">
-                    <h1 className="text-3xl lg:text-5xl font-bold text-blue-500">Pitchle: Made for Business</h1>
-                    <p className="text-justify lg:text-start">
+                <div className="lg:w-1/2 mt-20 p-1 lg:p-5 ms-0 lg:ms-20 lg:mt-0 space-y-8">
+                    <h1 className="text-4xl lg:text-7xl font-bold text-[#417DFF]">Pitchle: Made for Business</h1>
+                    <p className="text-justify text-lg lg:text-start">
                         Social media today is largely focused on entertainment, leaving a gap in the business sector.
                         There's a clear
                         need for a platform that addresses business and commerce opportunities with a sophisticated,
@@ -117,7 +121,7 @@ const AboutPage = () => {
                         touch.
                     </p>
                     <br/>
-                    <p className="text-justify lg:text-start">
+                    <p className="text-justify text-lg lg:text-start">
                         That's how Pitchle was born – a unique social media platform dedicated exclusively to empowering
                         small businesses to grow and succeed equitably. Through short videos, Pitchle helps businesses
                         promote products,
@@ -126,12 +130,13 @@ const AboutPage = () => {
                 </div>
             </section>
             <section className="text-center">
-                <h2 className="text-4xl font-bold mb-10">The values that drive us</h2>
-                <div className="grid w-full py-6 lg:w-9/12 mx-auto grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-6 ">
+                <h2 className="text-4xl lg:text-6xl font-bold my-16 lg:my-24">The values that drive us</h2>
+                <div
+                    className="grid w-full py-6 mx-auto grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3 ">
                     {[
                         {
                             title: 'Innovation',
-                            icon: <svg  width="50" height="50" viewBox="0 0 88 88" fill="none"
+                            icon: <svg width="70" height="70" viewBox="0 0 88 88" fill="none"
                                        xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_627_2499)">
                                     <path
@@ -156,7 +161,7 @@ const AboutPage = () => {
                         },
                         {
                             title: 'Collaboration',
-                            icon: <svg  width="50" height="50" viewBox="0 0 82 81" fill="none"
+                            icon: <svg width="70" height="70" viewBox="0 0 82 81" fill="none"
                                        xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M24.7743 13.5915L22.7577 7.72485C22.5132 7.05263 22.5597 6.38041 22.897 5.70819C23.2344 5.03597 23.7685 4.57763 24.4994 4.33319C25.1716 4.08874 25.8438 4.14985 26.516 4.51652C27.1882 4.88319 27.6466 5.40263 27.891 6.07485L29.9077 11.8499C30.1521 12.5221 30.091 13.1943 29.7244 13.8665C29.3577 14.5387 28.8382 14.9971 28.166 15.2415C27.4327 15.486 26.7458 15.4554 26.1054 15.1499C25.4649 14.8443 25.0212 14.3249 24.7743 13.5915ZM38.2493 8.91652V3.41652C38.2493 2.62208 38.5097 1.96574 39.0304 1.44752C39.551 0.929299 40.2073 0.668965 40.9993 0.666521C41.7913 0.664077 42.4489 0.92441 42.972 1.44752C43.4951 1.97063 43.7542 2.62697 43.7493 3.41652V8.91652C43.7493 9.71097 43.489 10.3685 42.9684 10.8892C42.4477 11.4099 41.7913 11.669 40.9993 11.6665C40.2073 11.6641 39.551 11.4037 39.0304 10.8855C38.5097 10.3673 38.2493 9.71097 38.2493 8.91652ZM52.1827 11.8499L54.1077 6.07485C54.3521 5.40263 54.7958 4.89785 55.4387 4.56052C56.0816 4.22319 56.7685 4.17797 57.4994 4.42485C58.1716 4.6693 58.691 5.12763 59.0577 5.79985C59.4243 6.47208 59.4855 7.1443 59.241 7.81652L57.2243 13.5915C56.9799 14.2637 56.5216 14.7832 55.8493 15.1499C55.1771 15.5165 54.5049 15.5776 53.8327 15.3332C53.1605 15.0887 52.6557 14.6157 52.3183 13.9142C51.981 13.2126 51.9358 12.5245 52.1827 11.8499ZM7.81602 80.8749C7.02157 80.9971 6.28824 80.8137 5.61602 80.3248C4.94379 79.836 4.54657 79.1943 4.42435 78.3999L4.24102 76.9332C4.11879 76.1387 4.28624 75.4213 4.74335 74.7808C5.20046 74.1404 5.82746 73.7578 6.62435 73.6332L23.1244 71.1582C23.7966 71.036 24.393 70.7451 24.9137 70.2855C25.4343 69.826 25.8157 69.2613 26.0577 68.5915L29.1743 58.8749C29.4799 58.0193 29.4799 57.1943 29.1743 56.3999C28.8688 55.6054 28.3188 54.9943 27.5243 54.5665L25.5994 60.6165C25.2938 61.5943 24.6986 62.3117 23.8137 62.7688C22.9288 63.226 21.9962 63.303 21.016 62.9998C20.0358 62.6967 19.3183 62.1003 18.8637 61.2105C18.409 60.3207 18.332 59.3894 18.6327 58.4165L25.5994 36.4165C25.7216 36.0499 25.7827 35.6526 25.7827 35.2249C25.7827 34.7971 25.7216 34.3999 25.5994 34.0332L13.316 57.1332C12.3382 58.9054 10.9791 60.3268 9.23868 61.3975C7.49824 62.4682 5.61846 63.0023 3.59935 62.9998C2.74379 62.9998 2.04102 62.7248 1.49102 62.1748C0.941016 61.6248 0.666016 60.9221 0.666016 60.0665L0.666016 58.5999C0.666016 57.7443 0.941016 57.0415 1.49102 56.4915C2.04102 55.9415 2.74379 55.6665 3.59935 55.6665C4.27157 55.6665 4.89857 55.4991 5.48035 55.1642C6.06213 54.8293 6.50457 54.3551 6.80768 53.7415L21.291 26.4249C21.7799 25.5082 22.5132 24.913 23.491 24.6392C24.4688 24.3654 25.416 24.4717 26.3327 24.9582L27.616 25.6915C29.8771 26.9749 31.4819 28.8241 32.4303 31.2392C33.3788 33.6543 33.4546 36.1134 32.6577 38.6165L29.816 47.5999C32.5049 48.6387 34.4458 50.4721 35.6387 53.0999C36.8316 55.7276 36.999 58.4165 36.141 61.1665L33.0243 70.8832C32.3521 72.8387 31.2375 74.5046 29.6803 75.8808C28.1232 77.2571 26.3046 78.0967 24.2244 78.3999L7.81602 80.8749ZM57.7744 78.3999C55.6966 78.0943 53.8791 77.2546 52.322 75.8808C50.7649 74.5071 49.649 72.8412 48.9744 70.8832L45.8577 61.1665C45.0021 58.4165 45.1708 55.7276 46.3637 53.0999C47.5566 50.4721 49.4962 48.6387 52.1827 47.5999L49.341 38.6165C48.5466 36.111 48.6236 33.6519 49.572 31.2392C50.5205 28.8265 52.124 26.9773 54.3827 25.6915L55.666 24.9582C56.5827 24.4693 57.5299 24.3617 58.5077 24.6355C59.4855 24.9093 60.2188 25.5057 60.7077 26.4249L75.191 53.7415C75.4966 54.3526 75.9402 54.8269 76.522 55.1642C77.1038 55.5015 77.7296 55.669 78.3994 55.6665C79.2549 55.6665 79.9577 55.9415 80.5077 56.4915C81.0577 57.0415 81.3327 57.7443 81.3327 58.5999V60.0665C81.3327 60.9221 81.0577 61.6248 80.5077 62.1748C79.9577 62.7248 79.2549 62.9998 78.3994 62.9998C76.3827 62.9998 74.5041 62.4657 72.7637 61.3975C71.0232 60.3293 69.6629 58.9079 68.6827 57.1332L56.3994 34.0332C56.2771 34.3999 56.216 34.7971 56.216 35.2249C56.216 35.6526 56.2771 36.0499 56.3994 36.4165L63.366 58.4165C63.6716 59.3943 63.5946 60.3269 63.135 61.2142C62.6755 62.1015 61.958 62.6967 60.9827 62.9998C60.0074 63.303 59.0748 63.2272 58.185 62.7725C57.2952 62.3178 56.7 61.5992 56.3994 60.6165L54.4744 54.5665C53.6799 54.9943 53.1299 55.6054 52.8244 56.3999C52.5188 57.1943 52.5188 58.0193 52.8244 58.8749L55.941 68.5915C56.1855 69.2637 56.568 69.8296 57.0887 70.2892C57.6094 70.7487 58.2046 71.0384 58.8744 71.1582L75.3744 73.6332C76.1688 73.7554 76.7958 74.138 77.2554 74.7808C77.7149 75.4237 77.8824 76.1412 77.7577 76.9332L77.5744 78.3999C77.4521 79.1943 77.0549 79.836 76.3827 80.3248C75.7105 80.8137 74.9771 80.9971 74.1827 80.8749L57.7744 78.3999Z"
@@ -165,7 +170,7 @@ const AboutPage = () => {
                         },
                         {
                             title: 'Diversity',
-                            icon: <svg width="50" height="50" viewBox="0 0 88 88" fill="none"
+                            icon: <svg width="70" height="70" viewBox="0 0 88 88" fill="none"
                                        xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_627_2541)">
                                     <path
@@ -181,7 +186,7 @@ const AboutPage = () => {
                         },
                         {
                             title: 'Respect',
-                            icon: <svg width="50" height="50" viewBox="0 0 88 88" fill="none"
+                            icon: <svg width="70" height="70" viewBox="0 0 88 88" fill="none"
                                        xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M44.3673 77C43.3284 77 42.4582 76.648 41.7566 75.944C41.0551 75.24 40.7031 74.3698 40.7007 73.3333C40.7007 72.9056 40.7923 72.4619 40.9757 72.0023C41.159 71.5428 41.434 71.1309 41.8007 70.7667L58.759 53.8083L56.1007 51.15L39.234 68.1084C38.8673 68.475 38.4701 68.75 38.0423 68.9333C37.6145 69.1167 37.1562 69.2083 36.6673 69.2083C35.6284 69.2083 34.7582 68.8576 34.0567 68.156C33.3551 67.4545 33.0031 66.583 33.0007 65.5417C33.0007 64.9306 33.0923 64.4258 33.2757 64.0273C33.459 63.6289 33.7034 63.2781 34.009 62.975L50.9673 46.0167L48.4007 43.45L31.4423 60.3167C31.0757 60.6833 30.6784 60.9583 30.2507 61.1417C29.8229 61.325 29.334 61.4167 28.784 61.4167C27.8062 61.4167 26.9507 61.05 26.2173 60.3167C25.484 59.5834 25.1173 58.7278 25.1173 57.75C25.1173 57.2611 25.209 56.8028 25.3923 56.375C25.5757 55.9472 25.8507 55.55 26.2173 55.1833L43.1757 38.225L40.5173 35.6584L23.6507 52.6167C23.3451 52.9222 22.9784 53.1667 22.5507 53.35C22.1229 53.5333 21.6034 53.625 20.9923 53.625C19.9534 53.625 19.082 53.273 18.378 52.569C17.674 51.865 17.3232 50.9948 17.3257 49.9583C17.3257 49.4695 17.4173 49.0111 17.6007 48.5833C17.784 48.1556 18.059 47.7584 18.4257 47.3917L38.8673 26.95L52.6173 40.7917C53.2895 41.4639 54.084 41.9992 55.0007 42.3977C55.9173 42.7961 56.834 42.9941 57.7507 42.9917C59.7062 42.9917 61.4173 42.3048 62.884 40.931C64.3507 39.5572 65.084 37.7997 65.084 35.6584C65.084 34.8028 64.9312 33.9167 64.6257 33C64.3201 32.0833 63.7701 31.2278 62.9757 30.4333L46.5673 14.025C47.6062 13.0472 48.7673 12.2992 50.0507 11.781C51.334 11.2628 52.6173 11.0025 53.9007 11C55.4895 11 56.9562 11.2603 58.3007 11.781C59.6451 12.3017 60.8673 13.1108 61.9673 14.2083L77.459 29.7917C78.559 30.8917 79.3693 32.1139 79.89 33.4583C80.4107 34.8028 80.6698 36.3611 80.6673 38.1333C80.6673 39.3556 80.3923 40.5937 79.8423 41.8477C79.2923 43.1017 78.4979 44.2469 77.459 45.2833L46.934 75.9C46.4451 76.3889 46.0173 76.6945 45.6507 76.8167C45.284 76.9389 44.8562 77 44.3673 77ZM12.9257 47.6667L10.5423 45.2833C9.50343 44.3056 8.70898 43.1445 8.15898 41.8C7.60898 40.4556 7.33398 39.05 7.33398 37.5833C7.33398 35.9945 7.63954 34.5278 8.25065 33.1833C8.86176 31.8389 9.62565 30.7083 10.5423 29.7917L26.034 14.2083C27.0118 13.2306 28.1729 12.4508 29.5173 11.869C30.8618 11.2872 32.1757 10.9976 33.459 11C35.109 11 36.5757 11.2298 37.859 11.6893C39.1423 12.1489 40.3951 12.9886 41.6173 14.2083L60.409 33C60.7757 33.3667 61.0507 33.7639 61.234 34.1917C61.4173 34.6195 61.509 35.0778 61.509 35.5667C61.509 36.5445 61.1423 37.4 60.409 38.1333C59.6757 38.8667 58.8201 39.2333 57.8423 39.2333C57.2923 39.2333 56.834 39.1576 56.4673 39.006C56.1007 38.8545 55.7034 38.5636 55.2757 38.1333L38.7757 21.8167L12.9257 47.6667Z"
@@ -189,22 +194,23 @@ const AboutPage = () => {
                             </svg>
                         }
                     ].map((value, index) => (
-                        <div key={index} className="py-4 px-2 bg-gray-100 flex justify-center items-center flex-col space-y-4 rounded-xl text-center">
+                        <div key={index}
+                             className="py-6 lg:py-10 px-2 bg-gray-100 flex justify-center items-center flex-col space-y-8 rounded-xl text-center">
                             {value.icon}
-                            <h3 className="font-bold text-xl lg:text-2xl mt-2">{value.title}</h3>
+                            <h3 className="font-bold text-xl lg:text-4xl">{value.title}</h3>
                         </div>
                     ))}
                 </div>
             </section>
             <section className="flex my-10 flex-col lg:flex-row items-center justify-center">
-                <div className="lg:w-1/2 mt-6 flex items-center flex-col justify-center text-center lg:mt-0">
+                <div className="lg:w-4/12 lg:me-10 lg:pb-16 flex items-center flex-col justify-center text-center lg:mt-0">
                     <img src="img/new_images/profile.png" alt="john"
-                         className="w-44 h-44 lg:w-60 lg:h-60 border-4 border-black rounded-full"/>
-                    <h1 className={"mt-4 text-xl font-semibold"}>Jhon Pillpe</h1>
-                    <h1 className={"text-xl"}>Founder</h1>
+                         className="w-44 h-44 lg:w-72 lg:h-72 border-[10px] border-black rounded-full"/>
+                    <h1 className={"mt-4 text-xl lg:text-3xl font-semibold"}>Jhon Pillpe</h1>
+                    <h1 className={"text-2xl"}>Founder</h1>
                 </div>
-                <div className="lg:w-1/2 space-y-4 mt-8 lg:mt-0">
-                    <p className=" text-xl text-center italic">
+                <div className="lg:w-8/12 space-y-4 mt-8 lg:mt-0">
+                    <p className=" text-xl lg:text-4xl text-center italic">
                         “ We are committed to progress!
                         <br/>
                         <br/>
@@ -215,11 +221,11 @@ const AboutPage = () => {
                     </p>
                 </div>
             </section>
-            <section id="CARE" className="lg:p-8 p-0">
-                <div  className="w-full   mx-auto">
+            <section id="CARE" className="scale-100 lg:scale-110 ">
+                <div className="w-full mx-auto">
                     <div className="flex flex-col justify-between md:flex-row items-start gap-1 lg:gap-8 mb-12">
                         <div className="w-full md:w-6/12">
-                            <h1 className="text-4xl font-bold mb-4">We Care</h1>
+                            <h1 className="text-4xl lg:text-6xl mt-20 lg:mt-0 font-bold mb-8">We Care</h1>
                             <p className="text-lg mb-4">Pitchle is more than a platform. We're the partner your business
                                 needs to grow. We innovate, collaborate, and empower success equitably, offering
                                 accessible tools that help all businesses thrive.</p>
@@ -227,7 +233,7 @@ const AboutPage = () => {
                                 here to make
                                 that happen.</p>
                         </div>
-                        <div className="w-full md:w-1/3 p-6 bg-blue-500 text-white rounded-2xl">
+                        <div className="w-full md:w-1/3 p-10 bg-[#417DFF] text-white rounded-2xl">
                             <svg width="50" height="50" viewBox="0 0 82 81" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <mask id="path-1-inside-1_261_303" fill="white">
@@ -259,7 +265,7 @@ const AboutPage = () => {
                             <h2 className="text-xl mt-4 font-bold mb-2">Inclusivity & Equal Opportunities</h2>
                             <p>We support diversity, ensuring everyone has access to growth and success.</p>
                         </div>
-                        <div className="p-6 bg-blue-500 text-white rounded-2xl">
+                        <div className="p-10 bg-[#417DFF] text-white rounded-2xl">
                             <svg width="50" height="50" viewBox="0 0 88 88" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -272,7 +278,7 @@ const AboutPage = () => {
                             <p>We advocate for businesses that prioritize eco-friendly products and sustainable,
                                 responsible practices.</p>
                         </div>
-                        <div className="p-6 bg-gray-100 rounded-2xl">
+                        <div className="p-10 bg-gray-100 rounded-2xl">
                             <svg width="50" height="50" viewBox="0 0 88 88" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -286,7 +292,60 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
-            <Feature/>
+
+
+            <section className="py-16 lg:py-30 px-0 md:px-16 lg:px-24 text-center relative">
+                {/* Heading */}
+                <div className="mb-8 space-y-7">
+                    <h1 className="text-4xl lg:text-8xl font-bold text-[#01BF74] mb-4">We Grow <br/> When You Grow</h1>
+                    <p className="text-lg lg:text-3xl">
+                        Download Pitchle and Start Growing <br/>Your Business Today!
+                    </p>
+                </div>
+
+                {/* Button */}
+                <div className="flex justify-center mt-16 relative">
+                    <button
+                        onMouseEnter={() => setShowQR(true)}
+                        onMouseLeave={() => setShowQR(false)}
+                        className="bg-[#417DFF] text-white py-3 px-16 lg:px-8 rounded-full shadow-md hover:bg-blue-600 transition flex items-center space-x-2 text-sm lg:text-base"
+                    >
+                        <span>Scan to Install</span>
+                        <svg width="23" height="23" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.66667 4.66667H11.6667V11.6667H4.66667V4.66667ZM23.3333 4.66667V11.6667H16.3333V4.66667H23.3333ZM16.3333 17.5H18.6667V15.1667H16.3333V12.8333H18.6667V15.1667H21V12.8333H23.3333V15.1667H21V17.5H23.3333V21H21V23.3333H18.6667V21H15.1667V23.3333H12.8333V18.6667H16.3333V17.5ZM18.6667 17.5V21H21V17.5H18.6667ZM4.66667 23.3333V16.3333H11.6667V23.3333H4.66667ZM7 7V9.33333H9.33333V7H7ZM18.6667 7V9.33333H21V7H18.6667ZM7 18.6667V21H9.33333V18.6667H7ZM4.66667 12.8333H7V15.1667H4.66667V12.8333ZM10.5 12.8333H15.1667V17.5H12.8333V15.1667H10.5V12.8333ZM12.8333 7H15.1667V11.6667H12.8333V7ZM2.33333 2.33333V7H0V2.33333C0 1.71449 0.245833 1.121 0.683417 0.683417C1.121 0.245833 1.71449 0 2.33333 0L7 0V2.33333H2.33333ZM25.6667 0C26.2855 0 26.879 0.245833 27.3166 0.683417C27.7542 1.121 28 1.71449 28 2.33333V7H25.6667V2.33333H21V0H25.6667ZM2.33333 21V25.6667H7V28H2.33333C1.71449 28 1.121 27.7542 0.683417 27.3166C0.245833 26.879 0 26.2855 0 25.6667V21H2.33333ZM25.6667 25.6667V21H28V25.6667C28 26.2855 27.7542 26.879 27.3166 27.3166C26.879 27.7542 26.2855 28 25.6667 28H21V25.6667H25.6667Z"
+                                fill="white"/>
+                        </svg>
+
+                    </button>
+
+                    {/* QR Code Popup */}
+                    {showQR && (
+                        <div
+                            className="absolute top-12 left-1/2 transform -translate-x-1/2 bg-white p-3 shadow-lg border rounded-lg z-50"
+                            onMouseEnter={() => setShowQR(true)}
+                            onMouseLeave={() => setShowQR(false)}
+                        >
+                            <QRCodeCanvas
+                                value={redirectUrl}
+                                size={128}
+                                bgColor={"#ffffff"}
+                                fgColor={"#000000"}
+                                level={"H"}
+                                includeMargin={true}
+                            />
+                            {/* Logo overlay */}
+                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <img
+                                    src="/img/logo/logo-crop.png"
+                                    alt="Logo"
+                                    className="w-10 h-10 bg-white p-1 rounded-full"
+                                />
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </section>
         </div>
     );
 };
