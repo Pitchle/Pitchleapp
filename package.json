@@ -23,7 +23,6 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
     "react-slick": "^0.30.2",
-    "react-snap": "^1.23.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.1",
     "tailwind-merge": "^3.1.0",
@@ -32,7 +31,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -58,22 +56,5 @@
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3"
-  },
-  "reactSnap": {
-    "inlineCss": true,
-    "skipThirdPartyRequests": true,
-    "include": [
-      "/",
-      "/about",
-      "/faq",
-      "/plans",
-      "/terms",
-      "/privacy",
-      "/blog",
-      "/blog-data",
-      "/redirect",
-      "/blog/what-is-pitchle-the-platform-revolutionizing-business-with-short-videos",
-      "/blog//5-reasons-why-pitchle-s-short-videos-are-the-future-of-business-networking-and-promotion"
-    ]
   }
 }
