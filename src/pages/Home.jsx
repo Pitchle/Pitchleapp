@@ -1,14 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import SplashScreen from '../components/SplashScreen';
 import Banner from '../components/Banner';
 import Introduction from '../components/Introduction';
 import About from '../components/About';
 import Feature from '../components/Feature';
-import Pricing from '../components/Pricing';
-import Philosophy from '../components/Philosophy';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Navbar from '../components/Navbar';
 import Benefits from "../components/Benefits";
 import PlansSection from "../components/PlansSection";
 import FAQs from "../components/FAQs";
@@ -45,10 +41,7 @@ const Home = () => {
 
     return (
         <div className="App">
-            {/*{loading && <SplashScreen isMobile={isMobile}/>} /!* Pass isMobile prop *!/*/}
-            {/*{!loading && (*/}
                 <>
-
                     <Banner/>
                     <Introduction/>
                     <About/>
@@ -57,7 +50,6 @@ const Home = () => {
                     <FAQs/>
                     <Feature/>
                 </>
-            {/*)}*/}
         </div>
     );
 };

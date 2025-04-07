@@ -1,6 +1,4 @@
 import React from 'react';
-import NavbarBar from "../components/NavbarBar";
-import Navbar from "../components/Navbar";
 
 const PrivacyPolicy = () => {
     return (

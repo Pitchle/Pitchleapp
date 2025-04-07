@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { client } from "../sanityClient";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import CategoryTabs from "../components/CategoryTabs";
 
 const categories = [

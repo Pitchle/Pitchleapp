@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Feature from "../components/Feature";
 import {useLocation} from "react-router-dom";
 import {QRCodeCanvas} from "qrcode.react";
 

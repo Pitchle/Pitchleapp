@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AiOutlineQrcode } from 'react-icons/ai';
 import { QRCodeCanvas } from 'qrcode.react';
 
 const Feature = () => {

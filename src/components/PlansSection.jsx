@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const plansData = [
 
@@ -50,9 +51,11 @@ const PlansSection = () => {
                 {/* For Mobile View - Triangle Layout */}
                 <div className="flex flex-col  items-center justify-center space-y-4 lg:hidden">
                     {/* Top Card */}
-                    <div className="bg-gray-100 p-4 rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer w-56 md:w-80">
+                    <div
+                        className="bg-gray-100 p-4 rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer w-56 md:w-80">
                         <div className="flex justify-center mb-4">
-                            <img src={mobileData[0].image} alt={mobileData[0].title} className="w-12 h-12 lg:w-20 lg:h-20"/>
+                            <img src={mobileData[0].image} alt={mobileData[0].title}
+                                 className="w-12 h-12 lg:w-20 lg:h-20"/>
                         </div>
                         <h3 className="font-bold text-xl mb-2">{mobileData[0].title}</h3>
                         <p className="text-gray-600 text-sm">{mobileData[0].description}</p>
@@ -91,11 +94,14 @@ const PlansSection = () => {
                     ))}
                 </div>
             </div>
-
-            {/* Learn More Button */}
-            <button className="bg-[#417DFF] px-20 text-white py-2 lg:px-6 rounded-full shadow-md hover:bg-blue-600 transition flex items-center mx-auto">
-                Learn more <span className="ml-2">→</span>
-            </button>
+            <div className={"mt-24"}>
+                <Link to={"/plans"}>
+                    <button
+                        className="bg-[#417DFF] px-20 text-white py-2 lg:px-6 rounded-full shadow-md hover:bg-blue-600 transition flex items-center mx-auto">
+                        Learn more <span className="ml-2">→</span>
+                    </button>
+                </Link>
+            </div>
         </section>
     );
 };
