@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { client } from "../sanityClient";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import CategoryTabs from "../components/CategoryTabs";
+import {Spinner} from "@material-tailwind/react";
 
 const categories = [
     { title: "Latest Updates", value: "latest updates" },
@@ -162,12 +163,15 @@ const BlogPage = () => {
         .slice(0, 3);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="text-center w-full flex justify-center my-10 text-lg">
+            <Spinner className="h-12 w-12" color="blue"/>
+        </div>
     }
 
     return (
         <>
-            {majorBlog && (<div className="flex flex-col lg:flex-row justify-between w-11/12 space-y-4 lg:space-y-0 lg:w-10/12 mx-auto lg:space-x-6 my-16">
+            {majorBlog && (<div
+                className="flex flex-col lg:flex-row justify-between w-11/12 space-y-4 lg:space-y-0 lg:w-10/12 mx-auto lg:space-x-6 my-16">
                     <MajorBlogCard post={majorBlog} />
                     <div
                         className="w-full lg:w-6/12 bg-white p-6 rounded-xl"

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { client } from "../sanityClient";
+import {Spinner} from "@material-tailwind/react";
 
 const BlogData = () => {
     const location = useLocation();
@@ -100,12 +101,14 @@ const BlogData = () => {
             </div>
 
             {/* Loading State */}
-            {loading && <p className="text-center">Loading posts...</p>}
+            {loading && <div className="text-center w-full flex justify-center my-10 text-lg">
+                <Spinner className="h-12 w-12" color="blue"/>
+            </div>}
 
             {/* Posts Grid */}
             {!loading && posts.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {posts.slice(0, limit).map((post) => (
+                {posts.slice(0, limit).map((post) => (
                         <div
                             key={post._id}
                             className="bg-white space-y-2 p-4 shadow-lg rounded-lg flex flex-col"
