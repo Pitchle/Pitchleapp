@@ -81,7 +81,7 @@ const Plan = () => {
                     {tabs.map((tab) => (
                         <motion.button
                             key={tab}
-                            className={`px-6 mb-6 lg:mb-0 lg:px-16 lg:py-8 lg:text-2xl py-2 font-bold transition-colors rounded-md duration-300 lg:rounded-t-lg ${
+                            className={`px-6 py-3 mb-6 lg:mb-0 lg:px-16 lg:py-8 lg:text-2xl  font-bold transition-colors rounded-md lg:rounded-none duration-300 lg:rounded-t-lg ${
                                 activeTab === tab ? 'bg-[#01BF74] text-white lg:rounded-t-xl -mb-1' : 'bg-gray-200 text-black'
                             }`}
                             onClick={() => setActiveTab(tab)}
@@ -95,7 +95,7 @@ const Plan = () => {
                 </div>
             </div>
 
-            <div className="mt-2 border-4 border-[#01BF74] h-full rounded-3xl shadow-lg overflow-hidden overflow-x-auto hide-scrollbar">
+            <div className="mt-1 border-4 border-[#01BF74] h-full rounded-3xl shadow-lg overflow-hidden overflow-x-auto hide-scrollbar">
                 <table className="min-w-full h-full rounded-3xl">
                     <thead>
                     <tr className="bg-gray-200  border-b border-gray-300">
