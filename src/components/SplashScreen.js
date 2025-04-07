@@ -4,12 +4,13 @@ import React from 'react';
 const SplashScreen = ({ isMobile }) => {
     return (
         <div className="splash-screen">
-            {/* Conditionally render based on the isMobile prop */}
-            {isMobile ? (
-                <img src="/img/splash.gif" alt="Mobile Splash Screen" />
-            ) : (
-                <img src="/img/splash_landscape.gif" alt="Desktop Splash Screen" />
-            )}
+            {/*/!* Conditionally render based on the isMobile prop *!/*/}
+            {/*{isMobile ? (*/}
+            {/*    <img src="/img/splash.gif" alt="Mobile Splash Screen" />*/}
+            {/*) : (*/}
+            {/*    <img src="/img/splash_landscape.gif" alt="Desktop Splash Screen" />*/}
+            {/*)}*/}
+
         </div>
     );
 };
