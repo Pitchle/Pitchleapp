@@ -20,7 +20,7 @@ const MajorBlogCard = ({ post }) => (
         <img
             src={post.image?.asset?.url}
             alt="Main Article"
-            className="w-full h-auto mx-auto rounded-xl mb-4"
+            className="w-full hover:scale-105 transition-transform duration-300 h-auto mx-auto  rounded-xl mb-4"
         />
         <p className="text-blue-500 font-semibold mb-1">{post.category}</p>
         <Link to={`/blog/${post.slug.current}`}>
@@ -28,7 +28,7 @@ const MajorBlogCard = ({ post }) => (
                 {post.title}
             </h2>
         </Link>
-        <p className="mb-4 line-clamp-2 lg:line-clamp-2">{post.description}</p>
+        <p className="mb-4 line-clamp-2 lg:line-clamp-1">{post.description}</p>
         <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
                 <img
@@ -50,11 +50,13 @@ const BlogCard = ({ post }) => (
         className="bg-white p-2 rounded-xl"
         style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
     >
+        <div className={"overflow-hidden group rounded-xl"}>
         <img
             src={post.image?.asset?.url}
             alt="Post"
-            className="w-full h-48 object-cover rounded-lg mb-4"
+            className="w-full  transition-transform duration-300 group-hover:scale-110 h-48 object-cover rounded-lg mb-4"
         />
+        </div>
         <p className="text-blue-500 font-semibold mb-1">{post.category}</p>
         <Link to={`/blog/${post.slug.current}`}>
             <h3 className="text-lg font-bold mb-2 hover:underline">{post.title}</h3>
@@ -177,13 +179,13 @@ const BlogPage = () => {
                         className="w-full lg:w-6/12 bg-white p-6 rounded-xl"
                         style={{ boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" }}
                     >
-                        <h3 className="text-3xl font-bold mb-4">Popular Articles</h3>
-                        <div className="space-y-4">
+                        <h3 className="text-3xl font-bold mb-8">Popular Articles</h3>
+                        <div className="space-y-4 ">
                             {currentPosts.map((post, index) => (
                                 <div key={index}>
-                                    <div className="flex flex-col lg:flex-row items-center">
-                                        <div className="w-full my-3 lg:w-6/12">
-                                            <div className="flex justify-between items-center">
+                                    <div className="flex hover:bg-gray-50 flex-col lg:flex-row items-center">
+                                        <div className="w-full  my-3 lg:w-6/12">
+                                            <div className="flex  justify-between items-center">
                                                 <div className="flex my-2 lg:hidden items-center gap-2">
                                                     <img
                                                         className="w-8 h-8"
@@ -218,7 +220,7 @@ const BlogPage = () => {
                                             />
                                         </div>
                                     </div>
-                                    <div className="text-gray-500 border-2 my-4"></div>
+                                    <div className="text-gray-500 border-2 my-2"></div>
                                 </div>
                             ))}
                         </div>
@@ -237,16 +239,18 @@ const BlogPage = () => {
                     <div className="w-full lg:w-6/12">
                         {promotePosts.length > 0 && (
                             <div
-                                className="bg-white p-2 rounded-xl"
+                                className="bg-white p-2 "
                                 style={{
                                     boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
                                 }}
                             >
+                                <div className={"overflow-hidden group rounded-xl"}>
                                 <img
                                     src={promotePosts[0].image?.asset?.url}
                                     alt="Promote Blog"
-                                    className="w-full rounded-lg mb-4"
+                                    className="w-full object-cover transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                 />
+                                </div>
                                 <p className="text-blue-500 font-semibold mb-1">
                                     {promotePosts[0].category}
                                 </p>
@@ -300,11 +304,13 @@ const BlogPage = () => {
                                     boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
                                 }}
                             >
+                                <div className={"overflow-hidden group rounded-xl"}>
                                 <img
                                     src={sellPosts[0].image?.asset?.url}
                                     alt="Sell & Transfer Blog"
-                                    className="w-full rounded-lg mb-4"
+                                    className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                 />
+                                </div>
                                 <p className="text-blue-500 font-semibold mb-1">
                                     {sellPosts[0].category}
                                 </p>
@@ -361,11 +367,13 @@ const BlogPage = () => {
                                     boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
                                 }}
                             >
+                                <div className={"overflow-hidden group rounded-xl"}>
                                 <img
                                     src={partnerPosts[0].image?.asset?.url}
                                     alt="Partner Blog"
-                                    className="w-full rounded-lg mb-4"
+                                    className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                 />
+                                </div>
                                 <p className="text-blue-500 font-semibold mb-1">
                                     {partnerPosts[0].category}
                                 </p>

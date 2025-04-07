@@ -23,15 +23,14 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
     };
 
     return (
-        <div className="relative">
-            {/* Mobile: Toggle Button + Drawer */}
-            <div className="md:hidden w-10/12 rounded-full text-center mx-auto">
+        <div className="relative ">
+            <div className="lg:hidden  w-10/12 rounded-full text-center mx-auto">
                 <h1 className="text-xl my-4 font-bold">
                     Choose a topic that fits your interests!
                 </h1>
                 <button
                     onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                    className="px-4 py-2 rounded w-8/12 mx-auto text-left flex items-center justify-between"
+                    className="px-6 py-2 bg-[#f6f6f6] rounded-full  mt-8 w-8/12 mx-auto text-left flex items-center justify-between"
                 >
                     <span>Topics</span>
                     <FaChevronDown
@@ -58,14 +57,17 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
             </div>
 
             {/* Desktop: Horizontal Category Tabs */}
+            <h1 className="text-5xl ms-24 mt-40 hidden lg:block my-4 font-bold">
+                Choose a topic that fits <br/> your interests!
+            </h1>
             <div
                 id="category-section"
-                className="hidden md:flex justify-center mb-6 px-4"
+                className="hidden  md:flex w-8/12 justify-self-end me-24 p-6 rounded-full bg-[#f6f6f6] justify-center mb-6 px-4"
             >
                 {categories.map((cat) => (
                     <button
                         key={cat.value}
-                        className={`px-4 py-2 mx-2 ${
+                        className={`px-2 py-2 text-xl font-semibold mx-2 ${
                             selectedCategory === cat.value
                                 ? " font-bold"
                                 : ""
