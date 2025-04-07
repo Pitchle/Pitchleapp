@@ -45,8 +45,8 @@ const Home = () => {
 
     return (
         <div className="App">
-            {loading && <SplashScreen isMobile={isMobile}/>} {/* Pass isMobile prop */}
-            {!loading && (
+            {/*{loading && <SplashScreen isMobile={isMobile}/>} /!* Pass isMobile prop *!/*/}
+            {/*{!loading && (*/}
                 <>
 
                     <Banner/>
@@ -57,7 +57,7 @@ const Home = () => {
                     <FAQs/>
                     <Feature/>
                 </>
-            )}
+            {/*)}*/}
         </div>
     );
 };

@@ -4,7 +4,7 @@ import { FaLinkedin, FaYoutube, FaApple, FaGooglePlay } from 'react-icons/fa';
 const Footer = () => {
     return (
         <footer className="bg-gray-100 py-10 px-4 text-[#343434] md:px-8 lg:m-4 lg:px-16 rounded-xl mt-10">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl scale-105 mx-auto">
                 {/* Row 1: Brand (left) + Newsletter (right) */}
                 <div className="flex flex-col md:flex-row md:justify-between gap-2">
                     {/* Brand */}
@@ -14,7 +14,7 @@ const Footer = () => {
                             <img
                                 src="/img/logo/logo.png"
                                 alt="Pitchle Logo"
-                                className="w-12 h-12 rounded-full"
+                                className="w-16 h-16 rounded-full"
                             />
                             <h2 className="text-3xl font-bold">Pitchle</h2>
                         </div>
@@ -38,7 +38,7 @@ const Footer = () => {
                             <input
                                 type="email"
                                 placeholder="Enter your Email"
-                                className="border border-blue-500 placeholder-[#7A7A7A]
+                                className="border-2 border-blue-500 placeholder-[black]
                            rounded-full px-4 py-3 focus:outline-none
                            w-44 md:w-full"
                             />

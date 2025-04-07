@@ -1,9 +1,8 @@
 import React from 'react';
-import {FaTrophy} from 'react-icons/fa';
 
 const Introduction = () => {
     return (
-        <div className="text-center my-32 space-y-3">
+        <div className="text-center h-screen flex items-center justify-center space-y-3">
             <h2 className="text-2xl md:text-8xl font-bold leading-snug">
                 Empowering Small <br/> Businesses to{' '}
                 <span className="text-[#01BF74] flex items-center gap-1 inline-flex">

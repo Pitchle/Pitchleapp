@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <section className="flex flex-col items-center justify-center p-4 lg:p-81">
             {/* Heading */}
-            <h1 className="text-3xl font-bold mt-5 text-center lg:text-7xl">
+            <h1 className="text-3xl font-bold mt-5 text-center lg:text-8xl">
                 <span className="text-[#01BF74]">Revolutionize</span> Business <br/> with Short Videos!
             </h1>
 
@@ -14,30 +14,30 @@ const Banner = () => {
                 {/* Desktop View */}
                 <div className="hidden lg:flex flex-row items-center gap-6">
                     {/* Left Side Buttons */}
-                    <div className="flex flex-col space-y-20 items-start gap-6">
-                        <img className={"w-60 h-32"} src="/img/buttons/Frame%2086.png" alt=""/>
-                        <img className={"w-60 h-32"} src="/img/buttons/Group%2010.png" alt=""/>
+                    <div className="flex flex-col space-y-40 items-start gap-6">
+                        <img className={"w-60 lg:scale-150 -mt-32 h-32"} src="/img/buttons/Frame%2086.png" alt=""/>
+                        <img className={"w-60 lg:scale-150 h-32"} src="/img/buttons/Group%2010.png" alt=""/>
                     </div>
 
                     {/* Video Section */}
                     <div className="relative">
-                        <div className={"w-7/12 mx-auto"}>
+                        <div className={"w-9/12 mx-auto"}>
                             <video
                                 src="/video/intro.mp4"
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
-                                className="w-[500px] p-4 scale-125 mx-auto h-[800px] rounded-lg"
+                                className="w-[500px] p-4 scale-105 mx-auto h-[800px] rounded-lg"
                             />
                         </div>
                     </div>
 
-                    <img className={"w-60 h-32"} src="/img/buttons/Frame%2091.png" alt=""/>
+                    <img className={"w-60 lg:scale-150 h-32"} src="/img/buttons/Frame%2091.png" alt=""/>
                 </div>
                 <div className="flex flex-col items-center gap-4 mt-0 lg:mt-6 lg:hidden">
                     <div className="relative w-full flex justify-center">
-                        <div className="w-full lg:w-7/12 mx-auto">
+                        <div className="w-full  lg:w-7/12 mx-auto">
                             <video
                                 src="/video/intro.mp4"
                                 autoPlay
@@ -73,15 +73,15 @@ const Banner = () => {
                     fill="#01BF74"/>
             </svg>
             {/* Text and Download Buttons */}
-            <p className="text-center text-lg my-4">Download Pitchle and start growing <br/> your business today!</p>
+            <p className="text-center text-xl lg:text-3xl my-4">Download Pitchle and start growing <br/> your business today!</p>
             <div className="flex mt-5 gap-4">
-                <button className="flex items-center bg-black text-white px-4 py-4 rounded-lg shadow-lg">
+                <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-7 py-4 rounded-lg shadow-lg">
                     <img className="w-7 h-7 me-2" src="/img/logo/apple.png" alt=""/>
-                    <span className="text-md font-semibold">App Store</span>
+                    <span className="text-lg font-semibold">App Store</span>
                 </button>
-                <button className="flex items-center bg-black text-white px-4 py-4 rounded-lg shadow-lg">
+                <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000] text-white px-7 py-4 rounded-lg shadow-lg">
                     <img className="w-7 h-7 me-2" src="/img/logo/playstore.png" alt=""/>
-                    <span className="text-md font-semibold">Google Play</span>
+                    <span className="text-lg font-semibold">Google Play</span>
                 </button>
             </div>
         </section>

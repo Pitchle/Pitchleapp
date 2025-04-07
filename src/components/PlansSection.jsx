@@ -1,9 +1,10 @@
 import React from 'react';
 
 const plansData = [
+
     {
-        title: 'Flexible Options',
-        description: 'Choose a one-time, monthly, or annual subscription based on your needs.',
+        title: 'Paid Plan',
+        description: 'Unlock 60-Second Videos to present your business and access extra benefits.',
         image: '/img/icon/img_9.png', // Replace with your image path
     },
     {
@@ -12,15 +13,34 @@ const plansData = [
         image: '/img/icon/img_10.png', // Replace with your image path
     },
     {
-        title: 'Paid Plan',
-        description: 'Unlock 60-Second Videos to present your business and access extra benefits.',
+        title: 'Flexible Options',
+        description: 'Choose a one-time, monthly, or annual subscription based on your needs.',
+        image: '/img/icon/img_11.png', // Replace with your image path
+    }
+];
+const mobileData = [
+    {
+        title: 'Flexible Options',
+        description: 'Choose a one-time, monthly, or annual subscription based on your needs.',
         image: '/img/icon/img_11.png', // Replace with your image path
     },
+    ,
+    {
+        title: 'Free Plan',
+        description: 'Access to the platform with a 30-second video model for pitching your business.',
+        image: '/img/icon/img_10.png', // Replace with your image path
+    },
+    {
+        title: 'Paid Plan',
+        description: 'Unlock 60-Second Videos to present your business and access extra benefits.',
+        image: '/img/icon/img_9.png', // Replace with your image path
+    }
+
 ];
 
 const PlansSection = () => {
     return (
-        <section className="py-16 px-0 md:px-16 lg:px-24 text-center">
+        <section className=" py-16 lg:py-40 space-y-10 lg:space-y-24 px-0 md:px-16 lg:px-24 text-center">
             {/* Title */}
             <h2 className="text-3xl lg:text-5xl font-bold mb-12">Choose your path to success</h2>
 
@@ -32,15 +52,15 @@ const PlansSection = () => {
                     {/* Top Card */}
                     <div className="bg-gray-100 p-4 rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer w-56 md:w-80">
                         <div className="flex justify-center mb-4">
-                            <img src={plansData[0].image} alt={plansData[0].title} className="w-12 h-12 lg:w-20 lg:h-20"/>
+                            <img src={mobileData[0].image} alt={mobileData[0].title} className="w-12 h-12 lg:w-20 lg:h-20"/>
                         </div>
-                        <h3 className="font-bold text-xl mb-2">{plansData[0].title}</h3>
-                        <p className="text-gray-600 text-sm">{plansData[0].description}</p>
+                        <h3 className="font-bold text-xl mb-2">{mobileData[0].title}</h3>
+                        <p className="text-gray-600 text-sm">{mobileData[0].description}</p>
                     </div>
 
                     {/* Bottom Two Cards */}
                     <div className="grid grid-cols-2 gap-1">
-                        {plansData.slice(1).map((plan, index) => (
+                        {mobileData.slice(1).map((plan, index) => (
                             <div
                                 key={index}
                                 className="bg-gray-100 p-2 rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer w-44 md:w-80"
@@ -60,13 +80,13 @@ const PlansSection = () => {
                     {plansData.map((plan, index) => (
                         <div
                             key={index}
-                            className="bg-gray-100 p-6 rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer"
+                            className="bg-gray-100 space-y-5 p-14 rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer"
                         >
                             <div className="flex justify-center py-4 mb-4">
                                 <img src={plan.image} alt={plan.title} className="w-12 h-12 lg:w-20 lg:h-20"/>
                             </div>
-                            <h3 className="font-bold text-xl mb-2">{plan.title}</h3>
-                            <p className="text-gray-600 text-sm">{plan.description}</p>
+                            <h3 className="font-bold text-2xl mb-2">{plan.title}</h3>
+                            <p className="text-md">{plan.description}</p>
                         </div>
                     ))}
                 </div>

@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavbarBar from "./NavbarBar";
 import Navbar from "./Navbar";
+import {useLocation} from "react-router-dom";
 
 const FaQs = () => {
     const faqs = [
@@ -54,10 +55,19 @@ const FaQs = () => {
         updatedExpandedItems[index] = !updatedExpandedItems[index];
         setExpandedItems(updatedExpandedItems);
     };
+    const location = useLocation();
 
+    useEffect(() => {
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [location]);
     return (
         <>
-            <h1 className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-5xl dark:text-white">
+            <h1 id="FAQ" className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-5xl dark:text-white">
                 <span className={"text-[#01BF74]"}> Got any questions?</span> <br/> <span className={"text-[#DFDFDF]"}>We’ve got answers.</span>
             </h1>
 

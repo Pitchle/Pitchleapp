@@ -1,8 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Feature from "../components/Feature";
+import {useLocation} from "react-router-dom";
 
 const AboutPage = () => {
+    const location = useLocation();
 
+    useEffect(() => {
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [location]);
     return (
         <div className="p-8 flex justify-center flex-col max-w-7xl mx-auto space-y-10 lg:space-y-40">
             <section className="flex flex-col mx-auto lg:flex-row items-center mt-6 lg:mt-16 justify-evenly">
@@ -205,10 +215,10 @@ const AboutPage = () => {
                     </p>
                 </div>
             </section>
-            <section className="lg:p-8 p-0">
-                <div className="w-full mx-auto">
+            <section id="CARE" className="lg:p-8 p-0">
+                <div  className="w-full   mx-auto">
                     <div className="flex flex-col justify-between md:flex-row items-start gap-1 lg:gap-8 mb-12">
-                        <div id="CARE" className="w-full md:w-6/12">
+                        <div className="w-full md:w-6/12">
                             <h1 className="text-4xl font-bold mb-4">We Care</h1>
                             <p className="text-lg mb-4">Pitchle is more than a platform. We're the partner your business
                                 needs to grow. We innovate, collaborate, and empower success equitably, offering

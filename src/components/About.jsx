@@ -5,14 +5,14 @@ const featureSections = [
     {
         title: 'Promote',
         description: 'Get your product in front of the right audience.',
-        bgColor: 'bg-blue-500',
+        bgColor: 'bg-[#417DFF]',
         videoId: '/video/promote.mp4',
         layout: 'right', // Video on the right, Text on the left
     },
     {
         title: 'Sell Business',
         description: 'List your business for sale or transfer and connect with serious buyers.',
-        bgColor: 'bg-green-500',
+        bgColor: 'bg-[#01BF74]',
         videoId: '/video/sell.mp4',
         layout: 'left', // Video on the left, Text on the right
     },
@@ -34,7 +34,7 @@ const FeatureCard = ({ section, index, scrollYProgress, scrollRange, viewportHei
 
     return (
         <motion.div
-            className={`sticky top-10 w-11/12 lg:w-8/12 mx-auto mb-10 ${section.bgColor} text-white rounded-xl shadow-lg`}
+            className={`sticky top-10 w-11/12 lg:w-10/12 mx-auto mb-10 ${section.bgColor} text-white rounded-xl shadow-lg`}
             style={{
                 zIndex: index + 1,
                 y, // vertical translation based on scroll progress
@@ -57,7 +57,7 @@ const FeatureCard = ({ section, index, scrollYProgress, scrollRange, viewportHei
                     <h3 className="text-2xl my-2 lg:my-5 lg:text-4xl font-bold">
                         {section.title}
                     </h3>
-                    <p className="mt-2 text-lg lg:text-xl">
+                    <p className="mt-2 text-lg lg:text-2xl">
                         {section.description}
                     </p>
                 </div>
@@ -75,14 +75,14 @@ const About = () => {
     });
 
     const sectionCount = featureSections.length;
-    const scrollRange = 1 / sectionCount;
+    const scrollRange = 0 / sectionCount;
     // You might want to adjust viewportHeight based on your design
-    const viewportHeight = 100;
+    const viewportHeight = 0;
 
     return (
         // The container height forces scrolling (e.g., 300vh for 3 sections)
         <div ref={containerRef} className="relative" style={{ height: `${sectionCount * 100}vh` }}>
-            <h2 className="text-center text-3xl lg:text-5xl font-bold mb-8">
+            <h2 className="text-center text-3xl lg:text-5xl font-bold mb-32">
                 With Pitchle you can
             </h2>
             {featureSections.map((section, index) => (
