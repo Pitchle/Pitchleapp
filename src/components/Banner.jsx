@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <section className="flex flex-col items-center justify-center p-4 lg:p-81">
             {/* Heading */}
-            <h1 className="text-3xl font-bold mt-5 text-center lg:text-8xl">
+            <h1 className="text-4xl scale-110 lg:scale-100 font-bold mt-5 text-center lg:text-8xl">
                 <span className="text-[#01BF74]">Revolutionize</span> Business <br/> with Short Videos!
             </h1>
 

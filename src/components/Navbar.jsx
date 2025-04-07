@@ -113,7 +113,7 @@ const Navbar = () => {
                             onClick={() => setMobileOpen(true)}
                             className="text-2xl text-gray-800"
                         >
-                            <FiMenu />
+                            <FiMenu className={"bg-[#01BF74] text-white p-2 w-12 h-12 rounded-full"} />
                         </button>
                     </div>
                 </div>
@@ -128,12 +128,12 @@ const Navbar = () => {
                 {/* Header in Drawer */}
                 <div className="flex items-center justify-between p-2 bg-white rounded-full m-4">
                     <div className="flex items-center space-x-2">
-                        <img src="/img/logo/logo-crop.png" alt="logo" className="w-10 h-10" />
-                        <span className="font-bold text-lg text-gray-800">Pitchle</span>
+                        <img src="/img/logo/logo-crop.png" alt="logo" className="w-12 h-12" />
+                        <span className="font-bold text-3xl text-gray-800">Pitchle</span>
                     </div>
                     <button
                         onClick={() => setMobileOpen(false)}
-                        className="text-xl bg-[#00C26A] text-white w-8 h-8 flex items-center justify-center rounded-full"
+                        className="text-xl bg-[#00C26A] text-white w-12 h-12 flex items-center justify-center rounded-full"
                     >
                         <FiX />
                     </button>
@@ -141,6 +141,8 @@ const Navbar = () => {
 
                 {/* Navigation Items */}
                 <div className="flex flex-col items-center justify-center mt-16 space-y-10 ">
+                    <Link onClick={() => setMobileOpen(false)} className={"text-white text-2xl font-medium"} to={"/"}>Home </Link>
+                    <>
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
@@ -153,6 +155,7 @@ const Navbar = () => {
                             {item.name}
                         </Link>
                     ))}
+                    </>
                 </div>
 
                 {/* Social Icons */}
