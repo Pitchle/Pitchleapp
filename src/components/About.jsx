@@ -82,7 +82,7 @@ const About = () => {
     return (
         // The container height forces scrolling (e.g., 300vh for 3 sections)
         <div ref={containerRef} className="relative" style={{ height: `${sectionCount * 100}vh` }}>
-            <h2 className="text-center text-3xl lg:text-5xl font-bold mb-32">
+            <h2 className="text-center text-4xl lg:text-5xl font-bold mb-12 lg:mb-32">
                 With Pitchle you can
             </h2>
             {featureSections.map((section, index) => (

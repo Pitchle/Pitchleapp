@@ -93,7 +93,7 @@ const PlansSection = () => {
             </div>
 
             {/* Learn More Button */}
-            <button className="bg-blue-500 text-white py-2 px-6 rounded-full shadow-md hover:bg-blue-600 transition flex items-center mx-auto">
+            <button className="bg-[#417DFF] px-20 text-white py-2 lg:px-6 rounded-full shadow-md hover:bg-blue-600 transition flex items-center mx-auto">
                 Learn more <span className="ml-2">→</span>
             </button>
         </section>

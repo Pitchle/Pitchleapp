@@ -74,13 +74,15 @@ const Banner = () => {
             </svg>
             {/* Text and Download Buttons */}
             <p className="text-center text-xl lg:text-3xl my-4">Download Pitchle and start growing <br/> your business today!</p>
-            <div className="flex mt-5 gap-4">
-                <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-7 py-4 rounded-lg shadow-lg">
-                    <img className="w-7 h-7 me-2" src="/img/logo/apple.png" alt=""/>
-                    <span className="text-lg font-semibold">App Store</span>
+            <div className="flex mt-5 gap-2">
+                <button
+                    className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-4 rounded-lg shadow-lg">
+                    <img className="w-5 h-5 lg:w-7 lg:h-7 me-2" src="/img/logo/apple.png" alt=""/>
+                    <span className="text-lg font-semibold">Apple Store</span>
                 </button>
-                <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000] text-white px-7 py-4 rounded-lg shadow-lg">
-                    <img className="w-7 h-7 me-2" src="/img/logo/playstore.png" alt=""/>
+                <button
+                    className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-4 rounded-lg shadow-lg">
+                    <img className="w-5 h-5 lg:w-7 lg:h-7 me-2" src="/img/logo/playstore.png" alt=""/>
                     <span className="text-lg font-semibold">Google Play</span>
                 </button>
             </div>
