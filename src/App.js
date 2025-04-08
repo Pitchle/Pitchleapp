@@ -14,6 +14,7 @@ import BlogData from "./pages/BlogData";
 import Plan from "./pages/Plan"; // Import BlogDetailPage
 
 function App() {
+
     return (
         <>
             <Router>
@@ -29,7 +30,7 @@ function App() {
                     <Route path="/blog-data" element={<BlogData />} />
                     <Route path="/redirect" element={<RedirectPage />} />
                 </Routes>
-                <Footer />
+                <Footer/>
             </Router>
         </>
     );

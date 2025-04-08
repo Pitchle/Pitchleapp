@@ -57,7 +57,7 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
             </div>
 
             {/* Desktop: Horizontal Category Tabs */}
-            <h1 className="text-5xl ms-24 mt-40 hidden lg:block my-4 font-bold">
+            <h1 className="text-4xl text-[#343434] ms-24 mt-40 hidden lg:block my-4 font-bold">
                 Choose a topic that fits <br/> your interests!
             </h1>
             <div
@@ -67,7 +67,7 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
                 {categories.map((cat) => (
                     <button
                         key={cat.value}
-                        className={`px-2 py-2 text-xl font-semibold mx-2 ${
+                        className={`px-2 py-2 hover:text-[#417dff] text-xl font-semibold mx-2 ${
                             selectedCategory === cat.value
                                 ? " font-bold"
                                 : ""
