@@ -21,6 +21,15 @@ const BlogDetail = () => {
     const [isLinkCopied, setIsLinkCopied] = useState(false);
 
     const contentRef = useRef(null);
+    const [timeSpent, setTimeSpent] = useState(0); // Time spent in minutes
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTimeSpent(prevTime => prevTime + 1);
+        }, 60000); // Increment time every 60 seconds (1 minute)
+
+        return () => clearInterval(timer); // Cleanup the timer when the component unmounts
+    }, []);
 
     // Scroll to top on route change
     useEffect(() => {
@@ -166,87 +175,92 @@ const BlogDetail = () => {
                 style={{ width: `${scrollProgress}%` }}
             />
 
-            <div className="max-w-4xl mx-auto px-4 my-20 lg:my-28">
-                <nav className="absolute top-24 left-5 lg:top-32 lg:left-40 text-sm text-gray-800">
-                    <Link to="/blog" className="hover:underline text-blue-500">
+            <div className="w-full lg:max-w-6xl mx-auto px-1 lg:px-4 my-20 lg:my-28">
+                <nav className="absolute top-24 left-5 lg:top-32 lg:left-24 text-sm">
+                    <Link to="/blog"
+                          className="hover:underline text-sm lg:text-xl font-semibold  text-[#bcb4b4] mb-4 text-left w-full">
                         Blog
                     </Link>
-                    <span className="mx-2">&gt;</span>
+                    <span className="lg:mx-2 text-sm lg:text-xl lg:font-bold text-[#bcb4b4]">&gt;</span>
                     {post.category ? (
                         <Link
                             to={`/blog-data?category=${encodeURIComponent(post.category)}`}
-                            className="capitalize hover:underline"
+                            className="capitalize text-sm lg:text-xl font-semibold  text-[#bcb4b4] mb-4 text-left w-full hover:underline"
                         >
                             {post.category}
                         </Link>
                     ) : (
                         <span className="text-gray-800">Uncategorized</span>
                     )}
-                    <span className="mx-2">&gt;</span>
-                    <span className="text-blue-500">{post.title}</span>
+                    <span className="lg:mx-2 text-sm lg:text-xl lg:font-bold text-[#bcb4b4]">&gt;</span>
+                    <span className="text-sm lg:text-xl font-semibold text-[#417dff] mb-4 text-left w-full">{post.title.split(' ').slice(0, 6).join(' ')}...</span>
+
                 </nav>
 
-                <h1 className="text-md w-7/12 lg:w-3/12 my-6 mx-auto text-white bg-blue-500 rounded-full p-3 lg:text-xl font-semibold text-center mb-4 ">
-                    {post.category}
-                </h1>
-                <h1 className="text-3xl lg:text-5xl font-bold py-5 text-center mb-4 ">
+                <div className={"mt-28 lg:mt-40 flex justify-center"}>
+                    <h1 className="text-md  mx-auto text-white bg-[#417dff] rounded-full py-1 px-3 mb-7 lg:text-md text-center ">
+                        {post.category}
+                    </h1>
+                </div>
+                <h1 className="text-[29px] px-[2px] lg:text-6xl font-semibold py-5 text-center mb-4 ">
                     {post.title}
 
                 </h1>
-                <h3 className="text-md lg:text-lg  text-center mb-4 ">
+                <h3 className="text-md w-full px-2 lg:px-0 lg:w-9/12 flex justify-self-center lg:text-xl  text-center mb-4 ">
                     {post.description}
 
                 </h3>
-                <div className="flex text-center items-center justify-center gap-4 mb-6 ">
-                    <div>
-                        <span className="font-semibold">Date:</span>{" "}
-                        {new Date(post.publishedAt).toLocaleDateString()}
+                <div className="flex  text-center space-x-2 lg:space-x-16 my-20 items-center justify-center gap-4 ">
+                    <div className={"flex justify-center flex-col space-y-2"}>
+                        <span className="text-xl lg:text-3xl font-semibold">Date</span>{" "}
+                       <span className={"text-lg lg:text-2xl"}> {new Date(post.publishedAt).toLocaleDateString()}</span>
                     </div>
-                    <div>
-                        <span className="font-semibold">Publisher:</span> Pitchle Team
+                    <div className={"flex justify-center flex-col space-y-2"}>
+                        <span className="text-xl lg:text-3xl font-semibold">Author</span> <span className={"text-lg lg:text-2xl"}>Pitchle Team</span>
                     </div>
-                    <div>
-                        <span className="font-semibold">Reading Time:</span> 12 minutes
+                    <div className={"flex justify-center flex-col space-y-2"}>
+                        <span className="text-xl lg:text-3xl font-semibold">Read</span>
+                        <span className="text-lg lg:text-2xl">{timeSpent} minute{timeSpent !== 1 ? 's' : ''}</span>
                     </div>
                 </div>
 
                 {post.image?.asset?.url && (
                     <img
-                        className="w-full h-auto object-cover rounded-md mb-6"
+                        className="w-11/12 lg:w-full h-[170px] mx-auto lg:h-[500px] object-fill rounded-xl mb-6"
                         src={post.image.asset.url}
                         alt={post.title}
                     />
                 )}
                 {post.description && (
-                    <p className="text-center text-lg text-gray-700 mb-10">
+                    <p className="text-start text-md w-full lg:text-2xl lg:w-8/12 mx-auto mt-16 px-3 lg:px-0 lg:mt-32 mb-10">
                         {post.description}
                     </p>
                 )}
-                <div ref={contentRef} className="prose lg:prose-xl poppins-regular text-[18px] mx-auto">
+                <div ref={contentRef} className="prose w-full px-3 lg:px-0 lg:w-9/12 lg:prose-xl poppins-regular text-md lg:text-xl mx-auto">
                     <PortableText
                         value={post.content}
                         components={{
                             block: {
-                                h1: ({children}) => <h1 className="text-5xl font-bold mt-4">{children}</h1>,
-                                h2: ({children}) => <h2 className="text-4xl font-bold mt-3">{children}</h2>,
-                                h3: ({children}) => <h3 className="text-3xl font-semibold mt-3">{children}</h3>,
-                                h4: ({children}) => <h4 className="text-2xl font-semibold mt-3">{children}</h4>,
-                                h5: ({children}) => <h5 className="text-xl font-medium mt-3">{children}</h5>,
+                                h1: ({children}) => <h1 className="text-5xl w-9/12 mx-automx-auto font-bold mt-4">{children}</h1>,
+                                h2: ({children}) => <h2 className="text-2xl lg:text-3xl py-5 text-center w-full lg:w-9/12 mx-auto font-bold mt-3">{children}</h2>,
+                                h3: ({children}) => <h3 className="text-xl lg:text-3xl mt-3">{children}</h3>,
+                                h4: ({children}) => <h4 className="text-xl  mt-3">{children}</h4>,
+                                h5: ({children}) => <h5 className="text-lg  mt-3">{children}</h5>,
 
                                 normal: ({children}) => (
-                                    <p className="leading-8 mt-4 whitespace-pre-wrap">
+                                    <p className="mt-0 lg:mt-2 whitespace-pre-wrap" style={{lineHeight: "1.5em"}}>
                                         {children}
                                     </p>
                                 ),
                                 blockquote: ({children}) => (
-                                    <blockquote className="border-l-4 border-gray-500 pl-4 italic my-4">
+                                    <blockquote className="border-l-4 mt-2 border-gray-500 pl-4 italic my-4">
                                         {children}
                                     </blockquote>
                                 ),
                             },
                             list: {
-                                bullet: ({children}) => <ul className="list-disc pl-5 space-y-2">{children}</ul>,
-                                number: ({children}) => <ol className="list-decimal pl-5 space-y-2">{children}</ol>,
+                                bullet: ({children}) => <ul className="list-disc mt-2 pl-5 space-y-2">{children}</ul>,
+                                number: ({children}) => <ol className="list-decimal mt-2 pl-5 space-y-2">{children}</ol>,
                             },
                             marks: {
                                 strong: ({children}) => <strong>{children}</strong>,
@@ -276,20 +290,20 @@ const BlogDetail = () => {
             <div className={"w-full flex justify-end"}>
             <div className={"flex w-6/12 justify-center items-center space-x-5"}>
                 <FaFacebookF
-                    className="text-gray-500 hover:text-blue-600 text-2xl cursor-pointer"
+                    className="hover:text-blue-600 text-2xl cursor-pointer"
                     onClick={() => handleShare("facebook")}
                 />
                 <FaXTwitter
-                    className="text-gray-500 hover:text-blue-400 text-2xl cursor-pointer"
+                    className="hover:text-blue-400 text-2xl cursor-pointer"
                     onClick={() => handleShare("twitter")}
                 />
                 <FaWhatsapp
-                    className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
+                    className="hover:text-blue-700 text-2xl cursor-pointer"
                     onClick={() => handleShare("whatsapp")}
                 />
                 <div className="relative">
                     <HiOutlineShare
-                        className="text-gray-500 hover:text-blue-700 text-2xl cursor-pointer"
+                        className="hover:text-blue-700 text-2xl cursor-pointer"
                         onClick={handleCopyLink}
                     />
                     {isLinkCopied && (
@@ -303,7 +317,7 @@ const BlogDetail = () => {
             {/* Related Blogs Section */}
             {relatedBlogs.length > 0 && (
                 <div className="max-w-6xl mx-auto px-4 mb-16">
-                    <h2 className="text-3xl lg:text-5xl font-semibold text-center my-10">
+                    <h2 className="text-3xl lg:text-5xl text-[#222222] font-bold text-center my-10">
                         Related Articles
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

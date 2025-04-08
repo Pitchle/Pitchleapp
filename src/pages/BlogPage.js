@@ -3,7 +3,8 @@ import { client } from "../sanityClient";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import CategoryTabs from "../components/CategoryTabs";
 import {Spinner} from "@material-tailwind/react";
-
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MajorBlogCard = ({ post }) => (
     <div
@@ -84,7 +85,43 @@ const BlogPage = () => {
     const categoryFromQuery = decodeURIComponent(queryParams.get("category") || "");
     const [selectedCategory, setSelectedCategory] = useState("latest updates");
     const categorySectionRef = useRef(null);
+    const [email, setEmail] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [subscribed, setSubscribed] = useState(false);
 
+    const handleSubscribe = () => {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!email) {
+            setEmailError("Email is required.");
+            return;
+        }
+
+        if (!emailRegex.test(email)) {
+            setEmailError("Please enter a valid email address.");
+            return;
+        }
+
+        setSubscribed(true);
+        setEmail("");
+        setEmailError("");
+
+        toast.success("Thanks for subscribing! You’ll get all updates from Blogs.");
+        requestNotificationPermission();
+    };
+
+    const requestNotificationPermission = () => {
+        if ("Notification" in window && Notification.permission !== "granted") {
+            Notification.requestPermission().then((permission) => {
+                if (permission === "granted") {
+                    new Notification("Subscription Successful!", {
+                        body: "You will receive updates for new blogs.",
+                        icon: "/img/logo/logo.png", // update if needed
+                    });
+                }
+            });
+        }
+    };
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
         const category = queryParams.get("category");
@@ -212,234 +249,254 @@ const BlogPage = () => {
                     </div>
                 </div>
             </div>)}
-            <h1 className="text-3xl text-[#343434] ms-24 mt-40 hidden lg:block my-4 font-bold">
-                Choose a topic that fits <br/> your interests!
-            </h1>
-            <div className={"w-9/12 flex justify-self-end me-10 pb-10"}>
-                <CategoryTabs
-                    selectedCategory={selectedCategory}
-                    setSelectedCategory={setSelectedCategory}
-                />
-            </div>
+                <h1 className="text-3xl text-[#343434] ms-24 mt-40 hidden lg:block my-4 font-bold">
+                    Choose a topic that fits <br/> your interests!
+                </h1>
+                <div className={"w-9/12 flex justify-self-end me-10 pb-10"}>
+                    <CategoryTabs
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
+                    />
+                </div>
 
-            <div className="my-12 w-10/12 mx-auto">
-                <h2 className="lg:text-5xl text-3xl text-center lg:text-start font-bold">Promote</h2>
-                <div className="border-gray-400 mt-4 lg:mb-16 border-2 mb-6"></div>
-                <div
-                    className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
-                    <div className="w-full  lg:w-6/12">
-                        {promotePosts.length > 0 && (
-                            <div
-                                className="bg-white rounded-xl p-2 "
-                                style={{
-                                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                                }}
-                            >
-                                <div className={"overflow-hidden group rounded-xl"}>
-                                    <img
-                                        src={promotePosts[0].image?.asset?.url}
-                                        alt="Promote Blog"
-                                        className="w-full object-cover transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
-                                    />
-                                </div>
-                                <p className="text-[#417dff] font-sm mb-3">
-                                    {promotePosts[0].category}
-                                </p>
-                                <Link to={`/blog/${promotePosts[0].slug.current}`}>
-                                    <h3 className="text-xl font-bold mb-2 hover:underline">
-                                        {promotePosts[0].title}
-                                    </h3>
-                                </Link>
-                                <p className="mb-4 text-sm line-clamp-2">
-                                    {promotePosts[0].description}
-                                </p>
-                                <div className="flex justify-between items-center text-sm">
-                                    <div className="flex items-center gap-2">
+                <div className="my-12 w-10/12 mx-auto">
+                    <h2 className="lg:text-5xl text-3xl text-center lg:text-start font-bold">Promote</h2>
+                    <div className="border-gray-400 mt-4 lg:mb-16 border-2 mb-6"></div>
+                    <div
+                        className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
+                        <div className="w-full  lg:w-6/12">
+                            {promotePosts.length > 0 && (
+                                <div
+                                    className="bg-white rounded-xl p-2 "
+                                    style={{
+                                        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                                    }}
+                                >
+                                    <div className={"overflow-hidden group rounded-xl"}>
                                         <img
-                                            src="/img/logo/logo.png"
-                                            alt="Author"
-                                            className="w-6 h-6 rounded-full"
+                                            src={promotePosts[0].image?.asset?.url}
+                                            alt="Promote Blog"
+                                            className="w-full object-cover transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                         />
-                                        <span className="text-sm font-semibold">Pitchle Team</span>
                                     </div>
-                                    <span>
+                                    <p className="text-[#417dff] font-sm mb-3">
+                                        {promotePosts[0].category}
+                                    </p>
+                                    <Link to={`/blog/${promotePosts[0].slug.current}`}>
+                                        <h3 className="text-xl font-bold mb-2 hover:underline">
+                                            {promotePosts[0].title}
+                                        </h3>
+                                    </Link>
+                                    <p className="mb-4 text-sm line-clamp-2">
+                                        {promotePosts[0].description}
+                                    </p>
+                                    <div className="flex justify-between items-center text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <img
+                                                src="/img/logo/logo.png"
+                                                alt="Author"
+                                                className="w-6 h-6 rounded-full"
+                                            />
+                                            <span className="text-sm font-semibold">Pitchle Team</span>
+                                        </div>
+                                        <span>
                     {new Date(promotePosts[0].publishedAt).toLocaleDateString()}
                   </span>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </div>
+                        <div
+                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
+                            {promotePosts.slice(1).map((post) => (
+                                <BlogCard key={post._id} post={post}/>
+                            ))}
+                        </div>
                     </div>
+                    <div className="flex justify-center mt-20">
+                        <Link to={`/blog-data?category=${encodeURIComponent("promote")}`}>
+                            <button
+                                className="px-8 font-semibold py-3 bg-[#01BF74]  text-white rounded-full shadow-lg transition">
+                                View All →
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+                <div className="my-12 w-10/12 mx-auto">
+                    <h2 className="text-3xl text-center lg:text-start font-bold">Sell & Transfer</h2>
+                    <div className="border-gray-400 border-2 mt-4 lg:mb-16"></div>
                     <div
-                        className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
-                        {promotePosts.slice(1).map((post) => (
-                            <BlogCard key={post._id} post={post}/>
-                        ))}
-                    </div>
-                </div>
-                <div className="flex justify-center mt-20">
-                    <Link to={`/blog-data?category=${encodeURIComponent("promote")}`}>
-                        <button
-                            className="px-8 font-semibold py-3 bg-[#01BF74]  text-white rounded-full shadow-lg transition">
-                            View All →
-                        </button>
-                    </Link>
-                </div>
-            </div>
-            <div className="my-12 w-10/12 mx-auto">
-                <h2 className="text-3xl text-center lg:text-start font-bold">Sell & Transfer</h2>
-                <div className="border-gray-400 border-2 mt-4 lg:mb-16"></div>
-                <div
-                    className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
-                    <div className="w-full lg:w-6/12">
-                        {sellPosts.length > 0 && (
-                            <div
-                                className="bg-white p-2 rounded-xl"
-                                style={{
-                                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                                }}
-                            >
-                                <div className={"overflow-hidden group rounded-xl"}>
-                                    <img
-                                        src={sellPosts[0].image?.asset?.url}
-                                        alt="Sell & Transfer Blog"
-                                        className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
-                                    />
-                                </div>
-                                <p className="text-[#417dff] mb-3">
-                                    {sellPosts[0].category}
-                                </p>
-                                <Link to={`/blog/${sellPosts[0].slug.current}`}>
-                                    <h3 className="text-xl font-bold mb-2 hover:underline">
-                                        {sellPosts[0].title}
-                                    </h3>
-                                </Link>
-                                <p className="mb-4 text-sm line-clamp-2">
-                                    {sellPosts[0].description}
-                                </p>
-                                <div className="flex justify-between items-center text-sm">
-                                    <div className="flex items-center gap-2">
+                        className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
+                        <div className="w-full lg:w-6/12">
+                            {sellPosts.length > 0 && (
+                                <div
+                                    className="bg-white p-2 rounded-xl"
+                                    style={{
+                                        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                                    }}
+                                >
+                                    <div className={"overflow-hidden group rounded-xl"}>
                                         <img
-                                            src="/img/logo/logo.png"
-                                            alt="Author"
-                                            className="w-6 h-6 rounded-full"
+                                            src={sellPosts[0].image?.asset?.url}
+                                            alt="Sell & Transfer Blog"
+                                            className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                         />
-                                        <span className="text-sm font-semibold">
+                                    </div>
+                                    <p className="text-[#417dff] mb-3">
+                                        {sellPosts[0].category}
+                                    </p>
+                                    <Link to={`/blog/${sellPosts[0].slug.current}`}>
+                                        <h3 className="text-xl font-bold mb-2 hover:underline">
+                                            {sellPosts[0].title}
+                                        </h3>
+                                    </Link>
+                                    <p className="mb-4 text-sm line-clamp-2">
+                                        {sellPosts[0].description}
+                                    </p>
+                                    <div className="flex justify-between items-center text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <img
+                                                src="/img/logo/logo.png"
+                                                alt="Author"
+                                                className="w-6 h-6 rounded-full"
+                                            />
+                                            <span className="text-sm font-semibold">
                       Pitchle Team
                     </span>
-                                    </div>
-                                    <span>
+                                        </div>
+                                        <span>
                     {new Date(sellPosts[0].publishedAt).toLocaleDateString()}
                   </span>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </div>
+                        <div
+                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
+                            {sellPosts.slice(1).map((post) => (
+                                <BlogCard key={post._id} post={post}/>
+                            ))}
+                        </div>
                     </div>
-                    <div
-                        className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
-                        {sellPosts.slice(1).map((post) => (
-                            <BlogCard key={post._id} post={post}/>
-                        ))}
+                    <div className="flex justify-center mt-20">
+                        <Link to={`/blog-data?category=${encodeURIComponent("sell & transfer")}`}>
+                            <button
+                                className="font-semibold px-8 py-3 bg-[#417DFF] text-white rounded-full shadow-lg transition">
+                                View All →
+                            </button>
+                        </Link>
                     </div>
                 </div>
-                <div className="flex justify-center mt-20">
-                    <Link to={`/blog-data?category=${encodeURIComponent("sell & transfer")}`}>
-                        <button
-                            className="font-semibold px-8 py-3 bg-[#417DFF] text-white rounded-full shadow-lg transition">
-                            View All →
-                        </button>
-                    </Link>
-                </div>
-            </div>
 
-            <div className="my-12 w-10/12 mx-auto">
-                <h2 className="text-3xl text-center lg:text-start font-bold">Partners</h2>
-                <div className="border-gray-400 border-2 mt-4 lg:mb-16"></div>
-                <div
-                    className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
-                    <div className="w-full lg:w-6/12">
-                        {partnerPosts.length > 0 && (
-                            <div
-                                className="bg-white p-2 rounded-xl"
-                                style={{
-                                    boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                                }}
-                            >
-                                <div className={"overflow-hidden group rounded-xl"}>
-                                    <img
-                                        src={partnerPosts[0].image?.asset?.url}
-                                        alt="Partner Blog"
-                                        className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
-                                    />
-                                </div>
-                                <p className="text-[#417dff] mb-3">
-                                    {partnerPosts[0].category}
-                                </p>
-                                <Link to={`/blog/${partnerPosts[0].slug.current}`}>
-                                    <h3 className="text-xl font-bold mb-2 hover:underline">
-                                        {partnerPosts[0].title}
-                                    </h3>
-                                </Link>
-                                <p className="mb-4 text-sm line-clamp-2">
-                                    {partnerPosts[0].description}
-                                </p>
-                                <div className="flex justify-between items-center text-sm">
-                                    <div className="flex items-center gap-2">
+                <div className="my-12 w-10/12 mx-auto">
+                    <h2 className="text-3xl text-center lg:text-start font-bold">Partners</h2>
+                    <div className="border-gray-400 border-2 mt-4 lg:mb-16"></div>
+                    <div
+                        className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
+                        <div className="w-full lg:w-6/12">
+                            {partnerPosts.length > 0 && (
+                                <div
+                                    className="bg-white p-2 rounded-xl"
+                                    style={{
+                                        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+                                    }}
+                                >
+                                    <div className={"overflow-hidden group rounded-xl"}>
                                         <img
-                                            src="/img/logo/logo.png"
-                                            alt="Author"
-                                            className="w-6 h-6 rounded-full"
+                                            src={partnerPosts[0].image?.asset?.url}
+                                            alt="Partner Blog"
+                                            className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                         />
-                                        <span className="text-sm font-semibold">
+                                    </div>
+                                    <p className="text-[#417dff] mb-3">
+                                        {partnerPosts[0].category}
+                                    </p>
+                                    <Link to={`/blog/${partnerPosts[0].slug.current}`}>
+                                        <h3 className="text-xl font-bold mb-2 hover:underline">
+                                            {partnerPosts[0].title}
+                                        </h3>
+                                    </Link>
+                                    <p className="mb-4 text-sm line-clamp-2">
+                                        {partnerPosts[0].description}
+                                    </p>
+                                    <div className="flex justify-between items-center text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <img
+                                                src="/img/logo/logo.png"
+                                                alt="Author"
+                                                className="w-6 h-6 rounded-full"
+                                            />
+                                            <span className="text-sm font-semibold">
                       Pitchle Team
                     </span>
-                                    </div>
-                                    <span>
+                                        </div>
+                                        <span>
                     {new Date(partnerPosts[0].publishedAt).toLocaleDateString()}
                   </span>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </div>
+                        <div
+                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
+                            {partnerPosts.slice(1).map((post) => (
+                                <BlogCard key={post._id} post={post}/>
+                            ))}
+                        </div>
                     </div>
-                    <div
-                        className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
-                        {partnerPosts.slice(1).map((post) => (
-                            <BlogCard key={post._id} post={post}/>
-                        ))}
+                    <div className="flex justify-center mt-20">
+                        <Link to={`/blog-data?category=${encodeURIComponent("partners & investors")}`}>
+                            <button
+                                className="font-semibold px-8 py-3 bg-[#01BF74] text-white rounded-full shadow-lg transition">
+                                View All →
+                            </button>
+                        </Link>
                     </div>
                 </div>
-                <div className="flex justify-center mt-20">
-                    <Link to={`/blog-data?category=${encodeURIComponent("partners & investors")}`}>
-                        <button
-                            className="font-semibold px-8 py-3 bg-[#01BF74] text-white rounded-full shadow-lg transition">
-                            View All →
-                        </button>
-                    </Link>
-                </div>
-            </div>
 
-            <div
-                className="w-11/12 mx-auto lg:w-8/12 my-24 lg:h-screen scale-100 lg:scale-125 flex flex-col justify-center items-center">
-                <h3 className="text-2xl flex justify-center items-center text-center lg:text-6xl lato-font md:text-center mb-2">
-                    Stay Updated with Our Latest <br/> News &amp; Offers!
-                </h3>
-                <p className="mt-6 text-center md:text-left mb-4">
-                    Subscribe to our newsletter for exclusive updates, business tips,
-                    and special offers.
-                </p>
-                <div className="flex mt-7 lg:mt-16 justify-center md:justify-start">
-                    <input
-                        type="email"
-                        placeholder="Enter your Email"
-                        className="border-2 border-[#417dff] placeholder-[#7A7A7A] rounded-full px-5 lg:px-12 py-2 focus:outline-none w-44 md:w-full"
-                    />
-                    <button
-                        className="ml-3 bg-[#417dff] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition">
-                        Subscribe
-                    </button>
+                <div
+                    className="w-11/12 mx-auto lg:w-8/12 my-24 lg:h-screen scale-100 lg:scale-125 flex flex-col justify-center items-center">
+                    <h3 className="text-2xl flex justify-center items-center text-center lg:text-6xl lato-font md:text-center mb-2">
+                        Stay Updated with Our Latest <br/> News &amp; Offers!
+                    </h3>
+                    <p className="mt-6 text-center md:text-left mb-4">
+                        Subscribe to our newsletter for exclusive updates, business tips, and special offers.
+                    </p>
+
+                    <div className="flex mt-7 lg:mt-16 justify-center md:justify-start w-full lg:w-6/12">
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Enter your Email"
+                            className="border-2 border-[#417dff] placeholder-[#7A7A7A] rounded-full px-5 lg:px-12 py-2 focus:outline-none w-full"
+                        />
+                        <button
+                            onClick={handleSubscribe}
+                            className="ml-3 bg-[#417dff] text-white px-6 py-2 rounded-full hover:bg-blue-600 transition"
+                        >
+                            Subscribe
+                        </button>
+                    </div>
+
+                    {emailError && (
+                        <div className="text-red-500 mt-2 text-sm">{emailError}</div>
+                    )}
                 </div>
-            </div>
+                <ToastContainer
+                    position="top-right"     // <-- change from top-center to top-right
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
         </>
-    );
+    )
+        ;
 };
 
 export default BlogPage;

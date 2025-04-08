@@ -293,7 +293,7 @@ const AboutPage = () => {
             </section>
 
 
-            <section className="py-16 lg:py-30 px-0 md:px-16 lg:px-24 text-center relative">
+            <section className="py-16 lg:py-28 lg:py-30 px-0 md:px-16 lg:px-24 text-center relative">
                 {/* Heading */}
                 <div className="mb-8 space-y-7">
                     <h1 className="text-4xl lg:text-8xl font-bold text-[#01BF74] mb-4">We Grow <br/> When You Grow</h1>

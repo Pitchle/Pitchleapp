@@ -11,13 +11,15 @@ import BlogDetailPage from './pages/BlogDetailPage';
 import RedirectPage from "./components/RedirectPage";
 import Navbar from "./components/Navbar";
 import BlogData from "./pages/BlogData";
-import Plan from "./pages/Plan"; // Import BlogDetailPage
+import Plan from "./pages/Plan";
+import ScrollToTop from "./components/ScrollToTop"; // Import BlogDetailPage
 
 function App() {
 
     return (
         <>
             <Router>
+                <ScrollToTop />
                 <Navbar/>
                 <Routes>
                     <Route path="/" element={<Home />} />
