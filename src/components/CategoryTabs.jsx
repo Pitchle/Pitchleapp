@@ -24,7 +24,7 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
 
     return (
         <div className="relative ">
-            <div className="lg:hidden  w-10/12 rounded-full text-center mx-auto">
+            <div className="lg:hidden w-10/12 rounded-full text-center mx-auto">
                 <h1 className="text-xl my-4 font-bold">
                     Choose a topic that fits your interests!
                 </h1>
@@ -55,15 +55,7 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
                     </div>
                 )}
             </div>
-
-            {/* Desktop: Horizontal Category Tabs */}
-            <h1 className="text-4xl text-[#343434] ms-24 mt-40 hidden lg:block my-4 font-bold">
-                Choose a topic that fits <br/> your interests!
-            </h1>
-            <div
-                id="category-section"
-                className="hidden  md:flex w-8/12 justify-self-end me-24 p-6 rounded-full bg-[#f6f6f6] justify-center mb-6 px-4"
-            >
+            <div id="category-section" className="hidden space-x-8 md:flex w-full p-6 rounded-full bg-[#f6f6f6] justify-center mb-6 px-4">
                 {categories.map((cat) => (
                     <button
                         key={cat.value}
