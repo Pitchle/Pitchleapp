@@ -83,13 +83,13 @@ const Navbar = () => {
                         {/* QR Code Popup */}
                         {showQR && (
                             <div
-                                className="absolute top-14 right-0 bg-white p-2 shadow-lg border rounded-lg z-50"
+                                className="absolute top-16 right-5 bg-white p-2 shadow-lg border rounded-lg z-50"
                                 onMouseEnter={() => setShowQR(true)}
                                 onMouseLeave={() => setShowQR(false)}
                             >
                                 <QRCodeCanvas
                                     value={redirectUrl}
-                                    size={128}
+                                    size={150}
                                     bgColor={"#ffffff"}
                                     fgColor={"#000000"}
                                     level={"H"}
