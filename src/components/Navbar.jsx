@@ -22,7 +22,7 @@ const Navbar = () => {
     };
     return (
         <nav className=" w-full bg-transparent">
-            <div className="w-11/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-4 sm:px-6 lg:px-3 bg-white">
+            <div className="w-11/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-5 py-3 bg-white">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <div className="flex items-center space-x-2">
@@ -61,10 +61,10 @@ const Navbar = () => {
                         <button
                             onMouseEnter={() => setShowQR(true)}
                             onMouseLeave={() => setShowQR(false)}
-                            className="bg-[#01BF74] text-white px-5 py-3 rounded-full flex items-center gap-2 hover:bg-[#00b05f] transition relative"
+                            className="bg-[#01BF74] text-white px-8 py-4 text-xl font-semibold rounded-full flex items-center gap-2 hover:bg-[#00b05f] transition relative"
                         >
                             Scan to Install
-                            <svg width="22" height="22" viewBox="0 0 28 28" fill="none"
+                            <svg width="26" height="26" viewBox="0 0 28 28" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_2003_254)">
                                     <path
