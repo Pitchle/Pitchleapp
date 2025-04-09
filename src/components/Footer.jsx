@@ -46,7 +46,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-gray-100 py-10 px-4 text-[#343434] md:px-8 lg:m-4 lg:px-16 rounded-xl mt-10">
+        <footer className="bg-gray-100 h-screen py-10 p-4 text-[#343434] md:px-8 lg:m-4 lg:p-16 rounded-xl mt-10">
             <ToastContainer
                 position="top-right"     // <-- change from top-center to top-right
                 autoClose={3000}
@@ -58,11 +58,11 @@ const Footer = () => {
                 draggable
                 pauseOnHover
             />
-            <div className="max-w-7xl scale-105 mx-auto">
+            <div className="max-w-7xl mx-auto">
                 {/* Row 1: Brand (left) + Newsletter (right) */}
                 <div className="flex flex-col md:flex-row md:justify-between gap-2">
                     {/* Brand */}
-                    <div className="flex flex-col justify-center items-center md:items-start">
+                    <div className="flex lg:scale-125 -mt-10 flex-col justify-center items-center md:items-start">
                         <div className="flex items-center space-x-2">
                             <img
                                 src="/img/logo/logo.png"
@@ -78,7 +78,7 @@ const Footer = () => {
                     </div>
 
                     {/* Newsletter */}
-                    <div className="w-full md:w-1/2 lg:w-2/5 my-10 lg:my-0">
+                    <div className="w-full md:w-1/2 lg:scale-125 lg:w-2/5 my-10 lg:my-12">
                         <h3 className="text-2xl lato-font text-center md:text-left mb-2">
                             Stay Updated with Our Latest News &amp; Offers!
                         </h3>
@@ -110,12 +110,12 @@ const Footer = () => {
                 </div>
 
                 {/* Row 2: Company | Legal | Connect */}
-                <div className={"flex justify-end"}>
+                <div className={"flex lg:scale-125 justify-end  me-0 lg:me-32"}>
                     <div className=" w-full lg:w-5/12 grid grid-cols-2 px-4 md:grid-cols-3 gap-8 lg:gap-0 mt-10">
                         {/* Company */}
                         <div>
                             <h4 className="font-bold text-2xl mb-2">Company</h4>
-                            <ul className="space-y-3 mt-3 text-sm">
+                            <ul className="space-y-1 mt-3 text-sm">
                                 {[
                                     {name: "About Us", path: "/about"},
                                     {name: "Plans", path: "/plans"},
@@ -141,7 +141,7 @@ const Footer = () => {
                         {/* Legal */}
                         <div>
                             <h4 className="font-bold text-2xl mb-2">Legal</h4>
-                            <ul className="space-y-3 mt-3 text-sm">
+                            <ul className=" mt-3 text-sm">
                                 {[
                                     { name: "Privacy Policy", path: "/privacy" },
                                     { name: "Terms of Services", path: "/terms" }
@@ -195,7 +195,7 @@ const Footer = () => {
                 </div>
 
                 {/* Copyright */}
-                <div className="mt-10 lg:mt-20 text-center text-sm">
+                <div className="mt-10 fixed bottom-5 left-0 right-0 lg:mt-20 text-center lg:text-lg text-sm">
                     © 2025 Pitchle. All rights reserved
                 </div>
             </div>
