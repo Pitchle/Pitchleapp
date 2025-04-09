@@ -5,35 +5,35 @@ const Banner = () => {
     return (
         <section className="flex flex-col items-center justify-center p-4 lg:p-81">
             {/* Heading */}
-            <h1 className="text-4xl scale-110 lg:scale-100 font-bold mt-5 text-center lg:text-8xl">
+            <h1 className="text-4xl scale-110 lg:scale-100 font-bold mt-10 text-center lg:text-9xl">
                 <span className="text-[#01BF74]">Revolutionize</span> Business <br/> with Short Videos!
             </h1>
 
             {/* Video and Buttons Section */}
-            <div className="relative flex flex-col lg:flex-row items-center justify-center mb-3 gap-6">
+            <div className="relative mt-0 lg:mt-20  flex flex-col lg:flex-row items-center justify-center mb-3 gap-6">
 
                 {/* Desktop View */}
-                <div className="hidden lg:flex flex-row items-center gap-6">
+                <div className="hidden lg:flex flex-row items-center gap-20">
                     {/* Left Side Buttons */}
                     <div className="flex flex-col space-y-52 items-start gap-6">
-                        <img className={"w-60 lg:scale-150 -mt-32 h-32"} src="/img/buttons/Frame%2086.png" alt=""/>
-                        <img className={"w-60 lg:scale-150 h-32"} src="/img/buttons/Group%2010.png" alt=""/>
+                        <img className={"w-72 lg:scale-150 -mt-32 h-40"} src="/img/buttons/Frame%2086.png" alt=""/>
+                        <img className={"w-72 lg:scale-150 h-40"} src="/img/buttons/Group%2010.png" alt=""/>
                     </div>
 
                     {/* Video Section */}
                     <div className="relative">
-                        <div className={"w-9/12 mx-auto"}>
+                        <div className={"w-full mx-auto"}>
                             <video
                                 src="/video/intro.mp4"
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
-                                className="w-[500px] p-4 scale-105 mx-auto h-[800px] rounded-lg"
+                                className="w-[550px] p-4 scale-105 mx-auto h-[850px] rounded-lg"
                             />
                         </div>
                     </div>
-                    <img className={"w-60 lg:scale-150 lg:-mt-10 h-32"} src="/img/buttons/Frame%2091.png" alt=""/>
+                    <img className={"w-72 lg:scale-150 lg:-mt-10 h-40"} src="/img/buttons/Frame%2091.png" alt=""/>
                 </div>
                 <div className="flex flex-col items-center gap-4 mt-0 lg:mt-6 lg:hidden">
                     <div className="relative w-full flex justify-center">
@@ -73,19 +73,19 @@ const Banner = () => {
                     fill="#01BF74"/>
             </svg>
             {/* Text and Download Buttons */}
-            <p className="text-center text-xl lg:text-3xl my-4">Download Pitchle and start growing <br/> your business today!</p>
-            <div className="flex mt-5 gap-2">
+            <p className="text-center text-xl lg:text-4xl my-8">Download Pitchle and start growing <br/> your business today!</p>
+            <div className="flex mt-5 gap-5">
                 <a href="https://apps.apple.com/us/app/pitchle/id6677026938" target="_blank" rel="noopener noreferrer">
-                <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-4 rounded-lg shadow-lg">
+                <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-6 rounded-lg shadow-lg">
                     <img className="w-5 h-5 lg:w-7 lg:h-7 me-2" src="/img/logo/apple.png" alt=""/>
-                    <span className="text-lg lg:text-xl font-semibold">Apple Store</span>
+                    <span className="text-lg lg:text-2xl font-semibold">Apple Store</span>
                 </button>
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.pitchle.pitchleApp" target="_blank" rel="noopener noreferrer">
                 <button
-                    className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-4 rounded-lg shadow-lg">
+                    className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-6 rounded-lg shadow-lg">
                     <img className="w-5 h-5 lg:w-7 lg:h-7 me-2" src="/img/logo/playstore.png" alt=""/>
-                    <span className="text-lg lg:text-xl font-semibold">Google Play</span>
+                    <span className="text-lg lg:text-2xl font-semibold">Google Play</span>
                 </button>
                 </a>
             </div>

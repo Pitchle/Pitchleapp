@@ -3,7 +3,7 @@ import React from 'react';
 const Introduction = () => {
     return (
         <div className="text-center my-32 lg:h-screen flex items-center justify-center space-y-3">
-            <h2 className="text-2xl scale-110 md:text-8xl font-bold leading-snug">
+            <h2 className="text-4xl px-1 lg:px-0 lg:scale-110 md:text-8xl font-bold leading-snug">
                 Empowering Small <br/> Businesses to{' '}
                 <span className="text-[#01BF74] flex items-center gap-1 inline-flex">
           Grow  &nbsp;<img className={"w-6 h-6 lg:w-16 lg:h-16"} src="/img/icon/img.png" alt=""/> &nbsp;

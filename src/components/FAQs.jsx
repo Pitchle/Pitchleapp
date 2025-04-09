@@ -86,24 +86,24 @@ const FaQs = () => {
     }, [location]);
     return (
         <>
-            <h1 id="FAQ" className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-6xl dark:text-white">
+            <h1 id="FAQ" className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-7xl dark:text-white">
                 <span className={"text-[#01BF74]"}> Got any questions?</span> <br/> <span className={"text-[#DFDFDF]"}>We’ve got answers.</span>
             </h1>
 
-            <div className="container md:px-24 px-4 lg:px-64 py-6 lg:py-12 mx-auto">
+            <div className="container md:px-24 px-4 lg:px-48 py-6 lg:py-12 mx-auto">
                 <div className="mt-8 space-y-4 lg:mt-12">
                     {faqs.map((faq, index) => (
                         <div key={index} className="rounded-lg overflow-hidden transition-all duration-500">
                             {/* Question and toggle button div with blue background */}
                             <div
-                                className={`px-8 py-6 lg:py-9 bg-[#417DFF] text-white flex items-center justify-between cursor-pointer transition-all duration-300 ${expandedItems[index] ? 'shadow-lg' : ''}`}
+                                className={`px-8 py-6 lg:py-7 bg-[#417DFF] text-white flex items-center justify-between cursor-pointer transition-all duration-300 ${expandedItems[index] ? 'shadow-lg' : ''}`}
                                 onClick={() => toggleExpand(index)}
                             >
                                 <h1 className="text-lg lg:text-3xl" dangerouslySetInnerHTML={{__html: faq.question}}/>
                                 <span className="text-white transition-transform duration-300">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className={`w-6 h-6 transform transition-transform duration-300 ${expandedItems[index] ? 'rotate-180' : 'rotate-0'}`}
+                                    className={`w-14 h-14 transform transition-transform duration-300 ${expandedItems[index] ? 'rotate-180' : 'rotate-0'}`}
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"

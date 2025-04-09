@@ -277,9 +277,9 @@ const BlogDetail = () => {
                                 image: ({value}) =>
                                     value?.asset ? (
                                         <img
-                                            src={urlFor(value).auto("format").fit("max").width(1000)}
+                                            src={urlFor(value).auto("format").fit("max").width(800)}
                                             alt={value.alt || "Blog Content"}
-                                            className="w-auto h-auto lg:h-[400px] mx-auto rounded-md shadow-sm my-6"
+                                            className="lg:w-auto w-52 lg:h-[400px] mx-auto rounded-md shadow-sm my-6"
                                         />
                                     ) : null,
                             },
