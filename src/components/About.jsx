@@ -34,7 +34,7 @@ const FeatureCard = ({ section, index, scrollYProgress, scrollRange, viewportHei
 
     return (
         <motion.div
-            className={`sticky top-10 w-11/12 lg:w-10/12 mx-auto mb-10 ${section.bgColor} text-white rounded-xl shadow-lg`}
+            className={`sticky top-10 w-11/12 lg:w-10/12 mx-auto mb-10 ${section.bgColor} text-white rounded-2xl shadow-lg`}
             style={{
                 zIndex: index + 1,
                 y, // vertical translation based on scroll progress
@@ -42,7 +42,7 @@ const FeatureCard = ({ section, index, scrollYProgress, scrollRange, viewportHei
         >
             <div className={`flex flex-col-reverse md:flex-row rounded-xl overflow-hidden shadow-lg ${section.layout === 'right' ? 'md:flex-row-reverse' : ''}`}>
                 {/* Video Section */}
-                <div className="w-11/12 bg-white m-3 p-4 rounded-lg md:w-1/2">
+                <div className="w-11/12 bg-white m-2 px-1 rounded-lg md:w-1/2">
                     <video
                         src={section.videoId}
                         autoPlay
@@ -54,10 +54,10 @@ const FeatureCard = ({ section, index, scrollYProgress, scrollRange, viewportHei
                 </div>
                 {/* Text Section */}
                 <div className="p-5 lg:p-16 w-full flex justify-center items-start flex-col md:w-1/2">
-                    <h3 className="text-2xl my-2 lg:my-5 lg:text-4xl font-bold">
+                    <h3 className="text-2xl my-2 lg:my-5 lg:text-7xl font-bold">
                         {section.title}
                     </h3>
-                    <p className="mt-2 text-lg lg:text-2xl">
+                    <p className="mt-2 text-lg lg:text-4xl">
                         {section.description}
                     </p>
                 </div>
@@ -82,7 +82,7 @@ const About = () => {
     return (
         // The container height forces scrolling (e.g., 300vh for 3 sections)
         <div ref={containerRef} className="relative" style={{ height: `${sectionCount * 100}vh` }}>
-            <h2 className="text-center text-4xl lg:text-5xl font-bold mb-12 lg:mb-32">
+            <h2 className="text-center text-4xl lg:text-7xl font-bold mb-12 lg:mb-32">
                 With Pitchle you can
             </h2>
             {featureSections.map((section, index) => (

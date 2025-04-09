@@ -4,45 +4,66 @@ import {useLocation} from "react-router-dom";
 const FaQs = () => {
     const faqs = [
         {
-            question: "What is <span translate='no'>Pitchle</span> app and what is its purpose?",
-            answer: "<span translate=\"no\">Pitchle</span> is a pioneering social network focused on business, while also serving as a platform for promoting products through short 30 or 60-second videos. <span translate=\"no\">Pitchle</span> facilitates finding partners, investors, buying or transferring businesses, and promoting products with a sophisticated and contemporary touch. <br/> <br/> With <span translate=\"no\"> Pitchle </span>, connecting and promoting has never been more efficient and impactful."
+            question: "What is Pitchle and what is its purpose?",
+            answer: "Pitchle is a pioneering social network for business and commerce, empowering small\n" +
+                "businesses to grow and succeed equitably. It is designed to promote products through short 30\n" +
+                "or 60-second videos. Pitchle also serves as a platform to find partners, sell or transfer\n" +
+                "businesses, and build meaningful connections with a sophisticated and contemporary touch.\n </br> </br>" +
+                "With Pitchle, connecting and promoting has never been more efficient and impactful."
         },
         {
-            question: "Who can use <span translate='no'>Pitchle</span> app?",
-            answer: "<span translate=\"no\">Pitchle </span> is designed for individuals, entrepreneurs, startups, and businesses of all sizes and industries looking to find partners, investors, business sales or transfers, and product promotion."
+            question: "Who can use Pitchle?",
+            answer: "Pitchle is for all businesses — no matter the size, location, or industry. It's mainly designed to\n" +
+                "help small businesses promote their products, find partners, sell or transfer their business, and\n" +
+                "connect with customers.\n </br> </br>" +
+                "Pitchle gives every business the opportunity to grow and succeed."
         },
         {
             question: "How does the subscription model work?",
-            answer: "<span translate=\"no\">Pitchle </span> is free for all users under its 30-second video model. <br/> <br/>For additional features like posting 60-second pitches, users can opt for a paid subscription. Subscription options include one-time use, monthly, or annual plans."
+            answer: "Pitchle offers a free 30-second video. For 60-second pitches and additional features, users can\n" +
+                "choose from one-time, monthly, or annual paid subscriptions."
         },
         {
-            question: "What types of videos are allowed on <span translate='no'><span translate=\"no\"> Pitchle </span></span> app?",
-            answer: "<span translate=\"no\">Pitchle </span> exclusively hosts business-focused content, including videos for seeking partners, investors, business sales or transfers, and product promotions. Any content not aligned with these purposes should be reported and may be removed."
+            question: "What types of videos are allowed on Pitchle?",
+            answer: "Pitchle exclusively hosts content focused on business and commerce, including product\n" +
+                "promotions, videos for seeking partners, and business sales or transfers. Any content that does\n" +
+                "not align with these purposes should be reported and may be removed."
         },
         {
             question: "What security measures protect user information?",
-            answer: "<span translate=\"no\">Pitchle </span> prioritizes user data security and privacy. User information is securely stored and protected by Google's Firebase. Users have control over their privacy settings and can manage who can view their profiles and pitches."
+            answer: "Pitchle prioritizes user data security and privacy. User information is securely stored and\n" +
+                "protected using Google Firebase. Users have full control over their privacy settings and can\n" +
+                "manage who can view their profiles and pitches."
+        },
+        ,
+        {
+            question: "What are the benefits of upgrading to a paid\n" +
+                "subscription?",
+            answer: "Upgrading unlocks features like posting 60-second videos, managing content visibility, and\n" +
+                "watermarking videos. Certain accounts can access multiple locations to view pitches from other\n" +
+                "countries and create or participate in global events.\n </br> </br>" +
+                "Pitchle includes supplementary features and employs artificial intelligence."
         },
         {
-            question: "What are the benefits of upgrading to a paid subscription?",
-            answer: "Upgrading unlocks features such as posting 60-second videos, managing content visibility (public or private), viewing other users' profiles, watermarking/copyrighting videos, and accessing multiple locations (available for investors) <br/><br/> <span translate=\"no\">Pitchle </span> includes supplementary features and employs artificial intelligence."
+            question: "Can Pitchle be used for networking beyond business purposes?",
+            answer: "While primarily focused on business activities, Pitchle also offers networking opportunities that\n" +
+                "extend beyond commercial matters. Its main goal, however, remains to facilitate business and\n" +
+                "commerce connections, investments, business sales or transfers, and product promotions."
         },
         {
-            question: "Can <span translate=\"no\"> Pitchle </span>be used for networking beyond business purposes? ",
-            answer: "While primarily focused on business activities, <span translate=\"no\"> Pitchle </span> also fosters networking opportunities that extend beyond commercial matters. Its main goal, however, remains facilitating professional connections, investments, business sales or transfers, and product promotions."
+            question: "How can users report inappropriate content or behavior?",
+            answer: "Users can report such content or behavior using the reporting feature within the app. Our\n" +
+                "moderation team promptly reviews reports and takes necessary actions to maintain a\n" +
+                "professional and business-oriented platform."
         },
         {
-            question: "How can users report inappropriate content or behavior? ",
-            answer: "Users can report such content or behavior using the reporting feature within the app. Our moderation team promptly reviews reports and takes necessary actions to maintain a professional and business-oriented platform."
+            question: "Is Pitchle available worldwide?",
+            answer: "Yes, Pitchle is available in all countries."
         },
         {
-            question: "Is <span translate=\"no\">Pitchle</span> available worldwide? ",
-            answer: "Yes, <span translate=\"no\"> Pitchle </span> is accessible globally, allowing users from various countries and regions to connect and explore business opportunities on an international scale."
-        },
-        {
-            question: "How can users contact customer support? ",
-            answer: `For any inquiries, technical issues, or assistance, users can contact our support team via email at 
-             <a class=" underline" href="mailto:contact@pitchleapp.com" translate="no">contact@pitchleapp.com</a>`
+            question: "How can users contact customer support?",
+            answer: "For any inquiries, technical issues, or assistance, users can contact our support team via email\n" +
+                "at <span class='underline'>contact@pitchleapp.com</span>"
         }
     ];
 
@@ -65,20 +86,20 @@ const FaQs = () => {
     }, [location]);
     return (
         <>
-            <h1 id="FAQ" className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-5xl dark:text-white">
+            <h1 id="FAQ" className="text-3xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-6xl dark:text-white">
                 <span className={"text-[#01BF74]"}> Got any questions?</span> <br/> <span className={"text-[#DFDFDF]"}>We’ve got answers.</span>
             </h1>
 
             <div className="container md:px-24 px-4 lg:px-64 py-6 lg:py-12 mx-auto">
-                <div className="mt-8 space-y-8 lg:mt-12">
+                <div className="mt-8 space-y-4 lg:mt-12">
                     {faqs.map((faq, index) => (
                         <div key={index} className="rounded-lg overflow-hidden transition-all duration-500">
                             {/* Question and toggle button div with blue background */}
                             <div
-                                className={`px-8 py-6 lg:py-8 bg-[#417DFF] text-white flex items-center justify-between cursor-pointer transition-all duration-300 ${expandedItems[index] ? 'shadow-lg' : ''}`}
+                                className={`px-8 py-6 lg:py-9 bg-[#417DFF] text-white flex items-center justify-between cursor-pointer transition-all duration-300 ${expandedItems[index] ? 'shadow-lg' : ''}`}
                                 onClick={() => toggleExpand(index)}
                             >
-                                <h1 className="font-semibold text-lg lg:text-xl" dangerouslySetInnerHTML={{__html: faq.question}}/>
+                                <h1 className="text-lg lg:text-3xl" dangerouslySetInnerHTML={{__html: faq.question}}/>
                                 <span className="text-white transition-transform duration-300">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"

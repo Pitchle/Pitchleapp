@@ -15,7 +15,7 @@ const Banner = () => {
                 {/* Desktop View */}
                 <div className="hidden lg:flex flex-row items-center gap-6">
                     {/* Left Side Buttons */}
-                    <div className="flex flex-col space-y-40 items-start gap-6">
+                    <div className="flex flex-col space-y-52 items-start gap-6">
                         <img className={"w-60 lg:scale-150 -mt-32 h-32"} src="/img/buttons/Frame%2086.png" alt=""/>
                         <img className={"w-60 lg:scale-150 h-32"} src="/img/buttons/Group%2010.png" alt=""/>
                     </div>
@@ -33,8 +33,7 @@ const Banner = () => {
                             />
                         </div>
                     </div>
-
-                    <img className={"w-60 lg:scale-150 h-32"} src="/img/buttons/Frame%2091.png" alt=""/>
+                    <img className={"w-60 lg:scale-150 lg:-mt-10 h-32"} src="/img/buttons/Frame%2091.png" alt=""/>
                 </div>
                 <div className="flex flex-col items-center gap-4 mt-0 lg:mt-6 lg:hidden">
                     <div className="relative w-full flex justify-center">
@@ -65,7 +64,7 @@ const Banner = () => {
                             fill="#01BF74"/>
                     </svg>
 
-                    <img className="w-40 h-24 mt-3 ms-28 " src="/img/buttons/Group%2010.png" alt=""/>
+                    <img className="w-40 h-24 mt-2   ms-28 " src="/img/buttons/Group%2010.png" alt=""/>
                 </div>
             </div>
             <svg className={"block md:hidden"} width="62" height="54" viewBox="0 0 62 54" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,14 +78,14 @@ const Banner = () => {
                 <a href="https://apps.apple.com/us/app/pitchle/id6677026938" target="_blank" rel="noopener noreferrer">
                 <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-4 rounded-lg shadow-lg">
                     <img className="w-5 h-5 lg:w-7 lg:h-7 me-2" src="/img/logo/apple.png" alt=""/>
-                    <span className="text-lg font-semibold">Apple Store</span>
+                    <span className="text-lg lg:text-xl font-semibold">Apple Store</span>
                 </button>
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.pitchle.pitchleApp" target="_blank" rel="noopener noreferrer">
                 <button
                     className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-4 rounded-lg shadow-lg">
                     <img className="w-5 h-5 lg:w-7 lg:h-7 me-2" src="/img/logo/playstore.png" alt=""/>
-                    <span className="text-lg font-semibold">Google Play</span>
+                    <span className="text-lg lg:text-xl font-semibold">Google Play</span>
                 </button>
                 </a>
             </div>

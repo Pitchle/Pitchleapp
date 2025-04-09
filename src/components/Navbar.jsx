@@ -121,7 +121,7 @@ const Navbar = () => {
 
             {/* Mobile Fullscreen Drawer */}
             <div
-                className={`fixed top-0 right-0 h-full w-full z-50 bg-[#00C26A] transition-transform duration-300 ease-in-out transform ${
+                className={`fixed top-0 right-0 h-full w-full z-50 bg-[#01BF74] transition-transform duration-300 ease-in-out transform ${
                     mobileOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >

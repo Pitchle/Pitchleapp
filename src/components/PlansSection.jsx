@@ -97,7 +97,7 @@ const PlansSection = () => {
             <div className={"mt-24"}>
                 <Link to={"/plans"}>
                     <button
-                        className="bg-[#417DFF] px-20 text-white py-2 lg:px-6 rounded-full shadow-md hover:bg-blue-600 transition flex items-center mx-auto">
+                        className="bg-[#417DFF] px-20 text-white text-xl font-semibold py-3 lg:px-8 rounded-full shadow-md hover:bg-blue-600 transition flex items-center mx-auto">
                         Learn more <span className="ml-2">→</span>
                     </button>
                 </Link>

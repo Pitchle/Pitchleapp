@@ -39,7 +39,7 @@ const Benefits = () => {
             <h1 className="text-4xl lg:text-6xl font-bold my-10 lg:my-32 text-center">
                 Discover all the benefits of Pitchle!
             </h1>
-            <div className="w-11/12 lg:w-9/12 mt-10 mx-auto">
+            <div className="w-11/12 lg:w-10/12 lg:scale-110 mt-10 mx-auto">
                 <div className="grid ms-0 lg:ms-20 grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-x-12 lg:gap-y-20">
                     {benefitsData.map((benefit, index) => (
                         <div
