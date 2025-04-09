@@ -34,7 +34,7 @@ const FeatureCard = ({ section, index, scrollYProgress, scrollRange, viewportHei
 
     return (
         <motion.div
-            className={`sticky top-10 w-11/12 lg:w-10/12 mx-auto mb-10 ${section.bgColor} text-white rounded-2xl shadow-lg`}
+            className={`sticky top-10 w-11/12 lg:w-10/12 mx-auto mb-10 ${section.bgColor} text-white rounded-3xl shadow-lg`}
             style={{
                 zIndex: index + 1,
                 y, // vertical translation based on scroll progress

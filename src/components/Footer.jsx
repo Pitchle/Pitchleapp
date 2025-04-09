@@ -46,7 +46,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-gray-100 h-screen m-2 py-10 p-4 text-[#343434] md:px-8 lg:m-4 lg:p-16 rounded-xl mt-10">
+        <footer className="bg-gray-100 min-h-screen m-2 py-10 p-4 text-[#343434] md:px-8 lg:m-4 lg:p-16 rounded-xl mt-10">
             <ToastContainer
                 position="top-right"
                 autoClose={3000}
@@ -82,11 +82,11 @@ const Footer = () => {
                         <h3 className="text-xl lg:text-3xl lato-font text-center md:text-left mb-8 lg:mb-2">
                             Stay Updated with Our Latest News &amp; Offers!
                         </h3>
-                        <p className="mt-3 text-center lg:text-xl md:text-left mb-4">
+                        <p className="mt-3 text-center text-sm scale-110 lg:scale-100 lg:text-xl md:text-left mb-4">
                             Subscribe to our newsletter for exclusive updates, business tips,
                             and special offers.
                         </p>
-                        <div className="flex flex-col w-10/12 mx-auto mt-7 justify-center md:justify-start">
+                        <div className="flex flex-col w-full lg:w-10/12 mx-auto mt-7 justify-center md:justify-start">
                             <div className="flex">
                                 <input
                                     type="email"
@@ -110,11 +110,11 @@ const Footer = () => {
                 </div>
                 {/* Row 2: Company | Legal | Connect */}
                 <div className={"flex justify-end my-10"}>
-                    <div className={"flex w-6/12 lg:scale-125 scale-110 justify-center"}>
+                    <div className={"flex w-full lg:w-6/12 lg:scale-125 scale-110 justify-center"}>
                         <div className=" w-full lg:w-9/12 grid grid-cols-2 px-4 md:grid-cols-3 gap-8 lg:gap-0 mt-10">
                             {/* Company */}
                             <div>
-                                <h4 className="font-bold text-3xl mb-5">Company</h4>
+                                <h4 className="font-bold text-xl lg:text-3xl mb-5">Company</h4>
                                 <ul className="space-y-1 mt-3 text-sm">
                                     {[
                                         {name: "About Us", path: "/about"},
@@ -126,7 +126,7 @@ const Footer = () => {
                                         <li key={item.name}>
                                             <Link
                                                 to={item.path}
-                                                className={`relative group text-[17px] transition duration-300 ${
+                                                className={`relative group text-md lg:text-[17px] transition duration-300 ${
                                                     location.pathname === item.path ? "underline underline-offset-4" : ""
                                                 }`}
                                             >
@@ -141,7 +141,7 @@ const Footer = () => {
 
                             {/* Legal */}
                             <div>
-                                <h4 className="font-bold text-3xl mb-5">Legal</h4>
+                                <h4 className="font-bold text-xl  lg:text-3xl mb-5">Legal</h4>
                                 <ul className=" mt-3 text-sm">
                                     {[
                                         {name: "Privacy Policy", path: "/privacy"},
@@ -150,7 +150,7 @@ const Footer = () => {
                                         <li key={item.name}>
                                             <Link
                                                 to={item.path}
-                                                className="relative group text-[17px] transition duration-300"
+                                                className="relative group text-md lg:text-[17px] transition duration-300"
                                             >
                                                 {item.name}
                                                 <span
@@ -163,10 +163,10 @@ const Footer = () => {
 
                             {/* Connect */}
                             <div className={"col-span-2 md:col-span-1 "}>
-                                <h4 className="font-bold text-3xl mb-5">Connect</h4>
+                                <h4 className="font-bold text-xl lg:text-3xl mb-5">Connect</h4>
                                 <a
                                     href="mailto:contact@pitchleapp.com"
-                                    className="text-md text-[17px] mt-3 mb-2 hover:underline"
+                                    className="text-md lg:text-[17px] mt-3 mb-2 hover:underline"
                                 >
                                     contact@pitchleapp.com
                                 </a>
@@ -203,7 +203,7 @@ const Footer = () => {
                     </div>
                 </div>
                 {/* Copyright */}
-                <div className="lg:mt-60 text-center lg:text-lg text-md">
+                <div className="lg:mt-60 mt-10 text-center lg:text-lg text-md">
                     © 2025 Pitchle. All rights reserved
                 </div>
             </div>

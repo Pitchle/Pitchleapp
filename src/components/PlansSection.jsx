@@ -41,9 +41,9 @@ const mobileData = [
 
 const PlansSection = () => {
     return (
-        <section className=" py-16 lg:py-52 space-y-10 lg:space-y-32 px-0 md:px-16 lg:px-24 text-center">
+        <section className=" py-40 lg:py-52 space-y-20 lg:space-y-32 px-0 md:px-16 lg:px-24 text-center">
             {/* Title */}
-            <h2 className="text-3xl lg:text-7xl font-bold mb-12">Choose your path to success</h2>
+            <h2 className="text-4xl lg:text-7xl font-bold mb-12">Choose your path to success</h2>
 
             {/* Plans Container */}
             <div className="w-full lg:w-9/12 mx-auto mb-12">
@@ -62,7 +62,7 @@ const PlansSection = () => {
                     </div>
 
                     {/* Bottom Two Cards */}
-                    <div className="grid grid-cols-2 gap-10">
+                    <div className="grid grid-cols-2 gap-2">
                         {mobileData.slice(1).map((plan, index) => (
                             <div
                                 key={index}
@@ -97,7 +97,7 @@ const PlansSection = () => {
             <div className={"mt-24"}>
                 <Link to={"/plans"}>
                     <button
-                        className="bg-[#417DFF] px-20 text-white text-xl font-semibold py-5 lg:px-12 rounded-full shadow-md hover:bg-blue-600 transition flex items-center mx-auto">
+                        className="bg-[#417DFF] px-20 text-white text-xl font-semibold py-3 lg:py-5 lg:px-12 rounded-full shadow-md hover:bg-blue-600 transition flex items-center mx-auto">
                         Learn more <span className="ml-2">→</span>
                     </button>
                 </Link>

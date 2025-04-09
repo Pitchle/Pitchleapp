@@ -2,7 +2,7 @@ import React from 'react';
 
 const Introduction = () => {
     return (
-        <div className="text-center my-32 lg:h-screen flex items-center justify-center space-y-3">
+        <div className="text-center mb-40 mt-32 lg:h-screen flex items-center justify-center space-y-3">
             <h2 className="text-4xl px-1 lg:px-0 lg:scale-110 md:text-8xl font-bold leading-snug">
                 Empowering Small <br/> Businesses to{' '}
                 <span className="text-[#01BF74] flex items-center gap-1 inline-flex">

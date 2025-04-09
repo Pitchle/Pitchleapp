@@ -73,19 +73,19 @@ const Banner = () => {
                     fill="#01BF74"/>
             </svg>
             {/* Text and Download Buttons */}
-            <p className="text-center text-xl lg:text-4xl my-8">Download Pitchle and start growing <br/> your business today!</p>
+            <p className="text-center text-xl scale-110 lg:scale-100 lg:text-4xl my-8">Download Pitchle and start growing <br/> your business today!</p>
             <div className="flex mt-5 gap-5">
                 <a href="https://apps.apple.com/us/app/pitchle/id6677026938" target="_blank" rel="noopener noreferrer">
-                <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-6 rounded-lg shadow-lg">
+                <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-4 lg:py-6 rounded-lg shadow-lg">
                     <img className="w-5 h-5 lg:w-7 lg:h-7 me-2" src="/img/logo/apple.png" alt=""/>
-                    <span className="text-lg lg:text-2xl font-semibold">Apple Store</span>
+                    <span className="text-md lg:text-2xl font-semibold">Apple Store</span>
                 </button>
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.pitchle.pitchleApp" target="_blank" rel="noopener noreferrer">
                 <button
-                    className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-3 lg:py-6 rounded-lg shadow-lg">
+                    className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000]  text-white px-4 lg:px-7 py-4 lg:py-6 rounded-lg shadow-lg">
                     <img className="w-5 h-5 lg:w-7 lg:h-7 me-2" src="/img/logo/playstore.png" alt=""/>
-                    <span className="text-lg lg:text-2xl font-semibold">Google Play</span>
+                    <span className="text-md lg:text-2xl font-semibold">Google Play</span>
                 </button>
                 </a>
             </div>
