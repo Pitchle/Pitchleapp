@@ -24,13 +24,13 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
 
     return (
         <div className="relative ">
-            <div className="lg:hidden w-10/12 rounded-full text-center mx-auto">
-                <h1 className="text-xl my-4 font-bold">
+            <div className="lg:hidden w-full rounded-full text-center mx-auto">
+                <h1 className="text-xl scale-115 my-4 font-bold">
                     Choose a topic that fits your interests!
                 </h1>
                 <button
                     onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                    className="px-6 py-2 bg-[#f6f6f6] rounded-full  mt-8 w-8/12 mx-auto text-left flex items-center justify-between"
+                    className="px-6 py-5 bg-[#f6f6f6] rounded-full text-xl font-semibold  mt-8 w-full mx-auto text-left flex items-center justify-between"
                 >
                     <span>Topics</span>
                     <FaChevronDown
@@ -40,12 +40,12 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
                     />
                 </button>
                 {isDrawerOpen && (
-                    <div className="absolute left-16 right-0 w-8/12 bg-white z-10 mt-1 rounded shadow">
+                    <div className="absolute left-0 right-0 w-full bg-white z-10 mt-1 rounded shadow">
                         {categories.map((cat) => (
                             <button
                                 key={cat.value}
                                 onClick={() => handleCategoryChange(cat.value)}
-                                className={`block w-full text-left px-4 py-2 hover:bg-gray-100 ${
+                                className={`block w-full text-xl text-center px-4 py-2 hover:bg-gray-100 ${
                                     selectedCategory === cat.value ? "font-bold" : ""
                                 }`}
                             >
@@ -55,11 +55,11 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
                     </div>
                 )}
             </div>
-            <div id="category-section" className="hidden space-x-8 md:flex w-full p-6 rounded-full bg-[#f6f6f6] justify-center mb-6 px-4">
+            <div id="category-section" className="hidden space-x-8 md:flex w-full p-7 rounded-full bg-[#f6f6f6] justify-center mb-6 px-28">
                 {categories.map((cat) => (
                     <button
                         key={cat.value}
-                        className={`px-2 py-2 hover:text-[#417dff] text-xl font-semibold mx-2 ${
+                        className={`px-2 py-2 hover:text-[#417dff] text-2xl font-semibold mx-2 ${
                             selectedCategory === cat.value
                                 ? " font-bold"
                                 : ""
