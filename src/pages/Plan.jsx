@@ -58,7 +58,7 @@ const Plan = () => {
 
         if (isHeader) {
             return (
-                <div className={`text-center text-sm lg:text-xl p-2 lg:p-3 font-bold ${cellIndex === 0 ? 'text-black' : 'text-[#01BF74]'}`}>
+                <div className={`text-center text-sm lg:text-2xl p-2 lg:p-5 font-bold ${cellIndex === 0 ? 'text-black' : 'text-[#01BF74]'}`}>
                     {cell}
                 </div>
             );
@@ -86,14 +86,14 @@ const Plan = () => {
 
     return (
         <div className="p-4 max-w-8xl mx-auto relative min-h-screen flex flex-col">
-            <h2 className="text-3xl md:text-8xl text-center font-bold my-10">Find a Plan That’s <br/> Right For You!</h2>
-            <p className="text-center text-xl lg:text-3xl mb-14">Select your role and explore <br/> the subscription plan.</p>
+            <h2 className="text-3xl md:text-9xl text-center font-[700] my-16">Find a Plan That’s <br/> Right For You!</h2>
+            <p className="text-center text-xl lg:text-4xl mb-20">Select your role and explore <br/> the subscription plan.</p>
             <div className="relative">
                 <div className="flex justify-center space-x-2 relative z-10">
                     {tabs.map((tab) => (
                         <motion.button
                             key={tab}
-                            className={`px-6 py-3 mb-6 lg:mb-0 lg:px-16 lg:py-8 lg:text-2xl  font-bold transition-colors rounded-md lg:rounded-none duration-300 lg:rounded-t-lg ${
+                            className={`px-6 py-3 mb-6 lg:mb-0 lg:px-20 lg:py-10 lg:text-4xl  font-bold transition-colors rounded-md lg:rounded-none duration-300 lg:rounded-t-lg ${
                                 activeTab === tab ? 'bg-[#01BF74] text-white lg:rounded-t-xl -mb-1' : 'bg-gray-200 text-black'
                             }`}
                             onClick={() => setActiveTab(tab)}
@@ -106,13 +106,13 @@ const Plan = () => {
                     ))}
                 </div>
             </div>
-            <div className="mt-1 border-4 h-full border-[#01BF74] rounded-3xl shadow-lg overflow-x-auto hide-scrollbar w-full lg:w-11/12 mx-auto">
+            <div className="mt-1 border-4  border-[#01BF74] rounded-3xl shadow-lg overflow-x-auto hide-scrollbar w-full lg:w-11/12 mx-auto">
                 <table className="w-full rounded-3xl table-fixed min-w-[800px] lg:min-w-full">
                     <thead>
                     <tr className="bg-gray-200 border-b border-gray-300">
                         {plan[activeTab][0].map((header, index) => (
                             <th key={index}
-                                className="py-2 px-2 text-sm lg:text-xl border-r last:border-r-0 border-gray-300">
+                                className="py-8 px-2 text-sm lg:text-xl border-r last:border-r-0 border-gray-300">
                                 {renderCell(header, true, false, index)}
                             </th>
                         ))}
@@ -132,7 +132,7 @@ const Plan = () => {
                                     className={`border-b border-gray-300 ${rowIndex % 2 === 0 ? 'bg-gray-50' : 'bg-gray-100'}`}>
                                     {row.map((cell, cellIndex) => (
                                         <td key={cellIndex}
-                                            className="p-0 py-2 md:p-3 border-r last:border-r-0 border-gray-300">
+                                            className="p-0 py-2 md:p-5 border-r last:border-r-0 border-gray-300">
                                             {renderCell(cell, false, rowIndex === plan[activeTab].length - 2, cellIndex)}
                                         </td>
                                     ))}
