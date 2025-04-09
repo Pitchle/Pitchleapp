@@ -175,162 +175,172 @@ const BlogDetail = () => {
                 style={{ width: `${scrollProgress}%` }}
             />
 
-            <div className="w-full lg:max-w-6xl mx-auto px-1 lg:px-4 my-20 lg:my-28">
-                <nav className="absolute top-24 left-5 lg:top-32 lg:left-24 text-sm">
-                    <Link to="/blog"
-                          className="hover:underline text-sm lg:text-xl font-semibold  text-[#bcb4b4] mb-4 text-left w-full">
-                        Blog
-                    </Link>
-                    <span className="lg:mx-2 text-sm lg:text-xl lg:font-bold text-[#bcb4b4]">&gt;</span>
-                    {post.category ? (
-                        <Link
-                            to={`/blog-data?category=${encodeURIComponent(post.category)}`}
-                            className="capitalize text-sm lg:text-xl font-semibold  text-[#bcb4b4] mb-4 text-left w-full hover:underline"
-                        >
-                            {post.category}
+            <div className={"flex justify-center"}>
+                <div className="w-full lg:w-8/12 mx-auto">
+                    <nav className="absolute top-24 left-5 lg:top-32 lg:left-24 text-sm">
+                        <Link to="/blog"
+                              className="hover:underline text-sm lg:text-xl font-semibold  text-[#bcb4b4] mb-4 text-left w-full">
+                            Blog
                         </Link>
-                    ) : (
-                        <span className="text-gray-800">Uncategorized</span>
-                    )}
-                    <span className="lg:mx-2 text-sm lg:text-xl lg:font-bold text-[#bcb4b4]">&gt;</span>
-                    <span className="text-sm lg:text-xl font-semibold text-[#417dff] mb-4 text-left w-full">{post.title.split(' ').slice(0, 6).join(' ')}...</span>
+                        <span className="lg:mx-3 text-sm lg:text-xl lg:font-bold text-[#bcb4b4]">&gt;</span>
+                        {post.category ? (
+                            <Link
+                                to={`/blog-data?category=${encodeURIComponent(post.category)}`}
+                                className="capitalize text-sm lg:text-xl font-semibold  text-[#bcb4b4] mb-4 text-left w-full hover:underline"
+                            >
+                                {post.category}
+                            </Link>
+                        ) : (
+                            <span className="text-gray-800">Uncategorized</span>
+                        )}
+                        <span className="lg:mx-2 text-sm lg:text-xl lg:font-bold text-[#bcb4b4]">&gt;</span>
+                        <span
+                            className="text-sm lg:text-xl font-semibold text-[#417dff] mb-4 text-left w-full">{post.title.split(' ').slice(0, 6).join(' ')}...</span>
 
-                </nav>
+                    </nav>
 
-                <div className={"mt-28 lg:mt-40 flex justify-center"}>
-                    <h1 className="text-md  mx-auto text-white bg-[#417dff] rounded-full py-1 px-3 mb-7 lg:text-md text-center ">
-                        {post.category}
+                    <div className={"mt-28 lg:mt-40 flex justify-center"}>
+                        <h1 className="text-md  mx-auto text-white bg-[#417dff] rounded-full py-1 px-3 mb-7 lg:text-md text-center ">
+                            {post.category}
+                        </h1>
+                    </div>
+                    <h1 className="text-[24px] px-[5px] lg:text-7xl font-semibold py-5 text-center mb-4 ">
+                        {post.title}
+
                     </h1>
-                </div>
-                <h1 className="text-[29px] px-[2px] lg:text-6xl font-semibold py-5 text-center mb-4 ">
-                    {post.title}
-
-                </h1>
-                <h3 className="text-md w-full px-2 lg:px-0 lg:w-9/12 flex justify-self-center lg:text-xl  text-center mb-4 ">
-                    {post.description}
-
-                </h3>
-                <div className="flex  text-center space-x-2 lg:space-x-16 my-20 items-center justify-center gap-4 ">
-                    <div className={"flex justify-center flex-col space-y-2"}>
-                        <span className="text-xl lg:text-3xl font-semibold">Date</span>{" "}
-                       <span className={"text-lg lg:text-2xl"}> {new Date(post.publishedAt).toLocaleDateString()}</span>
-                    </div>
-                    <div className={"flex justify-center flex-col space-y-2"}>
-                        <span className="text-xl lg:text-3xl font-semibold">Author</span> <span className={"text-lg lg:text-2xl"}>Pitchle Team</span>
-                    </div>
-                    <div className={"flex justify-center flex-col space-y-2"}>
-                        <span className="text-xl lg:text-3xl font-semibold">Read</span>
-                        <span className="text-lg lg:text-2xl">{timeSpent} minute{timeSpent !== 1 ? 's' : ''}</span>
-                    </div>
-                </div>
-
-                {post.image?.asset?.url && (
-                    <img
-                        className="w-11/12 lg:w-full h-[170px] mx-auto lg:h-[500px] object-fill rounded-xl mb-6"
-                        src={post.image.asset.url}
-                        alt={post.title}
-                    />
-                )}
-                {post.description && (
-                    <p className="text-start text-md w-full lg:text-2xl lg:w-8/12 mx-auto mt-16 px-3 lg:px-0 lg:mt-32 mb-10">
+                    <h3 className="text-lg w-full px-2 lg:px-0 lg:w-9/12 flex justify-self-center lg:text-2xl  text-center mb-4 ">
                         {post.description}
-                    </p>
-                )}
-                <div ref={contentRef} className="prose w-full px-3 lg:px-0 lg:w-9/12 lg:prose-xl poppins-regular text-md lg:text-xl mx-auto">
-                    <PortableText
-                        value={post.content}
-                        components={{
-                            block: {
-                                h1: ({children}) => <h1 className="text-5xl w-9/12 mx-automx-auto font-bold mt-4">{children}</h1>,
-                                h2: ({children}) => <h2 className="text-2xl lg:text-3xl py-5 text-center w-full lg:w-9/12 mx-auto font-bold mt-3">{children}</h2>,
-                                h3: ({children}) => <h3 className="text-xl lg:text-3xl mt-3">{children}</h3>,
-                                h4: ({children}) => <h4 className="text-xl  mt-3">{children}</h4>,
-                                h5: ({children}) => <h5 className="text-lg  mt-3">{children}</h5>,
 
-                                normal: ({children}) => (
-                                    <p className="mt-0 lg:mt-2 whitespace-pre-wrap" style={{lineHeight: "1.5em"}}>
-                                        {children}
-                                    </p>
-                                ),
-                                blockquote: ({children}) => (
-                                    <blockquote className="border-l-4 mt-2 border-gray-500 pl-4 italic my-4">
-                                        {children}
-                                    </blockquote>
-                                ),
-                            },
-                            list: {
-                                bullet: ({children}) => <ul className="list-disc mt-2 pl-5 space-y-2">{children}</ul>,
-                                number: ({children}) => <ol className="list-decimal mt-2 pl-5 space-y-2">{children}</ol>,
-                            },
-                            marks: {
-                                strong: ({children}) => <strong>{children}</strong>,
-                                em: ({children}) => <em>{children}</em>,
-                                underline: ({children}) => <u>{children}</u>,
-                                link: ({children, value}) => (
-                                    <a href={value.href} target="_blank" rel="noopener noreferrer"
-                                       className="text-blue-600 underline">
-                                        {children}
-                                    </a>
-                                ),
-                            },
-                            types: {
-                                image: ({value}) =>
-                                    value?.asset ? (
-                                        <img
-                                            src={urlFor(value).auto("format").fit("max").width(800)}
-                                            alt={value.alt || "Blog Content"}
-                                            className="lg:w-auto w-52 lg:h-[400px] mx-auto rounded-md shadow-sm my-6"
-                                        />
-                                    ) : null,
-                            },
-                        }}
-                    />
-                </div>
-            </div>
-            <div className={"w-full flex justify-end"}>
-            <div className={"flex w-6/12 justify-center items-center space-x-5"}>
-                <FaFacebookF
-                    className="hover:text-blue-600 text-2xl cursor-pointer"
-                    onClick={() => handleShare("facebook")}
-                />
-                <FaXTwitter
-                    className="hover:text-blue-400 text-2xl cursor-pointer"
-                    onClick={() => handleShare("twitter")}
-                />
-                <FaWhatsapp
-                    className="hover:text-blue-700 text-2xl cursor-pointer"
-                    onClick={() => handleShare("whatsapp")}
-                />
-                <div className="relative">
-                    <HiOutlineShare
-                        className="hover:text-blue-700 text-2xl cursor-pointer"
-                        onClick={handleCopyLink}
-                    />
-                    {isLinkCopied && (
-                        <div className="absolute top-[-2rem] left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
-                            Link copied!
+                    </h3>
+                    <div className="flex  text-center space-x-2 lg:space-x-16 my-20 items-center justify-center gap-4 ">
+                        <div className={"flex justify-center flex-col space-y-2"}>
+                            <span className="text-xl lg:text-3xl font-semibold">Date</span>{" "}
+                            <span
+                                className={"text-lg lg:text-2xl"}> {new Date(post.publishedAt).toLocaleDateString()}</span>
                         </div>
+                        <div className={"flex justify-center flex-col space-y-2"}>
+                            <span className="text-xl lg:text-3xl font-semibold">Author</span> <span
+                            className={"text-lg lg:text-2xl"}>Pitchle Team</span>
+                        </div>
+                        <div className={"flex justify-center flex-col space-y-2"}>
+                            <span className="text-xl lg:text-3xl font-semibold">Read</span>
+                            <span className="text-lg lg:text-2xl">{timeSpent} minute{timeSpent !== 1 ? 's' : ''}</span>
+                        </div>
+                    </div>
+
+                    {post.image?.asset?.url && (
+                        <img
+                            className="w-11/12 lg:w-full h-[170px] mx-auto lg:h-[500px] object-fill rounded-2xl lg:rounded-3xl mb-6"
+                            src={post.image.asset.url}
+                            alt={post.title}
+                        />
                     )}
+                    {post.description && (
+                        <p className="text-start text-md w-full lg:text-2xl lg:w-8/12 mx-auto mt-16 px-3 lg:px-0 lg:mt-32 mb-10">
+                            {post.description}
+                        </p>
+                    )}
+                    <div ref={contentRef}
+                         className="prose w-full px-3 lg:px-0 lg:w-9/12 lg:prose-xl poppins-regular text-md lg:text-2xl mx-auto">
+                        <PortableText
+                            value={post.content}
+                            components={{
+                                block: {
+                                    h1: ({children}) => <h1 className="text-5xl w-9/12 mx-automx-auto font-bold mt-4">{children}</h1>,
+                                    h2: ({children}) => <h2 className="text-2xl lg:text-4xl py-5 text-center w-full font-bold mt-3">{children}</h2>,
+                                    h3: ({children}) => <h3 className="text-xl lg:text-3xl mt-3">{children}</h3>,
+                                    h4: ({children}) => <h4 className="text-xl  mt-3">{children}</h4>,
+                                    h5: ({children}) => <h5 className="text-lg  mt-3">{children}</h5>,
+
+                                    normal: ({children}) => (
+                                        <p className="mt-0 lg:mt-2 whitespace-pre-wrap" style={{lineHeight: "1.5em"}}>
+                                            {children}
+                                        </p>
+                                    ),
+                                    blockquote: ({children}) => (
+                                        <blockquote className="border-l-4 mt-2 border-gray-500 pl-4 italic my-4">
+                                            {children}
+                                        </blockquote>
+                                    ),
+                                },
+                                list: {
+                                    bullet: ({children}) => <ul
+                                        className="list-disc mt-2 pl-5 space-y-2">{children}</ul>,
+                                    number: ({children}) => <ol
+                                        className="list-decimal mt-2 pl-5 space-y-2">{children}</ol>,
+                                },
+                                marks: {
+                                    strong: ({children}) => <strong>{children}</strong>,
+                                    em: ({children}) => <em>{children}</em>,
+                                    underline: ({children}) => <u>{children}</u>,
+                                    link: ({children, value}) => (
+                                        <a href={value.href} target="_blank" rel="noopener noreferrer"
+                                           className="text-blue-600 underline">
+                                            {children}
+                                        </a>
+                                    ),
+                                },
+                                types: {
+                                    image: ({value}) =>
+                                        value?.asset ? (
+                                            <img
+                                                src={urlFor(value).auto("format").fit("max").width(800)}
+                                                alt={value.alt || "Blog Content"}
+                                                className="lg:w-auto w-52 lg:h-[400px] mx-auto rounded-md shadow-sm my-6"
+                                            />
+                                        ) : null,
+                                },
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
+
+            <div className={"w-full flex justify-end"}>
+                <div className={"flex w-6/12 justify-center items-center space-x-5"}>
+                    <FaFacebookF
+                        className="hover:text-blue-600 text-2xl cursor-pointer"
+                        onClick={() => handleShare("facebook")}
+                    />
+                    <FaXTwitter
+                        className="hover:text-blue-400 text-2xl cursor-pointer"
+                        onClick={() => handleShare("twitter")}
+                    />
+                    <FaWhatsapp
+                        className="hover:text-blue-700 text-2xl cursor-pointer"
+                        onClick={() => handleShare("whatsapp")}
+                    />
+                    <div className="relative">
+                        <HiOutlineShare
+                            className="hover:text-blue-700 text-2xl cursor-pointer"
+                            onClick={handleCopyLink}
+                        />
+                        {isLinkCopied && (
+                            <div
+                                className="absolute top-[-2rem] left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
+                                Link copied!
+                            </div>
+                        )}
+                    </div>
+                </div>
             </div>
             {/* Related Blogs Section */}
             {relatedBlogs.length > 0 && (
-                <div className="max-w-6xl mx-auto px-4 mb-16">
-                    <h2 className="text-3xl lg:text-5xl text-[#222222] font-bold text-center my-10">
+                <div className=" w-10/12 mx-auto py-32">
+                    <h2 className="text-3xl lg:text-7xl text-[#222222] font-bold text-center my-32">
                         Related Articles
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-20">
                         {relatedBlogs.slice(0, visibleBlogs).map((blog) => (
                             <Link
                                 key={blog.slug.current}
                                 to={`/blog/${blog.slug.current}`}
-                                className="bg-white shadow-md border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition"
+                                className="bg-white rounded-lg overflow-hidden transition"
                             >
                                 <img
                                     src={blog.image?.asset?.url || "https://via.placeholder.com/400"}
                                     alt={blog.title}
-                                    className="w-full h-52 object-cover"
+                                    className="w-full h-80 transition-transform duration-300 group-hover:scale-110 object-cover rounded mb-2"
                                 />
                                 <div className="p-4">
                                     <div className="flex justify-between items-center mb-2">
