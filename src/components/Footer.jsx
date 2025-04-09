@@ -46,7 +46,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-gray-100 h-screen py-10 p-4 text-[#343434] md:px-8 lg:m-4 lg:p-16 rounded-xl mt-10">
+        <footer className="bg-gray-100 py-10 p-4 text-[#343434] md:px-8 lg:m-4 lg:p-16 rounded-xl mt-10">
             <ToastContainer
                 position="top-right"     // <-- change from top-center to top-right
                 autoClose={3000}
@@ -120,8 +120,8 @@ const Footer = () => {
                                     {name: "About Us", path: "/about"},
                                     {name: "Plans", path: "/plans"},
                                     {name: "We Care", path: "/about#CARE"},
-                                    { name: "Blog", path: "/blog" },
-                                    { name: "FAQs", path: "/#FAQ" }
+                                    {name: "Blog", path: "/blog"},
+                                    {name: "FAQs", path: "/#FAQ"}
                                 ].map(item => (
                                     <li key={item.name}>
                                         <Link
@@ -131,7 +131,8 @@ const Footer = () => {
                                             }`}
                                         >
                                             {item.name}
-                                            <span className="block h-[2px] w-0 bg-[#1e88e5] transition-all duration-300 group-hover:w-full"></span>
+                                            <span
+                                                className="block h-[2px] w-0 bg-[#1e88e5] transition-all duration-300 group-hover:w-full"></span>
                                         </Link>
                                     </li>
                                 ))}
@@ -143,8 +144,8 @@ const Footer = () => {
                             <h4 className="font-bold text-2xl mb-2">Legal</h4>
                             <ul className=" mt-3 text-sm">
                                 {[
-                                    { name: "Privacy Policy", path: "/privacy" },
-                                    { name: "Terms of Services", path: "/terms" }
+                                    {name: "Privacy Policy", path: "/privacy"},
+                                    {name: "Terms of Services", path: "/terms"}
                                 ].map(item => (
                                     <li key={item.name}>
                                         <Link
@@ -152,7 +153,8 @@ const Footer = () => {
                                             className="relative group transition duration-300"
                                         >
                                             {item.name}
-                                            <span className="block h-[2px] w-0 bg-[#1e88e5] transition-all duration-300 group-hover:w-full"></span>
+                                            <span
+                                                className="block h-[2px] w-0 bg-[#1e88e5] transition-all duration-300 group-hover:w-full"></span>
                                         </Link>
                                     </li>
                                 ))}
@@ -170,22 +172,28 @@ const Footer = () => {
                             </a>
                             <div className="flex mt-4 space-x-1">
                                 <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                                    <div className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
+                                    <div
+                                        className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
                                         <FaLinkedin size={22} className="text-white"/>
                                     </div>
                                 </a>
                                 <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-                                    <div className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
+                                    <div
+                                        className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
                                         <FaYoutube size={22} className="text-white"/>
                                     </div>
                                 </a>
-                                <a href="https://apps.apple.com/us/app/pitchle/id6677026938" target="_blank" rel="noopener noreferrer">
-                                    <div className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
+                                <a href="https://apps.apple.com/us/app/pitchle/id6677026938" target="_blank"
+                                   rel="noopener noreferrer">
+                                    <div
+                                        className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
                                         <FaApple size={22} className="text-white"/>
                                     </div>
                                 </a>
-                                <a href="https://play.google.com/store/apps/details?id=com.pitchle.pitchleApp" target="_blank" rel="noopener noreferrer">
-                                    <div className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
+                                <a href="https://play.google.com/store/apps/details?id=com.pitchle.pitchleApp"
+                                   target="_blank" rel="noopener noreferrer">
+                                    <div
+                                        className="bg-[#01BF74] w-10 h-10 flex items-center justify-center rounded-full">
                                         <FaGooglePlay size={22} className="text-white"/>
                                     </div>
                                 </a>
@@ -193,9 +201,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
                 {/* Copyright */}
-                <div className="mt-10 fixed bottom-5 left-0 right-0 lg:mt-20 text-center lg:text-lg text-sm">
+                <div className="mt-10 lg:mt-24 text-center lg:text-lg text-sm">
                     © 2025 Pitchle. All rights reserved
                 </div>
             </div>

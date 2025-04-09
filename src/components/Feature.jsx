@@ -20,7 +20,7 @@ const Feature = () => {
                 <button
                     onMouseEnter={() => setShowQR(true)}
                     onMouseLeave={() => setShowQR(false)}
-                    className="bg-[#417DFF] text-white py-3 px-5 lg:px-8 rounded-full shadow-md hover:bg-blue-600 transition flex items-center space-x-2 text-sm lg:text-base"
+                    className="bg-[#417DFF] hover:bg-[#049c60] text-white py-3 px-5 lg:px-8 rounded-full shadow-md hover:bg-blue-600 transition flex items-center space-x-2 text-sm lg:text-base"
                 >
                     <span className={"text-xl"}>Scan to Install</span>
                     <svg width="23" height="23" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">

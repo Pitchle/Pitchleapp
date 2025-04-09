@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { motion, AnimatePresence } from 'framer-motion';
+import Feature from "../components/Feature";
 
 const tabs = ['User', 'Business', 'Investor'];
 
@@ -10,8 +11,8 @@ const plan = {
         ['max 30-sec pitches', true, true, true, true],
         ['max 60-sec pitches', false, true, true, true],
         ['Find Partners', true, true, true, true],
-        ['Watermark/Copyright in videos', false, false, true, true],
         ['Video Visibility: Public and Private', false, false, true, true],
+        ['Watermark/Copyright in videos', false, false, true, true],
         ['Create and join events worldwide', false, false, true, true],
         ['Renews', '', '', 'monthly', 'yearly'],
         ['Price', 'FREE', '$6.99', '$9.99/month', { mainPrice: '$99.99/year', subPrice: '12 months at $8.33/mo.\nSave 16.6%' }]
@@ -85,11 +86,8 @@ const Plan = () => {
 
     return (
         <div className="p-4 max-w-8xl mx-auto relative min-h-screen flex flex-col">
-            <h2 className="text-3xl md:text-8xl text-center font-bold my-10">Find a Plan That’s <br/> Right For You!
-            </h2>
-            <p className="text-center text-xl lg:text-3xl mb-14">Select your role and explore <br/> the subscription
-                plan.</p>
-
+            <h2 className="text-3xl md:text-8xl text-center font-bold my-10">Find a Plan That’s <br/> Right For You!</h2>
+            <p className="text-center text-xl lg:text-3xl mb-14">Select your role and explore <br/> the subscription plan.</p>
             <div className="relative">
                 <div className="flex justify-center space-x-2 relative z-10">
                     {tabs.map((tab) => (
@@ -108,8 +106,8 @@ const Plan = () => {
                     ))}
                 </div>
             </div>
-            <div className="mt-1 border-4 border-[#01BF74] h-full rounded-3xl shadow-lg overflow-x-auto hide-scrollbar w-full lg:w-11/12 mx-auto">
-                <table className="w-full h-full rounded-3xl table-fixed min-w-[800px] lg:min-w-full">
+            <div className="mt-1 border-4 h-full border-[#01BF74] rounded-3xl shadow-lg overflow-x-auto hide-scrollbar w-full lg:w-11/12 mx-auto">
+                <table className="w-full rounded-3xl table-fixed min-w-[800px] lg:min-w-full">
                     <thead>
                     <tr className="bg-gray-200 border-b border-gray-300">
                         {plan[activeTab][0].map((header, index) => (
@@ -144,6 +142,8 @@ const Plan = () => {
                     </AnimatePresence>
                 </table>
             </div>
+
+            <Feature/>
         </div>
     );
 };

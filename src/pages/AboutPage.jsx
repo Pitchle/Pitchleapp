@@ -31,7 +31,7 @@ const AboutPage = () => {
                     <img
                         src='/img/about/about_main.png'
 
-                        className="w-fit mt-10 lg:mt-0 mx-auto p-4 scale-125 h-[450px] rounded-lg"
+                        className="lg:w-[230px] w-fit mt-10 lg:mt-0 mx-auto p-4 scale-125 h-[420px] rounded-lg"
                         alt={"img"}/>
                 </div>
             </section>
@@ -39,9 +39,11 @@ const AboutPage = () => {
                 {[
                     {
                         title: 'Who We Are',
-                        description: 'Pitchle is a social platform designed for commerce growth, offering small businesses a space to connect, thrive, and succeed equitably.',
+                        description: 'Pitchle is a social platform designed \n' +
+                            'for commerce growth, offering small businesses a space to connect, \n' +
+                            'thrive, and succeed equitably, unlike traditional entertainment-focused networks.',
                         icon: (
-                            <svg width="50" height="50" viewBox="0 0 89 88" fill="none"
+                            <svg width="80" height="80" viewBox="0 0 89 88" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_559_3383)">
                                     <path
@@ -59,9 +61,11 @@ const AboutPage = () => {
                     },
                     {
                         title: 'What We Do',
-                        description: 'We empower small businesses by providing a dedicated platform to drive commerce, promote products, find partners, and facilitate acquisitions or transfers.',
+                        description: 'We empower small businesses \n' +
+                            'by providing a dedicated platform dedicated to driving commerce. \n' +
+                            'Pitchle helps them promote products, connect with partners, and facilitate acquisitions or transfers.',
                         icon: (
-                            <svg width="50" height="50" viewBox="0 0 89 88" fill="none"
+                            <svg width="80" height="80" viewBox="0 0 89 88" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                       d="M44.4997 80.6668C24.2487 80.6668 7.83301 64.2512 7.83301 44.0002C7.83301 23.7492 24.2487 7.3335 44.4997 7.3335C64.7507 7.3335 81.1663 23.7492 81.1663 44.0002C81.1663 64.2512 64.7507 80.6668 44.4997 80.6668ZM40.184 51.8468L30.0457 41.7012L26.1663 45.5805L37.6027 57.0242C38.2903 57.7116 39.2227 58.0977 40.195 58.0977C41.1673 58.0977 42.0997 57.7116 42.7873 57.0242L64.6113 35.2075L60.7173 31.3135L40.184 51.8468Z"
@@ -73,9 +77,12 @@ const AboutPage = () => {
                     },
                     {
                         title: 'How We Do It',
-                        description: 'Through short videos, AI-powered tools, and user-friendly design, Pitchle helps businesses promote products and drive growth.',
+                        description: 'Pitchle empowers small businesses with short videos to\n' +
+                            'promote products, connect with partners, and drive growth. The\n' +
+                            'app is easy to use, AI-powered, and designed to automate tasks\n' +
+                            'and enhance content, helping businesses thrive.',
                         icon: (
-                            <svg width="50" height="50" viewBox="0 0 89 88" fill="none"
+                            <svg width="80" height="80" viewBox="0 0 89 88" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                       d="M59.7081 6C61.5823 6 63.1033 7.52 63.1033 9.39286V13.8443C63.1033 14.7441 62.7456 15.6071 62.1089 16.2434C61.4721 16.8797 60.6086 17.2371 59.7081 17.2371C58.8077 17.2371 57.9441 16.8797 57.3074 16.2434C56.6707 15.6071 56.313 14.7441 56.313 13.8443V9.39286C56.313 7.52 57.834 6 59.7081 6ZM27.9841 53.4349C29.739 53.4704 31.4834 53.1558 33.1152 52.5092C34.7469 51.8627 36.2331 50.8973 37.4868 49.6696C38.7405 48.4419 39.7365 46.9765 40.4165 45.3594C41.0964 43.7422 41.4466 42.0057 41.4466 40.2516C41.4466 38.4974 41.0964 36.761 40.4165 35.1438C39.7365 33.5266 38.7405 32.0613 37.4868 30.8335C36.2331 29.6058 34.7469 28.6405 33.1152 27.9939C31.4834 27.3474 29.739 27.0327 27.9841 27.0683C24.5317 27.1383 21.2443 28.558 18.8275 31.0227C16.4107 33.4875 15.057 36.8008 15.057 40.2516C15.057 43.7024 16.4107 47.0157 18.8275 49.4804C21.2443 51.9451 24.5317 53.3648 27.9841 53.4349ZM6 79.8014C6.09072 74.0339 8.44708 68.5332 12.5605 64.4866C16.674 60.44 22.2147 58.1719 27.9868 58.1719C33.759 58.1719 39.2996 60.44 43.4131 64.4866C47.5266 68.5332 49.8829 74.0339 49.9736 79.8014C49.9736 80.3845 49.7419 80.9437 49.3293 81.356C48.9167 81.7684 48.3571 82 47.7736 82H8.20004C7.61655 82 7.05696 81.7684 6.64438 81.356C6.23179 80.9437 6 80.3845 6 79.8014ZM80.508 19.5334C80.8812 19.281 81.2004 18.9568 81.447 18.5797C81.6935 18.2027 81.8625 17.7804 81.944 17.3375C82.0255 16.8945 82.018 16.4398 81.9218 15.9997C81.8256 15.5597 81.6428 15.1433 81.3838 14.7746C81.1249 14.406 80.7952 14.0925 80.4138 13.8526C80.0324 13.6126 79.607 13.4509 79.1624 13.377C78.7179 13.303 78.263 13.3182 77.8244 13.4218C77.3858 13.5253 76.9722 13.7151 76.6077 13.98L72.9627 16.5369C72.2426 17.0603 71.7571 17.8456 71.6108 18.7234C71.4646 19.6012 71.6693 20.5013 72.1809 21.2297C72.6925 21.9581 73.4699 22.4565 74.3457 22.6175C75.2216 22.7785 76.1256 22.5891 76.863 22.0903L80.508 19.5334ZM38.0663 14.8106C37.5498 15.5465 37.3466 16.4572 37.5014 17.3427C37.6562 18.2282 38.1563 19.0161 38.892 19.5334L42.5424 22.0903C42.9069 22.3552 43.3205 22.545 43.7591 22.6485C44.1977 22.7521 44.6525 22.7673 45.0971 22.6933C45.5417 22.6194 45.9671 22.4577 46.3485 22.2177C46.7298 21.9778 47.0596 21.6643 47.3185 21.2957C47.5774 20.927 47.7603 20.5106 47.8565 20.0705C47.9527 19.6305 47.9602 19.1758 47.8787 18.7328C47.7972 18.2899 47.6282 17.8676 47.3817 17.4905C47.1351 17.1135 46.8159 16.7893 46.4427 16.5369L42.7923 13.98C42.0558 13.4638 41.1445 13.2608 40.2585 13.4155C39.3724 13.5702 38.5839 14.07 38.0663 14.8051V14.8106ZM59.4528 21.4171C61.0606 21.4014 62.6558 21.7028 64.1468 22.3042C65.6379 22.9055 66.9955 23.7949 68.142 24.9215C69.2885 26.0481 70.2013 27.3896 70.8281 28.8693C71.4549 30.349 71.7834 31.9378 71.7948 33.5446C71.7405 37.996 69.0787 42.2303 65.0915 44.2171V50.2591C65.0802 50.6096 64.9337 50.9422 64.6826 51.1871C64.4314 51.432 64.0952 51.5702 63.7443 51.5729H55.6612C55.3103 51.5702 54.974 51.432 54.7229 51.1871C54.4717 50.9422 54.3252 50.6096 54.314 50.2591V44.3203C52.3963 43.3442 50.7691 41.8815 49.5955 40.0789C48.4218 38.2762 47.7429 36.1969 47.6269 34.0494C47.5711 32.4434 47.8329 30.8422 48.3974 29.3375C48.9619 27.8328 49.818 26.4542 50.9165 25.2807C52.0151 24.1072 53.3346 23.1619 54.7995 22.4989C56.2643 21.8359 57.8456 21.4683 59.4528 21.4171Z"
@@ -89,15 +96,15 @@ const AboutPage = () => {
                     <div key={index} className="p-6 text-start">
                         <div className={"flex justify-start items-center my-4 space-x-5"}>
                             <h3>{section.icon}</h3>
-                            <h3 className="font-bold mt-2 text-xl">{section.title}</h3>
+                            <h3 className="font-bold mt-2 text-xl lg:text-4xl">{section.title}</h3>
                         </div>
-                        <p className="text-start">{section.description}</p>
+                        <p className="text-start text-md leading-7 lg:mt-8">{section.description}</p>
                     </div>
                 ))}
             </section>
             <section className="flex flex-col lg:flex-row  items-center justify-between">
-                <div className="lg:w-1/2 mt-6 flex  justify-center lg:mt-0">
-                    <div className={"flex items-center scale-100 lg:scale-110 lg:space-x-5"}>
+                <div className="lg:w-1/2 mt-6 flex lg:scale-105 justify-center lg:mt-0">
+                    <div className={"flex items-center lg:scale-110 lg:space-x-5"}>
                         <img
                             src='/img/about/about1.png'
 
@@ -111,7 +118,7 @@ const AboutPage = () => {
                     </div>
                 </div>
                 <div className="lg:w-1/2 mt-20 p-1 lg:p-5 ms-0 lg:ms-20 lg:mt-0 space-y-8">
-                    <h1 className="text-4xl lg:text-7xl font-bold text-[#417DFF]">Pitchle: Made for Business</h1>
+                    <h1 className="text-4xl lg:text-6xl font-bold text-[#417DFF]">Pitchle: Made for Business</h1>
                     <p className="text-justify text-lg lg:text-start">
                         Social media today is largely focused on entertainment, leaving a gap in the business sector.
                         There's a clear
@@ -129,9 +136,9 @@ const AboutPage = () => {
                 </div>
             </section>
             <section className="text-center">
-                <h2 className="text-4xl lg:text-6xl font-bold my-16 lg:my-24">The values that drive us</h2>
+                <h2 className="text-4xl lg:text-7xl font-bold my-16 lg:my-24">The values that drive us</h2>
                 <div
-                    className="grid w-full py-6 mx-auto grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3 ">
+                    className="grid w-full lg:scale-105 py-6 mx-auto grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3 ">
                     {[
                         {
                             title: 'Innovation',
@@ -193,18 +200,17 @@ const AboutPage = () => {
                             </svg>
                         }
                     ].map((value, index) => (
-                        <div key={index}
-                             className="py-6 lg:py-10 px-2 bg-gray-100 flex justify-center items-center flex-col space-y-8 rounded-xl text-center">
+                        <div key={index} className="py-6  lg:py-10 px-2 bg-gray-100 flex justify-center items-center flex-col space-y-8 rounded-3xl text-center">
                             {value.icon}
                             <h3 className="font-bold text-xl lg:text-4xl">{value.title}</h3>
                         </div>
                     ))}
                 </div>
             </section>
-            <section className="flex my-10 flex-col lg:flex-row items-center justify-center">
-                <div className="lg:w-4/12 lg:me-10 lg:pb-16 flex items-center flex-col justify-center text-center lg:mt-0">
+            <section className="flex my-10 flex-col lg:flex-row lg:scale-110 items-center justify-center">
+                <div className="lg:w-4/12 lg:me-10  lg:pb-16 flex items-center flex-col justify-center text-center lg:mt-0">
                     <img src="img/new_images/profile.png" alt="john"
-                         className="w-44 h-44 lg:w-72 lg:h-72 border-[10px] border-black rounded-full"/>
+                         className="w-44 h-44 lg:w-72 lg:h-72 border-[7px] border-black rounded-full"/>
                     <h1 className={"mt-4 text-xl lg:text-3xl font-semibold"}>Jhon Pillpe</h1>
                     <h1 className={"text-2xl"}>Founder</h1>
                 </div>
@@ -232,8 +238,8 @@ const AboutPage = () => {
                                 here to make
                                 that happen.</p>
                         </div>
-                        <div className="w-full md:w-1/3 p-10 bg-[#417DFF] text-white rounded-2xl">
-                            <svg width="50" height="50" viewBox="0 0 82 81" fill="none"
+                        <div className="w-full md:w-1/3 p-10 bg-[#417DFF] text-white rounded-3xl">
+                            <svg width="80" height="80" viewBox="0 0 82 81" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <mask id="path-1-inside-1_261_303" fill="white">
                                     <path
@@ -245,7 +251,7 @@ const AboutPage = () => {
                                     mask="url(#path-1-inside-1_261_303)"/>
                             </svg>
 
-                            <h2 className="text-2xl mt-4 font-bold mb-2">Supporting Small Businesses</h2>
+                            <h2 className="text-2xl lg:text-4xl mt-4 font-bold mb-2">Supporting Small Businesses</h2>
                             <p>We empower small businesses by connecting them with new opportunities, partners, and
                                 customers.</p>
                         </div>
@@ -253,19 +259,19 @@ const AboutPage = () => {
 
                     {/* Second Row */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="p-6 bg-gray-100 rounded-2xl">
-                            <svg width="50" height="50" viewBox="0 0 88 88" fill="none"
+                        <div className="p-6 bg-gray-100 rounded-3xl">
+                            <svg width="80" height="80" viewBox="0 0 88 88" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M44.3673 77C43.3284 77 42.4582 76.648 41.7566 75.944C41.0551 75.24 40.7031 74.3698 40.7007 73.3333C40.7007 72.9056 40.7923 72.4619 40.9757 72.0023C41.159 71.5428 41.434 71.1309 41.8007 70.7667L58.759 53.8083L56.1007 51.15L39.234 68.1084C38.8673 68.475 38.4701 68.75 38.0423 68.9333C37.6145 69.1167 37.1562 69.2083 36.6673 69.2083C35.6284 69.2083 34.7582 68.8576 34.0567 68.156C33.3551 67.4545 33.0031 66.583 33.0007 65.5417C33.0007 64.9306 33.0923 64.4258 33.2757 64.0273C33.459 63.6289 33.7034 63.2781 34.009 62.975L50.9673 46.0167L48.4007 43.45L31.4423 60.3167C31.0757 60.6833 30.6784 60.9583 30.2507 61.1417C29.8229 61.325 29.334 61.4167 28.784 61.4167C27.8062 61.4167 26.9507 61.05 26.2173 60.3167C25.484 59.5834 25.1173 58.7278 25.1173 57.75C25.1173 57.2611 25.209 56.8028 25.3923 56.375C25.5757 55.9472 25.8507 55.55 26.2173 55.1833L43.1757 38.225L40.5173 35.6584L23.6507 52.6167C23.3451 52.9222 22.9784 53.1667 22.5507 53.35C22.1229 53.5333 21.6034 53.625 20.9923 53.625C19.9534 53.625 19.082 53.273 18.378 52.569C17.674 51.865 17.3232 50.9948 17.3257 49.9583C17.3257 49.4695 17.4173 49.0111 17.6007 48.5833C17.784 48.1556 18.059 47.7584 18.4257 47.3917L38.8673 26.95L52.6173 40.7917C53.2895 41.4639 54.084 41.9992 55.0007 42.3977C55.9173 42.7961 56.834 42.9941 57.7507 42.9917C59.7062 42.9917 61.4173 42.3048 62.884 40.931C64.3507 39.5572 65.084 37.7997 65.084 35.6584C65.084 34.8028 64.9312 33.9167 64.6257 33C64.3201 32.0833 63.7701 31.2278 62.9757 30.4333L46.5673 14.025C47.6062 13.0472 48.7673 12.2992 50.0507 11.781C51.334 11.2628 52.6173 11.0025 53.9007 11C55.4895 11 56.9562 11.2603 58.3007 11.781C59.6451 12.3017 60.8673 13.1108 61.9673 14.2083L77.459 29.7917C78.559 30.8917 79.3693 32.1139 79.89 33.4583C80.4107 34.8028 80.6698 36.3611 80.6673 38.1333C80.6673 39.3556 80.3923 40.5937 79.8423 41.8477C79.2923 43.1017 78.4979 44.2469 77.459 45.2833L46.934 75.9C46.4451 76.3889 46.0173 76.6945 45.6507 76.8167C45.284 76.9389 44.8562 77 44.3673 77ZM12.9257 47.6667L10.5423 45.2833C9.50343 44.3056 8.70898 43.1445 8.15898 41.8C7.60898 40.4556 7.33398 39.05 7.33398 37.5833C7.33398 35.9945 7.63954 34.5278 8.25065 33.1833C8.86176 31.8389 9.62565 30.7083 10.5423 29.7917L26.034 14.2083C27.0118 13.2306 28.1729 12.4508 29.5173 11.869C30.8618 11.2872 32.1757 10.9976 33.459 11C35.109 11 36.5757 11.2298 37.859 11.6893C39.1423 12.1489 40.3951 12.9886 41.6173 14.2083L60.409 33C60.7757 33.3667 61.0507 33.7639 61.234 34.1917C61.4173 34.6195 61.509 35.0778 61.509 35.5667C61.509 36.5445 61.1423 37.4 60.409 38.1333C59.6757 38.8667 58.8201 39.2333 57.8423 39.2333C57.2923 39.2333 56.834 39.1576 56.4673 39.006C56.1007 38.8545 55.7034 38.5636 55.2757 38.1333L38.7757 21.8167L12.9257 47.6667Z"
                                     fill="#417DFF"/>
                             </svg>
 
-                            <h2 className="text-xl mt-4 font-bold mb-2">Inclusivity & Equal Opportunities</h2>
+                            <h2 className="text-xl lg:text-4xl mt-4 font-bold mb-2">Inclusivity & Equal Opportunities</h2>
                             <p>We support diversity, ensuring everyone has access to growth and success.</p>
                         </div>
-                        <div className="p-10 bg-[#417DFF] text-white rounded-2xl">
-                            <svg width="50" height="50" viewBox="0 0 88 88" fill="none"
+                        <div className="p-10 bg-[#417DFF] text-white rounded-3xl">
+                            <svg width="80" height="80" viewBox="0 0 88 88" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M44.0003 73.3332C40.5781 73.3332 37.3551 72.7991 34.3313 71.7308C31.3075 70.6626 28.5417 69.1495 26.0337 67.1915L20.9003 72.2332C20.2281 72.9054 19.3725 73.2415 18.3337 73.2415C17.2948 73.2415 16.4392 72.9054 15.767 72.2332C15.0948 71.561 14.7587 70.7054 14.7587 69.6665C14.7587 68.6276 15.0948 67.7721 15.767 67.0998L20.8087 62.0582C18.8531 59.5526 17.3412 56.7721 16.273 53.7165C15.2048 50.6609 14.6694 47.4221 14.667 43.9998C14.667 35.8109 17.5087 28.8748 23.192 23.1915C28.8753 17.5082 35.8114 14.6665 44.0003 14.6665H73.3337V43.9998C73.3337 52.1887 70.492 59.1248 64.8087 64.8082C59.1253 70.4915 52.1892 73.3332 44.0003 73.3332ZM44.0003 65.9998C50.1114 65.9998 55.3059 63.861 59.5837 59.5832C63.8614 55.3054 66.0003 50.111 66.0003 43.9998V21.9998H44.0003C37.8892 21.9998 32.6948 24.1387 28.417 28.4165C24.1392 32.6943 22.0003 37.8887 22.0003 43.9998C22.0003 46.3832 22.367 48.6602 23.1003 50.8308C23.8337 53.0015 24.842 54.9717 26.1253 56.7415L45.1003 37.7665C45.7725 37.0943 46.6281 36.7582 47.667 36.7582C48.7059 36.7582 49.5614 37.0943 50.2337 37.7665C50.967 38.4998 51.3337 39.3713 51.3337 40.3808C51.3337 41.3904 50.967 42.2606 50.2337 42.9915L31.2587 61.9665C33.0309 63.2498 35.0023 64.2435 37.173 64.9475C39.3437 65.6515 41.6194 66.0023 44.0003 65.9998Z"
@@ -273,19 +279,19 @@ const AboutPage = () => {
                             </svg>
 
 
-                            <h2 className="text-xl mt-4 font-bold mb-2">Sustainability & Eco Trends</h2>
+                            <h2 className="text-xl lg:text-4xl mt-4 font-bold mb-2">Sustainability & Eco Trends</h2>
                             <p>We advocate for businesses that prioritize eco-friendly products and sustainable,
                                 responsible practices.</p>
                         </div>
-                        <div className="p-10 bg-gray-100 rounded-2xl">
-                            <svg width="50" height="50" viewBox="0 0 88 88" fill="none"
+                        <div className="p-10 bg-gray-100 rounded-3xl">
+                            <svg width="80" height="80" viewBox="0 0 88 88" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M61.6005 12.0998C61.6005 11.2246 61.9482 10.3852 62.567 9.76635C63.1859 9.14748 64.0253 8.7998 64.9005 8.7998H75.9005C76.7757 8.7998 77.6151 9.14748 78.2339 9.76635C78.8528 10.3852 79.2005 11.2246 79.2005 12.0998V23.0998C79.2005 23.975 78.8528 24.8144 78.2339 25.4333C77.6151 26.0521 76.7757 26.3998 75.9005 26.3998C75.0253 26.3998 74.1859 26.0521 73.567 25.4333C72.9482 24.8144 72.6005 23.975 72.6005 23.0998V20.0638L52.9325 39.7318C52.3137 40.3498 51.475 40.6969 50.6005 40.6969C49.726 40.6969 48.8872 40.3498 48.2685 39.7318L37.4005 28.8638L18.8325 47.4318C18.5304 47.756 18.166 48.0161 17.7612 48.1964C17.3565 48.3768 16.9195 48.4738 16.4764 48.4816C16.0333 48.4894 15.5932 48.4079 15.1823 48.2419C14.7713 48.076 14.3981 47.8289 14.0847 47.5156C13.7713 47.2022 13.5243 46.8289 13.3583 46.418C13.1924 46.0071 13.1109 45.567 13.1187 45.1239C13.1265 44.6808 13.2235 44.2438 13.4038 43.839C13.5842 43.4342 13.8443 43.0699 14.1685 42.7678L35.0685 21.8678C35.6872 21.2498 36.526 20.9027 37.4005 20.9027C38.275 20.9027 39.1137 21.2498 39.7325 21.8678L50.6005 32.7358L67.9365 15.3998H64.9005C64.0253 15.3998 63.1859 15.0521 62.567 14.4333C61.9482 13.8144 61.6005 12.975 61.6005 12.0998ZM16.5005 61.5998C17.3757 61.5998 18.2151 61.9475 18.8339 62.5664C19.4528 63.1852 19.8005 64.0246 19.8005 64.8998V75.8998C19.8005 76.775 19.4528 77.6144 18.8339 78.2333C18.2151 78.8521 17.3757 79.1998 16.5005 79.1998C15.6253 79.1998 14.7859 78.8521 14.167 78.2333C13.5482 77.6144 13.2005 76.775 13.2005 75.8998V64.8998C13.2005 64.0246 13.5482 63.1852 14.167 62.5664C14.7859 61.9475 15.6253 61.5998 16.5005 61.5998ZM37.4005 51.6998C37.4005 50.8246 37.0528 49.9852 36.4339 49.3664C35.8151 48.7475 34.9757 48.3998 34.1005 48.3998C33.2253 48.3998 32.3859 48.7475 31.767 49.3664C31.1482 49.9852 30.8005 50.8246 30.8005 51.6998V75.8998C30.8005 76.775 31.1482 77.6144 31.767 78.2333C32.3859 78.8521 33.2253 79.1998 34.1005 79.1998C34.9757 79.1998 35.8151 78.8521 36.4339 78.2333C37.0528 77.6144 37.4005 76.775 37.4005 75.8998V51.6998ZM51.7005 57.1998C52.5757 57.1998 53.4151 57.5475 54.0339 58.1664C54.6528 58.7852 55.0005 59.6246 55.0005 60.4998V75.8998C55.0005 76.775 54.6528 77.6144 54.0339 78.2333C53.4151 78.8521 52.5757 79.1998 51.7005 79.1998C50.8253 79.1998 49.9859 78.8521 49.367 78.2333C48.7482 77.6144 48.4005 76.775 48.4005 75.8998V60.4998C48.4005 59.6246 48.7482 58.7852 49.367 58.1664C49.9859 57.5475 50.8253 57.1998 51.7005 57.1998ZM72.6005 42.8998C72.6005 42.0246 72.2528 41.1852 71.6339 40.5664C71.0151 39.9475 70.1757 39.5998 69.3005 39.5998C68.4253 39.5998 67.5859 39.9475 66.967 40.5664C66.3482 41.1852 66.0005 42.0246 66.0005 42.8998V75.8998C66.0005 76.775 66.3482 77.6144 66.967 78.2333C67.5859 78.8521 68.4253 79.1998 69.3005 79.1998C70.1757 79.1998 71.0151 78.8521 71.6339 78.2333C72.2528 77.6144 72.6005 76.775 72.6005 75.8998V42.8998Z"
                                     fill="#417DFF"/>
                             </svg>
 
-                            <h2 className="text-xl mt-4 font-bold mb-2">Helping Businesses Grow</h2>
+                            <h2 className="text-xl lg:text-3xl mt-4 font-bold mb-2">Helping Businesses Grow</h2>
                             <p>Our platform provides tools for promotion, networking, and scaling businesses.</p>
                         </div>
                     </div>
