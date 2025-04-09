@@ -34,22 +34,22 @@ const FeatureCard = ({ section, index, scrollYProgress, scrollRange, viewportHei
 
     return (
         <motion.div
-            className={`sticky top-10 w-11/12 lg:w-10/12 mx-auto mb-10 ${section.bgColor} text-white rounded-3xl shadow-lg`}
+            className={`sticky top-10 w-11/12 lg:w-10/12 mx-auto mb-10 ${section.bgColor} text-white rounded-3xl`}
             style={{
                 zIndex: index + 1,
                 y, // vertical translation based on scroll progress
             }}
         >
-            <div className={`flex flex-col-reverse md:flex-row rounded-xl overflow-hidden shadow-lg ${section.layout === 'right' ? 'md:flex-row-reverse' : ''}`}>
+            <div className={`flex flex-col-reverse md:flex-row rounded-3xl overflow-hidden ${section.layout === 'right' ? 'md:flex-row-reverse' : ''}`}>
                 {/* Video Section */}
-                <div className="w-11/12 bg-white m-2 px-1 rounded-lg md:w-1/2">
+                <div className="w-11/12 m-2 rounded-3xl bg-white md:w-1/2">
                     <video
                         src={section.videoId}
                         autoPlay
                         loop
                         muted
                         playsInline
-                        className="w-full mx-auto h-full rounded-lg"
+                        className="w-full mx-auto px-2 pt-2 h-full rounded-3xl"
                     />
                 </div>
                 {/* Text Section */}
