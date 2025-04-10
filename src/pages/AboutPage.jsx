@@ -243,7 +243,7 @@ const AboutPage = () => {
                 <h1 className={"text-xl lg:text-2xl"}>Founder</h1>
             </div>
             <div className="lg:w-8/12  space-y-4 mt-8 lg:mt-0">
-                <p className=" text-[18px] font-[500] lg:text-4xl text-[##343434] lg:font-[500] lg:leading-10 text-center italic">
+                <p className=" text-[18px] font-[500] lg:text-[36px] text-[#343434] lg:font-[500] lg:leading-10 text-center italic">
                     “ We are committed to progress!
                     <br/>
                     <br/>
@@ -268,7 +268,7 @@ const AboutPage = () => {
                             here to make
                             that happen.</p>
                     </div>
-                    <div className="w-full md:w-1/3 p-10 bg-[#417DFF] text-white rounded-3xl">
+                    <div className="w-full md:w-1/3 p-14 bg-[#417DFF] text-white rounded-3xl">
                         <svg width="80" height="80" viewBox="0 0 82 81" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <mask id="path-1-inside-1_261_303" fill="white">
@@ -291,7 +291,7 @@ const AboutPage = () => {
 
                 {/* Second Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-6 bg-gray-100 rounded-3xl">
+                    <div className="p-14 bg-gray-100 rounded-3xl">
                         <svg width="80" height="80" viewBox="0 0 88 88" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
