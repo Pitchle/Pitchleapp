@@ -20,8 +20,9 @@ const Navbar = () => {
     const scrollToTop = () => {
         window.scrollTo(0, 0);
     };
+    const bgColor = location.pathname === '/blog' ? "bg-[#f6f6f6]" : "bg-white";
     return (
-        <nav className=" w-full bg-transparent">
+        <nav className={`w-full ${bgColor}`}>
             <div className="w-11/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-2 lg:px-5 py-0 lg:py-3 bg-white">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
@@ -118,13 +119,10 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-
             {/* Mobile Fullscreen Drawer */}
-            <div
-                className={`fixed top-0 right-0 h-full w-full z-50 bg-[#01BF74] transition-transform duration-300 ease-in-out transform ${
+            <div className={`fixed top-0 right-0 h-full w-full z-50 bg-[#01BF74] transition-transform duration-300 ease-in-out transform ${
                     mobileOpen ? "translate-x-0" : "translate-x-full"
-                }`}
-            >
+                }`}>
                 {/* Header in Drawer */}
                 <div className="flex items-center justify-between p-2 bg-white rounded-full m-4">
                     <div className="flex items-center space-x-2">

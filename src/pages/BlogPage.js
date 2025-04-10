@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const MajorBlogCard = ({ post }) => (
     <div
-        className="w-full lg:w-6/12 p-3 rounded-xl flex flex-col-reverse lg:flex-col"
+        className="w-full bg-white lg:w-6/12 p-3 rounded-xl flex flex-col-reverse lg:flex-col"
         style={{boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}
     >
         <img
@@ -194,9 +194,8 @@ const BlogPage = () => {
     }
 
     return (
-        <>
-            {majorBlog && (
-                <div className="flex flex-col lg:flex-row justify-between w-11/12 space-y-4 lg:space-y-0 lg:w-10/12 mx-auto lg:space-x-10 my-16">
+        < div className={"bg-[#f6f6f6]"}>
+            {majorBlog && (<div className="flex py-14  flex-col lg:flex-row justify-between w-11/12 space-y-4 lg:space-y-0 lg:w-10/12 mx-auto lg:space-x-10">
                 <MajorBlogCard post={majorBlog}/>
                 <div
                     className="w-full lg:w-6/12 bg-white p-6 rounded-xl"
@@ -494,7 +493,7 @@ const BlogPage = () => {
                     draggable
                     pauseOnHover
                 />
-        </>
+        </div>
     )
         ;
 };

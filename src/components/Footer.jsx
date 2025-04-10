@@ -10,6 +10,7 @@ const Footer = () => {
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState("");
     const [subscribed, setSubscribed] = useState(false);
+    const bgColor = location.pathname === '/blog' ? "bg-white" : "bg-[#f6f6f6]";
 
     const handleSubscribe = () => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -46,7 +47,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-gray-100 min-h-screen m-2 py-10 p-4 text-[#343434] md:px-8 lg:m-4 lg:p-16 rounded-xl mt-10">
+        <footer className={`${bgColor} min-h-screen m-2 py-10 p-4 text-[#343434] md:px-8 lg:m-4 lg:p-16 rounded-xl mt-10`}>
             <ToastContainer
                 position="top-right"
                 autoClose={3000}
@@ -58,7 +59,7 @@ const Footer = () => {
                 draggable
                 pauseOnHover
             />
-            <div className=" w-11/12 mx-auto py-10 lg:py-0 ">
+            <div className={" w-11/12 mx-auto py-10 lg:py-0 "}>
                 {/* Row 1: Brand (left) + Newsletter (right) */}
                 <div className="flex flex-col md:flex-row md:justify-between gap-2">
                     {/* Brand */}

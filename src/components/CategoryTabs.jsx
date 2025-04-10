@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa";
 
 // Define your categories array (can also be imported from a separate file)
@@ -13,8 +13,9 @@ const categories = [
 
 const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
     const navigate = useNavigate();
+    const location = useLocation();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+    const bgColor = location.pathname === '/blog' ? "bg-white" : "bg-[#f6f6f6]";
     const handleCategoryChange = (catValue) => {
         setSelectedCategory(catValue);
         // Redirect to the BlogData page with the chosen category
@@ -22,15 +23,17 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
         setIsDrawerOpen(false);
     };
 
+
+
     return (
-        <div className="relative ">
+        <div className="relative">
             <div className="lg:hidden w-full rounded-full text-center mx-auto">
                 <h1 className="text-xl scale-115 my-4 font-bold">
                     Choose a topic that fits your interests!
                 </h1>
                 <button
                     onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                    className="px-6 py-5 bg-[#f6f6f6] rounded-full text-xl font-semibold  mt-8 w-full mx-auto text-left flex items-center justify-between"
+                    className={`px-6 py-5 ${bgColor} rounded-full text-xl font-semibold  mt-8 w-full mx-auto text-left flex items-center justify-between`}
                 >
                     <span>Topics</span>
                     <FaChevronDown
@@ -55,7 +58,7 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
                     </div>
                 )}
             </div>
-            <div id="category-section" className="hidden space-x-10 md:flex w-full p-7 rounded-full bg-[#f6f6f6] justify-center mb-6 px-16">
+            <div id="category-section" className={`hidden space-x-10 md:flex w-full p-7 rounded-full ${bgColor} justify-center mb-6 px-16`}>
                 {categories.map((cat) => (
                     <button
                         key={cat.value}
