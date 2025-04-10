@@ -46,7 +46,7 @@ const Footer = () => {
     };
 
     return (
-        <div className={"flex max-h-screen justify-center"}>
+        <div className={"flex  justify-center"}>
             <footer className={`${bgColor} w-full  m-2 py-10 p-4 text-[#343434]  lg:m-4 lg:px-10 rounded-3xl mt-10`}>
                 <ToastContainer
                     position="top-right"
@@ -205,7 +205,7 @@ const Footer = () => {
                         </div>
                     </div>
                     {/* Copyright */}
-                    <div className="lg:mt-60 mt-10 text-center lg:text-lg text-md">
+                    <div className="lg:mt-40 mt-10 text-center lg:text-lg text-md">
                         © 2025 Pitchle. All rights reserved
                     </div>
                 </div>
