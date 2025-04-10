@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const MajorBlogCard = ({ post }) => (
     <div
         className="w-full bg-white lg:w-6/12 p-3 rounded-xl flex flex-col-reverse lg:flex-col"
-        style={{boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}
+        style={{boxShadow: "rgba(99, 99, 99, 0.3) 0px 2px 8px 0px"}}
     >
         <img
             src={post.image?.asset?.url}
