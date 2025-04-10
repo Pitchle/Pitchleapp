@@ -103,7 +103,7 @@ const FaQs = () => {
                                 <span className="text-white transition-transform duration-300">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className={`w-14 h-14 transform transition-transform duration-300 ${expandedItems[index] ? 'rotate-180' : 'rotate-0'}`}
+                                    className={`w-10 h-10 transform transition-transform duration-300 ${expandedItems[index] ? 'rotate-180' : 'rotate-0'}`}
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"

@@ -23,7 +23,7 @@ const Navbar = () => {
     const bgColor = location.pathname === '/blog' ? "bg-[#f6f6f6]" : "bg-white";
     return (
         <nav className={`w-full ${bgColor}`}>
-            <div className="w-11/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-2 lg:px-5 py-0 lg:py-3 bg-white">
+            <div className="w-10/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-2 lg:px-5 py-0 lg:py-3 bg-white">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <div className="flex items-center space-x-2">

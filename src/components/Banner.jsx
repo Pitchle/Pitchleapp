@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <section className="flex flex-col items-center justify-center p-4 lg:p-81">
             {/* Heading */}
-            <h1 className="text-4xl scale-110 lg:scale-100 font-bold mt-10 text-center lg:text-9xl">
+            <h1 className="text-4xl px-2 lg:px-0 scale-110 lg:scale-110 font-bold mt-10 text-center lg:text-8xl">
                 <span className="text-[#01BF74]">Revolutionize</span> Business <br/> with Short Videos!
             </h1>
 
@@ -15,9 +15,9 @@ const Banner = () => {
                 {/* Desktop View */}
                 <div className="hidden lg:flex flex-row items-center gap-20">
                     {/* Left Side Buttons */}
-                    <div className="flex flex-col space-y-52 items-start gap-6">
-                        <img className={"w-72 lg:scale-150 -mt-32 h-40"} src="/img/buttons/Frame%2086.png" alt=""/>
-                        <img className={"w-72 lg:scale-150 h-40"} src="/img/buttons/Group%2010.png" alt=""/>
+                    <div className="flex flex-col space-y-52 lg:-mt-10  items-start gap-6">
+                        <img className={"w-72 lg:scale-125 -mt-32 h-40"} src="/img/buttons/Frame%2086.png" alt=""/>
+                        <img className={"w-72 lg:scale-125 h-40"} src="/img/buttons/Group%2010.png" alt=""/>
                     </div>
 
                     {/* Video Section */}
@@ -33,18 +33,18 @@ const Banner = () => {
                             />
                         </div>
                     </div>
-                    <img className={"w-72 lg:scale-150 lg:-mt-10 h-40"} src="/img/buttons/Frame%2091.png" alt=""/>
+                    <img className={"w-72 lg:scale-125 lg:-mt-10 h-40"} src="/img/buttons/Frame%2091.png" alt=""/>
                 </div>
                 <div className="flex flex-col items-center gap-4 mt-0 lg:mt-6 lg:hidden">
                     <div className="relative w-full flex justify-center">
-                        <div className="w-full  lg:w-7/12 mx-auto">
+                        <div className="w-full lg:w-7/12 mx-auto">
                             <video
                                 src="/video/intro.mp4"
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
-                                className="w-[300px] h-[600px] p-4 mx-auto rounded-lg"
+                                className="w-[400px] h-[420px] p-4 mx-auto rounded-lg"
                             />
                         </div>
                     </div>

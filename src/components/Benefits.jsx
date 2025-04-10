@@ -40,19 +40,19 @@ const Benefits = () => {
                 Discover all the benefits of Pitchle!
             </h1>
             <div className={"flex justify-center"}>
-                <div className="w-full mx-2 lg:mx-0 lg:w-9/12 lg:scale-110 mt-10 ">
+                <div className="w-full mx-2 lg:mx-0 lg:w-9/12 mt-10 ">
                     <div className="grid ms-0 lg:ms-20 grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-x-12 lg:gap-y-20">
                         {benefitsData.map((benefit, index) => (
                             <div
                                 key={index}
-                                className="space-y-4 rounded-lg px-1 py-2 lg:px-0 bg-[#F5F5F5] md:bg-transparent"
+                                className="space-y-6 rounded-lg px-1 py-2 lg:px-0 bg-[#F5F5F5] md:bg-transparent"
                             >
                                 <img
                                     className="w-12 h-12 lg:w-20 mb-4 lg:h-20"
                                     src={benefit.icon}
                                     alt={benefit.title}
                                 />
-                                <h1 className="text-md lg:text-2xl font-semibold lg:font-bold text-start">
+                                <h1 className="text-md lg:text-3xl font-bold lg:font-bold text-start">
                                     {benefit.title}
                                 </h1>
                                 <h1 className="text-sm text-[#767676] lg:text-2xl text-start">

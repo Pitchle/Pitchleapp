@@ -28,8 +28,8 @@ const Feature = () => {
     return (
         <section className="py-32 lg:py-44 px-4 md:px-16 lg:px-24 text-center relative">
             {/* Heading */}
-            <div className="mb-8 space-y-7 lg:space-y-16">
-                <h1 className="text-4xl lg:text-8xl font-bold text-[#01BF74] mb-4">
+            <div className="mb-8 space-y-5 lg:space-y-10">
+                <h1 className="text-4xl lg:text-8xl md:leading-[5rem] lg:leading-[7rem] font-bold text-[#01BF74] mb-4">
                     We Grow <br /> When You Grow
                 </h1>
                 <p className="text-lg lg:text-4xl">
