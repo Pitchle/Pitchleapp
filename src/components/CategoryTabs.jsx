@@ -55,7 +55,7 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
                     </div>
                 )}
             </div>
-            <div id="category-section" className="hidden space-x-8 md:flex w-full p-7 rounded-full bg-[#f6f6f6] justify-center mb-6 px-28">
+            <div id="category-section" className="hidden space-x-10 md:flex w-full p-7 rounded-full bg-[#f6f6f6] justify-center mb-6 px-16">
                 {categories.map((cat) => (
                     <button
                         key={cat.value}

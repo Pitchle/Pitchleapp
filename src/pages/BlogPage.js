@@ -195,8 +195,8 @@ const BlogPage = () => {
 
     return (
         <>
-            {majorBlog && (<div
-                className="flex flex-col lg:flex-row justify-between w-11/12 space-y-4 lg:space-y-0 lg:w-10/12 mx-auto lg:space-x-10 my-16">
+            {majorBlog && (
+                <div className="flex flex-col lg:flex-row justify-between w-11/12 space-y-4 lg:space-y-0 lg:w-10/12 mx-auto lg:space-x-10 my-16">
                 <MajorBlogCard post={majorBlog}/>
                 <div
                     className="w-full lg:w-6/12 bg-white p-6 rounded-xl"
