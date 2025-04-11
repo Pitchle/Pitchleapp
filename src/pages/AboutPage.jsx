@@ -119,7 +119,7 @@ const AboutPage = () => {
             ].map((section, index) => (
               <div
                 key={index}
-                className="p-4 sm:p-6 lg:p-8 text-start bg-gray-50 rounded-lg "
+                className="p-4 sm:p-6 lg:p-8 text-start rounded-lg "
               >
                 <div className="flex justify-center sm:justify-start items-center my-4 space-x-3">
                   <div>{section.icon}</div>
@@ -134,9 +134,9 @@ const AboutPage = () => {
             ))}
           </section>
           <section className="mt-0 sm:-mt-32 bg-white px-4 pb-20 pt-4">
-            <div className="container mx-auto">
-              <div className="mt-0 sm:mt-32  flex flex-wrap items-center">
-                <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
+            <div className=" mx-auto">
+              <div className="mt-0 sm:mt-32 flex flex-wrap items-center">
+                <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-3/12 lg:mt-0">
                   <div className="flex items-center px-2 justify-center scale-100 md:scale-105 lg:scale-110 space-x-2 md:space-x-2">
                     <img
                       src="/img/about/about1.png"
@@ -158,7 +158,7 @@ const AboutPage = () => {
                   >
                     Pitchle: Made for Business
                   </Typography>
-                  <Typography className="mb-8 font-normal text-black">
+                  <Typography className="mb-8 text-lg md:text-xl lg:text-lg font-normal text-black">
                     Social media today is largely focused on entertainment,
                     leaving a gap in the business sector. There's a clear need
                     for a platform that addresses business and commerce

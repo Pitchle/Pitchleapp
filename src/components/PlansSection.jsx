@@ -94,11 +94,11 @@ const PlansSection = () => {
           </div>
 
           {/* For Desktop View - All Cards in Row */}
-          <div className="hidden lg:grid grid-cols-3 gap-8 lg:gap-40">
+          <div className="hidden lg:grid grid-cols-3 gap-8 lg:gap-20">
             {plansData.map((plan, index) => (
               <div
                 key={index}
-                className="bg-gray-100 scale-110 my-10 space-y-5 p-[69px_14px_60px_14px]  rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer"
+                className="bg-gray-100 scale-110 my-10 space-y-5 p-[45px_14px_40px_14px]  rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer"
               >
                 <div className="flex justify-center py-4 mb-4">
                   <img
