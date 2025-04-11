@@ -119,11 +119,11 @@ const AboutPage = () => {
             ].map((section, index) => (
               <div
                 key={index}
-                className="p-4 sm:p-6 lg:p-8 text-start bg-gray-50 rounded-lg shadow-md"
+                className="p-4 sm:p-6 lg:p-8 text-start bg-gray-50 rounded-lg "
               >
                 <div className="flex justify-center sm:justify-start items-center my-4 space-x-3">
                   <div>{section.icon}</div>
-                  <h3 className="font-bold text-[#222222] text-lg sm:text-xl lg:text-xl">
+                  <h3 className="font-bold text-[#222222] text-lg sm:text-3xl lg:text-3xl">
                     {section.title}
                   </h3>
                 </div>
@@ -140,12 +140,12 @@ const AboutPage = () => {
                   <div className="flex items-center px-2 justify-center scale-100 md:scale-105 lg:scale-110 space-x-2 md:space-x-2">
                     <img
                       src="/img/about/about1.png"
-                      className="w-full md:w-auto h-1/2 sm:h-48 md:h-60 lg:h-[350px] rounded-lg"
+                      className="w-full md:w-auto h-1/2 sm:h-48 md:h-60 lg:h-[502px] rounded-lg"
                       alt="img"
                     />
                     <img
                       src="/img/about/about2.png"
-                      className="w-full md:w-auto h-2/3 sm:h-60 md:h-72 lg:h-[500px] rounded-lg"
+                      className="w-full md:w-auto h-2/3 sm:h-60 md:h-72 lg:h-[650px] rounded-lg"
                       alt="img"
                     />
                   </div>
@@ -153,12 +153,12 @@ const AboutPage = () => {
                 <div className="mx-auto mt-3 sm:-mt-8 w-full px-4 md:w-5/12">
                   <Typography
                     variant="h1"
-                    className=" mb-3 font-bold text-[#417DFF] text-2xl sm:text-2xl"
+                    className=" mb-10 font-bold text-[#417DFF] text-2xl sm:text-6xl"
                     color="blue-gray"
                   >
                     Pitchle: Made for Business
                   </Typography>
-                  <Typography className="mb-8 font-normal text-blue-gray-500">
+                  <Typography className="mb-8 font-normal text-black">
                     Social media today is largely focused on entertainment,
                     leaving a gap in the business sector. There's a clear need
                     for a platform that addresses business and commerce
