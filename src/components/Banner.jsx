@@ -69,7 +69,7 @@ const Banner = () => {
         Download Pitchle and start growing <br /> your business today!
       </p>
 
-      <div className="flex flex-wrap justify-center items-center gap-4 mt-5">
+      <div className="flex flex-row justify-center items-center gap-1 mt-5">
         <a
           href="https://apps.apple.com/us/app/pitchle/id6677026938"
           target="_blank"
@@ -97,7 +97,7 @@ const Banner = () => {
               src="/img/logo/playstore.png"
               alt=""
             />
-            <span className="text-md md:text-xl font-semibold">
+            <span className="text-base md:text-lg font-semibold">
               Google Play
             </span>
           </button>

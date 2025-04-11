@@ -61,7 +61,7 @@ const Footer = () => {
           draggable
           pauseOnHover
         />
-        <div className="w-11/12 mx-auto lg:p-0">
+        <div className="w-full sm:w-11/12 mx-auto lg:p-0">
           {/* Row 1: Brand (left) + Newsletter (right) */}
           <div className="flex flex-col md:flex-row md:justify-between gap-6">
             {/* Brand */}
@@ -81,8 +81,8 @@ const Footer = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="w-full lg:w-7/12">
-              <h3 className="text-3xl lg:text-3xl text-center md:text-left mb-4 font-extrabold tracking-wide">
+            <div className="w-full lg:w-6/12">
+              <h3 className="text-[1.3rem] lg:text-3xl text-center md:text-left mb-4 font-extrabold tracking-normal sm:tracking-wide">
                 Stay Updated with Our Latest News &amp; Offers!
               </h3>
               <p className="text-center md:text-left text-sm lg:text-lg mb-4 tracking-wider ">

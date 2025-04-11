@@ -2,9 +2,9 @@ import React from "react";
 
 const Introduction = () => {
   return (
-    <section className="flex flex-col items-center justify-center px-4  lg:px-16 xl:px-32 2xl:px-48">
+    <div className="container mx-auto px-2">
       <div className="text-center lg:h-screen flex items-center justify-center">
-        <h2 className=" text-4xl font-[700] md:text-6xl lg:font-bold leading-[3rem] md:leading-[4rem] lg:leading-[4.2rem]">
+        <h2 className=" text-4xl font-[700] md:text-5xl lg:font-bold leading-[3rem] md:leading-[4rem] lg:leading-[4.2rem]">
           Empowering Small <br /> Businesses to{" "}
           <span className="text-[#01BF74]  items-center gap-1 inline-flex">
             Grow
@@ -15,6 +15,7 @@ const Introduction = () => {
             />
           </span>{" "}
           and
+          <br />
           <span className="text-[#417DFF]  items-center gap-1 inline-flex">
             Succeed
             <img
@@ -26,7 +27,7 @@ const Introduction = () => {
           Equitably
         </h2>
       </div>
-    </section>
+    </div>
   );
 };
 

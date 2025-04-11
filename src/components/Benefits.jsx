@@ -41,28 +41,29 @@ const benefitsData = [
 const Benefits = () => {
   return (
     <>
-      <section className="px-4 sm:px-6">
-        <h1 className="text-4xl lg:text-6xl font-bold mt-20 mb-5 lg:my-28 text-center">
-          Discover all the benefits of Pitchle!
-        </h1>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 md:grid-cols-3  lg:grid-cols-3 gap-x-4 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
-          {benefitsData.map((benefit, index) => (
-            <div
-              key={index}
-              className="p-4 sm:p-6 lg:p-8 space-y-6 rounded-lg px-2 py-2 lg:px-0 bg-[#F5F5F5] md:bg-transparent"
-            >
-              <img
-                className="w-12 h-12 lg:w-20 mb-4 lg:h-20"
-                src={benefit.icon}
-                alt={benefit.title}
-              />
-              <h1 className="text-md lg:text-3xl font-bold lg:font-bold text-start">
-                {benefit.title}
-              </h1>
-              <h1 className="text-sm text-[#767676] lg:text-2xl text-start">
-                {benefit.description}
-              </h1>
-              {/* <div className="flex justify-center sm:justify-start items-center my-4 space-x-3">
+      <div className="container mx-auto px-2">
+        <section className="px-4 sm:px-6">
+          <h1 className="text-4xl lg:text-6xl font-bold mt-20 mb-5 lg:my-28 text-center">
+            Discover all the benefits of Pitchle!
+          </h1>
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 md:grid-cols-3  lg:grid-cols-3 gap-x-2 sm:gap-x-7 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
+            {benefitsData.map((benefit, index) => (
+              <div
+                key={index}
+                className="p-4 sm:p-6 lg:p-8 space-y-6 rounded-lg px-2 py-2 lg:px-0 bg-[#F5F5F5] md:bg-transparent"
+              >
+                <img
+                  className="w-12 h-12 lg:w-20 mb-4 lg:h-20"
+                  src={benefit.icon}
+                  alt={benefit.title}
+                />
+                <h1 className="text-md lg:text-3xl font-bold lg:font-bold text-start">
+                  {benefit.title}
+                </h1>
+                <h1 className="text-sm text-[#767676] lg:text-2xl text-start">
+                  {benefit.description}
+                </h1>
+                {/* <div className="flex justify-center sm:justify-start items-center my-4 space-x-3">
               <div>{section.icon}</div>
               <h3 className="font-bold text-[#222222] text-lg sm:text-xl lg:text-xl">
                 {section.title}
@@ -71,10 +72,11 @@ const Benefits = () => {
             <p className="text-start text-sm sm:text-base lg:text-lg font-[400] text-[#343434]">
               {section.description}
             </p> */}
-            </div>
-          ))}
-        </div>
-      </section>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </>
   );
 };
