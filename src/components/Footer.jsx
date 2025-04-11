@@ -8,7 +8,6 @@ const Footer = () => {
   const location = useLocation();
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
   const bgColor = location.pathname === "/blog" ? "bg-white" : "bg-[#f6f6f6]";
 
   const handleSubscribe = () => {
@@ -24,7 +23,6 @@ const Footer = () => {
       return;
     }
 
-    setSubscribed(true);
     setEmail("");
     setEmailError("");
 
@@ -83,7 +81,7 @@ const Footer = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="w-full lg:w-5/12">
+            <div className="w-full lg:w-7/12">
               <h3 className="text-3xl lg:text-3xl text-center md:text-left mb-4 font-extrabold tracking-wide">
                 Stay Updated with Our Latest News &amp; Offers!
               </h3>
@@ -102,7 +100,7 @@ const Footer = () => {
                   />
                   <button
                     onClick={handleSubscribe}
-                    className="ml-3 w-4/12 bg-[#417DFF] text-white text-base font-semibold text-center lg:text-xl px-2 lg:px-6 py-1 lg:py-2  rounded-full hover:bg-blue-600 transition  lg:w-1/5"
+                    className="ml-3 w-[min-content] bg-[#417DFF] text-white text-base font-semibold text-center lg:text-xl px-2 lg:px-6 py-1 lg:py-2  rounded-full hover:bg-blue-600 transition  lg:w-5/10"
                   >
                     Subscribe
                   </button>
