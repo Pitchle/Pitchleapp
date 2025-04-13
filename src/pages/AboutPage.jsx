@@ -37,7 +37,7 @@ const AboutPage = () => {
               />
             </div>
           </section>
-          <section className="mx-auto mt-10 grid max-w-2xl grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-4 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
+          <section className="mx-auto mt-10 grid max-w-2xl grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-4 gap-y-5 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
             {[
               {
                 title: "Who We Are",
@@ -123,11 +123,11 @@ const AboutPage = () => {
               >
                 <div className="flex lg:justify-center justify-start items-center my-4 space-x-3">
                   <div>{section.icon}</div>
-                  <h3 className="font-bold text-[#222222] text-lg sm:text-3xl lg:text-3xl">
+                  <h3 className="font-bold text-[#222222] text-xl sm:text-3xl lg:text-3xl">
                     {section.title}
                   </h3>
                 </div>
-                <p className="text-start text-sm sm:text-base lg:text-lg font-[400] text-[#343434]">
+                <p className="text-start text-[20px] sm:text-sm lg:text-lg font-[400] text-[#343434]">
                   {section.description}
                 </p>
               </div>

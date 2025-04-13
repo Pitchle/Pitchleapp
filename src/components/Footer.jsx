@@ -74,7 +74,7 @@ const Footer = () => {
                 />
                 <h2 className="text-3xl lg:text-4xl font-semibold">Pitchle</h2>
               </div>
-              <p className="text-center md:text-left text-lg lg:text-base mt-4 sm:w-auto w-1/2 font-medium">
+              <p className="text-center md:text-left text-[22pxs] lg:text-base mt-4 sm:w-auto w-1/2 font-medium">
                 The Social Network <br className="hidden md:block" />
                 for Business &amp; Commerce
               </p>
