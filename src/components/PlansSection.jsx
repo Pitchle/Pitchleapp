@@ -73,11 +73,11 @@ const PlansSection = () => {
             </div>
 
             {/* Bottom Two Cards */}
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-2">
               {mobileData.slice(1).map((plan, index) => (
                 <div
                   key={index}
-                  className="bg-gray-100 p-2 rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer w-44 md:w-80"
+                  className="bg-gray-100 p-1 rounded-2xl shadow-sm transition-transform transform hover:scale-105 cursor-pointer w-40 md:w-80"
                 >
                   <div className="flex justify-center mb-4">
                     <img
@@ -93,8 +93,7 @@ const PlansSection = () => {
             </div>
           </div>
 
-          {/* For Desktop View - All Cards in Row */}
-          <div className="hidden lg:grid grid-cols-3 gap-8 lg:gap-20">
+          <div className="hidden lg:grid grid-cols-3 gap-20 lg:gap-20">
             {plansData.map((plan, index) => (
               <div
                 key={index}
