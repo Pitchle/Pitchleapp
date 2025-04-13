@@ -39,7 +39,7 @@ const Navbar = () => {
                 alt="logo"
                 className="w-11 h-11 mb-1 lg:w-14 lg:h-14 rounded-full"
               />
-              <span className="text-lg lg:text-xl font-semibold text-gray-800">
+              <span className="text-lg mb-1 lg:text-xl font-semibold text-gray-800">
                 Pitchle
               </span>
             </Link>
