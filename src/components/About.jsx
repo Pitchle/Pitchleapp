@@ -54,7 +54,7 @@ const FeatureCard = ({
         }`}
       >
         {/* Video Section */}
-        <div className="w-11/12 mb-2 rounded-3xl md:w-1/2">
+        <div className="w-full mb-2 mx-auto rounded-3xl md:w-1/2">
           <video
             src={section.videoId}
             autoPlay
