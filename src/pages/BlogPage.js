@@ -16,14 +16,14 @@ const MajorBlogCard = ({ post }) => (
             alt="Main Article"
             className="w-full hover:scale-105 transition-transform duration-300 h-[300px] lg:h-[480px] mx-auto  rounded-xl mb-4"
         />
-        <p className="text-[#417dff] text-sm hidden lg:block font-semibold mb-1">{post.category}</p>
+        <p className="text-[#417dff] text-sm hidden lg:block capitalize font-semibold mb-1">{post.category}</p>
         <p className="mb-4 line-clamp-2 visible lg:hidden text-sm mt-4 lg:line-clamp-1">{post.description}</p>
         <Link to={`/blog/${post.slug.current}`}>
             <h2 className="text-xl lg:mt-3 lg:text-2xl font-bold lg:mb-2 hover:underline">
                 {post.title}
             </h2>
         </Link>
-        <p className="my-4 line-clamp-1 invisible lg:visible  text-sm">{post.description}</p>
+        <p className="my-4 line-clamp-1 invisible lg:visible text-sm">{post.description}</p>
         <div className="flex mt-4 items-center justify-between">
             <div className="flex items-center gap-2">
                 <img
@@ -52,7 +52,7 @@ const BlogCard = ({post}) => (
             className="w-full transition-transform duration-300 group-hover:scale-110 h-56 object-cover rounded-lg mb-4"
         />
         </div>
-        <p className="text-[#709dff] text-sm font-semibold mb-1">{post.category}</p>
+        <p className="text-[#709dff] text-sm capitalize font-semibold mb-1">{post.category}</p>
         <Link to={`/blog/${post.slug.current}`}>
             <h3 className="text-lg font-bold line-clamp-2 mb-2 hover:underline">{post.title}</h3>
             <p className="text-sm line-clamp-2 mb-2 hover:underline">
@@ -239,7 +239,7 @@ const BlogPage = () => {
                                         <img
                                             src={post.image?.asset?.url}
                                             alt="Latest Post"
-                                            className="w-full lg:w-9/12 mx-auto h-40 rounded-lg"
+                                            className="w-full lg:w-9/12 mx-auto h-40 lg:h-40 md:h-60 rounded-lg"
                                         />
                                     </div>
                                 </div>
@@ -279,7 +279,7 @@ const BlogPage = () => {
                                             className="w-full object-cover transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                         />
                                     </div>
-                                    <p className="text-[#417dff] font-sm mb-3">
+                                    <p className="text-[#417dff] capitalize font-sm mb-3">
                                         {promotePosts[0].category}
                                     </p>
                                     <Link to={`/blog/${promotePosts[0].slug.current}`}>
@@ -342,7 +342,7 @@ const BlogPage = () => {
                                             className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                         />
                                     </div>
-                                    <p className="text-[#417dff] mb-3">
+                                    <p className="text-[#417dff] capitalize mb-3">
                                         {sellPosts[0].category}
                                     </p>
                                     <Link to={`/blog/${sellPosts[0].slug.current}`}>
@@ -408,7 +408,7 @@ const BlogPage = () => {
                                             className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                         />
                                     </div>
-                                    <p className="text-[#417dff] mb-3">
+                                    <p className="text-[#417dff] capitalize mb-3">
                                         {partnerPosts[0].category}
                                     </p>
                                     <Link to={`/blog/${partnerPosts[0].slug.current}`}>

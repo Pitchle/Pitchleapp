@@ -171,7 +171,7 @@ const BlogDetail = () => {
     return (
         <>
             <div
-                className="fixed top-0 left-0 h-1 bg-blue-500 transition-all duration-200"
+                className="fixed top-0 left-0  h-1 bg-blue-500 transition-all duration-200"
                 style={{ width: `${scrollProgress}%` }}
             />
 
@@ -200,7 +200,7 @@ const BlogDetail = () => {
                     </nav>
 
                     <div className={"mt-28 lg:mt-40 flex justify-center"}>
-                        <h1 className="text-md  mx-auto text-white bg-[#417dff] rounded-full py-1 px-3 mb-7 lg:text-md text-center ">
+                        <h1 className="text-md capitalize  mx-auto text-white bg-[#417dff] rounded-full py-1 px-3 mb-7 lg:text-md text-center ">
                             {post.category}
                         </h1>
                     </div>
