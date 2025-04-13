@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav className={`w-full ${bgColor} `}>
-      <div className="w-11/12 lg:w-11/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-4 lg:px-6 py-2 lg:py-3 bg-white">
+      <div className="w-11/12 lg:w-11/12 mx-auto mt-4 border border-[#ECECEC] rounded-full px-2 lg:px-6 pt-0.5 lg:py-3 bg-white">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
@@ -37,7 +37,7 @@ const Navbar = () => {
               <img
                 src="/img/logo/logo.png"
                 alt="logo"
-                className="w-12 h-12 lg:w-14 lg:h-14 rounded-full"
+                className="w-11 h-11 lg:w-14 lg:h-14 rounded-full"
               />
               <span className="text-lg lg:text-xl font-semibold text-gray-800">
                 Pitchle

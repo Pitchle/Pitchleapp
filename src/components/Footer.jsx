@@ -70,11 +70,11 @@ const Footer = () => {
                 <img
                   src="/img/logo/logo.png"
                   alt="Pitchle Logo"
-                  className="w-20 h-20 scale-105 rounded-full"
+                  className="w-16 h-16 scale-105 rounded-full"
                 />
                 <h2 className="text-3xl lg:text-4xl font-semibold">Pitchle</h2>
               </div>
-              <p className="text-center md:text-left text-sm lg:text-base mt-4  sm:w-auto w-1/2 font-medium">
+              <p className="text-center md:text-left text-lg lg:text-base mt-4 sm:w-auto w-1/2 font-medium">
                 The Social Network <br className="hidden md:block" />
                 for Business &amp; Commerce
               </p>

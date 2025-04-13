@@ -121,7 +121,7 @@ const AboutPage = () => {
                 key={index}
                 className="p-4 sm:p-6 lg:p-8 text-start rounded-lg "
               >
-                <div className="flex justify-center sm:justify-start items-center my-4 space-x-3">
+                <div className="flex lg:justify-center justify-start items-center my-4 space-x-3">
                   <div>{section.icon}</div>
                   <h3 className="font-bold text-[#222222] text-lg sm:text-3xl lg:text-3xl">
                     {section.title}

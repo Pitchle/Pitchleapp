@@ -44,7 +44,7 @@ const Banner = () => {
                             loop
                             muted
                             playsInline
-                            className="w-[50vw] max-w-xs sm:max-w-md rounded-lg"
+                            className="w-[60vw] max-w-xs sm:max-w-md rounded-lg"
                         />
                     </div>
 
