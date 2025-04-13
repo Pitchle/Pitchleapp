@@ -54,14 +54,14 @@ const FeatureCard = ({
         }`}
       >
         {/* Video Section */}
-        <div className="w-11/12 m-2 rounded-3xl bg-white md:w-1/2">
+        <div className="w-11/12 mb-2 rounded-3xl md:w-1/2">
           <video
             src={section.videoId}
             autoPlay
             loop
             muted
             playsInline
-            className="w-full mx-auto px-2 pt-2 h-full rounded-3xl"
+            className="w-full animated-image mx-auto px-2 pt-2 h-full rounded-3xl"
           />
         </div>
         {/* Text Section */}
