@@ -2,6 +2,7 @@ import React, {useState, useRef} from 'react';
 import {CheckCircleIcon} from '@heroicons/react/24/solid';
 import {motion, AnimatePresence} from 'framer-motion';
 import Feature from "../components/Feature";
+import {Helmet} from "react-helmet";
 
 const tabs = ['User', 'Business', 'Investor'];
 
@@ -98,6 +99,11 @@ const Plan = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Plans & Pricing - Pitchle — Social Media for Business</title>
+                <meta name="description" content="Pitchle have cheapest price and planing in all social media industry" />
+                <meta name="keywords" content="pitchle plans,pricing, cheap pricing, competative pricing, pitchle, bussines, social media, video app, 30-60 second videos, pitchleapp" />
+            </Helmet>
             <div className="p-4 max-w-8xl mx-auto relative min-h-screen flex flex-col">
                 <h2 className="text-4xl md:text-9xl text-center font-[700] my-16">Find a Plan That’s <br/> Right For
                     You!</h2>

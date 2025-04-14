@@ -3,6 +3,7 @@ import {useLocation, Link} from "react-router-dom";
 import {client} from "../sanityClient";
 import {Spinner} from "@material-tailwind/react";
 import CategoryTabs from "../components/CategoryTabs";
+import {Helmet} from "react-helmet";
 
 const BlogData = () => {
     const location = useLocation();
@@ -60,6 +61,29 @@ const BlogData = () => {
 
     return (
         <>
+            <Helmet>
+                <title>
+                    {category
+                        ? `${category} — Pitchle — Social Media for Business`
+                        : "Pitchle — Social Media for Business"}
+                </title>
+                <meta
+                    name="description"
+                    content={
+                        category
+                            ? `Understand about Pitchle social media app through ${category}`
+                            : "Understand about Pitchle social media app"
+                    }
+                />
+                <meta
+                    name="keywords"
+                    content={
+                        category
+                            ? `${category}, pitchle, social media, business`
+                            : "pitchle, social media, business"
+                    }
+                />
+            </Helmet>
             <div className={"flex justify-center"}>
                 <div className=" w-full lg:w-10/12 px-4 py-8">
                     {/* Breadcrumb */}

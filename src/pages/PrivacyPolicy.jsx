@@ -1,8 +1,14 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 
 const PrivacyPolicy = () => {
     return (
         <>
+            <Helmet>
+                <title>Privacy Policy - Pitchle — Social Media for Business</title>
+                <meta name="description" content="Welcome to the home page of My Awesome Site where you find the best content." />
+                <meta name="keywords" content="privacy, policy, pitchle, bussines, social media, video app, 30-60 second videos, pitchleapp" />
+            </Helmet>
             <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-4xl font-bold text-gray-800 mb-8">Privacy Policy</h1>

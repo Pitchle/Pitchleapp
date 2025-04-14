@@ -7,6 +7,7 @@ import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiOutlineShare } from "react-icons/hi";
 import { urlFor } from "../sanityClient";
+import {Helmet} from "react-helmet";
 
 const BlogDetail = () => {
     const { slug } = useParams();
@@ -170,6 +171,17 @@ const BlogDetail = () => {
 
     return (
         <>
+            <Helmet>
+                <title>{post.title} — Pitchle — Social Media for Business</title>
+                <meta
+                    name="description"
+                    content={post.description}
+                />
+                <meta
+                    name="keywords"
+                    content={`${post.category}, pitchle, social media, business`}
+                />
+            </Helmet>
             <div
                 className="fixed top-0 left-0  h-1 bg-blue-500 transition-all duration-200"
                 style={{ width: `${scrollProgress}%` }}

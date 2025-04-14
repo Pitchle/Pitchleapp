@@ -5,6 +5,7 @@ import CategoryTabs from "../components/CategoryTabs";
 import {Spinner} from "@material-tailwind/react";
 import {toast, ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Helmet} from "react-helmet";
 
 const MajorBlogCard = ({ post }) => (
     <div
@@ -194,6 +195,12 @@ const BlogPage = () => {
     }
 
     return (
+        <>
+            <Helmet>
+                <title>Blogs- Pitchle — Social Media for Business</title>
+                <meta name="description" content="understand about pitchle social media app through unique blogs " />
+                <meta name="keywords" content="blogs, promote blog, bussines blog, sell & transfer blog, latest blogs, popular blogs, partners blog, pitchle, bussines, social media, video app, 30-60 second videos, pitchleapp" />
+            </Helmet>
         < div className={"bg-[#f6f6f6]"}>
             {majorBlog && (<div className="flex py-14  flex-col lg:flex-row justify-between w-11/12 space-y-4 lg:space-y-0 lg:w-10/12 mx-auto lg:space-x-10">
                 <MajorBlogCard post={majorBlog}/>
@@ -494,8 +501,8 @@ const BlogPage = () => {
                     pauseOnHover
                 />
         </div>
-    )
-        ;
+        </>
+    );
 };
 
 export default BlogPage;
