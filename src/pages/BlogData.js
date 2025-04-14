@@ -9,6 +9,7 @@ const BlogData = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const category = decodeURIComponent(queryParams.get("category") || "");
+    const [selectedCategory, setSelectedCategory] = useState("latest updates");
 
     // State to hold the fetched posts and the limit for "Load more"
     const [posts, setPosts] = useState([]);
@@ -214,7 +215,10 @@ const BlogData = () => {
                     </h3>
                 </div>
                 <div className={"w-9/12"}>
-                    <CategoryTabs/>
+                    <CategoryTabs
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
+                    />
                 </div>
             </div>
         </>

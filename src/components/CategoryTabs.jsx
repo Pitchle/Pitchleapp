@@ -21,6 +21,7 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
         // Redirect to the BlogData page with the chosen category
         navigate(`/blog-data?category=${encodeURIComponent(catValue)}`);
         setIsDrawerOpen(false);
+        window.scrollTo(0, 0);
     };
 
 
