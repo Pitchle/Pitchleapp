@@ -58,11 +58,11 @@ const CategoryTabs = ({ selectedCategory, setSelectedCategory }) => {
                     </div>
                 )}
             </div>
-            <div id="category-section" className={`hidden  space-x-10 lg:flex w-full p-7 rounded-full ${bgColor} justify-center mb-6 px-16`}>
+            <div id="category-section" className={`hidden  space-x-10 lg:flex w-full py-5 rounded-full ${bgColor} justify-center mb-6 px-10`}>
                 {categories.map((cat) => (
                     <button
                         key={cat.value}
-                        className={`px-2 py-2 hover:text-[#417dff] text-2xl font-semibold mx-2 ${
+                        className={`px-2 py-2 hover:text-[#417dff] text-2xl mx-2 ${
                             selectedCategory === cat.value
                                 ? " font-bold"
                                 : ""

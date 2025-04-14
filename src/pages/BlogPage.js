@@ -17,10 +17,10 @@ const MajorBlogCard = ({ post }) => (
             alt="Main Article"
             className="w-full hover:scale-105 transition-transform duration-300 h-[300px] lg:h-[480px] mx-auto  rounded-xl mb-4"
         />
-        <p className="text-[#417dff] text-sm hidden lg:block capitalize font-semibold mb-1">{post.category}</p>
+        <p className="text-[#417dff] text-sm hidden lg:block capitalize mb-1">{post.category}</p>
         <p className="mb-4 line-clamp-2 visible lg:hidden text-sm mt-4 lg:line-clamp-1">{post.description}</p>
         <Link to={`/blog/${post.slug.current}`}>
-            <h2 className="text-xl lg:mt-3 lg:text-2xl font-bold lg:mb-2 hover:underline">
+            <h2 className="text-xl lg:mt-3 lg:text-[20px] font-[600] lg:mb-2 hover:underline">
                 {post.title}
             </h2>
         </Link>
@@ -34,7 +34,7 @@ const MajorBlogCard = ({ post }) => (
                 />
                 <span className="text-sm font-semibold">Pitchle Team</span>
             </div>
-            <span className="text-gray-900">
+            <span className="text-[#343434] text-[12px] font-[400]">
         {new Date(post.publishedAt).toLocaleDateString()}
       </span>
         </div>
@@ -50,18 +50,18 @@ const BlogCard = ({post}) => (
         <img
             src={post.image?.asset?.url}
             alt="Post"
-            className="w-full transition-transform duration-300 group-hover:scale-110 h-56 object-cover rounded-lg mb-4"
+            className="w-full transition-transform duration-300 group-hover:scale-110 h-60 object-cover rounded-lg mb-4"
         />
         </div>
-        <p className="text-[#709dff] text-sm capitalize font-semibold mb-1">{post.category}</p>
+        <p className="text-[#709dff] text-sm capitalize  my-3">{post.category}</p>
         <Link to={`/blog/${post.slug.current}`}>
-            <h3 className="text-lg font-bold line-clamp-2 mb-2 hover:underline">{post.title}</h3>
+            <h3 className="text-lg lg:text-[20px] font-[600] line-clamp-2 mb-2 hover:underline">{post.title}</h3>
             <p className="text-sm line-clamp-2 mb-2 hover:underline">
                 {post.description}
             </p>
         </Link>
         <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center mt-2 gap-2">
+            <div className="flex items-center mt-4 gap-2">
                 <img
                     src="/img/logo/logo.png"
                     alt="Author"
@@ -69,7 +69,7 @@ const BlogCard = ({post}) => (
                 />
                 <span className="text-sm font-semibold">Pitchle Team</span>
             </div>
-            <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+            <span className={"text-[#343434] text-[12px] mt-4 font-[400]"}>{new Date(post.publishedAt).toLocaleDateString()}</span>
         </div>
     </div>
 );
@@ -224,12 +224,12 @@ const BlogPage = () => {
                                                 />
                                                 <p className="text-sm font-semibold">Pitchle Team</p>
                                             </div>
-                                            <p className="text-gray-800 text-sm mb-1">
+                                            <p className="text-[#343434] text-[12px] font-[400] mb-1">
                                                 {new Date(post.publishedAt).toLocaleDateString()}
                                             </p>
                                         </div>
                                         <Link to={`/blog/${post.slug.current}`}>
-                                            <h4 className="font-bold text-xl lg:text-[20px] font-[600]  mt-2 line-clamp-3 my-2 hover:underline">
+                                            <h4 className=" text-xl lg:text-[20px] font-[600]  mt-2 line-clamp-3 my-2 hover:underline">
                                                 {post.title}
                                             </h4>
                                         </Link>
@@ -290,7 +290,7 @@ const BlogPage = () => {
                                         {promotePosts[0].category}
                                     </p>
                                     <Link to={`/blog/${promotePosts[0].slug.current}`}>
-                                        <h3 className="text-xl font-bold mb-2 hover:underline">
+                                        <h3 className="text-xl lg:text-[20px] font-[600] mb-2 hover:underline">
                                             {promotePosts[0].title}
                                         </h3>
                                     </Link>
@@ -306,7 +306,7 @@ const BlogPage = () => {
                                             />
                                             <span className="text-sm font-semibold">Pitchle Team</span>
                                         </div>
-                                        <span>
+                                        <span className={"text-[#343434] text-[12px] font-[400]"}>
                     {new Date(promotePosts[0].publishedAt).toLocaleDateString()}
                   </span>
                                     </div>
@@ -314,7 +314,7 @@ const BlogPage = () => {
                             )}
                         </div>
                         <div
-                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
+                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[470px] lg:space-x-5 w-full lg:w-6/12">
                             {promotePosts.slice(1).map((post) => (
                                 <BlogCard key={post._id} post={post}/>
                             ))}
@@ -353,7 +353,7 @@ const BlogPage = () => {
                                         {sellPosts[0].category}
                                     </p>
                                     <Link to={`/blog/${sellPosts[0].slug.current}`}>
-                                        <h3 className="text-xl font-bold mb-2 hover:underline">
+                                        <h3 className="text-xl lg:text-[20px] font-[600] mb-2 hover:underline">
                                             {sellPosts[0].title}
                                         </h3>
                                     </Link>
@@ -371,7 +371,7 @@ const BlogPage = () => {
                       Pitchle Team
                     </span>
                                         </div>
-                                        <span>
+                                        <span className={"text-[#343434] text-[12px] font-[400]"}>
                     {new Date(sellPosts[0].publishedAt).toLocaleDateString()}
                   </span>
                                     </div>
@@ -379,7 +379,7 @@ const BlogPage = () => {
                             )}
                         </div>
                         <div
-                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
+                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[470px] lg:space-x-5 w-full lg:w-6/12">
                             {sellPosts.slice(1).map((post) => (
                                 <BlogCard key={post._id} post={post}/>
                             ))}
@@ -419,7 +419,7 @@ const BlogPage = () => {
                                         {partnerPosts[0].category}
                                     </p>
                                     <Link to={`/blog/${partnerPosts[0].slug.current}`}>
-                                        <h3 className="text-xl font-bold mb-2 hover:underline">
+                                        <h3 className="text-xl lg:text-[20px] font-[600] mb-2 hover:underline">
                                             {partnerPosts[0].title}
                                         </h3>
                                     </Link>
@@ -437,7 +437,7 @@ const BlogPage = () => {
                       Pitchle Team
                     </span>
                                         </div>
-                                        <span>
+                                        <span className={"text-[#343434] text-[12px] font-[400]"}>
                     {new Date(partnerPosts[0].publishedAt).toLocaleDateString()}
                   </span>
                                     </div>
@@ -445,7 +445,7 @@ const BlogPage = () => {
                             )}
                         </div>
                         <div
-                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[430px] lg:space-x-5 w-full lg:w-6/12">
+                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[470px] lg:space-x-5 w-full lg:w-6/12">
                             {partnerPosts.slice(1).map((post) => (
                                 <BlogCard key={post._id} post={post}/>
                             ))}

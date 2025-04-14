@@ -105,9 +105,9 @@ const Plan = () => {
                 <meta name="keywords" content="pitchle plans,pricing, cheap pricing, competative pricing, pitchle, bussines, social media, video app, 30-60 second videos, pitchleapp" />
             </Helmet>
             <div className="p-4 max-w-8xl mx-auto relative min-h-screen flex flex-col">
-                <h2 className="text-4xl md:text-9xl text-center font-[700] my-16">Find a Plan That’s <br/> Right For
+                <h2 className="text-4xl md:text-8xl text-center font-[700] my-16">Find a Plan That’s <br/> Right For
                     You!</h2>
-                <p className="text-center text-xl lg:text-4xl mb-20">Select your role and explore <br/> the subscription
+                <p className="text-center text-xl lg:text-3xl mb-20">Select your role and explore <br/> the subscription
                     plan.</p>
                 <div className="relative">
                     <div className="flex justify-center space-x-2 relative z-10">

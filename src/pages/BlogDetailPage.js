@@ -206,8 +206,7 @@ const BlogDetail = () => {
                             <span className="text-gray-800">Uncategorized</span>
                         )}
                         <span className="lg:mx-2 text-sm lg:text-xl lg:font-bold text-[#bcb4b4]">&gt;</span>
-                        <span
-                            className="text-sm lg:text-xl font-semibold text-[#417dff] mb-4 text-left w-full">{post.title.split(' ').slice(0, 6).join(' ')}...</span>
+                        <span className="text-sm lg:text-xl font-semibold text-[#417dff] mb-4 text-left w-full">{post.title.split(' ').slice(0, 6).join(' ')}...</span>
 
                     </nav>
 
@@ -242,7 +241,7 @@ const BlogDetail = () => {
 
                     {post.image?.asset?.url && (
                         <img
-                            className="w-11/12 lg:w-full h-[170px] mx-auto lg:h-[500px] object-fill rounded-2xl lg:rounded-3xl mb-6"
+                            className="w-11/12 lg:w-full h-[170px] mx-auto lg:h-[500px] object-cover rounded-2xl lg:rounded-3xl mb-6"
                             src={post.image.asset.url}
                             alt={post.title}
                         />
@@ -308,7 +307,7 @@ const BlogDetail = () => {
                 </div>
             </div>
 
-            <div className={"w-full flex justify-end"}>
+            <div className={"w-full flex my-20 justify-end"}>
                 <div className={"flex w-6/12 justify-center items-center space-x-5"}>
                     <FaFacebookF
                         className="hover:text-blue-600 text-2xl cursor-pointer"

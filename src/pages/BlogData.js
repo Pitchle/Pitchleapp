@@ -148,14 +148,14 @@ const BlogData = () => {
                                             className="w-full h-80 transition-transform duration-300 group-hover:scale-110 object-cover rounded mb-2"
                                         />
                                     </div>
-                                    <p className="text-[#4d85ff] mb-1">
+                                    <p className="text-[#4d85ff] capitalize mb-1">
                                         {post.category}
                                     </p>
                                     <Link
                                         to={`/blog/${post.slug.current}`}
                                         className="mt-2 "
                                     >
-                                        <h3 className="text-2xl hover:underline font-semibold mb-1 line-clamp-2">
+                                        <h3 className="text-xl lg:text-[20px] line-clamp-1 font-[600] hover:underline mb-1">
                                             {post.title}
                                         </h3>
                                         <p className="text-sm mt-3 text-gray-800 line-clamp-2 mb-2">
@@ -174,7 +174,7 @@ const BlogData = () => {
                                         Pitchle Team
                                     </span>
                                         </div>
-                                        <p className="text-sm">
+                                        <p className="text-[#343434] text-[12px] font-[400]">
                                             {new Date(post.publishedAt).toLocaleDateString()}
                                         </p>
                                     </div>

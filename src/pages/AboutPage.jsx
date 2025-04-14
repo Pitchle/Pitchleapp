@@ -18,12 +18,12 @@ const AboutPage = () => {
       <div className={"flex justify-center"}>
         <div className="p-4  w-full lg:w-10/12 flex justify-center flex-col mx-auto space-y-10 lg:space-y-40">
           <section className="flex flex-col mx-auto lg:flex-row items-center mt-6 lg:mt-16 justify-evenly">
-            <div className="lg:w-7/12 space-y-7 lg:space-y-12">
+            <div className="lg:w-7/12 space-y-7 lg:ms-10 lg:space-y-12">
               <h1 className="text-[40px] font-[700] lg:text-8xl text-center lg:text-start text-[#417DFF]">
                 About <br className={"hidden lg:block"}/> Company
               </h1>
-              <p className=" text-sm lg:text-2xl text-center lg:text-start">
-                At Pitchle, we empower small businesses to thrive through short,
+              <p className=" lg:w-10/12 text-sm lg:text-xl text-center lg:text-start">
+                At Pitchle, we empower small businesses to thrive through short
                 impactful videos. Unlike traditional social media, Pitchle is
                 built for business, advocating for eco-friendly practices while
                 providing all businesses a platform to grow equitably.
@@ -32,12 +32,12 @@ const AboutPage = () => {
             <div className="w-8/12 lg:w-6/12 mt-20 ms-0 lg:ms-40 flex justify-end lg:mt-0">
               <img
                 src="/img/about/about_main.png"
-                className="lg:w-[260px] w-fit mt-10 lg:mt-0 mx-auto p-4 scale-125 h-[400px] lg:h-[500px] rounded-lg"
+                className="lg:w-[240px] w-fit mt-10 lg:mt-0 mx-auto p-4 scale-125 h-[400px] lg:h-[450px] rounded-lg"
                 alt={"img"}
               />
             </div>
           </section>
-          <section className="mx-auto mt-10 grid max-w-2xl grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-4 gap-y-5 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
+          <section className="mx-auto mt-10 grid max-w-2xl grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-4 gap-y-5 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
             {[
               {
                 title: "Who We Are",
@@ -119,15 +119,15 @@ const AboutPage = () => {
             ].map((section, index) => (
               <div
                 key={index}
-                className="p-4 sm:p-6 lg:p-8 text-start rounded-lg "
+                className="p-4 sm:p-6 lg:py-8 lg:px-4  text-start rounded-lg "
               >
                 <div className="flex justify-start items-center my-4 space-x-3">
                   <div>{section.icon}</div>
-                  <h3 className="font-bold text-[#222222] text-xl sm:text-3xl lg:text-3xl">
+                  <h3 className="font-bold text-[#222222] text-xl sm:text-3xl lg:text-[32px]">
                     {section.title}
                   </h3>
                 </div>
-                <p className="text-start text-[20px] sm:text-sm lg:text-lg font-[400] text-[#343434]">
+                <p className="text-start text-[20px] sm:text-sm  lg:text-lg font-[400] text-[#343434]" style={{ lineHeight: '1.2' }}>
                   {section.description}
                 </p>
               </div>
@@ -137,23 +137,23 @@ const AboutPage = () => {
             <div className=" mx-auto">
               <div className="mt-0 sm:mt-32 flex flex-wrap items-center">
                 <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-3/12 lg:mt-0">
-                  <div className="flex items-center px-2 justify-center scale-100 md:scale-105 lg:scale-110 space-x-2 md:space-x-2">
+                  <div className="flex items-center px-2 justify-center space-x-2 md:space-x-2">
                     <img
                       src="/img/about/about1.png"
-                      className="w-full md:w-auto h-1/2 sm:h-48 md:h-60 lg:h-[502px] rounded-lg"
+                      className="w-full md:w-auto sub-image-scaler  rounded-lg"
                       alt="img"
                     />
                     <img
                       src="/img/about/about2.png"
-                      className="w-full md:w-auto h-2/3 sm:h-60 md:h-72 lg:h-[650px] rounded-lg"
+                      className="w-full md:w-auto h-2/3 image-scaler rounded-lg"
                       alt="img"
                     />
                   </div>
                 </div>{" "}
-                <div className="mx-auto mt-3 sm:-mt-8 w-full px-4 md:w-5/12">
+                <div className="mx-auto mt-3 sm:-mt-8  w-full px-4 md:w-5/12">
                   <Typography
                     variant="h1"
-                    className=" mb-10 font-bold text-[#417DFF] text-2xl sm:text-6xl"
+                    className=" mb-10 font-bold  about-heading text-[#417DFF] "
                     color="blue-gray"
                   >
                     Pitchle: Made for Business
@@ -331,18 +331,18 @@ const AboutPage = () => {
                   <h1 className="text-4xl lg:text-6xl font-bold mb-8">
                     We Care
                   </h1>
-                  <p className="text-lg mb-4">
+                  <p className="text-lg md:text-[20px] lg:font-[400] mb-4" style={{ lineHeight: '1.2' }}>
                     Pitchle is more than a platform. We're the partner your
                     business needs to grow. We innovate, collaborate, and
                     empower success equitably, offering accessible tools that
                     help all businesses thrive.
                   </p>
-                  <p className="text-lg mb-8 lg:mb-0">
+                  <p className="text-lg md:text-[20px] lg:font-[400] mb-8 lg:mb-0">
                     Every business deserves the chance to shine, and we're here
                     to make that happen.
                   </p>
                 </div>
-                <div className="w-full md:w-1/3 p-14 bg-[#417DFF] text-white rounded-3xl">
+                <div className="w-full md:w-1/3  about-box-size bg-[#417DFF] text-white rounded-3xl">
                   <svg
                     width="80"
                     height="80"
@@ -362,10 +362,10 @@ const AboutPage = () => {
                     />
                   </svg>
 
-                  <h2 className="text-2xl lg:text-[30px]  mb-4 mt-4 font-bold ">
+                  <h2 className="text-2xl lg:text-[31px]  mb-4 mt-4 font-bold ">
                     Supporting Small Businesses
                   </h2>
-                  <p>
+                  <p className={"text-[18px] font-[400]"} style={{ lineHeight: '1.2' }}>
                     We empower small businesses by connecting them with new
                     opportunities, partners, and customers.
                   </p>
@@ -374,7 +374,7 @@ const AboutPage = () => {
 
               {/* Second Row */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-14 bg-gray-100 rounded-3xl">
+                <div className="about-box-size bg-gray-100 rounded-3xl">
                   <svg
                     width="80"
                     height="80"
@@ -391,12 +391,12 @@ const AboutPage = () => {
                   <h2 className="text-xl lg:text-[30px]  mb-4 mt-4 font-bold">
                     Inclusivity & Equal Opportunities
                   </h2>
-                  <p>
+                  <p className={"text-[18px] text-[#767676] font-[400]"} style={{ lineHeight: '1.2' }}>
                     We support diversity, ensuring everyone has access to growth
                     and success.
                   </p>
                 </div>
-                <div className="p-10 bg-[#417DFF] text-white rounded-3xl">
+                <div className="about-box-size bg-[#417DFF] text-white rounded-3xl">
                   <svg
                     width="80"
                     height="80"
@@ -413,12 +413,12 @@ const AboutPage = () => {
                   <h2 className="text-xl lg:text-[30px]  mb-4 mt-4 font-bold">
                     Sustainability & Eco Trends
                   </h2>
-                  <p>
+                  <p className={"text-[18px] font-[400]"} style={{ lineHeight: '1.2' }}>
                     We advocate for businesses that prioritize eco-friendly
                     products and sustainable, responsible practices.
                   </p>
                 </div>
-                <div className="p-10 bg-gray-100 rounded-3xl">
+                <div className="about-box-size bg-gray-100 rounded-3xl">
                   <svg
                     width="80"
                     height="80"
@@ -435,7 +435,7 @@ const AboutPage = () => {
                   <h2 className="text-xl lg:text-[30px]  mb-4 mt-4 font-bold ">
                     Helping Businesses Grow
                   </h2>
-                  <p>
+                  <p className={"text-[18px] text-[#767676] font-[400]"} style={{ lineHeight: '1.2' }}>
                     Our platform provides tools for promotion, networking, and
                     scaling businesses.
                   </p>
