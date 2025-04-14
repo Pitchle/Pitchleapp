@@ -37,7 +37,7 @@ const AboutPage = () => {
               />
             </div>
           </section>
-          <section className="mx-auto mt-10 grid max-w-2xl grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-4 gap-y-5 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
+          <section className="mx-auto mt-10 grid max-w-2xl grid-cols-1 md:grid-cols-2 ms-5 lg:ms-0 lg:grid-cols-3 gap-x-4 gap-y-5 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
             {[
               {
                 title: "Who We Are",
@@ -127,7 +127,7 @@ const AboutPage = () => {
                     {section.title}
                   </h3>
                 </div>
-                <p className="text-start text-[20px] sm:text-sm  lg:text-lg font-[400] text-[#343434]" style={{ lineHeight: '1.2' }}>
+                <p className="text-start text-[16px] sm:text-sm  lg:text-lg font-[400] text-[#343434]" style={{ lineHeight: '1.2' }}>
                   {section.description}
                 </p>
               </div>
@@ -328,21 +328,21 @@ const AboutPage = () => {
             <div className="w-full mx-auto">
               <div className="flex flex-col justify-between md:flex-row items-start gap-1 lg:gap-8 mb-12">
                 <div className="w-full md:w-6/12">
-                  <h1 className="text-4xl lg:text-6xl font-bold mb-8">
+                  <h1 className="text-4xl ms-5 lg:ms-0 lg:text-6xl font-bold mb-8">
                     We Care
                   </h1>
-                  <p className="text-lg md:text-[20px] lg:font-[400] mb-4" style={{ lineHeight: '1.2' }}>
+                  <p className="text-lg ms-5 lg:ms-0 md:text-[20px] lg:font-[400] mb-4" style={{ lineHeight: '1.2' }}>
                     Pitchle is more than a platform. We're the partner your
                     business needs to grow. We innovate, collaborate, and
                     empower success equitably, offering accessible tools that
                     help all businesses thrive.
                   </p>
-                  <p className="text-lg md:text-[20px] lg:font-[400] mb-8 lg:mb-0">
+                  <p className="text-lg ms-5 lg:ms-0 md:text-[20px] lg:font-[400] mb-8 lg:mb-0">
                     Every business deserves the chance to shine, and we're here
                     to make that happen.
                   </p>
                 </div>
-                <div className="w-full md:w-1/3  about-box-size bg-[#417DFF] text-white rounded-3xl">
+                <div className="w-full  md:w-1/3 about-box-size bg-[#417DFF] text-white rounded-3xl">
                   <svg
                     width="80"
                     height="80"
@@ -373,7 +373,7 @@ const AboutPage = () => {
               </div>
 
               {/* Second Row */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 -mt-6 lg:mt-0 gap-6">
                 <div className="about-box-size bg-gray-100 rounded-3xl">
                   <svg
                     width="80"

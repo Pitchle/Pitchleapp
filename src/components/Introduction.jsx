@@ -26,8 +26,8 @@ const Introduction = () => {
           Equitably
         </h2>
       </div>
-      <div className="text-center flex lg:h-screen md:hidden items-center justify-center">
-        <h2 className=" text-[32px] sm:text-[34px] font-[700] md:text-6xl lg:font-bold leading-[3rem] md:leading-[4rem] lg:leading-[4.2rem] tracking-wider">
+      <div className="text-center flex lg:h-screen  md:hidden items-center justify-center">
+        <h2 className=" text-[30px] sm:text-[30px] mt-14 mb-28 font-[700] md:text-6xl lg:font-bold leading-[2.2rem] md:leading-[4rem] lg:leading-[4.2rem] tracking-wider">
           Empowering Small {" "}<span>Businesses</span> <br/> <span> to {" "} </span>
           <span className="text-[#01BF74]  items-center gap-1 inline-flex">Grow
             <img

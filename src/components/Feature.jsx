@@ -32,7 +32,7 @@ const Feature = () => {
         <h1 className="text-4xl lg:text-8xl md:leading-[5rem] lg:leading-[7rem] font-bold text-[#01BF74] mb-4">
           We Grow <br /> When You Grow
         </h1>
-        <p className="text-lg lg:text-[32px] lg:font-[400] leading-10">
+        <p className="text-lg lg:text-[32px] lg:font-[400] leading-6 text-[#343434] lg:leading-10">
           Download Pitchle and Start Growing <br />
           Your Business Today!
         </p>

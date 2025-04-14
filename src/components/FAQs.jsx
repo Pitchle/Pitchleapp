@@ -120,8 +120,8 @@ const FaQs = () => {
                                 style={{backgroundColor: expandedItems[index] ? 'rgba(255, 255, 255, 0.9)' : 'transparent'}}
                             >
                                 {expandedItems[index] && (
-                                    <div className="p-8 text-black">
-                                        <p className="text-lg text-justify leading-6 lg:text-start"
+                                    <div className="py-8 px-4 lg:p-8 text-black">
+                                        <p className="text-[14px] lg:text-xl leading-6 lg:text-start"
                                            dangerouslySetInnerHTML={{__html: faq.answer}}/>
                                     </div>
                                 )}

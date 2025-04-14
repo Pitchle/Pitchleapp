@@ -46,18 +46,18 @@ const Benefits = () => {
           <h1 className="text-4xl lg:text-6xl font-bold mt-20 mb-5 lg:my-28 text-center">
             Discover all the benefits of Pitchle!
           </h1>
-          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 md:grid-cols-3 lg:ms-16 lg:grid-cols-3 gap-2 sm:gap-7 lg:gap-10 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 md:grid-cols-3 lg:ms-16 lg:grid-cols-3 gap-1 px-1 lg:px-0 sm:gap-7 lg:gap-10 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
             {benefitsData.map((benefit, index) => (
               <div
                 key={index}
-                className=" sm:p-6  lg:p-8 space-y-6 rounded-lg px-1 py-2 lg:px-0 bg-[#F5F5F5] md:bg-transparent"
+                className=" sm:p-6 lg:p-8 space-y-2 lg:space-y-6 rounded-xl px-1 py-2 lg:px-0 bg-[#F5F5F5] md:bg-transparent"
               >
                 <img
                   className="w-12 h-12 lg:w-20 mb-4 lg:h-20"
                   src={benefit.icon}
                   alt={benefit.title}
                 />
-                <h1 className="text-md lg:text-3xl font-bold lg:font-bold text-start">
+                <h1 className="text-[16px] lg:text-3xl font-bold lg:font-bold text-start">
                   {benefit.title}
                 </h1>
                 <h1 className="text-sm text-[#767676] lg:text-[20px] lg:font-[400] lg:leading-7 text-start">
