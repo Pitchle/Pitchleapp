@@ -1,16 +1,15 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
         <section className="flex flex-col items-center justify-center px-4 py-10 lg:px-16 xl:px-32 2xl:px-48">
             {/* Heading */}
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-center mt-2 lg:mt-10 leading-tight">
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-center mt-2 lg:mt-2 leading-tight">
                 <span className="text-[#01BF74]">Revolutionize</span> Business <br /> with Short Videos!
             </h1>
 
             {/* Video and Buttons Section */}
-            <div className="relative mt-10 lg:mt-20 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
+            <div className="relative mt-10 lg:-mt-5 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
                 {/* Desktop View */}
                 <div className="hidden lg:flex -mt-20 items-center gap-10 xl:gap-20">
                     {/* Left Side Buttons */}
