@@ -62,7 +62,7 @@ const Banner = () => {
             </div>
 
             {/* Text and Download Buttons */}
-            <p className="text-center text-lg sm:text-xl md:text-2xl lg:text-4xl my-8 leading-snug">
+            <p className="text-center text-lg lg:font-[400] sm:text-xl md:text-2xl lg:text-[32px] my-8 leading-snug">
                 Download Pitchle and start growing <br /> your business today!
             </p>
 

@@ -32,7 +32,7 @@ const Feature = () => {
         <h1 className="text-4xl lg:text-8xl md:leading-[5rem] lg:leading-[7rem] font-bold text-[#01BF74] mb-4">
           We Grow <br /> When You Grow
         </h1>
-        <p className="text-lg lg:text-4xl">
+        <p className="text-lg lg:text-[32px] lg:font-[400] leading-10">
           Download Pitchle and Start Growing <br />
           Your Business Today!
         </p>
@@ -46,7 +46,7 @@ const Feature = () => {
       >
         <button
           onClick={handleClick}
-          className="bg-[#417DFF] hover:bg-[#049c60] text-white py-3 lg:py-4 px-20 lg:px-10 rounded-full shadow-md transition flex items-center space-x-2 text-sm lg:text-base"
+          className="bg-[#417DFF] hover:bg-[#049c60] text-white py-3 lg:py-3 px-20 lg:px-6 rounded-full shadow-md transition flex items-center space-x-2 text-sm lg:text-base"
         >
           <span className="text-xl">Scan to Install</span>
           <svg

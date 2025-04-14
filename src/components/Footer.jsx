@@ -85,7 +85,7 @@ const Footer = () => {
               <h3 className="text-[1.3rem] lg:text-3xl text-center md:text-left mb-4 font-extrabold tracking-normal sm:tracking-wide">
                 Stay Updated with Our Latest News &amp; Offers!
               </h3>
-              <p className="text-center md:text-left text-sm lg:text-lg mb-4 tracking-wider ">
+              <p className="text-center md:text-left text-sm lg:text-lg mb-4 tracking-tight ">
                 Subscribe to our newsletter for exclusive updates, business
                 tips, and special offers.
               </p>
@@ -96,11 +96,11 @@ const Footer = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your Email"
-                    className="border-2 border-blue-500 placeholder-black placeholder:text-sm rounded-full px-4 py-3 lg:py-4 focus:outline-none w-2/3 lg:w-8/12"
+                    className="border-2 border-blue-500 placeholder-black placeholder:text-sm rounded-full px-4 py-3 lg:py-3 focus:outline-none w-2/3 lg:w-8/12"
                   />
                   <button
                     onClick={handleSubscribe}
-                    className="ml-3 w-[min-content] bg-[#417DFF] text-white text-base font-semibold text-center lg:text-xl px-2 lg:px-6 py-1 lg:py-2  rounded-full hover:bg-blue-600 transition  lg:w-5/10"
+                    className="ml-3 w-[min-content] bg-[#417DFF] text-white text-base font-semibold text-center lg:text-xl px-2 lg:px-6 py-1 lg:py-0  rounded-full hover:bg-blue-600 transition  lg:w-5/10"
                   >
                     Subscribe
                   </button>
@@ -119,7 +119,7 @@ const Footer = () => {
                     <h4 className="font-bold text-lg lg:text-xl mb-4">
                       Company
                     </h4>
-                    <ul className="space-y-2 text-sm lg:text-base">
+                    <ul className="space-y-1 text-sm lg:text-base">
                       {[
                         { name: "About Us", path: "/about" },
                         { name: "Plans", path: "/plans" },
@@ -147,7 +147,7 @@ const Footer = () => {
                   {/* Legal */}
                   <div>
                     <h4 className="font-bold text-lg lg:text-xl mb-4">Legal</h4>
-                    <ul className="space-y-2 text-sm lg:text-base">
+                    <ul className="space-y-1 text-sm lg:text-base">
                       {[
                         { name: "Privacy Policy", path: "/privacy" },
                         { name: "Terms of Services", path: "/terms" },
@@ -178,7 +178,7 @@ const Footer = () => {
                     </a>
                     <div className="flex mt-4 space-x-2">
                       <a
-                        href="https://www.linkedin.com/"
+                        href="https://www.linkedin.com/company/pitchle/?viewAsMember=true"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -187,7 +187,7 @@ const Footer = () => {
                         </div>
                       </a>
                       <a
-                        href="https://www.youtube.com/"
+                        href="https://www.youtube.com/@Pitchle"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

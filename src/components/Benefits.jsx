@@ -41,12 +41,12 @@ const benefitsData = [
 const Benefits = () => {
   return (
     <>
-      <div className="container mx-auto px-2">
+      <div className="container mx-auto lg:mt-60 px-2">
         <section>
           <h1 className="text-4xl lg:text-6xl font-bold mt-20 mb-5 lg:my-28 text-center">
             Discover all the benefits of Pitchle!
           </h1>
-          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 md:grid-cols-3  lg:grid-cols-3 gap-2 sm:gap-7  border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none l:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-2 md:grid-cols-3 lg:ms-16 lg:grid-cols-3 gap-2 sm:gap-7 lg:gap-10 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
             {benefitsData.map((benefit, index) => (
               <div
                 key={index}
@@ -60,7 +60,7 @@ const Benefits = () => {
                 <h1 className="text-md lg:text-3xl font-bold lg:font-bold text-start">
                   {benefit.title}
                 </h1>
-                <h1 className="text-sm text-[#767676] lg:text-2xl text-start">
+                <h1 className="text-sm text-[#767676] lg:text-[20px] lg:font-[400] lg:leading-7 text-start">
                   {benefit.description}
                 </h1>
                 {/* <div className="flex justify-center sm:justify-start items-center my-4 space-x-3">

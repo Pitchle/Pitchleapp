@@ -2,8 +2,8 @@ import React from "react";
 
 const Introduction = () => {
   return (
-    <div className="container mx-auto px-2 my-20 lg:my-0">
-      <div className="text-center hidden md:flex lg:h-screen  items-center justify-center">
+    <div className="container mx-auto px-2 my-20 lg:mt-32 lg:mb-72">
+      <div className="text-center hidden md:flex  items-center justify-center">
         <h2 className=" text-[32px] sm:text-[34px] font-[700] md:text-6xl lg:font-bold leading-[3rem] md:leading-[4rem] lg:leading-[4.2rem] tracking-wider">
           Empowering Small <br /> Businesses to{" "}
           <span className="text-[#01BF74]  items-center gap-1 inline-flex">

@@ -19,8 +19,8 @@ const AboutPage = () => {
         <div className="p-4  w-full lg:w-10/12 flex justify-center flex-col mx-auto space-y-10 lg:space-y-40">
           <section className="flex flex-col mx-auto lg:flex-row items-center mt-6 lg:mt-16 justify-evenly">
             <div className="lg:w-7/12 space-y-7 lg:space-y-12">
-              <h1 className="text-[40px] font-[700] lg:text-6xl text-center lg:text-start text-[#417DFF]">
-                About Company
+              <h1 className="text-[40px] font-[700] lg:text-8xl text-center lg:text-start text-[#417DFF]">
+                About <br className={"hidden lg:block"}/> Company
               </h1>
               <p className=" text-sm lg:text-2xl text-center lg:text-start">
                 At Pitchle, we empower small businesses to thrive through short,

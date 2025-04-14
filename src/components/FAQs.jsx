@@ -86,7 +86,7 @@ const FaQs = () => {
     }, [location]);
     return (
         <>
-            <h1 id="FAQ" className="text-4xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-7xl dark:text-white">
+            <h1 id="FAQ" className="text-4xl ms-0 text-center lg:text-start lg:ms-32 mt-10 lg:mt-20 font-semibold  text-gray-800 lg:text-6xl dark:text-white">
                 <span className={"text-[#01BF74]"}> Got any questions?</span> <br/> <span className={"text-[#DFDFDF]"}>We’ve got answers.</span>
             </h1>
 
@@ -121,7 +121,7 @@ const FaQs = () => {
                             >
                                 {expandedItems[index] && (
                                     <div className="p-8 text-black">
-                                        <p className="text-lg text-justify lg:text-start"
+                                        <p className="text-lg text-justify leading-6 lg:text-start"
                                            dangerouslySetInnerHTML={{__html: faq.answer}}/>
                                     </div>
                                 )}

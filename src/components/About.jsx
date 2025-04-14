@@ -65,11 +65,11 @@ const FeatureCard = ({
           />
         </div>
         {/* Text Section */}
-        <div className="p-5 lg:p-16 w-full flex justify-center items-start flex-col md:w-1/2">
-          <h3 className="text-2xl my-2 lg:my-5 lg:text-5xl font-semibold">
+        <div className="p-5 lg:p-16 lg:mb-20 w-full flex justify-center items-start flex-col md:w-1/2">
+          <h3 className="text-2xl my-2 lg:my-5 lg:text-4xl font-semibold">
             {section.title}
           </h3>
-          <p className="mt-2 text-lg font-light lg:text-4xl">
+          <p className="mt-2 text-lg font-light lg:text-2xl">
             {section.description}
           </p>
         </div>
