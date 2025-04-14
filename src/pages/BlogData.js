@@ -207,7 +207,7 @@ const BlogData = () => {
             <div className={"h-screen flex justify-center items-center flex-col"}>
                 <div
                     className="w-11/12 mb-32  mx-auto lg:w-10/12 my-12 scale-100 lg:scale-110 flex flex-col justify-center items-center">
-                    <h3 className="text-3xl flex flex-col  justify-center items-center text-center lg:text-7xl font-bold md:text-center mb-2"
+                    <h3 className="intersted-font flex flex-col  justify-center items-center text-center font-bold md:text-center mb-2"
                         style={{lineHeight: "1.2em"}}>
                         Not interested in anything? <br/>
                         Maybe you're just in the wrong category.

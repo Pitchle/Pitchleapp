@@ -320,7 +320,7 @@ const BlogPage = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="flex justify-center mt-20">
+                    <div className="flex justify-center my-28">
                         <Link to={`/blog-data?category=${encodeURIComponent("promote")}`}>
                             <button
                                 className="px-12 text-xl font-semibold py-4 bg-[#01BF74]  text-white rounded-full shadow-lg transition">
@@ -385,7 +385,7 @@ const BlogPage = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="flex justify-center mt-20">
+                    <div className="flex justify-center my-28">
                         <Link to={`/blog-data?category=${encodeURIComponent("sell & transfer")}`}>
                             <button
                                 className=" px-12 text-xl font-semibold py-4 bg-[#417DFF] text-white rounded-full shadow-lg transition">
@@ -451,7 +451,7 @@ const BlogPage = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="flex justify-center mt-20">
+                    <div className="flex justify-center my-28">
                         <Link to={`/blog-data?category=${encodeURIComponent("partners & investors")}`}>
                             <button
                                 className="font-semibold px-12 text-xl py-4 bg-[#01BF74] text-white rounded-full shadow-lg transition">

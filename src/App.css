@@ -399,6 +399,9 @@
   .about-box-size{
     padding: 25px 15px 25px 15px;
   }
+  .intersted-font{
+    font-size: 28px;
+  }
 }
 
 /* iPad / Tablet screens */
@@ -414,6 +417,9 @@
   }
   .about-box-size{
     padding: 25px 10px 25px 10px;
+  }
+  .intersted-font{
+    font-size: 32px;
   }
 
 }
@@ -432,6 +438,12 @@
   .about-box-size{
     padding: 35px 20px 35px 20px;
   }
+  .intersted-font{
+    font-size: 35px;
+  }
+  .category-title{
+    font-size: 14px;
+  }
 }
 
 /* 2K and larger screens */
@@ -447,6 +459,12 @@
   }
   .about-box-size{
     padding: 3.5rem 3.4rem 3.5rem 3.4rem ;
+  }
+  .intersted-font{
+    font-size: 40px;
+  }
+  .category-title{
+    font-size: 24px;
   }
 
 }
