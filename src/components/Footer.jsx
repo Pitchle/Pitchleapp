@@ -68,15 +68,27 @@ const Footer = () => {
             <div className="flex flex-col justify-center items-center md:items-start mb-8 self-baseline">
               <div className="flex items-center space-x-3">
                 <img
-                  src="/img/logo/logo.png"
-                  alt="Pitchle Logo"
-                  className="w-16 h-16 scale-105 rounded-full"
+                    src="/img/logo/logo.png"
+                    alt="Pitchle Logo"
+                    className="w-16 h-16 scale-105 rounded-full"
                 />
                 <h2 className="text-3xl lg:text-4xl font-semibold">Pitchle</h2>
               </div>
-              <p className="text-center md:text-left text-[22pxs] lg:text-base mt-4 sm:w-auto w-1/2 font-medium">
-                The Social Network <br className="hidden md:block" />
-                for Business &amp; Commerce
+              <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] text-[#545454] lg:text-base mt-4 sm:w-auto w-10/12 font-medium">
+                Shop Sustainably <br className="hidden md:block"/>
+                Sustainable shopping
+              </p>
+              <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-8 sm:w-auto w-10/12 font-medium">
+                Verified Sustainable Commerce
+              </p>
+              <p className="text-center ms-3 bg-[#ffff00] md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">
+                Video commerce for sustainable products
+              </p>
+              <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">
+                Proof-first video shopping
+              </p>
+              <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">
+                Shop by proof
               </p>
             </div>
 

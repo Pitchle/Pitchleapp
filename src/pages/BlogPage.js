@@ -256,18 +256,18 @@ const BlogPage = () => {
                     </div>
                 </div>
             </div>)}
-            <h1 className="text-4xl text-[#343434] ms-24 mt-40 hidden lg:block my-4 font-bold">
-                    Choose a topic that fits <br/> your interests!
-                </h1>
-                <div className={"w-9/12 flex justify-self-end me-10 pb-10"}>
-                    <CategoryTabs
-                        selectedCategory={selectedCategory}
-                        setSelectedCategory={setSelectedCategory}
-                    />
-                </div>
+            {/*<h1 className="text-4xl text-[#343434] ms-24 mt-40 hidden lg:block my-4 font-bold">*/}
+            {/*        Choose a topic that fits <br/> your interests!*/}
+            {/*    </h1>*/}
+                {/*<div className={"w-9/12 flex justify-self-end me-10 pb-10"}>*/}
+                {/*    <CategoryTabs*/}
+                {/*        selectedCategory={selectedCategory}*/}
+                {/*        setSelectedCategory={setSelectedCategory}*/}
+                {/*    />*/}
+                {/*</div>*/}
 
                 <div className="my-12 w-10/12 mx-auto">
-                    <h2 className="lg:text-7xl text-3xl text-center lg:text-start font-bold">Promote</h2>
+                    <h2 className="lg:text-7xl text-3xl text-center lg:text-start font-bold">All  Articles</h2>
                     <div className="border-gray-400 mt-4 lg:mb-16 border-2 mb-6"></div>
                     <div
                         className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
@@ -329,137 +329,138 @@ const BlogPage = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="my-12 w-10/12 mx-auto">
-                    <h2 className="text-3xl lg:text-7xl text-center lg:text-start font-bold">Sell & Transfer</h2>
-                    <div className="border-gray-400 border-2 mt-4 lg:mb-16"></div>
-                    <div
-                        className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
-                        <div className="w-full lg:w-6/12">
-                            {sellPosts.length > 0 && (
-                                <div
-                                    className="bg-white p-2 rounded-xl"
-                                    style={{
-                                        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                                    }}
-                                >
-                                    <div className={"overflow-hidden group rounded-xl"}>
-                                        <img
-                                            src={sellPosts[0].image?.asset?.url}
-                                            alt="Sell & Transfer Blog"
-                                            className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
-                                        />
-                                    </div>
-                                    <p className="text-[#417dff] capitalize mb-3">
-                                        {sellPosts[0].category}
-                                    </p>
-                                    <Link to={`/blog/${sellPosts[0].slug.current}`}>
-                                        <h3 className="text-xl lg:text-[20px] font-[600] mb-2 hover:underline">
-                                            {sellPosts[0].title}
-                                        </h3>
-                                    </Link>
-                                    <p className="mb-4 text-sm line-clamp-2">
-                                        {sellPosts[0].description}
-                                    </p>
-                                    <div className="flex justify-between items-center text-sm">
-                                        <div className="flex items-center gap-2">
-                                            <img
-                                                src="/img/logo/logo.png"
-                                                alt="Author"
-                                                className="w-6 h-6 rounded-full"
-                                            />
-                                            <span className="text-sm font-semibold">
-                      Pitchle Team
-                    </span>
-                                        </div>
-                                        <span className={"text-[#343434] text-[12px] font-[400]"}>
-                    {new Date(sellPosts[0].publishedAt).toLocaleDateString()}
-                  </span>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                        <div
-                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[470px] lg:space-x-5 w-full lg:w-6/12">
-                            {sellPosts.slice(1).map((post) => (
-                                <BlogCard key={post._id} post={post}/>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="flex justify-center my-28">
-                        <Link to={`/blog-data?category=${encodeURIComponent("sell & transfer")}`}>
-                            <button
-                                className=" px-12 text-xl font-semibold py-4 bg-[#417DFF] text-white rounded-full shadow-lg transition">
-                                View All →
-                            </button>
-                        </Link>
-                    </div>
-                </div>
 
-                <div className="my-12 w-10/12 mx-auto">
-                    <h2 className="text-3xl lg:text-7xl text-center lg:text-start font-bold">Partners</h2>
-                    <div className="border-gray-400 border-2 mt-4 lg:mb-16"></div>
-                    <div
-                        className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">
-                        <div className="w-full lg:w-6/12">
-                            {partnerPosts.length > 0 && (
-                                <div
-                                    className="bg-white p-2 rounded-xl"
-                                    style={{
-                                        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                                    }}
-                                >
-                                    <div className={"overflow-hidden group rounded-xl"}>
-                                        <img
-                                            src={partnerPosts[0].image?.asset?.url}
-                                            alt="Partner Blog"
-                                            className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
-                                        />
-                                    </div>
-                                    <p className="text-[#417dff] capitalize mb-3">
-                                        {partnerPosts[0].category}
-                                    </p>
-                                    <Link to={`/blog/${partnerPosts[0].slug.current}`}>
-                                        <h3 className="text-xl lg:text-[20px] font-[600] mb-2 hover:underline">
-                                            {partnerPosts[0].title}
-                                        </h3>
-                                    </Link>
-                                    <p className="mb-4 text-sm line-clamp-2">
-                                        {partnerPosts[0].description}
-                                    </p>
-                                    <div className="flex justify-between items-center text-sm">
-                                        <div className="flex items-center gap-2">
-                                            <img
-                                                src="/img/logo/logo.png"
-                                                alt="Author"
-                                                className="w-6 h-6 rounded-full"
-                                            />
-                                            <span className="text-sm font-semibold">
-                      Pitchle Team
-                    </span>
-                                        </div>
-                                        <span className={"text-[#343434] text-[12px] font-[400]"}>
-                    {new Date(partnerPosts[0].publishedAt).toLocaleDateString()}
-                  </span>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                        <div
-                            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[470px] lg:space-x-5 w-full lg:w-6/12">
-                            {partnerPosts.slice(1).map((post) => (
-                                <BlogCard key={post._id} post={post}/>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="flex justify-center my-28">
-                        <Link to={`/blog-data?category=${encodeURIComponent("partners & investors")}`}>
-                            <button
-                                className="font-semibold px-12 text-xl py-4 bg-[#01BF74] text-white rounded-full shadow-lg transition">
-                                View All →
-                            </button>
-                        </Link>
-                    </div>
-                </div>
+
+                {/*<div className="my-12 w-10/12 mx-auto">*/}
+                {/*    <h2 className="text-3xl lg:text-7xl text-center lg:text-start font-bold">Sell & Transfer</h2>*/}
+                {/*    <div className="border-gray-400 border-2 mt-4 lg:mb-16"></div>*/}
+                {/*    <div*/}
+                {/*        className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">*/}
+                {/*        <div className="w-full lg:w-6/12">*/}
+                {/*            {sellPosts.length > 0 && (*/}
+                {/*                <div*/}
+                {/*                    className="bg-white p-2 rounded-xl"*/}
+                {/*                    style={{*/}
+                {/*                        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",*/}
+                {/*                    }}*/}
+                {/*                >*/}
+                {/*                    <div className={"overflow-hidden group rounded-xl"}>*/}
+                {/*                        <img*/}
+                {/*                            src={sellPosts[0].image?.asset?.url}*/}
+                {/*                            alt="Sell & Transfer Blog"*/}
+                {/*                            className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"*/}
+                {/*                        />*/}
+                {/*                    </div>*/}
+                {/*                    <p className="text-[#417dff] capitalize mb-3">*/}
+                {/*                        {sellPosts[0].category}*/}
+                {/*                    </p>*/}
+                {/*                    <Link to={`/blog/${sellPosts[0].slug.current}`}>*/}
+                {/*                        <h3 className="text-xl lg:text-[20px] font-[600] mb-2 hover:underline">*/}
+                {/*                            {sellPosts[0].title}*/}
+                {/*                        </h3>*/}
+                {/*                    </Link>*/}
+                {/*                    <p className="mb-4 text-sm line-clamp-2">*/}
+                {/*                        {sellPosts[0].description}*/}
+                {/*                    </p>*/}
+                {/*                    <div className="flex justify-between items-center text-sm">*/}
+                {/*                        <div className="flex items-center gap-2">*/}
+                {/*                            <img*/}
+                {/*                                src="/img/logo/logo.png"*/}
+                {/*                                alt="Author"*/}
+                {/*                                className="w-6 h-6 rounded-full"*/}
+                {/*                            />*/}
+                {/*                            <span className="text-sm font-semibold">*/}
+                {/*      Pitchle Team*/}
+                {/*    </span>*/}
+                {/*                        </div>*/}
+                {/*                        <span className={"text-[#343434] text-[12px] font-[400]"}>*/}
+                {/*    {new Date(sellPosts[0].publishedAt).toLocaleDateString()}*/}
+                {/*  </span>*/}
+                {/*                    </div>*/}
+                {/*                </div>*/}
+                {/*            )}*/}
+                {/*        </div>*/}
+                {/*        <div*/}
+                {/*            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[470px] lg:space-x-5 w-full lg:w-6/12">*/}
+                {/*            {sellPosts.slice(1).map((post) => (*/}
+                {/*                <BlogCard key={post._id} post={post}/>*/}
+                {/*            ))}*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*    <div className="flex justify-center my-28">*/}
+                {/*        <Link to={`/blog-data?category=${encodeURIComponent("sell & transfer")}`}>*/}
+                {/*            <button*/}
+                {/*                className=" px-12 text-xl font-semibold py-4 bg-[#417DFF] text-white rounded-full shadow-lg transition">*/}
+                {/*                View All →*/}
+                {/*            </button>*/}
+                {/*        </Link>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+                {/*<div className="my-12 w-10/12 mx-auto">*/}
+                {/*    <h2 className="text-3xl lg:text-7xl text-center lg:text-start font-bold">Partners</h2>*/}
+                {/*    <div className="border-gray-400 border-2 mt-4 lg:mb-16"></div>*/}
+                {/*    <div*/}
+                {/*        className="flex flex-col lg:flex-row justify-center lg:justify-between space-y-5 lg:space-y-0 lg:space-x-10">*/}
+                {/*        <div className="w-full lg:w-6/12">*/}
+                {/*            {partnerPosts.length > 0 && (*/}
+                {/*                <div*/}
+                {/*                    className="bg-white p-2 rounded-xl"*/}
+                {/*                    style={{*/}
+                {/*                        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",*/}
+                {/*                    }}*/}
+                {/*                >*/}
+                {/*                    <div className={"overflow-hidden group rounded-xl"}>*/}
+                {/*                        <img*/}
+                {/*                            src={partnerPosts[0].image?.asset?.url}*/}
+                {/*                            alt="Partner Blog"*/}
+                {/*                            className="w-full transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"*/}
+                {/*                        />*/}
+                {/*                    </div>*/}
+                {/*                    <p className="text-[#417dff] capitalize mb-3">*/}
+                {/*                        {partnerPosts[0].category}*/}
+                {/*                    </p>*/}
+                {/*                    <Link to={`/blog/${partnerPosts[0].slug.current}`}>*/}
+                {/*                        <h3 className="text-xl lg:text-[20px] font-[600] mb-2 hover:underline">*/}
+                {/*                            {partnerPosts[0].title}*/}
+                {/*                        </h3>*/}
+                {/*                    </Link>*/}
+                {/*                    <p className="mb-4 text-sm line-clamp-2">*/}
+                {/*                        {partnerPosts[0].description}*/}
+                {/*                    </p>*/}
+                {/*                    <div className="flex justify-between items-center text-sm">*/}
+                {/*                        <div className="flex items-center gap-2">*/}
+                {/*                            <img*/}
+                {/*                                src="/img/logo/logo.png"*/}
+                {/*                                alt="Author"*/}
+                {/*                                className="w-6 h-6 rounded-full"*/}
+                {/*                            />*/}
+                {/*                            <span className="text-sm font-semibold">*/}
+                {/*      Pitchle Team*/}
+                {/*    </span>*/}
+                {/*                        </div>*/}
+                {/*                        <span className={"text-[#343434] text-[12px] font-[400]"}>*/}
+                {/*    {new Date(partnerPosts[0].publishedAt).toLocaleDateString()}*/}
+                {/*  </span>*/}
+                {/*                    </div>*/}
+                {/*                </div>*/}
+                {/*            )}*/}
+                {/*        </div>*/}
+                {/*        <div*/}
+                {/*            className="flex flex-col lg:flex-row h-auto space-y-5 lg:space-y-0 lg:h-[470px] lg:space-x-5 w-full lg:w-6/12">*/}
+                {/*            {partnerPosts.slice(1).map((post) => (*/}
+                {/*                <BlogCard key={post._id} post={post}/>*/}
+                {/*            ))}*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*    <div className="flex justify-center my-28">*/}
+                {/*        <Link to={`/blog-data?category=${encodeURIComponent("partners & investors")}`}>*/}
+                {/*            <button*/}
+                {/*                className="font-semibold px-12 text-xl py-4 bg-[#01BF74] text-white rounded-full shadow-lg transition">*/}
+                {/*                View All →*/}
+                {/*            </button>*/}
+                {/*        </Link>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
                 <div className="w-11/12 mx-auto lg:w-8/12 my-24 lg:h-screen scale-100 lg:scale-125 flex flex-col justify-center items-center">
                     <h3 className="text-2xl flex justify-center items-center text-center lg:text-6xl lato-font md:text-center mb-2">

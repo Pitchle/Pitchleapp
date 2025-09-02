@@ -3,24 +3,30 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const featureSections = [
   {
-    title: "Promote",
-    description: "Get your product in front of the right audience.",
+    title: "Discover in 30s",
+    description: (
+        <>
+          Explore quick clips from responsible brands.
+          <br />
+          Swipe and save favorites.
+        </>
+    ),
     bgColor: "bg-[#417DFF]",
     videoId: "/video/promote.mp4",
     layout: "right", // Video on the right, Text on the left
   },
   {
-    title: "Sell Business",
+    title: "Shop with Impact+",
     description:
-      "List your business for sale or transfer and connect with serious buyers.",
+      "Verification of certifications/DPP reviewed by Pitchle.",
     bgColor: "bg-[#01BF74]",
     videoId: "/video/sell.mp4",
     layout: "left", // Video on the left, Text on the right
   },
   {
-    title: "Find Partners",
+    title: " One-tap checkout",
     description:
-      "Connect with potential partners to scale your business or start a new venture.",
+      " Pay securely without leaving the video.",
     bgColor: "bg-[#343434]",
     videoId: "/video/partners.mp4",
     layout: "right", // Video on the right, Text on the left
@@ -93,21 +99,24 @@ const About = () => {
 
   return (
     // The container height forces scrolling (e.g., 300vh for 3 sections)
-    <div ref={containerRef} className="relative">
-      <h2 className="text-center text-4xl lg:text-7xl font-bold my-12 lg:mb-32">
-        With Pitchle you can
-      </h2>
-      {featureSections.map((section, index) => (
-        <FeatureCard
-          key={index}
-          section={section}
-          index={index}
-          scrollYProgress={scrollYProgress}
-          scrollRange={scrollRange}
-          viewportHeight={viewportHeight}
-        />
-      ))}
-    </div>
+      <div ref={containerRef} className="relative">
+        <h2 className="text-center text-4xl lg:text-7xl font-bold my-12 lg:mb-16">
+          How Pitchle works
+        </h2>
+        <p className="text-center text-lg lg:font-[400] sm:text-xl md:text-2xl lg:text-[32px] my-20 leading-snug">
+          Watch 30-second videos, look for the green Impact+ label, and buy in one tap.
+        </p>
+        {featureSections.map((section, index) => (
+            <FeatureCard
+                key={index}
+                section={section}
+                index={index}
+                scrollYProgress={scrollYProgress}
+                scrollRange={scrollRange}
+                viewportHeight={viewportHeight}
+            />
+        ))}
+      </div>
   );
 };
 

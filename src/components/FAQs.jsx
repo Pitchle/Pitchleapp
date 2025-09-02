@@ -4,19 +4,17 @@ import {useLocation} from "react-router-dom";
 const FaQs = () => {
     const faqs = [
         {
-            question: "What is Pitchle and what is its purpose?",
-            answer: "Pitchle is a pioneering social network for business and commerce, empowering small\n" +
-                "businesses to grow and succeed equitably. It is designed to promote products through short 30\n" +
-                "or 60-second videos. Pitchle also serves as a platform to find partners, sell or transfer\n" +
-                "businesses, and build meaningful connections with a sophisticated and contemporary touch.\n </br> </br>" +
-                "With Pitchle, connecting and promoting has never been more efficient and impactful."
+            question: " What’s Pitchle?",
+            answer: "Pitchle is a video commerce platform for sustainable products — with Impact+ verification.\n" +
+                "Watch 30-second clips, look for the green Impact+ label when a brand’s evidence has been reviewed, and pay in one \n" +
+                "tap.\n </br> </br>" +
+                " Sustainable shopping has never been easier—or more trustworthy."
         },
         {
             question: "Who can use Pitchle?",
-            answer: "Pitchle is for all businesses — no matter the size, location, or industry. It's mainly designed to\n" +
-                "help small businesses promote their products, find partners, sell or transfer their business, and\n" +
-                "connect with customers.\n </br> </br>" +
-                "Pitchle gives every business the opportunity to grow and succeed."
+            answer: "Pitchle is for sustainable shoppers and responsible brands.\n </br>" +
+                " Shoppers watch short videos, look for Impact+, and buy in one tap. </br> </br>" +
+                " Brands sell with or without Impact+ and can apply for verification by submitting evidence for review.\n"
         },
         {
             question: "How does the subscription model work?",
@@ -24,32 +22,26 @@ const FaQs = () => {
                 "choose from one-time, monthly, or annual paid subscriptions."
         },
         {
-            question: "What types of videos are allowed on Pitchle?",
-            answer: "Pitchle exclusively hosts content focused on business and commerce, including product\n" +
-                "promotions, videos for seeking partners, and business sales or transfers. Any content that does\n" +
-                "not align with these purposes should be reported and may be removed."
+            question: " How does Impact+ verification work?",
+            answer: "Sellers upload documentation (e.g., certifications, DPP, test reports, etc.). Our team reviews the \n" +
+                "evidence; if it checks out, the product video shows the Impact+ label."
         },
         {
-            question: "What security measures protect user information?",
-            answer: "Pitchle prioritizes user data security and privacy. User information is securely stored and\n" +
-                "protected using Google Firebase. Users have full control over their privacy settings and can\n" +
-                "manage who can view their profiles and pitches."
-        },
-        ,
-        {
-            question: "What are the benefits of upgrading to a paid\n" +
-                "subscription?",
-            answer: "Upgrading unlocks features like posting 60-second videos, managing content visibility, and\n" +
-                "watermarking videos. Certain accounts can access multiple locations to view pitches from other\n" +
-                "countries and create or participate in global events.\n </br> </br>" +
-                "Pitchle includes supplementary features and employs artificial intelligence."
+            question: "Is Impact+ a certification?",
+            answer: "No. Impact+ is a verification review, not a certification. It aggregates and checks third\n" +
+                "party proofs so shoppers can see evidence before buying."
         },
         {
-            question: "Can Pitchle be used for networking beyond business purposes?",
-            answer: "While primarily focused on business activities, Pitchle also offers networking opportunities that\n" +
-                "extend beyond commercial matters. Its main goal, however, remains to facilitate business and\n" +
-                "commerce connections, investments, business sales or transfers, and product promotions."
+            question: " Can I sell if I don’t have certifications?",
+            answer: " Yes. You can list and sell; your video will simply appear without the Impact+ label until evidence is \n" +
+                "provided and reviewed."
         },
+        // {
+        //     question: "Can Pitchle be used for networking beyond business purposes?",
+        //     answer: "While primarily focused on business activities, Pitchle also offers networking opportunities that\n" +
+        //         "extend beyond commercial matters. Its main goal, however, remains to facilitate business and\n" +
+        //         "commerce connections, investments, business sales or transfers, and product promotions."
+        // },
         {
             question: "How can users report inappropriate content or behavior?",
             answer: "Users can report such content or behavior using the reporting feature within the app. Our\n" +

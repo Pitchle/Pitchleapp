@@ -4,57 +4,58 @@ import {motion, AnimatePresence} from 'framer-motion';
 import Feature from "../components/Feature";
 import {Helmet} from "react-helmet";
 
-const tabs = ['User', 'Business', 'Investor'];
+// const tabs = ['User', 'Business', 'Investor'];
+const tabs = ['Business'];
 
 const plan = {
-    User: [
-        ['Features', 'Free plan', '1 time publication', 'Explorer', 'Visionary'],
-        ['max 30-sec pitches', true, true, true, true],
-        ['max 60-sec pitches', false, true, true, true],
-        ['Find Partners', true, true, true, true],
-        ['Video Visibility: Public and Private', false, false, true, true],
-        ['Watermark/Copyright in videos', false, false, true, true],
-        ['Create and join events worldwide', false, false, true, true],
-        ['Renews', '', '', 'monthly', 'yearly'],
-        ['Price', 'FREE', '$6.99', '$9.99/month', {
-            mainPrice: '$99.99/year',
-            subPrice: '12 months at $8.33/mo.\nSave 16.6%'
-        }]
-    ],
+    // User: [
+    //     ['Features', 'Free plan', '1 time publication', 'Explorer', 'Visionary'],
+    //     ['max 30-sec pitches', true, true, true, true],
+    //     ['max 60-sec pitches', false, true, true, true],
+    //     ['Find Partners', true, true, true, true],
+    //     ['Video Visibility: Public and Private', false, false, true, true],
+    //     ['Watermark/Copyright in videos', false, false, true, true],
+    //     ['Create and join events worldwide', false, false, true, true],
+    //     ['Renews', '', '', 'monthly', 'yearly'],
+    //     ['Price', 'FREE', '$6.99', '$9.99/month', {
+    //         mainPrice: '$99.99/year',
+    //         subPrice: '12 months at $8.33/mo.\nSave 16.6%'
+    //     }]
+    // ],
     Business: [
         ['Features', 'Free plan', '1 time publication', 'Explorer', 'Visionary'],
         ['max 30-sec pitches', true, true, true, true],
         ['max 60-sec pitches', false, true, true, true],
         ['Promote Products', true, true, true, true],
-        ['Sell or Transfer business', true, true, true, true],
-        ['Find Partners', true, true, true, true],
+        // ['Sell or Transfer business', true, true, true, true],
+        // ['Find Partners', true, true, true, true],
         ['Video Visibility: Public and Private', false, false, true, true],
         ['Watermark/Copyright in videos', false, false, true, true],
-        ['Create and join events worldwide', false, false, true, true],
+        // ['Create and join events worldwide', false, false, true, true],
         ['Renews', '', '', 'monthly', 'yearly'],
         ['Price', 'FREE', '$9.99', '$14.99/month', {
             mainPrice: '$149.99/year',
             subPrice: '12 months at $8.33/mo.\nSave 16.6%'
         }]
-    ],
-    Investor: [
-        ['Features', 'Free plan', '1 time publication', 'Investor', 'Investor X'],
-        ['max 30-sec pitches', true, true, true, true],
-        ['max 60-sec pitches', false, true, true, true],
-        ['Sell or Transfer business', true, true, true, true],
-        ['Video Visibility: Public and Private', false, false, true, true],
-        ['Watermark/Copyright in videos', false, false, true, true],
-        ['Create and join events worldwide', false, false, true, true],
-        ['Renews', '', '', 'monthly', 'yearly'],
-        ['Price', 'FREE', '$15.99', '$19.99/month', {
-            mainPrice: '$199.99/year',
-            subPrice: '12 months at $9.9/mo.\nSave 16.6%'
-        }]
     ]
+    // Investor: [
+    //     ['Features', 'Free plan', '1 time publication', 'Investor', 'Investor X'],
+    //     ['max 30-sec pitches', true, true, true, true],
+    //     ['max 60-sec pitches', false, true, true, true],
+    //     ['Sell or Transfer business', true, true, true, true],
+    //     ['Video Visibility: Public and Private', false, false, true, true],
+    //     ['Watermark/Copyright in videos', false, false, true, true],
+    //     ['Create and join events worldwide', false, false, true, true],
+    //     ['Renews', '', '', 'monthly', 'yearly'],
+    //     ['Price', 'FREE', '$15.99', '$19.99/month', {
+    //         mainPrice: '$199.99/year',
+    //         subPrice: '12 months at $9.9/mo.\nSave 16.6%'
+    //     }]
+    // ]
 };
 
 const Plan = () => {
-    const [activeTab, setActiveTab] = useState('User');
+    const [activeTab, setActiveTab] = useState('Business');
     const tableRef = useRef(null);
 
     const renderCell = (cell, isHeader = false, isPriceRow = false, cellIndex = 0) => {
@@ -107,8 +108,8 @@ const Plan = () => {
             <div className="p-4 max-w-8xl mx-auto relative min-h-screen flex flex-col">
                 <h2 className="text-4xl md:text-8xl text-center font-[700] my-16">Find a Plan That’s <br/> Right For
                     You!</h2>
-                <p className="text-center text-xl lg:text-3xl mb-20">Select your role and explore <br/> the subscription
-                    plan.</p>
+                {/*<p className="text-center text-xl lg:text-3xl mb-20">Select your role and explore <br/> the subscription*/}
+                {/*    plan.</p>*/}
                 <div className="relative">
                     <div className="flex justify-center space-x-2 relative z-10">
                         {tabs.map((tab) => (

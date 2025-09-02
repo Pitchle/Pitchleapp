@@ -4,8 +4,8 @@ const Banner = () => {
     return (
         <section className="flex flex-col items-center justify-center px-4 py-10 lg:px-16 xl:px-32 2xl:px-48">
             {/* Heading */}
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-center mt-2 lg:mt-2 leading-tight">
-                <span className="text-[#01BF74]">Revolutionize</span> Business <br /> with Short Videos!
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-center mt-2 lg:mt-2 leading-tight"> Shop
+                <span className="text-[#01BF74]"> Sustainably</span> <br /> In Short Videos!
             </h1>
 
             {/* Video and Buttons Section */}

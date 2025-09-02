@@ -9,14 +9,14 @@ const benefitsData = [
   },
   {
     icon: "/img/icon/img_3.png", // Replace with your image path
-    title: "Business Matchmaking",
+    title: "Impact+ Verification",
     description:
-      "Instantly connect with the right people based on your goals and industry.",
+      " We review certificates, DPP and supporting evidence. Verified products display the green Impact+ label",
   },
   {
     icon: "/img/icon/img_4.png", // Replace with your image path
-    title: "Business Events",
-    description: "Discover top networking events, workshops and conferences.",
+    title: "One-Tap Checkout",
+    description: " Pay securely in one tap. Coordinate delivery and tap Confirm received to complete the order",
   },
   {
     icon: "/img/icon/img_8.png", // Replace with your image path

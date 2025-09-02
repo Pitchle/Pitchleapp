@@ -23,10 +23,8 @@ const AboutPage = () => {
                 About <br className={"hidden lg:block"}/> Company
               </h1>
               <p className=" lg:w-10/12 text-sm lg:text-xl text-center lg:text-start">
-                At Pitchle, we empower small businesses to thrive through short
-                impactful videos. Unlike traditional social media, Pitchle is
-                built for business, advocating for eco-friendly practices while
-                providing all businesses a platform to grow equitably.
+                We empower small brands to sell sustainable products through 30
+                second videos — with Impact+ verification and one-tap checkout.
               </p>
             </div>
             <div className="w-8/12 lg:w-6/12 mt-20 ms-0 lg:ms-40 flex justify-end lg:mt-0">
@@ -42,9 +40,7 @@ const AboutPage = () => {
               {
                 title: "Who We Are",
                 description:
-                  "Pitchle is a social platform designed \n" +
-                  "for commerce growth, offering small businesses a space to connect, \n" +
-                  "thrive, and succeed equitably, unlike traditional entertainment-focused networks.",
+                  " Pitchle is a video commerce platform for sustainable products with Impact+ verification",
                 icon: (
                   <svg
                     className="w-[50px] h-[50px] md:w-[70px] md:h-[70px]"
@@ -74,9 +70,10 @@ const AboutPage = () => {
               {
                 title: "What We Do",
                 description:
-                  "We empower small businesses \n" +
-                  "by providing a dedicated platform dedicated to driving commerce. \n" +
-                  "Pitchle helps them promote products, connect with partners, and facilitate acquisitions or transfers.",
+                  "We connect conscious \n" +
+                    "shoppers and responsible \n" +
+                    "brands through 30-second \n" +
+                    "videos and one-tap checkout.",
                 icon: (
                   <svg
                     className="w-[50px] h-[50px] md:w-[70px] md:h-[70px]"
@@ -96,10 +93,10 @@ const AboutPage = () => {
               {
                 title: "How We Do It",
                 description:
-                  "Pitchle empowers small businesses with short videos to\n" +
-                  "promote products, connect with partners, and drive growth. The\n" +
-                  "app is easy to use, AI-powered, and designed to automate tasks\n" +
-                  "and enhance content, helping businesses thrive.",
+                  "Brands submit certificates, \n" +
+                    "DPP, and evidence. When \n" +
+                    "reviewed, the video displays \n" +
+                    "the green Impact+ label.",
                 icon: (
                   <svg
                     className="w-[50px] h-[50px] md:w-[70px] md:h-[70px]"
@@ -156,20 +153,14 @@ const AboutPage = () => {
                     className=" mb-10 font-bold  about-heading text-[#417DFF] "
                     color="blue-gray"
                   >
-                    Pitchle: Made for Business
+                    Pitchle: Video commerce for
+                    Sustainable Products
                   </Typography>
                   <Typography className="mb-8 text-lg md:text-xl lg:text-lg font-normal text-black">
-                    Social media today is largely focused on entertainment,
-                    leaving a gap in the business sector. There's a clear need
-                    for a platform that addresses business and commerce
-                    opportunities with a sophisticated, contemporary touch.
-                    <br />
-                    <br />
-                    That's how Pitchle was born – a unique social media platform
-                    dedicated exclusively to empowering small businesses to grow
-                    and succeed equitably. Through short videos, Pitchle helps
-                    businesses promote products, find partners, and buy or
-                    transfer businesses.
+                    Social media is built for entertainment. Sustainable commerce needs a specialized,
+                    contemporary platform — one that makes proof visible and buying effortless. Pitchle
+                    fills that gap with short-form (30-second) video, Impact+ verification, and one-tap
+                    checkout
                   </Typography>
                 </div>
               </div>
@@ -317,9 +308,8 @@ const AboutPage = () => {
                   “ We are committed to progress!
                   <br />
                   <br />
-                  Pitchle aims to be a game-changing tech leader in business and
-                  commerce, empowering small businesses and independent
-                  professionals to thrive responsibly. ”
+                  We build commerce that serves people, planet, and small businesses—where
+                  transparency and responsibility set the standard.”
                 </p>
               </div>
             </div>
@@ -332,14 +322,14 @@ const AboutPage = () => {
                     We Care
                   </h1>
                   <p className="text-lg ms-5 lg:ms-0 md:text-[20px] lg:font-[400] mb-4" style={{ lineHeight: '1.2' }}>
-                    Pitchle is more than a platform. We're the partner your
-                    business needs to grow. We innovate, collaborate, and
-                    empower success equitably, offering accessible tools that
-                    help all businesses thrive.
+                    Pitchle is more than a platform.
+                    We’re building fair, transparent,
+                    sustainable commerce.
                   </p>
                   <p className="text-lg ms-5 lg:ms-0 md:text-[20px] lg:font-[400] mb-8 lg:mb-0">
-                    Every business deserves the chance to shine, and we're here
-                    to make that happen.
+                    We support small and independent
+                    brands — and people who buy with
+                    purpose.
                   </p>
                 </div>
                 <div className="w-full  md:w-1/3 about-box-size bg-[#417DFF] text-white rounded-3xl">
@@ -365,10 +355,10 @@ const AboutPage = () => {
                   <h2 className="text-2xl lg:text-[31px]  mb-4 mt-4 font-bold ">
                     Supporting Small Businesses
                   </h2>
-                  <p className={"text-[18px] font-[400]"} style={{ lineHeight: '1.2' }}>
-                    We empower small businesses by connecting them with new
-                    opportunities, partners, and customers.
-                  </p>
+                  {/*<p className={"text-[18px] font-[400]"} style={{ lineHeight: '1.2' }}>*/}
+                  {/*  We empower small businesses by connecting them with new*/}
+                  {/*  opportunities, partners, and customers.*/}
+                  {/*</p>*/}
                 </div>
               </div>
 
@@ -391,10 +381,10 @@ const AboutPage = () => {
                   <h2 className="text-xl lg:text-[30px]  mb-4 mt-4 font-bold">
                     Inclusivity & Equal Opportunities
                   </h2>
-                  <p className={"text-[18px] text-[#767676] font-[400]"} style={{ lineHeight: '1.2' }}>
-                    We support diversity, ensuring everyone has access to growth
-                    and success.
-                  </p>
+                  {/*<p className={"text-[18px] text-[#767676] font-[400]"} style={{ lineHeight: '1.2' }}>*/}
+                  {/*  We support diversity, ensuring everyone has access to growth*/}
+                  {/*  and success.*/}
+                  {/*</p>*/}
                 </div>
                 <div className="about-box-size bg-[#417DFF] text-white rounded-3xl">
                   <svg
@@ -413,10 +403,10 @@ const AboutPage = () => {
                   <h2 className="text-xl lg:text-[30px]  mb-4 mt-4 font-bold">
                     Sustainability & Eco Trends
                   </h2>
-                  <p className={"text-[18px] font-[400]"} style={{ lineHeight: '1.2' }}>
-                    We advocate for businesses that prioritize eco-friendly
-                    products and sustainable, responsible practices.
-                  </p>
+                  {/*<p className={"text-[18px] font-[400]"} style={{ lineHeight: '1.2' }}>*/}
+                  {/*  We advocate for businesses that prioritize eco-friendly*/}
+                  {/*  products and sustainable, responsible practices.*/}
+                  {/*</p>*/}
                 </div>
                 <div className="about-box-size bg-gray-100 rounded-3xl">
                   <svg
@@ -435,10 +425,10 @@ const AboutPage = () => {
                   <h2 className="text-xl lg:text-[30px]  mb-4 mt-4 font-bold ">
                     Helping Businesses Grow
                   </h2>
-                  <p className={"text-[18px] text-[#767676] font-[400]"} style={{ lineHeight: '1.2' }}>
-                    Our platform provides tools for promotion, networking, and
-                    scaling businesses.
-                  </p>
+                  {/*<p className={"text-[18px] text-[#767676] font-[400]"} style={{ lineHeight: '1.2' }}>*/}
+                  {/*  Our platform provides tools for promotion, networking, and*/}
+                  {/*  scaling businesses.*/}
+                  {/*</p>*/}
                 </div>
               </div>
             </div>
