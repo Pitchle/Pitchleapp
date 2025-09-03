@@ -75,8 +75,7 @@ const Footer = () => {
                 <h2 className="text-3xl lg:text-4xl font-semibold">Pitchle</h2>
               </div>
               <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] text-[#545454] lg:text-base mt-4 sm:w-auto w-10/12 font-medium">
-                Verified Sustainable <br className="hidden md:block"/>
-                Products
+                Verified Sustainable Products
               </p>
               {/*<p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-8 sm:w-auto w-10/12 font-medium">*/}
               {/*  Verified Sustainable Commerce*/}

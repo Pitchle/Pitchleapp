@@ -4,8 +4,16 @@ const Banner = () => {
     return (
         <section className="flex flex-col items-center justify-center px-4 py-10 lg:px-16 xl:px-32 2xl:px-48">
             {/* Heading */}
-            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-center mt-2 lg:mt-2 leading-tight"> Shop
-                <span className="text-[#01BF74]"> Sustainably</span> <br /> In Short Videos!
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-center mt-2 lg:mt-2 leading-tight">
+                <span className={" flex flex-col md:flex-row justify-center items-center lg:space-x-2"}>
+                     Shop
+                    <span className="text-[#01BF74] flex flex-row justify-center items-center ms-0 md:ms-4"> Sustainably                 <img className={"w-12 h-12 block lg:hidden lg:mt-4"}
+                                                                                            src="/img/icon/title_icon.jpg"
+                                                                                            alt="icon"/>
+ </span>
+                    <img className={"w-20 h-20 hidden lg:block mt-4"} src="/img/icon/title_icon.jpg" alt="icon"/>
+                </span>
+                 <span className={"me-0 md:me-28"}>In Short Videos!</span>
             </h1>
 
             {/* Video and Buttons Section */}
