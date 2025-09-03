@@ -17,7 +17,8 @@ const MajorBlogCard = ({ post }) => (
             alt="Main Article"
             className="w-full hover:scale-105 transition-transform duration-300 h-[300px] lg:h-[480px] mx-auto  rounded-xl mb-4"
         />
-        <p className="text-[#417dff] text-sm hidden lg:block capitalize mb-1">{post.category}</p>
+        {/*<p className="text-[#417dff] text-sm hidden lg:block capitalize mb-1">{post.category}</p>*/}
+        <p className="text-[#417dff] text-sm hidden lg:block capitalize mb-1">Sustainable Trade</p>
         <p className="mb-4 line-clamp-2 visible lg:hidden text-sm mt-4 lg:line-clamp-1">{post.description}</p>
         <Link to={`/blog/${post.slug.current}`}>
             <h2 className="text-xl lg:mt-3 lg:text-[20px] font-[600] lg:mb-2 hover:underline">
@@ -53,7 +54,8 @@ const BlogCard = ({post}) => (
             className="w-full transition-transform duration-300 group-hover:scale-110 h-60 object-cover rounded-lg mb-4"
         />
         </div>
-        <p className="text-[#709dff] text-sm capitalize  my-3">{post.category}</p>
+        {/*<p className="text-[#709dff] text-sm capitalize  my-3">{post.category}</p>*/}
+        <p className="text-[#709dff] text-sm capitalize  my-3">Sustainable Trade</p>
         <Link to={`/blog/${post.slug.current}`}>
             <h3 className="text-lg lg:text-[20px] font-[600] line-clamp-2 mb-2 hover:underline">{post.title}</h3>
             <p className="text-sm line-clamp-2 mb-2 hover:underline">
@@ -286,8 +288,11 @@ const BlogPage = () => {
                                             className="w-full object-cover transition-transform duration-300 group-hover:scale-110 rounded-lg mb-4"
                                         />
                                     </div>
+                                    {/*<p className="text-[#417dff] capitalize font-sm mb-3">*/}
+                                    {/*    {promotePosts[0].category}*/}
+                                    {/*</p>*/}
                                     <p className="text-[#417dff] capitalize font-sm mb-3">
-                                        {promotePosts[0].category}
+                                        Sustainable Trade
                                     </p>
                                     <Link to={`/blog/${promotePosts[0].slug.current}`}>
                                         <h3 className="text-xl lg:text-[20px] font-[600] mb-2 hover:underline">

@@ -93,8 +93,8 @@ const BlogData = () => {
                             Blog
                         </Link>
                         <span className="mx-1">&gt;</span>
-                        <span
-                            className="capitalize font-semibold text-xl text-[#417dff]">{category || "All Blogs"}</span>
+                        {/*<span className="capitalize font-semibold text-xl text-[#417dff]">{category || "All Blogs"}</span>*/}
+                        <span className="capitalize font-semibold text-xl text-[#417dff]">Sustainable Trade</span>
                     </nav>
 
                     {/* Header Section */}
@@ -109,7 +109,8 @@ const BlogData = () => {
                             <div className="w-24 h-24 rounded-full bg-gray-300 mb-4"/>
                         )}
                         <h1 className="text-4xl text-[#343434] capitalize lg:text-7xl my-8 font-bold text-center">
-                            {category || "All Blogs"}
+                            {/*{category || "All Blogs"}*/}
+                            Sustainable Trade
                         </h1>
                         <div className="w-10/12 lg:w-6/12 my-1 lg:my-6">
                             <svg
@@ -150,7 +151,8 @@ const BlogData = () => {
                                         />
                                     </div>
                                     <p className="text-[#4d85ff] capitalize mb-1">
-                                        {post.category}
+                                        {/*{post.category}*/}
+                                        Sustainable Trade
                                     </p>
                                     <Link
                                         to={`/blog/${post.slug.current}`}
@@ -204,23 +206,23 @@ const BlogData = () => {
                     )}
                 </div>
             </div>
-            <div className={"h-screen flex justify-center items-center flex-col"}>
-                <div
-                    className="w-11/12 mb-32  mx-auto lg:w-10/12 my-12 scale-100 lg:scale-110 flex flex-col justify-center items-center">
-                    <h3 className="intersted-font flex flex-col  justify-center items-center text-center font-bold md:text-center mb-2"
-                        style={{lineHeight: "1.2em"}}>
-                        Not interested in anything? <br/>
-                        Maybe you're just in the wrong category.
-                        <br/><span className={"text-[#01bf74]"}>Try another one!</span>
-                    </h3>
-                </div>
-                <div className={"w-9/12"}>
-                    <CategoryTabs
-                        selectedCategory={selectedCategory}
-                        setSelectedCategory={setSelectedCategory}
-                    />
-                </div>
-            </div>
+            {/*<div className={"h-screen flex justify-center items-center flex-col"}>*/}
+            {/*    <div*/}
+            {/*        className="w-11/12 mb-32  mx-auto lg:w-10/12 my-12 scale-100 lg:scale-110 flex flex-col justify-center items-center">*/}
+            {/*        <h3 className="intersted-font flex flex-col  justify-center items-center text-center font-bold md:text-center mb-2"*/}
+            {/*            style={{lineHeight: "1.2em"}}>*/}
+            {/*            Not interested in anything? <br/>*/}
+            {/*            Maybe you're just in the wrong category.*/}
+            {/*            <br/><span className={"text-[#01bf74]"}>Try another one!</span>*/}
+            {/*        </h3>*/}
+            {/*    </div>*/}
+            {/*    <div className={"w-9/12"}>*/}
+            {/*        <CategoryTabs*/}
+            {/*            selectedCategory={selectedCategory}*/}
+            {/*            setSelectedCategory={setSelectedCategory}*/}
+            {/*        />*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </>
     );
 

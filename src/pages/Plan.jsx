@@ -26,7 +26,7 @@ const plan = {
         ['Features', 'Free plan', '1 time publication', 'Explorer', 'Visionary'],
         ['max 30-sec pitches', true, true, true, true],
         ['max 60-sec pitches', false, true, true, true],
-        ['Promote Products', true, true, true, true],
+        // ['Promote Products', true, true, true, true],
         // ['Sell or Transfer business', true, true, true, true],
         // ['Find Partners', true, true, true, true],
         ['Video Visibility: Public and Private', false, false, true, true],
@@ -115,7 +115,7 @@ const Plan = () => {
                         {tabs.map((tab) => (
                             <motion.button
                                 key={tab}
-                                className={`px-6 py-3 mb-6 lg:mb-0 lg:px-20 lg:py-10 lg:text-4xl  font-bold transition-colors rounded-md lg:rounded-none duration-300 lg:rounded-t-lg ${
+                                className={`px-6  py-3 mb-6 lg:mb-0 lg:px-20 lg:py-10 lg:text-4xl  font-bold transition-colors rounded-md lg:rounded-none duration-300 lg:rounded-t-lg ${
                                     activeTab === tab ? 'bg-[#01BF74] text-white lg:rounded-t-xl -mb-1' : 'bg-gray-200 text-black'
                                 }`}
                                 onClick={() => setActiveTab(tab)}
@@ -129,7 +129,7 @@ const Plan = () => {
                     </div>
                 </div>
                 <div
-                    className="mt-1 border-2 lg:border-4  border-[#01BF74] rounded-3xl shadow-lg overflow-x-auto hide-scrollbar w-full lg:w-11/12 mx-auto">
+                    className="mt-8 border-2 lg:border-4  border-[#01BF74] rounded-3xl shadow-lg overflow-x-auto hide-scrollbar w-full lg:w-11/12 mx-auto">
                     <table className="w-full rounded-3xl table-fixed min-w-[800px] lg:min-w-full">
                         <thead>
                         <tr className="bg-gray-200 border-b border-gray-300">

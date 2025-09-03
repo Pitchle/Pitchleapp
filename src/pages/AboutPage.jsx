@@ -39,8 +39,8 @@ const AboutPage = () => {
             {[
               {
                 title: "Who We Are",
-                description:
-                  " Pitchle is a video commerce platform for sustainable products with Impact+ verification",
+                description: " Pitchle is a video commerce platform for sustainable products with Impact+  \n </br>" +
+                    " verification",
                 icon: (
                   <svg
                     className="w-[50px] h-[50px] md:w-[70px] md:h-[70px]"
@@ -124,9 +124,9 @@ const AboutPage = () => {
                     {section.title}
                   </h3>
                 </div>
-                <p className="text-start text-[16px] sm:text-sm  lg:text-lg font-[400] text-[#343434]" style={{ lineHeight: '1.2' }}>
-                  {section.description}
-                </p>
+                <p className="text-start text-[16px] sm:text-sm  lg:text-lg font-[400] text-[#343434]" style={{ lineHeight: '1.2' }}
+                  dangerouslySetInnerHTML={{__html: section.description}}/>
+
               </div>
             ))}
           </section>

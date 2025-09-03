@@ -75,21 +75,21 @@ const Footer = () => {
                 <h2 className="text-3xl lg:text-4xl font-semibold">Pitchle</h2>
               </div>
               <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] text-[#545454] lg:text-base mt-4 sm:w-auto w-10/12 font-medium">
-                Shop Sustainably <br className="hidden md:block"/>
-                Sustainable shopping
+                Verified Sustainable <br className="hidden md:block"/>
+                Products
               </p>
-              <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-8 sm:w-auto w-10/12 font-medium">
-                Verified Sustainable Commerce
-              </p>
-              <p className="text-center ms-3 bg-[#ffff00] md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">
-                Video commerce for sustainable products
-              </p>
-              <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">
-                Proof-first video shopping
-              </p>
-              <p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">
-                Shop by proof
-              </p>
+              {/*<p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-8 sm:w-auto w-10/12 font-medium">*/}
+              {/*  Verified Sustainable Commerce*/}
+              {/*</p>*/}
+              {/*<p className="text-center ms-3 bg-[#ffff00] md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">*/}
+              {/*  Video commerce for sustainable products*/}
+              {/*</p>*/}
+              {/*<p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">*/}
+              {/*  Proof-first video shopping*/}
+              {/*</p>*/}
+              {/*<p className="text-center ms-3 md:ms-0 md:text-left text-[22px] lg:text-base mt-2 sm:w-auto w-10/12 font-medium">*/}
+              {/*  Shop by proof*/}
+              {/*</p>*/}
             </div>
 
             {/* Newsletter */}
