@@ -7,11 +7,11 @@ const Banner = () => {
             <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-center mt-2 lg:mt-2 leading-tight">
                 <span className={" flex flex-col md:flex-row justify-center items-center lg:space-x-2"}>
                      Shop
-                    <span className="text-[#01BF74] flex flex-row justify-center items-center ms-0 md:ms-4"> Sustainably                 <img className={"w-12 h-12 block lg:hidden lg:mt-4"}
+                    <span className="text-[#01BF74] flex flex-row justify-center items-center ms-0 md:ms-4"> Sustainably                 <img className={"w-10 h-10 block lg:hidden lg:mt-4"}
                                                                                             src="/img/icon/title_icon.jpg"
                                                                                             alt="icon"/>
  </span>
-                    <img className={"w-20 h-20 hidden lg:block mt-4"} src="/img/icon/title_icon.jpg" alt="icon"/>
+                    <img className={"w-16 h-16 hidden lg:block mt-4"} src="/img/icon/title_icon.jpg" alt="icon"/>
                 </span>
                  <span className={"me-0 md:me-28"}>In Short Videos!</span>
             </h1>
