@@ -75,7 +75,7 @@ const Banner = () => {
             </p>
 
             <div className="flex flex-wrap justify-center items-center gap-4 mt-5">
-                <a href="https://apps.apple.com/us/app/pitchle/id6677026938" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/fr/app/pitchle/id6677026938" target="_blank" rel="noopener noreferrer">
                     <button className="flex items-center bg-gradient-to-r from-[#383838] to-[#000000] text-white px-5 py-3 md:px-7 md:py-4 rounded-lg shadow-lg">
                         <img className="w-5 h-5 md:w-6 md:h-6 me-2" src="/img/logo/apple.png" alt="" />
                         <span className="text-md md:text-xl font-semibold">Apple Store</span>
