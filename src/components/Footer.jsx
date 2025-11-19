@@ -207,7 +207,7 @@ const Footer = () => {
                         </div>
                       </a>
                       <a
-                        href="https://apps.apple.com/us/app/pitchle/id6677026938"
+                        href="https://apps.apple.com/fr/app/pitchle/id6677026938"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
